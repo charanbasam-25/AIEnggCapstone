@@ -1,0 +1,130 @@
+[
+  {
+    "query_id": "q01",
+    "query": "What are the Fundamental Rights guaranteed by the Constitution?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      37
+    ]
+  },
+  {
+    "query_id": "q02",
+    "query": "What are the Directive Principles of State Policy?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      52
+    ]
+  },
+  {
+    "query_id": "q03",
+    "query": "What are the Fundamental Duties of citizens?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      56
+    ]
+  },
+  {
+    "query_id": "q04",
+    "query": "How is the President of India elected?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      57
+    ]
+  },
+  {
+    "query_id": "q05",
+    "query": "What is the role of the Council of Ministers in relation to the President?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      65
+    ]
+  },
+  {
+    "query_id": "q06",
+    "query": "How is Parliament constituted under the Constitution?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      67
+    ]
+  },
+  {
+    "query_id": "q07",
+    "query": "What is the composition of the Council of States?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      67
+    ]
+  },
+  {
+    "query_id": "q08",
+    "query": "What is the composition of the House of the People?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      68
+    ]
+  },
+  {
+    "query_id": "q09",
+    "query": "What provisions establish High Courts for the States?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      130
+    ]
+  },
+  {
+    "query_id": "q10",
+    "query": "What is the role of the Comptroller and Auditor-General of India?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      99
+    ]
+  },
+  {
+    "query_id": "q11",
+    "query": "How is the Finance Commission constituted?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      193
+    ]
+  },
+  {
+    "query_id": "q12",
+    "query": "What are the provisions relating to Public Service Commissions?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      208
+    ]
+  },
+  {
+    "query_id": "q13",
+    "query": "What are the powers and functions of the Election Commission?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      217
+    ]
+  },
+  {
+    "query_id": "q14",
+    "query": "How are legislative powers distributed between Parliament and the State Legislatures?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      176
+    ]
+  },
+  {
+    "query_id": "q15",
+    "query": "When can a Proclamation of Emergency be issued?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      239
+    ]
+  },
+  {
+    "query_id": "q16",
+    "query": "What is the procedure for amending the Constitution?",
+    "expected_source": "constitution",
+    "expected_pages": [
+      259
+    ]
+  }
+]
