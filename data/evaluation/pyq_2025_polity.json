@@ -1,0 +1,151 @@
+{
+  "dataset_name": "UPSC 2025 Polity PYQ Evaluation Dataset",
+  "year": 2025,
+  "source": "data/raw/upsc/prelims2025Questions.pdf",
+  "description": "Indian Polity questions from the UPSC Civil Services Preliminary Examination 2025 used for evaluating answer accuracy and evidence grounding.",
+  "questions": [
+    {
+      "q_number": 54,
+      "question_text": "\u0007Consider the following subjects under the Constitution of India: [Salient Features of Indian Constitution] I. List I-Union List, in the Seventh Schedule II. Extent of the executive power of a State III. Conditions of the Governor’s office \u0007For a constitutional amendment with respect to which of the above, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent?",
+      "options": {
+        "A": "I and II only",
+        "B": "II and III only",
+        "C": "I and III only",
+        "D": "I, II and III"
+      },
+      "official_answer": "A"
+    },
+    {
+      "q_number": 55,
+      "question_text": "\u0007Consider the following statements about Lokpal: [The Judiciary] I. \u0007The power of Lokpal applies to public servants of India, but not to the Indian public servants posted outside India. II. \u0007The Chairperson or a Member shall not be a Member of the Parliament or a Member of the Legislature of any State or Union Territory, and only the Chief Justice of India, whether incumbent or retired, has to be its Chairperson. III. \u0007The Chairperson or a Member shall not be a person of less than forty-five years of age on the date of assuming office as the Chairperson or Member, as the case may be. IV. \u0007Lokpal cannot inquire into the allegations of corruption against a sitting Prime Minister of India. \b \u0007Which of the statements given above is/are correct?",
+      "options": {
+        "A": "III only",
+        "B": "II and III",
+        "C": "I and IV",
+        "D": "None of the above statements is correct"
+      },
+      "official_answer": "A"
+    },
+    {
+      "q_number": 56,
+      "question_text": "Consider the following pairs: [Fundamental Rights] Provision in the Constitution of India Stated under I. Separation of Judiciary from the Executive in the public services of the State The Directive Principles of the State Policy II. Valuing and preserving of the rich heritage of our composite culture The Fundamental Duties III. Prohibition of employment of children below the age of 14 years in factories The Fundamental Rights \u0007How many of the above pairs are correctly matched?",
+      "options": {
+        "A": "Only one",
+        "B": "Only two",
+        "C": "All the three",
+        "D": "None"
+      },
+      "official_answer": "C"
+    },
+    {
+      "q_number": 57,
+      "question_text": "\u0007Consider the following statements with regard to pardoning power of the President of India: [Union Executive] I. \u0007The exercise of this power by the President can be subjected to limited judicial review. II. \u0007The President can exercise this power without the advice of the Central Government. \u0007Which of the statements given above is/are correct?",
+      "options": {
+        "A": "I only",
+        "B": "II only",
+        "C": "Both I and II",
+        "D": "Neither I nor II"
+      },
+      "official_answer": "A"
+    },
+    {
+      "q_number": 58,
+      "question_text": "Consider the following statements: [Union Executive] I. \u0007If any question arises as to whether a Member of the House of the People has become subject to disqualification under the 10th Schedule, the President’s decision in accordance with the opinion of the Council of Union Ministers shall be final. II. \u0007There is no mention of the word ‘political party’ in the Constitution of India. \u0007Which of the statements given above is/are correct?",
+      "options": {
+        "A": "I only",
+        "B": "II only",
+        "C": "Both I and II",
+        "D": "Neither I nor II"
+      },
+      "official_answer": "A"
+    },
+    {
+      "q_number": 59,
+      "question_text": "Consider the following statements: [Union Legislature] I. \u0007On the dissolution of the House of the People, the Speaker shall not vacate his/her office until immediately before the first meeting of the House of the People after the dissolution. II. \u0007According to the provisions of the Constitution of India, a Member of the House of the People on being elected as Speaker shall resign from his/her political party immediately. III. \u0007The Speaker of the House of the People may be may be removed from his/her office by a resolution of the House of the People passed by a majority of all the then Members of the House, provided that no resolution shall be moved unless at least fourteen days’ notice has been given of the intention to move the resolution. \u0007Which of the statements given above are correct?",
+      "options": {
+        "A": "I and II only",
+        "B": "II and III only",
+        "C": "I and III only",
+        "D": "I, II and III"
+      },
+      "official_answer": "C"
+    },
+    {
+      "q_number": 60,
+      "question_text": "\u0007With reference to the Indian polity, consider the following statements: [Union Legislature] I. \u0007An Ordinance can amend any Central Act. II. \u0007An Ordinance can abridge a Fundamental Right. III. \u0007An Ordinance can come into effect from a back date. \u0007Which of the statements given above are correct?",
+      "options": {
+        "A": "I and II only",
+        "B": "II and III only",
+        "C": "I and III only",
+        "D": "I, II and III"
+      },
+      "official_answer": "D"
+    },
+    {
+      "q_number": 61,
+      "question_text": "\u0007Consider the following statements: [State Legislature & Executive] I. \u0007The Constitution of India/explicitly mentions that in certain spheres the Governor of a State acts in his/her own discretion. II. \u0007The President of India can, of his/her own, reserve a bill passed by a State Legislature for his/her consideration without it being forwarded by the Governor of the State concerned. \u0007Which of the statements given above is/are correct?",
+      "options": {
+        "A": "I only",
+        "B": "II only",
+        "C": "Both I and II",
+        "D": "Neither I nor II"
+      },
+      "official_answer": "A"
+    },
+    {
+      "q_number": 62,
+      "question_text": "\u0007With reference to the Indian polity, consider the following statements: [State Legislature & Executive] I. \u0007The Governor of a State is not answerable to any court for the exercise and performance of the powers and duties of his/her office. II. \u0007No criminal proceedings shall be instituted or continued against the Governor during his/her term of office. III. \u0007Members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House. \u0007Which of the statements given above are correct?",
+      "options": {
+        "A": "I and II only",
+        "B": "II and III only",
+        "C": "I and III only",
+        "D": "I, II and III"
+      },
+      "official_answer": "D"
+    },
+    {
+      "q_number": 63,
+      "question_text": "Consider the following statements: [Local Government] I. \u0007Panchayats at the intermediate level exist in all States. II. \u0007To be eligible to be a Member of a Panchayat at the intermediate level, a person should attain the age of thirty years. III. \u0007The Chief Minister of a State constitutes a commission to review the financial position of Panchayats at the intermediate levels and to make recommendations regarding the distribution of net proceeds of taxes and duties, leviable by the State, between the State and Panchayats at the intermediate level. \u0007Which of the statements given above are not correct?",
+      "options": {
+        "A": "I and II only",
+        "B": "II and III only",
+        "C": "I and III only",
+        "D": "I, II and III"
+      },
+      "official_answer": "D"
+    },
+    {
+      "q_number": 64,
+      "question_text": "Consider the following pairs: [Local Government] State Description I. Arunachal Pradesh The capital is named after a fort, and the State has two National Parks II. Nagaland The State came into existence on the basis of a Constitutional Amendment Act III. Tripura Initially a Part ‘C’ State, it became a centrally administered territory with the reorganisation of States in 1956 and later attained the status of a full- fledged State \b \u0007How many of the above pairs are correctly matched?",
+      "options": {
+        "A": "Only one",
+        "B": "Only two",
+        "C": "All the three",
+        "D": "None"
+      },
+      "official_answer": "C"
+    },
+    {
+      "q_number": 65,
+      "question_text": "Consider the following statements: [Local Government] \u0007With reference to the Constitution of India, if an area in a State is declared as Scheduled Area under the Fifth Schedule I. \u0007the State Government loses its executive power in such areas and a local body assumes total administration II. \u0007the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor \u0007Which of the statements given above is/are correct?",
+      "options": {
+        "A": "I only",
+        "B": "II only",
+        "C": "Both I and II",
+        "D": "Neither I nor II"
+      },
+      "official_answer": "D"
+    },
+    {
+      "q_number": 66,
+      "question_text": "\u0007Consider the following activities: [Local Government] I. Production of crude oil-free II. \u0007Refining, storage and distribution of petroleum III. Marketing and sale of petroleum products IV. Production of natural gas \u0007How many of the above activities are regulated by the Petroleum and Natural Gas Regulatory Board in our country?",
+      "options": {
+        "A": "Only one",
+        "B": "Only two",
+        "C": "Only three",
+        "D": "All the four"
+      },
+      "official_answer": "B"
+    }
+  ]
+}

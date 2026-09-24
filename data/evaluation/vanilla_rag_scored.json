@@ -1,0 +1,453 @@
+{
+  "system": "Vanilla RAG",
+  "dataset": "UPSC 2025 Polity PYQs",
+  "total_questions": 13,
+  "correct": 5,
+  "incorrect": 8,
+  "no_answer": 0,
+  "accuracy": 0.38461538461538464,
+  "results": [
+    {
+      "q_number": 54,
+      "official_answer": "A",
+      "predicted_answer": "D",
+      "status": "INCORRECT",
+      "rag_answer": "According to Article 368 of the Constitution of India, any amendment that seeks to alter the provisions related to the Union List, the extent of the executive power of a State, and the conditions of the Governor’s office requires ratification by the Legislatures of not less than one-half of the States before being presented to the President for assent. Therefore, all three subjects mentioned (I, II, and III) fall under this requirement for ratification [Constitution of India, p. 260].",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -1.8411171436309814
+        },
+        {
+          "source": "constitution",
+          "page": 176,
+          "score": -2.7938811779022217
+        },
+        {
+          "source": "constitution",
+          "page": 181,
+          "score": -2.812415599822998
+        },
+        {
+          "source": "constitution",
+          "page": 176,
+          "score": -2.924283742904663
+        },
+        {
+          "source": "constitution",
+          "page": 260,
+          "score": -3.0920679569244385
+        }
+      ]
+    },
+    {
+      "q_number": 55,
+      "official_answer": "A",
+      "predicted_answer": "D",
+      "status": "INCORRECT",
+      "rag_answer": "The provided sources do not contain specific information regarding the statements about Lokpal. Therefore, the evidence is insufficient to determine the correctness of the statements I, II, III, and IV.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 209,
+          "score": -2.3218727111816406
+        },
+        {
+          "source": "constitution",
+          "page": 77,
+          "score": -2.3806138038635254
+        },
+        {
+          "source": "constitution",
+          "page": 378,
+          "score": -2.459974527359009
+        },
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -2.5189151763916016
+        },
+        {
+          "source": "constitution",
+          "page": 110,
+          "score": -2.7454590797424316
+        }
+      ]
+    },
+    {
+      "q_number": 56,
+      "official_answer": "C",
+      "predicted_answer": "A",
+      "status": "INCORRECT",
+      "rag_answer": "Only one pair is correctly matched. The first pair, 'Separation of Judiciary from the Executive in the public services of the State', is a provision under the Directive Principles of State Policy, not Fundamental Rights. The second pair, 'Valuing and preserving of the rich heritage of our composite culture', is part of the Fundamental Duties, not Fundamental Rights. The third pair, 'Prohibition of employment of children below the age of 14 years in factories', is a Fundamental Right under Article 24. Therefore, only the third pair is correctly matched, making the correct option A (Only one). [Constitution of India, p. 37; NCERT Polity, p. 13]",
+      "sources": [
+        {
+          "source": "ncert",
+          "page": 13,
+          "score": -3.775144338607788
+        },
+        {
+          "source": "constitution",
+          "page": 37,
+          "score": -3.888036012649536
+        },
+        {
+          "source": "ncert",
+          "page": 15,
+          "score": -4.081003665924072
+        },
+        {
+          "source": "constitution",
+          "page": 64,
+          "score": -4.11170768737793
+        },
+        {
+          "source": "constitution",
+          "page": 225,
+          "score": -4.384640693664551
+        }
+      ]
+    },
+    {
+      "q_number": 57,
+      "official_answer": "A",
+      "predicted_answer": "A",
+      "status": "CORRECT",
+      "rag_answer": "Statement I is correct because the exercise of the pardoning power by the President can indeed be subjected to limited judicial review, as established by the Supreme Court in various judgments. Statement II is incorrect because the President exercises this power on the advice of the Council of Ministers, as per Article 74 of the Constitution. Therefore, the correct option is A (I only) [Constitution of India, p. 63].",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 96,
+          "score": -2.1926393508911133
+        },
+        {
+          "source": "constitution",
+          "page": 57,
+          "score": -2.468456268310547
+        },
+        {
+          "source": "constitution",
+          "page": 63,
+          "score": -2.7174205780029297
+        },
+        {
+          "source": "constitution",
+          "page": 180,
+          "score": -3.1699371337890625
+        },
+        {
+          "source": "constitution",
+          "page": 180,
+          "score": -3.189723014831543
+        }
+      ]
+    },
+    {
+      "q_number": 58,
+      "official_answer": "A",
+      "predicted_answer": "D",
+      "status": "INCORRECT",
+      "rag_answer": "Both statements are incorrect. Statement I is incorrect because the President's decision regarding disqualification under the Tenth Schedule is final for members of Parliament, not for members of the House of the People; it is the Governor's decision that is final for State Legislature members [Constitution of India, p. 117]. Statement II is also incorrect because the term 'political party' is indeed mentioned in the Constitution, specifically in the context of disqualifications under the Tenth Schedule [Constitution of India, p. 378]. Therefore, the correct option is D: Neither I nor II.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -4.2405853271484375
+        },
+        {
+          "source": "constitution",
+          "page": 378,
+          "score": -4.276760578155518
+        },
+        {
+          "source": "constitution",
+          "page": 77,
+          "score": -4.5639495849609375
+        },
+        {
+          "source": "constitution",
+          "page": 153,
+          "score": -5.013615131378174
+        },
+        {
+          "source": "constitution",
+          "page": 378,
+          "score": -5.117380142211914
+        }
+      ]
+    },
+    {
+      "q_number": 59,
+      "official_answer": "C",
+      "predicted_answer": "C",
+      "status": "CORRECT",
+      "rag_answer": "Statement I is correct as the Constitution states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution [Constitution of India, p. 73]. Statement II is incorrect because the Constitution does not require a Member of the House of the People to resign from their political party upon being elected as Speaker. Statement III is correct as it mentions the procedure for the removal of the Speaker, which includes the requirement of a resolution passed by a majority of all the then members of the House, with at least fourteen days' notice [Constitution of India, p. 73]. Therefore, the correct option is C (I and III only).",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 73,
+          "score": 0.6021658182144165
+        },
+        {
+          "source": "constitution",
+          "page": 112,
+          "score": 0.017664946615695953
+        },
+        {
+          "source": "constitution",
+          "page": 73,
+          "score": -0.7420783638954163
+        },
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -1.5335603952407837
+        },
+        {
+          "source": "constitution",
+          "page": 378,
+          "score": -1.675194501876831
+        }
+      ]
+    },
+    {
+      "q_number": 60,
+      "official_answer": "D",
+      "predicted_answer": "A",
+      "status": "INCORRECT",
+      "rag_answer": "Statement I is correct because an Ordinance can amend any Central Act as per the provisions of the Constitution. Statement II is incorrect because an Ordinance cannot abridge a Fundamental Right, as it must conform to the Constitution. Statement III is also incorrect because an Ordinance cannot come into effect from a back date; it takes effect from the date of promulgation. Therefore, only statement I is correct, making the correct option A (I and II only) incorrect. The correct option is A.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 278,
+          "score": -5.485993385314941
+        },
+        {
+          "source": "constitution",
+          "page": 173,
+          "score": -5.578756809234619
+        },
+        {
+          "source": "constitution",
+          "page": 34,
+          "score": -5.593006134033203
+        },
+        {
+          "source": "constitution",
+          "page": 201,
+          "score": -6.003209590911865
+        },
+        {
+          "source": "constitution",
+          "page": 88,
+          "score": -6.313640594482422
+        }
+      ]
+    },
+    {
+      "q_number": 61,
+      "official_answer": "A",
+      "predicted_answer": "A",
+      "status": "CORRECT",
+      "rag_answer": "Statement I is correct because the Constitution of India does mention that the Governor of a State can act in his/her own discretion in certain matters, as outlined in Article 163. However, Statement II is incorrect because the President cannot reserve a bill passed by a State Legislature for his/her consideration without it being forwarded by the Governor, as per Article 200. Therefore, the correct option is A (I only). [Constitution of India, p. 64]",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -2.5902624130249023
+        },
+        {
+          "source": "constitution",
+          "page": 181,
+          "score": -2.9112000465393066
+        },
+        {
+          "source": "constitution",
+          "page": 77,
+          "score": -3.0824127197265625
+        },
+        {
+          "source": "constitution",
+          "page": 64,
+          "score": -3.2816929817199707
+        },
+        {
+          "source": "constitution",
+          "page": 34,
+          "score": -3.944148540496826
+        }
+      ]
+    },
+    {
+      "q_number": 62,
+      "official_answer": "D",
+      "predicted_answer": "D",
+      "status": "CORRECT",
+      "rag_answer": "All three statements are correct based on the Constitution of India. Statement I is correct because the Governor is not answerable to any court for the exercise and performance of the powers and duties of his office [Constitution of India, p. 250]. Statement II is also correct as no criminal proceedings can be instituted or continued against the Governor during his term of office [Constitution of India, p. 250]. Lastly, Statement III is correct since members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House [Constitution of India, p. 250]. Therefore, the correct option is D: I, II and III.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -3.529721736907959
+        },
+        {
+          "source": "constitution",
+          "page": 250,
+          "score": -4.003589630126953
+        },
+        {
+          "source": "constitution",
+          "page": 181,
+          "score": -4.5424323081970215
+        },
+        {
+          "source": "constitution",
+          "page": 201,
+          "score": -4.6881208419799805
+        },
+        {
+          "source": "constitution",
+          "page": 64,
+          "score": -4.9496564865112305
+        }
+      ]
+    },
+    {
+      "q_number": 63,
+      "official_answer": "D",
+      "predicted_answer": "A",
+      "status": "INCORRECT",
+      "rag_answer": "Statement I is incorrect because Panchayats at the intermediate level may not be constituted in a State having a population not exceeding twenty lakhs, meaning not all States have them [Constitution of India, p. 150]. Statement II is incorrect because the minimum age to be a member of a Panchayat is twenty-one years, not thirty [Constitution of India, p. 153]. Statement III is correct as the Chief Minister does constitute a commission to review the financial position of Panchayats [Constitution of India, p. 154]. Therefore, the statements that are not correct are I and II.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 151,
+          "score": -1.6488101482391357
+        },
+        {
+          "source": "constitution",
+          "page": 154,
+          "score": -2.995103120803833
+        },
+        {
+          "source": "constitution",
+          "page": 153,
+          "score": -3.249790668487549
+        },
+        {
+          "source": "constitution",
+          "page": 150,
+          "score": -3.481304883956909
+        },
+        {
+          "source": "constitution",
+          "page": 193,
+          "score": -3.9255659580230713
+        }
+      ]
+    },
+    {
+      "q_number": 64,
+      "official_answer": "C",
+      "predicted_answer": "A",
+      "status": "INCORRECT",
+      "rag_answer": "Only one pair is correctly matched. I. Arunachal Pradesh is correctly described as having a capital named after a fort and having two National Parks. However, II. Nagaland's existence is based on the State of Nagaland Act, 1962, not a Constitutional Amendment Act, and III. Tripura was initially a Part 'C' State but did not become a centrally administered territory in 1956; it became a full-fledged State in 1972. Therefore, only the first pair is correct.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 199,
+          "score": -5.34445333480835
+        },
+        {
+          "source": "constitution",
+          "page": 175,
+          "score": -6.046322822570801
+        },
+        {
+          "source": "constitution",
+          "page": 34,
+          "score": -6.523357391357422
+        },
+        {
+          "source": "constitution",
+          "page": 174,
+          "score": -6.552765369415283
+        },
+        {
+          "source": "constitution",
+          "page": 157,
+          "score": -6.582077980041504
+        }
+      ]
+    },
+    {
+      "q_number": 65,
+      "official_answer": "D",
+      "predicted_answer": "B",
+      "status": "INCORRECT",
+      "rag_answer": "Statement I is incorrect because the State Government does not lose its executive power entirely in Scheduled Areas; rather, the administration is subject to certain provisions and the Governor's recommendations. Statement II is correct as the Union Government can take over the administration of Scheduled Areas under certain circumstances on the recommendations of the Governor, as outlined in the Constitution. Therefore, the correct option is B (II only). [Constitution of India, p. 164]",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -1.9075243473052979
+        },
+        {
+          "source": "constitution",
+          "page": 77,
+          "score": -3.103879451751709
+        },
+        {
+          "source": "constitution",
+          "page": 175,
+          "score": -3.3546853065490723
+        },
+        {
+          "source": "constitution",
+          "page": 164,
+          "score": -3.656602144241333
+        },
+        {
+          "source": "constitution",
+          "page": 307,
+          "score": -3.983444929122925
+        }
+      ]
+    },
+    {
+      "q_number": 66,
+      "official_answer": "B",
+      "predicted_answer": "B",
+      "status": "CORRECT",
+      "rag_answer": "The Petroleum and Natural Gas Regulatory Board regulates the refining, storage, and distribution of petroleum (II) and the marketing and sale of petroleum products (III). However, it does not regulate the production of crude oil (I) or the production of natural gas (IV). Therefore, only two activities (II and III) are regulated by the Board, making the correct option B.",
+      "sources": [
+        {
+          "source": "constitution",
+          "page": 117,
+          "score": -4.882975101470947
+        },
+        {
+          "source": "constitution",
+          "page": 193,
+          "score": -5.095192909240723
+        },
+        {
+          "source": "constitution",
+          "page": 66,
+          "score": -5.279533863067627
+        },
+        {
+          "source": "constitution",
+          "page": 242,
+          "score": -5.987391948699951
+        },
+        {
+          "source": "constitution",
+          "page": 344,
+          "score": -6.088118076324463
+        }
+      ]
+    }
+  ]
+}

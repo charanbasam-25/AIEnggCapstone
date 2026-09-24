@@ -1,0 +1,9 @@
+{
+  "dataset_name": "UPSC Polity PYQ Evaluation Dataset",
+  "description": "Official UPSC Civil Services Preliminary Examination Polity questions used for evaluating answer accuracy and evidence grounding.",
+  "source_documents": [
+    "data/raw/upsc/prelims2026Questions.pdf",
+    "data/raw/answer_keys/prelims2026Key.pdf"
+  ],
+  "questions": []
+}

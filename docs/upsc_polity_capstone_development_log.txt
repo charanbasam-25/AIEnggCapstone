@@ -1,0 +1,388 @@
+SOURCE-VERIFIED UPSC PRELIMS POLITY MCQ TUTOR
+CAPSTONE DEVELOPMENT LOG
+
+Purpose
+-------
+Maintain a running record of actual capstone work:
+- What we did
+- What went wrong / what we learned
+- What we modified
+- What we tested
+- Test result
+- Decision / next step
+
+Only confirmed work is recorded as completed. Planned work is explicitly marked
+as planned.
+
+============================================================
+CURRENT PROJECT STATUS
+============================================================
+
+Project:
+Source-Verified UPSC Prelims Polity MCQ Tutor
+
+Research question:
+Does an independent verification pipeline reduce MCQ factual and answer-key
+errors compared with a standard RAG-based generator?
+
+Scope:
+- UPSC Civil Services Preliminary Examination
+- Indian Polity
+- Static knowledge only
+- No current affairs
+- Constitution of India
+- NCERT Polity
+- UPSC PYQs / answer keys for evaluation
+
+============================================================
+1. ENVIRONMENT AND DATA
+============================================================
+
+Completed:
+- Python 3.11.16
+- Virtual environment created and activated
+- Core requirements installed and imports verified
+- Constitution extracted: 402 pages / ~845,502 characters
+- NCERT extracted: 20 pages / ~30,061 characters
+- Prepared documents: 422 pages
+- Final chunks: 1,149
+- JSONL chunk file created and validated
+
+Initial problem:
+The first chunk parser returned zero documents.
+
+Modification:
+Replaced the parser with regex-based recovery of SOURCE, DOCUMENT, PAGE and
+content blocks.
+
+Result:
+422 documents and 1,149 chunks successfully produced.
+
+============================================================
+2. RETRIEVAL EXPERIMENTS
+============================================================
+
+Gold retrieval benchmark: 16 queries.
+
+Results:
+- BM25: 75.00% Recall@5
+- Dense semantic BGE-small: 87.50%
+- Hybrid BM25 + semantic + RRF: 81.25%
+- Semantic + cross-encoder reranker: 93.75%
+- Parent-child + reranker: 87.50%
+
+Selected retrieval:
+BGE-small semantic retrieval -> top 20 -> cross-encoder reranking -> top 5.
+
+Important:
+93.75% is Recall@5 on the 16-query benchmark only.
+
+============================================================
+3. VANILLA RAG BASELINE
+============================================================
+
+Implemented:
+- src/rag/vanilla_rag.py
+- PYQ evaluation and scoring scripts
+
+Model:
+gpt-4o-mini
+
+Evaluation:
+13 2025 UPSC Polity questions.
+
+Result:
+5/13 correct = 38.46%.
+
+This is the current benchmark-specific baseline.
+
+============================================================
+4. PYQ DATA EXTRACTION
+============================================================
+
+2025 question paper was parsed.
+
+Initial problems:
+- Only 99 usable questions were extracted.
+- Q24 had missing options in the PDF text layer.
+- Q82 was initially misparsed because "2028." in its text looked like a
+  question number.
+
+Modification:
+Question-number parsing restricted to valid numbers <= 100.
+
+Result:
+99 usable questions; Q24 remained incomplete and was not needed for the
+Polity evaluation.
+
+Polity evaluation subset:
+Q54-Q66 = 13 questions.
+
+Official answers extracted from the ANSWERS section:
+Q54 A
+Q55 A
+Q56 C
+Q57 A
+Q58 A
+Q59 C
+Q60 D
+Q61 A
+Q62 D
+Q63 D
+Q64 C
+Q65 D
+Q66 B
+
+Validation:
+13 questions, no missing answers.
+
+============================================================
+5. CLAIM EXTRACTION
+============================================================
+
+Initial approach:
+LLM-based claim extraction.
+
+Problem:
+Repeated runs produced different wording for the same PYQ statements.
+
+Modification:
+Created deterministic numbered-statement parser:
+src/evaluation/pyq_statement_parser.py
+
+It extracts I / II / III / IV directly from the original question text.
+
+Validation:
+All 13 Polity questions parsed successfully with expected statement counts.
+
+Decision:
+Use deterministic statement extraction for official PYQ evaluation.
+
+============================================================
+6. FACT VERIFICATION
+============================================================
+
+FactVerifier outputs:
+SUPPORTED / CONTRADICTED / INSUFFICIENT.
+
+Principles:
+- Only supplied evidence
+- No outside knowledge
+- Complete evidence required for SUPPORTED
+- Explicit conflict required for CONTRADICTED
+- INSUFFICIENT when evidence is incomplete
+
+Negative claim handling was added using:
+src/verification/negative_claim_checker.py
+
+Purpose:
+Handle claims such as:
+"There is no mention of the word 'political party'..."
+
+Test:
+The term "political party" was found in the Constitution corpus.
+Q58 Statement II was therefore correctly identified as CONTRADICTED.
+
+============================================================
+7. VERIFIED PYQ EVALUATION
+============================================================
+
+Current verified-pipeline result:
+2/13 correct = 15.38%.
+
+This is NOT being treated as the final quality of the system.
+
+The evaluation is being used to identify failure modes.
+
+Key failures found:
+
+Q54:
+All statements individually supported, but answer mapping was wrong.
+Finding:
+The question asks which subjects fall under a constitutional amendment
+ratification rule. Statement truth alone does not answer the relationship
+question.
+
+Q55:
+All statements insufficient.
+Likely limitation:
+Current Constitution + NCERT corpus does not provide sufficient detailed
+Lokpal statutory evidence.
+
+Q56:
+Statement I insufficient; II and III supported.
+Finding:
+Pair-matching requires evidence about the relationship between a provision
+and its constitutional location.
+
+Q57:
+Statement I supported; II insufficient.
+Finding:
+Retrieved Article 72 evidence did not explicitly establish the judicial-review
+doctrine.
+
+Q58:
+Statement II correctly contradicted by lexical corpus search.
+
+Statement I exposed a compound-claim retrieval problem.
+
+Q59:
+Statements I and III supported; II insufficient.
+
+Q60:
+All statements insufficient.
+
+Q63:
+Statement I contradicted; II and III insufficient.
+
+Q64:
+All statements insufficient.
+
+Q65:
+Statement I insufficient; II supported.
+
+Q66:
+Statements I and IV insufficient; II and III supported.
+
+============================================================
+8. Q58 DETAILED FINDING
+============================================================
+
+Statement I contains two separate factual components:
+
+1. President decides relevant parliamentary disqualification questions and the
+   decision is final.
+2. President acts in accordance with Council of Ministers' advice.
+
+Initial ClaimRetriever results:
+- Constitution p.77: Article 103
+- Constitution p.378: Tenth Schedule
+- Constitution p.117: Article 192
+
+The missing Council of Ministers evidence was NOT a corpus limitation.
+
+A deterministic grep of chunks.jsonl found Article 74 on Constitution p.65:
+Council of Ministers aids and advises the President, and the President acts in
+accordance with such advice.
+
+Therefore the problem is:
+
+Original compound claim
+-> single retrieval query
+-> one required constitutional provision is missed
+
+This is a multi-hop / compound-claim retrieval problem.
+
+Important:
+Do not force the verifier to mark the claim SUPPORTED merely because the
+official PYQ answer is known.
+
+============================================================
+9. CURRENT ARCHITECTURAL LESSON
+============================================================
+
+Current verification:
+Claim
+-> independent retrieval
+-> FactVerifier
+
+Observed limitation:
+A compound claim may require multiple constitutional provisions.
+
+Planned architecture:
+Compound claim
+-> decomposition into atomic subclaims
+-> independent retrieval for each subclaim
+-> verification of each subclaim
+-> aggregate result
+
+Example for Q58:
+Subclaim 1:
+Relevant parliamentary disqualification questions are decided by the President
+and the decision is final.
+Evidence: Article 103, p.77.
+
+Subclaim 2:
+The President acts in accordance with the advice of the Council of Ministers.
+Evidence: Article 74, p.65.
+
+Aggregation:
+- all supported -> SUPPORTED
+- any explicit contradiction -> CONTRADICTED
+- otherwise -> INSUFFICIENT
+
+============================================================
+10. IMPORTANT FAILURE-ANALYSIS PRINCIPLES
+============================================================
+
+Do not:
+- weaken verification just to increase the score
+- use official answers to influence verification
+- treat missing evidence as contradiction
+- treat failure to retrieve a term as proof of absence
+- invent evidence
+- silently add outside sources
+- generalize benchmark results
+
+Do:
+- preserve baseline results
+- separate retrieval, verification, reasoning and mapping failures
+- use deterministic parsing when reproducibility matters
+- use independent retrieval for verification
+- record every modification and test
+
+============================================================
+11. CONFIRMED METRICS
+============================================================
+
+Retrieval:
+BM25: 75.00% Recall@5
+Semantic: 87.50%
+Hybrid RRF: 81.25%
+Semantic + Cross-Encoder: 93.75%
+Parent-child + Reranker: 87.50%
+
+Vanilla RAG:
+5/13 = 38.46%
+
+Verified PYQ pipeline:
+2/13 = 15.38%
+
+All metrics are benchmark-specific.
+
+============================================================
+12. NEXT PLANNED STEP
+============================================================
+
+Create:
+src/verification/claim_decomposer.py
+
+Purpose:
+Detect/decompose compound factual claims into atomic, independently verifiable
+subclaims.
+
+Testing sequence:
+1. Implement decomposer.
+2. Test independently on Q58 Statement I.
+3. Verify stable structured output.
+4. Retrieve each subclaim independently.
+5. Verify each subclaim.
+6. Integrate into the full PYQ evaluator only after the isolated test works.
+
+============================================================
+13. RUNNING LOG TEMPLATE
+============================================================
+
+DATE:
+STEP:
+WHAT WE DID:
+WHAT WENT WRONG / OBSERVATION:
+WHAT WE MODIFIED:
+WHAT WE TESTED:
+RESULT:
+DECISION:
+NEXT STEP:
+
+This template will be appended for future development steps.
+
+END OF CURRENT LOG
