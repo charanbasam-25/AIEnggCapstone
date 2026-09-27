@@ -1,0 +1,137 @@
+corpus 1149 chunks, 13 questions
+baseline vanilla RAG (answers every question):
+  stored_labels   accuracy 38.46%   wrong 61.54%
+  audited_labels  accuracy 46.15%   wrong 53.85%
+
+running C0 ...
+running C1 ...
+running C1d ...
+running C2 ...
+running C3 ...
+running C3d ...
+
+cache: 216 hits, 0 misses -> data/evaluation/system_c_verdict_cache.json
+
+--- C0: stored claims, k=3, base prompt ---
+    isolates: reference point; differs from System B only in retriever
+    verdicts: {'SUPPORTED': 15, 'INSUFFICIENT': 16, 'CONTRADICTED': 6}
+    claims:   37  propositional 70.27%  false SUPPORTED 9
+    stored_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  45.45%  accuracy  38.46%  wrong  46.15%
+    audited_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+
+--- C1: bound claims, k=3, base prompt ---
+    isolates: predicate binding at k=3
+    verdicts: {'SUPPORTED': 13, 'INSUFFICIENT': 17, 'CONTRADICTED': 7}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  46.15%  precision  50.00%  accuracy  23.08%  wrong  23.08%
+      elimination   coverage  46.15%  precision  50.00%  accuracy  23.08%  wrong  23.08%
+      closed_world  coverage  76.92%  precision  40.00%  accuracy  30.77%  wrong  46.15%
+    audited_labels:
+      strict        coverage  46.15%  precision  66.67%  accuracy  30.77%  wrong  15.38%
+      elimination   coverage  46.15%  precision  66.67%  accuracy  30.77%  wrong  15.38%
+      closed_world  coverage  76.92%  precision  50.00%  accuracy  38.46%  wrong  38.46%
+
+--- C1d: stored claims, k=5, base prompt ---
+    isolates: retrieval depth 3 -> 5, claims held at stored
+    verdicts: {'SUPPORTED': 17, 'INSUFFICIENT': 14, 'CONTRADICTED': 6}
+    claims:   37  propositional 70.27%  false SUPPORTED 8
+    stored_labels:
+      strict        coverage  53.85%  precision  85.71%  accuracy  46.15%  wrong   7.69%
+      elimination   coverage  53.85%  precision  85.71%  accuracy  46.15%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+    audited_labels:
+      strict        coverage  53.85%  precision  71.43%  accuracy  38.46%  wrong  15.38%
+      elimination   coverage  53.85%  precision  71.43%  accuracy  38.46%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+
+--- C2: bound claims, k=5, base prompt ---
+    isolates: predicate binding at k=5 (compare against C1d)
+    verdicts: {'SUPPORTED': 14, 'INSUFFICIENT': 15, 'CONTRADICTED': 8}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  61.54%  precision  62.50%  accuracy  38.46%  wrong  23.08%
+      elimination   coverage  61.54%  precision  62.50%  accuracy  38.46%  wrong  23.08%
+      closed_world  coverage  76.92%  precision  50.00%  accuracy  38.46%  wrong  38.46%
+    audited_labels:
+      strict        coverage  61.54%  precision  75.00%  accuracy  46.15%  wrong  15.38%
+      elimination   coverage  61.54%  precision  75.00%  accuracy  46.15%  wrong  15.38%
+      closed_world  coverage  76.92%  precision  60.00%  accuracy  46.15%  wrong  30.77%
+
+--- C3: bound claims, k=5, numeric prompt ---
+    isolates: numeric conflict detection
+    verdicts: {'SUPPORTED': 14, 'INSUFFICIENT': 14, 'CONTRADICTED': 9}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  69.23%  precision  66.67%  accuracy  46.15%  wrong  23.08%
+      elimination   coverage  69.23%  precision  66.67%  accuracy  46.15%  wrong  23.08%
+      closed_world  coverage  76.92%  precision  60.00%  accuracy  46.15%  wrong  30.77%
+    audited_labels:
+      strict        coverage  69.23%  precision  77.78%  accuracy  53.85%  wrong  15.38%
+      elimination   coverage  69.23%  precision  77.78%  accuracy  53.85%  wrong  15.38%
+      closed_world  coverage  76.92%  precision  70.00%  accuracy  53.85%  wrong  23.08%
+
+--- C3d: stored claims, k=5, numeric prompt ---
+    isolates: numeric conflict detection without binding
+    verdicts: {'SUPPORTED': 16, 'INSUFFICIENT': 13, 'CONTRADICTED': 8}
+    claims:   37  propositional 70.27%  false SUPPORTED 8
+    stored_labels:
+      strict        coverage  61.54%  precision  75.00%  accuracy  46.15%  wrong  15.38%
+      elimination   coverage  61.54%  precision  75.00%  accuracy  46.15%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+    audited_labels:
+      strict        coverage  61.54%  precision  87.50%  accuracy  53.85%  wrong   7.69%
+      elimination   coverage  61.54%  precision  87.50%  accuracy  53.85%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  72.73%  accuracy  61.54%  wrong  23.08%
+
+--- verdict changes, C0 -> C1 ---
+    Q65 I: INSUFFICIENT -> CONTRADICTED
+    Q65 II: INSUFFICIENT -> SUPPORTED
+    Q66 II: SUPPORTED -> INSUFFICIENT
+    Q66 III: SUPPORTED -> INSUFFICIENT
+    Q66 IV: SUPPORTED -> INSUFFICIENT
+
+--- verdict changes, C0 -> C1d ---
+    Q57 I: INSUFFICIENT -> SUPPORTED
+    Q58 I: CONTRADICTED -> SUPPORTED
+    Q59 II: INSUFFICIENT -> CONTRADICTED
+    Q65 II: INSUFFICIENT -> SUPPORTED
+    Q66 IV: SUPPORTED -> INSUFFICIENT
+
+--- verdict changes, C1d -> C2 ---
+    Q58 I: SUPPORTED -> CONTRADICTED
+    Q65 I: INSUFFICIENT -> CONTRADICTED
+    Q66 II: SUPPORTED -> INSUFFICIENT
+    Q66 III: SUPPORTED -> INSUFFICIENT
+
+--- verdict changes, C2 -> C3 ---
+    Q63 II: INSUFFICIENT -> CONTRADICTED
+
+--- verdict changes, C1d -> C3d ---
+    Q58 I: SUPPORTED -> CONTRADICTED
+    Q63 II: INSUFFICIENT -> CONTRADICTED
+
+--- per-question answers (strict policy, audited labels) ---
+    Q     label     C0     C1     C1d    C2     C3     C3d  
+    Q54   A         D      D      D      D      D      D    
+    Q55   A         --     --     --     --     --     --   
+    Q56   C         C*     C*     C*     C*     C*     C*   
+    Q57   A         --     --     A*     A*     A*     A*   
+    Q58   D         D*     D*     A      D*     D*     D*    (was A)
+    Q59   C         --     --     C*     C*     C*     C*   
+    Q60   D         --     --     --     --     --     --   
+    Q61   A         A*     A*     A*     A*     A*     A*   
+    Q62   D         D*     D*     D*     D*     D*     D*   
+    Q63   D         --     --     --     --     D*     D*   
+    Q64   C         --     --     --     --     --     --   
+    Q65   D         --     B      --     B      B      --   
+    Q66   B         --     --     --     --     --     --   
+    * = correct, -- = abstained
+
+Saved results to: data/evaluation/system_c_results.json

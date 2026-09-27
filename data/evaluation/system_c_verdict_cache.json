@@ -1,0 +1,1203 @@
+{
+  "32ff52a3df5cdca2d7d5051a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly lists 'List I—Union List' in the Seventh Schedule, confirming the claim that there is a Union List in the Seventh Schedule of the Constitution.",
+    "supporting_pages": [
+      341
+    ],
+    "resolved_by": "llm"
+  },
+  "197ed3d2e0a1077084a83052": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to matters for which the State Legislature has the power to make laws, as outlined in Evidence 2. This directly addresses the claim regarding the extent of the executive power of a State.",
+    "supporting_pages": [
+      103
+    ],
+    "resolved_by": "llm"
+  },
+  "84d91ba1a2533f69920fd1d3": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly outlines the conditions of the Governor's office, including eligibility criteria, restrictions on holding other offices, and entitlements. Specifically, Evidence 1 details the qualifications for appointment and the conditions under which a Governor operates, confirming the claim about the conditions of the Governor's office.",
+    "supporting_pages": [
+      102
+    ],
+    "resolved_by": "llm"
+  },
+  "e2557c728ef71771b878959b": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the applicability of the Lokpal's power to public servants of India, nor does it clarify whether it applies to Indian public servants posted outside India. Therefore, there is not enough information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "e2c4ccbb13bea5095ac513bd": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses disqualifications for membership in Parliament and State Legislatures but does not explicitly state that the Chairperson or a Member shall not be a Member of Parliament or a State Legislature, nor does it confirm that only the Chief Justice of India can be the Chairperson. Therefore, the evidence does not fully support or contradict the claim.",
+    "supporting_pages": [
+      76,
+      117,
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "15ea495218e264e2e9456b34": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for the Chairperson or a Member. It mentions terms of office and age limits for retirement but does not confirm that a person must be at least forty-five years old to assume the position. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "bfec456c4056e2f687fa1117": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly address whether the Lokpal can inquire into allegations of corruption against a sitting Prime Minister. The evidence discusses the composition of the National Judicial Appointments Commission, the protection of the President and Governors, and disqualifications of members of the Legislative Assembly, but does not mention the Lokpal or its powers regarding the Prime Minister. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "27eb401324d0f47e4b889902": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the Directive Principles of State Policy and their role in governance but does not explicitly mention the separation of the judiciary from the executive in public services of the State. Therefore, it does not provide sufficient information to verify the claim.",
+    "supporting_pages": [
+      52
+    ],
+    "resolved_by": "llm"
+  },
+  "4fcc4bee0a64a349b7577445": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that it is the duty of every citizen of India to 'value and preserve the rich heritage of our composite culture' as part of the Fundamental Duties outlined in Article 51A of the Constitution. This directly supports the claim regarding valuing and preserving the rich heritage of our composite culture as a Fundamental Duty.",
+    "supporting_pages": [
+      56,
+      14
+    ],
+    "resolved_by": "llm"
+  },
+  "466f74a129164fe8087c51ba": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 24 that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment.' This directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories as part of the Fundamental Rights.",
+    "supporting_pages": [
+      45
+    ],
+    "resolved_by": "llm"
+  },
+  "7b18f41f3b98fb6af01884ef": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the conduct of the President may be brought under review by any court, tribunal, or body appointed or designated by either House of Parliament for the investigation of a charge under article 61. This indicates that the exercise of the President's powers can indeed be subjected to limited judicial review, as it allows for a review process under specific circumstances.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "39afd514241475b43cf23a3b": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether the President can exercise the power without the advice of the Central Government. The evidence discusses the appointment of the Chief Minister and the collective responsibility of the Council of Ministers, but does not clarify the conditions under which the President may act independently of the Central Government. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "34f87e61db59afac06271939": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that if any question arises regarding disqualification of a member of either House of Parliament, the question shall be referred to the President, and his decision shall be final (EVIDENCE 1). However, it also states that for members of the House of the Legislature of a State, the decision is made by the Governor (EVIDENCE 3). This indicates that the President's decision is not final for all cases of disqualification, contradicting the claim that the President's decision is final for members of the House of the People regarding disqualification under the 10th Schedule.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "b52f54216ea2b5ea42a1ebcd": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that whenever the House of the People is dissolved, the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution. This directly supports the claim made.",
+    "supporting_pages": [
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "59e0e0ba4bfd43cfa71081fd": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that a Member of the House of the People must resign from their political party upon being elected as Speaker. It discusses the conditions under which a Speaker may vacate their office or resign, but does not address the requirement to resign from a political party. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "817478880211b5ae2510a3d1": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed from office by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "f1c22f827ff9e89bad72f618": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that an Ordinance can amend any Central Act. While it mentions that an Ordinance has the same force and effect as an Act of Parliament, it does not clarify the scope of what can be amended by an Ordinance. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "d50f8f70c78e90ea6df14d37": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether an Ordinance can abridge a Fundamental Right. While it mentions that an Ordinance has the same force and effect as an Act of Parliament, it does not clarify the relationship between Ordinances and Fundamental Rights. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "e190887799879650b5e032d7": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether an Ordinance can come into effect from a back date. It discusses the conditions under which an Ordinance operates and its validity, but does not address the specific claim about backdating. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b870b2e5c8a239e9d1a08bb4": {
+    "verdict": "SUPPORTED",
+    "reasoning": "EVIDENCE 1 explicitly states that the Governor is required to act in his discretion in certain matters, which supports the claim that the Constitution of India mentions that the Governor acts in his/her own discretion in certain spheres.",
+    "supporting_pages": [
+      105
+    ],
+    "resolved_by": "llm"
+  },
+  "91778991da4f1fd3a232cce6": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence indicates that the Governor must reserve a bill for the consideration of the President, as stated in Evidence 2. This explicitly contradicts the claim that the President can reserve a bill without it being forwarded by the Governor.",
+    "supporting_pages": [
+      122
+    ],
+    "resolved_by": "llm"
+  },
+  "732db61d96677bdd442bb820": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Governor of a State shall not be answerable to any court for the exercise and performance of the powers and duties of his office, which directly supports the claim.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "88b6e8db0866f06e8071d618": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No criminal proceedings whatsoever shall be instituted or continued against the President, or the Governor of a State, in any court during his term of office.' This directly supports the claim that no criminal proceedings shall be instituted or continued against the Governor during his/her term of office.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "48ed361084b8bdc65bd94825": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof. This directly supports the claim that members of a State Legislature are not liable to any court proceedings for their statements made within the House.",
+    "supporting_pages": [
+      118
+    ],
+    "resolved_by": "llm"
+  },
+  "70cc29016672bd514e9b12fe": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that Panchayats at the intermediate level may not be constituted in a State having a population not exceeding twenty lakhs, which contradicts the claim that Panchayats at the intermediate level exist in all States.",
+    "supporting_pages": [
+      150
+    ],
+    "resolved_by": "llm"
+  },
+  "bb58c54faf8b4dbf13c6f96c": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for being a member of a Panchayat at the intermediate level. While it mentions disqualifications and age requirements for other levels, it does not confirm that a person must be thirty years old to be eligible for the intermediate level. Therefore, the claim cannot be verified as supported or contradicted based on the available evidence.",
+    "supporting_pages": [
+      151,
+      153
+    ],
+    "resolved_by": "llm"
+  },
+  "8c4d908d5f8086cd48dc330b": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the Finance Commission is constituted by the Governor of a State, not the Chief Minister, to review the financial position of the Panchayats and make recommendations regarding the distribution of net proceeds of taxes and duties. This directly contradicts the claim that the Chief Minister constitutes such a commission.",
+    "supporting_pages": [
+      154
+    ],
+    "resolved_by": "llm"
+  },
+  "bf2f4d82c39af4516ecb9775": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh being named after a fort or the existence of two National Parks in the state. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "01f6a9fdb2dd2127775fff8d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence based on a Constitutional Amendment Act. While it mentions special provisions related to Nagaland, it does not confirm the basis of its existence as a state. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "8b17b03c98b593065c59b4c5": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Tripura was initially a Part ‘C’ State, became a centrally administered territory in 1956, or later attained the status of a full-fledged State. The evidence mentions Tripura's status before the commencement of the Constitution but does not provide the necessary details to verify the entire claim.",
+    "supporting_pages": [
+      290
+    ],
+    "resolved_by": "llm"
+  },
+  "f1bc2797f64a0c1467e8fe59": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the powers of the Governor and the administration of certain areas, but it does not explicitly state that the State Government loses its executive power in such areas or that a local body assumes total administration. The evidence mentions the Governor's authority to assume administration and the possibility of placing it under a Commission or other body, but it does not confirm the complete claim as stated.",
+    "supporting_pages": [
+      268,
+      332,
+      243
+    ],
+    "resolved_by": "llm"
+  },
+  "7879c8ec7f0d85523314820f": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that the Union Government can take over the total administration of areas based on the recommendations of the Governor. While there are references to the Governor's powers and the administration of Union territories, the specific claim about the Union Government's authority to take over administration under certain circumstances is not clearly supported by the evidence provided.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "3710d4a2424c25d75357d90d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses taxation related to petroleum crude and other petroleum products but does not explicitly mention anything about the production of crude oil or whether it is free or not. Therefore, there is not enough information to verify the claim regarding the production of crude oil being free.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "d85ebd7a21f1330dabe3bb37": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the regulation and development of oilfields and mineral oil resources, as well as petroleum and petroleum products, which directly relates to the refining, storage, and distribution of petroleum. This supports the claim that these activities are covered under the Constitution.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "7f422ed471d314ba1a148d3a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the regulation and development of petroleum and petroleum products, as well as the taxation on the sale of petroleum crude, high speed diesel, motor spirit (petrol), and natural gas. This supports the claim regarding the marketing and sale of petroleum products.",
+    "supporting_pages": [
+      344,
+      351
+    ],
+    "resolved_by": "llm"
+  },
+  "316cedd97e869c1a6ac8c7fc": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence mentions natural gas in the context of the Goods and Services Tax (GST) and the regulation of petroleum and petroleum products, but it does not provide explicit information about the production of natural gas. Therefore, it is insufficient to verify the claim regarding the production of natural gas.",
+    "supporting_pages": [
+      192,
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "ca32764bd677845f5a146170": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the requirement for ratification by the Legislatures of not less than one-half of the States for a constitutional amendment concerning the Union List before presenting the bill to the President of India for assent. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b0ea146c093dcb48d220b584": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment concerning the extent of the executive power of a State, ratification by the Legislatures of not less than one-half of the States is required before the bill is presented to the President for assent. This directly supports the claim made.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "dc0525520cd2df911dcc09da": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment, it is required to be ratified by the Legislatures of not less than one-half of the States before the Bill is presented to the President for assent. This directly supports the claim regarding the conditions of the Governor's office.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "333fb415b18587fd3c94b1a6": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states 'Separation of judiciary from executive' as part of the Directive Principles of State Policy in the Constitution, which directly supports the claim.",
+    "supporting_pages": [
+      7
+    ],
+    "resolved_by": "llm"
+  },
+  "a2f037143d107a22b348f8f7": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that it is the duty of every citizen of India to 'value and preserve the rich heritage of our composite culture' as part of the Fundamental Duties outlined in the Constitution.",
+    "supporting_pages": [
+      56,
+      14
+    ],
+    "resolved_by": "llm"
+  },
+  "6696031e9b61b3ac0c17932a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment,' which directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories as stated under The Fundamental Rights.",
+    "supporting_pages": [
+      45
+    ],
+    "resolved_by": "llm"
+  },
+  "8d56f3bedd5cafc226a81dca": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that if any question arises regarding disqualification of a member of either House of Parliament, the question shall be referred to the President, and his decision shall be final. However, the evidence does not support the claim that this applies specifically to disqualifications under the 10th Schedule, as it also mentions disqualifications under article 102. Additionally, the evidence regarding disqualifications for State Legislatures refers to the Governor, not the President, which contradicts the claim's assertion about the President's role in disqualifications under the 10th Schedule.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "207a7e7e36f9b694f072a9e3": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed from office by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "e76b7872d1e1ceb497edc7f1": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh or the number of National Parks in the state. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "1b95d2626ea4131cd28a26b1": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence based on a Constitutional Amendment Act. While it mentions special provisions related to Nagaland in Articles 371A and 371B, it does not provide information about the state's creation or the specific amendment that led to its establishment.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "75c16e41d3694bf0afb62554": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the status of Tripura as a Part 'C' State, its transition to a centrally administered territory, or its later attainment of full statehood. Therefore, there is not enough information to verify the claim completely.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "a7c1a73b694addc4a92c3a49": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to the Scheduled Areas therein, which contradicts the claim that the State Government loses its executive power in such areas. Therefore, the claim is not supported by the evidence provided.",
+    "supporting_pages": [
+      307
+    ],
+    "resolved_by": "llm"
+  },
+  "290d438f42841c737c190250": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of the Union extends to giving directions to the State regarding the administration of Scheduled Areas, based on reports from the Governor. This supports the claim that the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor.",
+    "supporting_pages": [
+      307
+    ],
+    "resolved_by": "llm"
+  },
+  "b9d76f9c50745cf7a111150e": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the regulation of petroleum and petroleum products but does not explicitly state that the Petroleum and Natural Gas Regulatory Board regulates the production of crude oil-free. The evidence mentions various aspects of regulation related to oilfields and mineral oil resources, but it does not confirm the specific claim about the regulatory authority of the Petroleum and Natural Gas Regulatory Board.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "d34293134ccfe33cea3dd710": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products fall under the control of the Union as declared by Parliament by law, which supports the claim that the Petroleum and Natural Gas Regulatory Board regulates these activities.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "ef45933b3fed8ecaef39f696": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products fall under the control of the Union as declared by Parliament by law, which supports the claim that the Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of these products.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "26777ac0086a1858c3c0ab0d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence mentions the regulation and development of petroleum and natural gas but does not explicitly state that the Petroleum and Natural Gas Regulatory Board is responsible for this regulation. Therefore, it is insufficient to verify the claim that the production of natural gas is regulated by the Petroleum and Natural Gas Regulatory Board.",
+    "supporting_pages": [
+      344,
+      192,
+      346
+    ],
+    "resolved_by": "llm"
+  },
+  "4eb29660cc748746f9afab8f": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly lists the 'Union List' as part of the 'Seventh Schedule' in the Constitution, confirming the claim that List I is the Union List in the Seventh Schedule.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "9451a6206837bd7bea0c9659": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to matters for which the State Legislature has the power to make laws, and it also outlines the limitations of this power in relation to the Union's executive power. This directly addresses the extent of the executive power of a State as claimed.",
+    "supporting_pages": [
+      2,
+      4
+    ],
+    "resolved_by": "llm"
+  },
+  "5e130c2b73f905efbac411df": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly outlines the conditions of the Governor's office, including qualifications for appointment, restrictions on holding other offices, and entitlements such as official residences and emoluments. This directly supports the claim regarding the conditions of the Governor's office.",
+    "supporting_pages": [
+      102
+    ],
+    "resolved_by": "llm"
+  },
+  "5746f928a9000c1c24aca2ac": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the applicability of the Lokpal's power to public servants posted outside India. There is no information regarding the jurisdiction of Lokpal over such public servants, making it impossible to verify the claim fully.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "f7694865bba441f52a9d9f82": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The evidence provided discusses disqualifications for membership in Parliament and State Legislatures, but it does not explicitly state that the Chairperson or a Member of the Union Public Service Commission (UPSC) cannot be a Member of Parliament or a State Legislature. Additionally, while it mentions that the Chief Justice of India can be the Chairperson, it does not confirm that only the Chief Justice can hold that position. Therefore, the evidence does not fully support the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "8ec50b444191783f2d4d8708": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for the Chairperson or a Member as being not less than forty-five years. While there are references to age limits for other positions (like members of the Public Service Commission and the Vice-President), none of the evidence directly supports the specific claim regarding the age requirement for the Chairperson or a Member. Therefore, the evidence is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b9e8fc22e2992cb4a5efaccf": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly address whether the Lokpal can inquire into allegations of corruption against a sitting Prime Minister. There is no mention of the Lokpal's powers or limitations regarding inquiries into the Prime Minister's conduct. Therefore, the evidence is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "41743b00b2a6a01f49fb95c5": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Evidence 5 (Page 7) that there is a provision for the 'Separation of judiciary from executive.' This directly supports the claim regarding the separation of judiciary from the executive in the public services of the State as part of the Directive Principles of State Policy.",
+    "supporting_pages": [
+      5
+    ],
+    "resolved_by": "llm"
+  },
+  "e414115c0d86e49453dbf559": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in both Evidence 1 and Evidence 2 that it is the duty of every citizen of India to 'value and preserve the rich heritage of our composite culture.' This directly supports the claim regarding the Fundamental Duties related to valuing and preserving cultural heritage.",
+    "supporting_pages": [
+      56,
+      14
+    ],
+    "resolved_by": "llm"
+  },
+  "d5c8e777840fbd1d2e91f090": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 24 that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment.' This directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories as part of the Fundamental Rights.",
+    "supporting_pages": [
+      45
+    ],
+    "resolved_by": "llm"
+  },
+  "cc2097b1f0a98797ef5ba655": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the conduct of the President may be brought under review by any court, tribunal, or body appointed or designated by either House of Parliament for the investigation of a charge under article 61. This indicates that the exercise of the President's powers can indeed be subjected to limited judicial review, as specified in the first provision of Evidence 1.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "b7956cdeeb5d5df84d3ba486": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether the President can exercise the power without the advice of the Central Government. While there are references to the President's powers and the role of the Council of Ministers, none of the evidence confirms or denies the claim directly.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "68369e6575a5d3dfb13cc819": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that if any question arises as to whether a member of either House of Parliament has become subject to disqualification under the Tenth Schedule, the question shall be referred for the decision of the President and his decision shall be final. This directly supports the claim regarding the President's authority in such matters for the House of the People.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "ec116cc8b4a9eb3bc9edbf78": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that whenever the House of the People is dissolved, the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution. This directly supports the claim made.",
+    "supporting_pages": [
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "9acc829974d5cd87e828d9c5": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the resignation and vacation of office for the Speaker of the House of the People but does not explicitly state that a Member of the House of the People must resign from their political party upon being elected as Speaker. Therefore, the evidence does not fully support the claim.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "d203cfed759b8cd774305331": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed from office by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim made.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "879e5f84d1723af028300871": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the conditions under which an Ordinance can be promulgated and its effects, but it does not explicitly state that an Ordinance can amend any Central Act. The evidence does not provide sufficient information to confirm or deny the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "7234a07d5474456fb6bebe6c": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether an Ordinance can abridge a Fundamental Right. While it mentions that an Ordinance has the same force and effect as an Act of Parliament, it does not clarify the relationship between Ordinances and Fundamental Rights. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "3d9be75411f543553b426a8e": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the conditions under which an Ordinance can be promulgated and its validity, but it does not explicitly state whether an Ordinance can come into effect from a back date. There is no mention of retroactive effect or backdating in the evidence provided.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b4f1f656a9831e98e37e6423": {
+    "verdict": "SUPPORTED",
+    "reasoning": "EVIDENCE 1 explicitly states that the Governor is required to act in his discretion in certain matters, which supports the claim that the Constitution of India mentions that in certain spheres the Governor acts in his/her own discretion.",
+    "supporting_pages": [
+      105
+    ],
+    "resolved_by": "llm"
+  },
+  "9eaea70d6ba06dc262fba63e": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the Governor must reserve a bill for the consideration of the President, indicating that the President cannot reserve a bill on his/her own without it being forwarded by the Governor.",
+    "supporting_pages": [
+      4
+    ],
+    "resolved_by": "llm"
+  },
+  "64fa90642666e8f79ab0d6b8": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Governor of a State shall not be answerable to any court for the exercise and performance of the powers and duties of his office, which directly supports the claim.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "3f2043d12c57ff4bb08fea9f": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No criminal proceedings whatsoever shall be instituted or continued against the President, or the Governor of a State, in any court during his term of office.' This directly supports the claim that no criminal proceedings shall be instituted or continued against the Governor during his/her term of office.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "658aafd2374f154a1b07df7a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof.' This directly supports the claim that members of a State Legislature are not liable to court proceedings for their statements made within the House.",
+    "supporting_pages": [
+      118
+    ],
+    "resolved_by": "llm"
+  },
+  "df8f1331ff6e3160d0031926": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that Panchayats at the intermediate level may not be constituted in a State having a population not exceeding twenty lakhs, which contradicts the claim that Panchayats at the intermediate level exist in all States.",
+    "supporting_pages": [
+      150
+    ],
+    "resolved_by": "llm"
+  },
+  "b8d876d2a79f8022c492534b": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for being a member of a Panchayat at the intermediate level. While it mentions disqualifications related to age, it does not confirm that a person must be thirty years old to be eligible. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "439ee6b3f45d6d5792cc0c68": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the Finance Commission is constituted by the Governor of a State, not the Chief Minister, to review the financial position of the Panchayats and make recommendations regarding the distribution of taxes and duties. This directly contradicts the claim that the Chief Minister constitutes such a commission.",
+    "supporting_pages": [
+      154
+    ],
+    "resolved_by": "llm"
+  },
+  "e82e4c346353e8b5962ac2ce": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh being named after a fort, nor does it mention the number of National Parks in the state. Therefore, there is insufficient evidence to verify the claim in its entirety.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b7ba2fe99260d5b7dada2632": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence based on a Constitutional Amendment Act. While there are references to the State of Nagaland Act, 1962, and provisions related to Nagaland in the Constitution, there is no direct mention of the constitutional amendment that established the state. Therefore, the evidence is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b2c658a70a530daed8971b95": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Tripura was initially a Part ‘C’ State, became a centrally administered territory in 1956, and later attained full statehood. While it mentions Tripura's status before the Constitution, it does not provide the necessary details to confirm the entire claim regarding its transition through different statuses.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "ca05427941599a08bf1d56d4": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the powers of the Governor and the administration of certain areas, but it does not explicitly state that the State Government loses its executive power in such areas or that a local body assumes total administration. The evidence mentions the Governor's authority to assume functions and powers, but it does not confirm the complete claim as stated.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "0e8fa5691e3eef707308050e": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Governor can assume the administration of an area under certain circumstances, specifically with the previous approval of the Legislature of the State, which aligns with the claim that the Union Government can take over the total administration of such areas on the recommendations of the Governor.",
+    "supporting_pages": [
+      332
+    ],
+    "resolved_by": "llm"
+  },
+  "ccd115df5c1ec51b714d6233": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses various aspects of petroleum and its regulation, including taxation and the Goods and Services Tax Council's role in relation to petroleum products. However, it does not explicitly mention anything about the production of crude oil being free or not. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "308a4bed50ca639bad8446d9": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the 'regulation and development of oilfields and mineral oil resources; petroleum and petroleum products' as a subject under the control of the Union, which directly relates to the refining, storage, and distribution of petroleum.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "921164d4b40462647297c687": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the regulation and development of petroleum and petroleum products, as well as the taxation on the sale of petroleum products, which supports the claim regarding the marketing and sale of these products.",
+    "supporting_pages": [
+      351,
+      344,
+      192
+    ],
+    "resolved_by": "llm"
+  },
+  "b4222bf61c82d4951f017a20": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence mentions natural gas in the context of the Goods and Services Tax and regulation of petroleum products, but it does not explicitly address the production of natural gas. Therefore, there is not enough information to verify the claim about the production of natural gas.",
+    "supporting_pages": [
+      192
+    ],
+    "resolved_by": "llm"
+  },
+  "ae14daac9c8a7716687942b7": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the requirement for ratification by the Legislatures of not less than one-half of the States for a constitutional amendment concerning the Union List before presenting the bill to the President of India for assent. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "78b7b73b2a63c09d39d8688f": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment concerning the extent of the executive power of a State, ratification by the Legislatures of not less than one-half of the States is required before the bill is presented to the President for assent. This directly supports the claim made.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "1eab4ca98064adaf3876d074": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment, it is required to be ratified by the Legislatures of not less than one-half of the States before the Bill is presented to the President for assent. This directly supports the claim regarding the conditions of the Governor's office.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "2bcd2ffba84ae547341ed802": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states 'Separation of judiciary from executive' as a principle under the Directive Principles of State Policy, confirming the claim.",
+    "supporting_pages": [
+      3
+    ],
+    "resolved_by": "llm"
+  },
+  "87e2e01dc96d6d954a3a4aad": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that it is the duty of every citizen of India to 'value and preserve the rich heritage of our composite culture' under the Fundamental Duties as outlined in Article 51A of the Constitution.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "9d123db560637880c485f000": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 24 that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment.' This directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories as stated under The Fundamental Rights.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "008e2dae793331e95c7590d1": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that if any question arises as to whether a member of either House of Parliament has become subject to disqualification under the Tenth Schedule, the question shall be referred for the decision of the President and his decision shall be final. This directly supports the claim regarding the President's authority in such matters for the House of the People.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "c794eba95f786d75a830b753": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed from office by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim made.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "b79cb182313d943b11a02189": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh being named after a fort or the existence of two National Parks in the state. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "53e5bf34c0785bf60c40fa05": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence based on a Constitutional Amendment Act. While it mentions provisions related to Nagaland, it does not confirm the specific basis of its establishment as a state. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "34f26717d8f3e807003738a2": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the status of Tripura as a Part 'C' State, its transition to a centrally administered territory, or its later attainment of full statehood. Therefore, there is not enough information to verify the claim completely.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "e34314d00d51db66626a77c5": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to the Scheduled Areas therein, which contradicts the claim that the State Government loses its executive power in such areas. Additionally, it mentions that the Governor has specific powers regarding the administration of Scheduled Areas, indicating that the local body does not assume total administration as claimed.",
+    "supporting_pages": [
+      307
+    ],
+    "resolved_by": "llm"
+  },
+  "b1027955df8c5d63cc981ddb": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of the Union extends to giving directions to the State regarding the administration of Scheduled Areas, based on reports from the Governor. This supports the claim that the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "7690c7b881bf0080ea65646d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the regulation and development of oilfields and petroleum products but does not explicitly state that the Petroleum and Natural Gas Regulatory Board regulates the production of crude oil-free. Therefore, there is not enough information to confirm or deny the claim.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "e5ab6f6f42fe420dcb314051": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products are under the control of the Union as declared by Parliament by law, which aligns with the claim that the Petroleum and Natural Gas Regulatory Board regulates these activities.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "749060aa4d8af74c141bd826": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products fall under the control of the Union as declared by Parliament by law, which supports the claim that the Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of these products.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "9beacd41d7a8156646974a8b": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products, which includes natural gas, is under the control of the Union as declared by Parliament by law. This supports the claim that the production of natural gas is regulated by a governing body, which in this context is the Petroleum and Natural Gas Regulatory Board, as it operates under the laws established by Parliament.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "272c1b948f1d1b7ebb7e9ba3": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the requirement for ratification by the Legislatures of not less than one-half of the States for a constitutional amendment concerning the Union List before presenting the bill to the President of India for assent. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b477ae6a5e7dee8503c974f3": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment concerning the extent of the executive power of a State, ratification by the Legislatures of not less than one-half of the States is required before the bill is presented to the President for assent. This directly supports the claim made.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "a76b4e2940f8ff8797da870b": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that for a constitutional amendment, it is required to be ratified by the Legislatures of not less than one-half of the States before the Bill is presented to the President for assent. This directly supports the claim made.",
+    "supporting_pages": [
+      260
+    ],
+    "resolved_by": "llm"
+  },
+  "c1c4d083bc42bd10ae473867": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly mention the applicability of the Lokpal's power to Indian public servants posted outside India. There is no information that confirms or denies this aspect of the claim. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "a77ba66080926b4259a54e1f": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The evidence provided discusses disqualifications for membership in Parliament and State Legislatures, but it does not explicitly state that only the Chief Justice of India can be the Chairperson of the body in question. Additionally, while it mentions that no person can be a member of both Parliament and a State Legislature, it does not confirm the complete claim regarding the Chairperson's eligibility. Therefore, the evidence is insufficient to fully verify the claim.",
+    "supporting_pages": [
+      76,
+      117,
+      77,
+      211
+    ],
+    "resolved_by": "llm"
+  },
+  "bb8f84363ed150c229be8df1": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for the Chairperson or a Member. While it mentions age limits for other positions (like the Vice-President and members of Public Service Commissions), it does not confirm the specific age of forty-five years for the Chairperson or Member as claimed. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "4b204d026fd3cf59fb806cf1": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly address whether the Lokpal can inquire into allegations of corruption against a sitting Prime Minister. There is no mention of the Lokpal's powers or limitations regarding inquiries into the Prime Minister's conduct in the evidence provided.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "94064e4b03dd460aad8a29c7": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states 'Separation of judiciary from executive' as a provision under the Directive Principles of State Policy in the Constitution, which directly supports the claim.",
+    "supporting_pages": [
+      3
+    ],
+    "resolved_by": "llm"
+  },
+  "389395b39d5d714baf808321": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that it is the duty of every citizen of India to 'value and preserve the rich heritage of our composite culture' under the Fundamental Duties in Article 51A(f) of the Constitution.",
+    "supporting_pages": [
+      56
+    ],
+    "resolved_by": "llm"
+  },
+  "68b4bf759b8f8a80e2a9a18a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 24 that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment.' This directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "a6f2475b1280d2cb45fe6ee4": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the conduct of the President may be brought under review by any court, tribunal, or body appointed or designated by either House of Parliament for the investigation of a charge under article 61. This indicates that the exercise of the President's powers can indeed be subjected to limited judicial review, as the claim states.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "610ad1358cebda70f1534964": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether the President can exercise the power without the advice of the Central Government. While there are references to the President's powers and the role of the Central Government, none of the evidence confirms or denies the claim directly.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "03c06389a1e198774ce6ced5": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that if any question arises as to whether a member of either House of Parliament has become subject to disqualification under the Tenth Schedule, the question shall be referred for the decision of the President and his decision shall be final. This directly supports the claim regarding the President's role in disqualification matters under the Tenth Schedule for the House of the People.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "cf422b73338d70d931f9e3d0": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that whenever the House of the People is dissolved, the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution. This directly supports the claim made.",
+    "supporting_pages": [
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "5b2703e0496ff12751685db7": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the resignation and vacation of office for the Speaker of the House of the People but does not explicitly state that a Member of the House of the People must resign from their political party upon being elected as Speaker. Therefore, there is not enough information to verify the claim.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "054bf648000111af3f437cf4": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim made.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "62b9e5ddcc091e550b3915a0": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the conditions under which an Ordinance can be promulgated and its effects, but it does not explicitly state that an Ordinance can amend any Central Act. The evidence does not provide sufficient information to confirm or deny the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "1f482c3f333c81bf03c0d0ba": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state whether an Ordinance can abridge a Fundamental Right. While it mentions that an Ordinance has the same force and effect as an Act of Parliament, it does not clarify the relationship between Ordinances and Fundamental Rights. Therefore, there is not enough information to support or contradict the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "36e6a32fa74495ccaf52407d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the conditions under which an Ordinance can be promulgated and its validity, but it does not explicitly state whether an Ordinance can come into effect from a back date. There is no mention of retroactive effect or backdating in the evidence provided.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "20bc4a024f208d9b3fd3be31": {
+    "verdict": "SUPPORTED",
+    "reasoning": "EVIDENCE 1 explicitly states that the Governor is required to act in his discretion in certain matters, which supports the claim that the Constitution of India mentions that in certain spheres the Governor acts in his/her own discretion.",
+    "supporting_pages": [
+      105
+    ],
+    "resolved_by": "llm"
+  },
+  "9653b6dce0d5bea2ed01da5f": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that a bill must be reserved by the Governor for the consideration of the President, indicating that the President cannot reserve a bill on his/her own without it being forwarded by the Governor.",
+    "supporting_pages": [
+      122,
+      128,
+      203
+    ],
+    "resolved_by": "llm"
+  },
+  "b3a669795996f9cf7242a60b": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Governor of a State shall not be answerable to any court for the exercise and performance of the powers and duties of his office, which directly supports the claim.",
+    "supporting_pages": [
+      250
+    ],
+    "resolved_by": "llm"
+  },
+  "0329cb8346a7068d088d7cd5": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No criminal proceedings whatsoever shall be instituted or continued against the President, or the Governor of a State, in any court during his term of office.' This directly supports the claim that no criminal proceedings shall be instituted or continued against the Governor during his/her term of office.",
+    "supporting_pages": [
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "2e261ef1ca49f1011e55c31e": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that 'No member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof.' This directly supports the claim that members of a State Legislature are not liable to court proceedings for their statements made within the House.",
+    "supporting_pages": [
+      118
+    ],
+    "resolved_by": "llm"
+  },
+  "ab3703b59b59ee3837cee129": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that Panchayats at the intermediate level may not be constituted in a State having a population not exceeding twenty lakhs, which contradicts the claim that Panchayats at the intermediate level exist in all States.",
+    "supporting_pages": [
+      150
+    ],
+    "resolved_by": "llm"
+  },
+  "5e7ab2c8ef4f93cc5ffc529d": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state the age requirement for being a member of a Panchayat at the intermediate level. While it mentions disqualifications related to age, it does not confirm that a person must be thirty years old to be eligible. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [
+      151,
+      153
+    ],
+    "resolved_by": "llm"
+  },
+  "43a4db5434f918abbf1875fe": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence states that the Finance Commission is constituted by the Governor of a State, not the Chief Minister, to review the financial position of the Panchayats and make recommendations regarding the distribution of taxes and duties. This directly contradicts the claim that the Chief Minister constitutes such a commission.",
+    "supporting_pages": [
+      154
+    ],
+    "resolved_by": "llm"
+  },
+  "d384e2a498514320d35ebd5c": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh or the number of National Parks in the state. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "05535c4e0a49635fefb0b31c": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence on the basis of a Constitutional Amendment Act. While it mentions the State of Nagaland Act, 1962, and various provisions related to Nagaland, it does not confirm the specific claim regarding the constitutional basis for the state's existence.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "6cf7479b779dde61cb65b315": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Tripura was initially a Part 'C' State, became a centrally administered territory in 1956, and later attained the status of a full-fledged State. The evidence mentions Tripura's status before the commencement of the Constitution but does not detail the specific changes in status or the timeline of these changes. Therefore, it is insufficient to verify the complete claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "aee584dd344a60675fc50ce7": {
+    "verdict": "CONTRADICTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to the Scheduled Areas therein, which contradicts the claim that the State Government loses its executive power in such areas. Specifically, Evidence 1 states, 'the executive power of a State extends to the Scheduled Areas therein.'",
+    "supporting_pages": [
+      307
+    ],
+    "resolved_by": "llm"
+  },
+  "dbabe18215b3e2e82ce81988": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of the Union extends to giving directions to the State regarding the administration of Scheduled Areas, based on reports from the Governor. This supports the claim that the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor.",
+    "supporting_pages": [
+      1
+    ],
+    "resolved_by": "llm"
+  },
+  "0c83db9fcb261764c29c073e": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the regulation and development of oilfields and petroleum products but does not explicitly state that the Petroleum and Natural Gas Regulatory Board is responsible for the production of crude oil-free. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "8beba5ba309d4f9a4fbc5d00": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products fall under the control of the Union as declared by Parliament, which aligns with the claim that the Petroleum and Natural Gas Regulatory Board regulates these activities.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "cf0a58539195bd158a03ee7d": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products fall under the control of the Union as declared by Parliament by law, which supports the claim that the Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of these products.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "7bc7604efc64e59b40432d7a": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products, which includes natural gas, is under the control of the Union as declared by Parliament by law. This supports the claim that the production of natural gas is regulated by a governing body, which is the Petroleum and Natural Gas Regulatory Board, as it operates under the framework established by Parliament.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "8a52371fbc207c34c4208df3": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that List I is the Union List in the Seventh Schedule of the Constitution, confirming the claim.",
+    "supporting_pages": [
+      1,
+      2
+    ],
+    "resolved_by": "llm"
+  },
+  "c7e86513d4a604b967e6ec9f": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the executive power of a State extends to matters for which the State Legislature has the power to make laws, and it also outlines the limitations of this power in relation to the Union's executive power. This directly addresses the extent of the executive power of a State as claimed.",
+    "supporting_pages": [
+      2,
+      4
+    ],
+    "resolved_by": "llm"
+  },
+  "9b6ff890d80c8715ce8b5645": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly outlines the conditions of the Governor's office, including qualifications for appointment, restrictions on holding other offices, and entitlements such as official residences and emoluments. This directly supports the claim regarding the conditions of the Governor's office.",
+    "supporting_pages": [
+      102
+    ],
+    "resolved_by": "llm"
+  },
+  "ea892da77a64c0950936d627": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 50 of the Constitution that there is a provision for the separation of the judiciary from the executive. This directly supports the claim regarding the separation of judiciary from the executive in the public services of the State as outlined in the Directive Principles of State Policy.",
+    "supporting_pages": [
+      5
+    ],
+    "resolved_by": "llm"
+  },
+  "5be9f8a10283a00e4e7c75cb": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in both Evidence 1 and Evidence 2 that one of the Fundamental Duties is to 'value and preserve the rich heritage of our composite culture.' This directly supports the claim made.",
+    "supporting_pages": [
+      56,
+      14
+    ],
+    "resolved_by": "llm"
+  },
+  "ae2290598bcf10e478bc9092": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states in Article 24 that 'No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment.' This directly supports the claim regarding the prohibition of employment of children below the age of 14 years in factories as part of the Fundamental Rights.",
+    "supporting_pages": [
+      45
+    ],
+    "resolved_by": "llm"
+  },
+  "12233ff414df032d0e3843dc": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that if any question arises as to whether a member of either House of Parliament has become subject to disqualification under the Tenth Schedule, the question shall be referred for the decision of the President and his decision shall be final. This directly supports the claim regarding the President's role in disqualification matters under the Tenth Schedule for the House of the People.",
+    "supporting_pages": [
+      77
+    ],
+    "resolved_by": "llm"
+  },
+  "2d76b13db4a19c0542e7786f": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Speaker of the House of the People may be removed from office by a resolution passed by a majority of all the then members of the House, and that at least fourteen days' notice must be given before moving such a resolution. This directly supports the claim made.",
+    "supporting_pages": [
+      73
+    ],
+    "resolved_by": "llm"
+  },
+  "658a84629ad5fbec403e8756": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh being named after a fort or the existence of two National Parks in the state. Therefore, it is insufficient to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "72b57c545c0cd5ba41563eeb": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence based on a Constitutional Amendment Act. While it mentions provisions related to Nagaland, it does not confirm the specific basis of its establishment as a state through an amendment. Therefore, there is insufficient information to verify the claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "b3c94d4474b6362091bac76a": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence does not explicitly state that Tripura was initially a Part ‘C’ State, became a centrally administered territory in 1956, or later attained the status of a full-fledged State. The evidence mentions Tripura's status before the Constitution but does not detail the specific changes in status or the timeline of these changes. Therefore, it is insufficient to verify the complete claim.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "2c28ce19d56be0a50577cab2": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses the powers of the Governor and the administration of certain areas, but it does not explicitly state that the State Government loses its executive power entirely or that a local body assumes total administration. The evidence mentions the Governor's authority to assume functions or powers in specific situations, but it does not confirm the complete claim as stated.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "ba7bbbba2c0aa43e77b24c95": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly states that the Governor can assume the administration of an area under certain circumstances, specifically with the previous approval of the Legislature of the State, which aligns with the claim that the Union Government can take over the total administration of such areas on the recommendations of the Governor.",
+    "supporting_pages": [
+      332
+    ],
+    "resolved_by": "llm"
+  },
+  "e1e8c034558f10e0c645d633": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence discusses various aspects of petroleum and related products, including taxation and regulation, but does not explicitly mention the production of crude oil or state that it is free. Therefore, there is not enough information to verify the claim that crude oil production is free.",
+    "supporting_pages": [],
+    "resolved_by": "llm"
+  },
+  "89b5e95f4531123a61cef1db": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the 'regulation and development of oilfields and mineral oil resources; petroleum and petroleum products' as a subject under the control of the Union, which directly supports the claim regarding the refining, storage, and distribution of petroleum.",
+    "supporting_pages": [
+      344
+    ],
+    "resolved_by": "llm"
+  },
+  "dc177d8fdcfef7e017527368": {
+    "verdict": "SUPPORTED",
+    "reasoning": "The evidence explicitly mentions the regulation and development of petroleum and petroleum products, as well as the taxation on the sale of petroleum crude, high speed diesel, motor spirit (petrol), natural gas, and aviation turbine fuel. This supports the claim regarding the marketing and sale of petroleum products.",
+    "supporting_pages": [
+      351,
+      344,
+      192
+    ],
+    "resolved_by": "llm"
+  },
+  "e61626e02b1a70b5ce299fe0": {
+    "verdict": "INSUFFICIENT",
+    "reasoning": "The provided evidence mentions natural gas in the context of the Goods and Services Tax Council and its recommendations, as well as in relation to the regulation and development of petroleum and petroleum products. However, it does not provide specific information about the production of natural gas itself. Therefore, the evidence is insufficient to verify the claim regarding the production of natural gas.",
+    "supporting_pages": [
+      192,
+      344
+    ],
+    "resolved_by": "llm"
+  }
+}

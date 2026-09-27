@@ -1,0 +1,141 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+stored vs bound claims differ on 7/13 questions
+Loading embedding model: BAAI/bge-small-en-v1.5
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  94%|#########4| 188/199 [00:00<00:00, 1879.30it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 1962.83it/s]
+Embedding 1149 chunks...
+Batches:   0%|          | 0/36 [00:00<?, ?it/s]Batches:   3%|2         | 1/36 [00:01<01:05,  1.87s/it]Batches:   6%|5         | 2/36 [00:05<01:30,  2.67s/it]Batches:   8%|8         | 3/36 [00:07<01:30,  2.73s/it]Batches:  11%|#1        | 4/36 [00:10<01:23,  2.60s/it]Batches:  14%|#3        | 5/36 [00:12<01:18,  2.53s/it]Batches:  17%|#6        | 6/36 [00:15<01:16,  2.56s/it]Batches:  19%|#9        | 7/36 [00:18<01:15,  2.60s/it]Batches:  22%|##2       | 8/36 [00:21<01:20,  2.88s/it]Batches:  25%|##5       | 9/36 [00:24<01:15,  2.78s/it]Batches:  28%|##7       | 10/36 [00:27<01:20,  3.08s/it]Batches:  31%|###       | 11/36 [00:32<01:25,  3.44s/it]Batches:  33%|###3      | 12/36 [00:34<01:18,  3.28s/it]Batches:  36%|###6      | 13/36 [00:37<01:11,  3.12s/it]Batches:  39%|###8      | 14/36 [00:40<01:08,  3.09s/it]Batches:  42%|####1     | 15/36 [00:46<01:22,  3.91s/it]Batches:  44%|####4     | 16/36 [00:49<01:13,  3.67s/it]Batches:  47%|####7     | 17/36 [00:51<01:00,  3.19s/it]Batches:  50%|#####     | 18/36 [00:57<01:10,  3.90s/it]Batches:  53%|#####2    | 19/36 [01:00<01:05,  3.83s/it]Batches:  56%|#####5    | 20/36 [01:04<00:58,  3.63s/it]Batches:  58%|#####8    | 21/36 [01:06<00:49,  3.30s/it]Batches:  61%|######1   | 22/36 [01:09<00:44,  3.18s/it]Batches:  64%|######3   | 23/36 [01:12<00:39,  3.01s/it]Batches:  67%|######6   | 24/36 [01:17<00:44,  3.73s/it]Batches:  69%|######9   | 25/36 [01:20<00:38,  3.52s/it]Batches:  72%|#######2  | 26/36 [01:23<00:33,  3.39s/it]Batches:  75%|#######5  | 27/36 [01:26<00:28,  3.14s/it]Batches:  78%|#######7  | 28/36 [01:28<00:23,  2.90s/it]Batches:  81%|########  | 29/36 [01:30<00:18,  2.69s/it]Batches:  83%|########3 | 30/36 [01:32<00:14,  2.49s/it]Batches:  86%|########6 | 31/36 [01:34<00:11,  2.35s/it]Batches:  89%|########8 | 32/36 [01:37<00:09,  2.32s/it]Batches:  92%|#########1| 33/36 [01:38<00:06,  2.12s/it]Batches:  94%|#########4| 34/36 [01:40<00:04,  2.00s/it]Batches:  97%|#########7| 35/36 [01:41<00:01,  1.86s/it]Batches: 100%|##########| 36/36 [01:43<00:00,  1.61s/it]Batches: 100%|##########| 36/36 [01:43<00:00,  2.86s/it]
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|##########| 105/105 [00:00<00:00, 2096.19it/s]
+corpus 1149 chunks, 13 questions
+retriever: semantic (BAAI/bge-small-en-v1.5) -> cross-encoder rerank (cross-encoder/ms-marco-MiniLM-L-6-v2), candidate_k=20
+output:    data/evaluation/system_c_results.json
+baseline vanilla RAG (answers every question):
+  stored_labels   accuracy 38.46%   wrong 61.54%
+  audited_labels  accuracy 46.15%   wrong 53.85%
+
+running C0 ...
+running C1 ...
+running C1d ...
+running C2 ...
+running C3 ...
+running C3d ...
+
+cache: 57 hits, 159 misses -> data/evaluation/system_c_verdict_cache.json
+
+--- C0: stored claims, k=3, base prompt ---
+    isolates: reference point; differs from System B only in retriever
+    verdicts: {'SUPPORTED': 14, 'INSUFFICIENT': 18, 'CONTRADICTED': 5}
+    claims:   37  propositional 70.27%  false SUPPORTED 7
+    stored_labels:
+      strict        coverage  30.77%  precision  50.00%  accuracy  15.38%  wrong  15.38%
+      elimination   coverage  30.77%  precision  50.00%  accuracy  15.38%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+    audited_labels:
+      strict        coverage  30.77%  precision  75.00%  accuracy  23.08%  wrong   7.69%
+      elimination   coverage  30.77%  precision  75.00%  accuracy  23.08%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+
+--- C1: bound claims, k=3, base prompt ---
+    isolates: predicate binding at k=3
+    verdicts: {'INSUFFICIENT': 16, 'SUPPORTED': 15, 'CONTRADICTED': 6}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+    audited_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+
+--- C1d: stored claims, k=5, base prompt ---
+    isolates: retrieval depth 3 -> 5, claims held at stored
+    verdicts: {'SUPPORTED': 17, 'INSUFFICIENT': 16, 'CONTRADICTED': 4}
+    claims:   37  propositional 70.27%  false SUPPORTED 8
+    stored_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+    audited_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+
+--- C2: bound claims, k=5, base prompt ---
+    isolates: predicate binding at k=5 (compare against C1d)
+    verdicts: {'INSUFFICIENT': 15, 'SUPPORTED': 17, 'CONTRADICTED': 5}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+    audited_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  45.45%  accuracy  38.46%  wrong  46.15%
+
+--- C3: bound claims, k=5, numeric prompt ---
+    isolates: numeric conflict detection
+    verdicts: {'INSUFFICIENT': 15, 'SUPPORTED': 17, 'CONTRADICTED': 5}
+    claims:   37  propositional 100.00%  false SUPPORTED 0
+    stored_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+    audited_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  45.45%  accuracy  38.46%  wrong  46.15%
+
+--- C3d: stored claims, k=5, numeric prompt ---
+    isolates: numeric conflict detection without binding
+    verdicts: {'SUPPORTED': 17, 'INSUFFICIENT': 16, 'CONTRADICTED': 4}
+    claims:   37  propositional 70.27%  false SUPPORTED 8
+    stored_labels:
+      strict        coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      elimination   coverage  38.46%  precision  80.00%  accuracy  30.77%  wrong   7.69%
+      closed_world  coverage  84.62%  precision  63.64%  accuracy  53.85%  wrong  30.77%
+    audited_labels:
+      strict        coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      elimination   coverage  38.46%  precision  60.00%  accuracy  23.08%  wrong  15.38%
+      closed_world  coverage  84.62%  precision  54.55%  accuracy  46.15%  wrong  38.46%
+
+--- verdict changes, C0 -> C1 ---
+    Q54 I: SUPPORTED -> INSUFFICIENT
+    Q56 I: INSUFFICIENT -> SUPPORTED
+    Q65 I: INSUFFICIENT -> CONTRADICTED
+    Q65 II: INSUFFICIENT -> SUPPORTED
+
+--- verdict changes, C0 -> C1d ---
+    Q56 I: INSUFFICIENT -> SUPPORTED
+    Q58 I: CONTRADICTED -> SUPPORTED
+    Q65 II: INSUFFICIENT -> SUPPORTED
+
+--- verdict changes, C1d -> C2 ---
+    Q54 I: SUPPORTED -> INSUFFICIENT
+    Q65 I: INSUFFICIENT -> CONTRADICTED
+    Q66 IV: INSUFFICIENT -> SUPPORTED
+
+--- verdict changes, C2 -> C3 ---
+    no statement changed verdict
+
+--- verdict changes, C1d -> C3d ---
+    no statement changed verdict
+
+--- per-question answers (strict policy, audited labels) ---
+    Q     label     C0     C1     C1d    C2     C3     C3d  
+    Q54   A         D      --     D      --     --     D    
+    Q55   A         --     --     --     --     --     --   
+    Q56   C         --     C*     C*     C*     C*     C*   
+    Q57   A         --     --     --     --     --     --   
+    Q58   D         D*     D*     A      A      A      A     (was A)
+    Q59   C         --     --     --     --     --     --   
+    Q60   D         --     --     --     --     --     --   
+    Q61   A         A*     A*     A*     A*     A*     A*   
+    Q62   D         D*     D*     D*     D*     D*     D*   
+    Q63   D         --     --     --     --     --     --   
+    Q64   C         --     --     --     --     --     --   
+    Q65   D         --     B      --     B      B      --   
+    Q66   B         --     --     --     --     --     --   
+    * = correct, -- = abstained
+
+Saved results to: data/evaluation/system_c_results.json

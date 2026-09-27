@@ -1,0 +1,500 @@
+{
+  "strict": {
+    "policy": "strict",
+    "total": 13,
+    "answered": 4,
+    "abstained": 9,
+    "correct": 4,
+    "coverage": 0.3076923076923077,
+    "precision_when_answered": 1.0,
+    "accuracy_overall": 0.3076923076923077,
+    "rows": [
+      {
+        "q_number": 54,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 55,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT",
+          "IV": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 56,
+        "official_answer": "C",
+        "predicted_answer": "C",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 57,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 58,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 59,
+        "official_answer": "C",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 60,
+        "official_answer": "D",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 61,
+        "official_answer": "A",
+        "predicted_answer": "A",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 62,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 63,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "CONTRADICTED",
+          "II": "CONTRADICTED",
+          "III": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 64,
+        "official_answer": "C",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 65,
+        "official_answer": "D",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 66,
+        "official_answer": "B",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED",
+          "IV": "INSUFFICIENT"
+        }
+      }
+    ]
+  },
+  "elimination": {
+    "policy": "elimination",
+    "total": 13,
+    "answered": 4,
+    "abstained": 9,
+    "correct": 4,
+    "coverage": 0.3076923076923077,
+    "precision_when_answered": 1.0,
+    "accuracy_overall": 0.3076923076923077,
+    "rows": [
+      {
+        "q_number": 54,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 55,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT",
+          "IV": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 56,
+        "official_answer": "C",
+        "predicted_answer": "C",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 57,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 58,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 59,
+        "official_answer": "C",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 60,
+        "official_answer": "D",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 61,
+        "official_answer": "A",
+        "predicted_answer": "A",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 62,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 63,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "CONTRADICTED",
+          "II": "CONTRADICTED",
+          "III": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 64,
+        "official_answer": "C",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 65,
+        "official_answer": "D",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 66,
+        "official_answer": "B",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED",
+          "IV": "INSUFFICIENT"
+        }
+      }
+    ]
+  },
+  "closed_world": {
+    "policy": "closed_world",
+    "total": 13,
+    "answered": 11,
+    "abstained": 2,
+    "correct": 6,
+    "coverage": 0.8461538461538461,
+    "precision_when_answered": 0.5454545454545454,
+    "accuracy_overall": 0.46153846153846156,
+    "rows": [
+      {
+        "q_number": 54,
+        "official_answer": "A",
+        "predicted_answer": "B",
+        "status": "INCORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 55,
+        "official_answer": "A",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "no_option_matched",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT",
+          "IV": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 56,
+        "official_answer": "C",
+        "predicted_answer": "C",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 57,
+        "official_answer": "A",
+        "predicted_answer": "A",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 58,
+        "official_answer": "A",
+        "predicted_answer": "D",
+        "status": "INCORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 59,
+        "official_answer": "C",
+        "predicted_answer": "C",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 60,
+        "official_answer": "D",
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "no_option_matched",
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 61,
+        "official_answer": "A",
+        "predicted_answer": "A",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 62,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "SUPPORTED",
+          "II": "SUPPORTED",
+          "III": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 63,
+        "official_answer": "D",
+        "predicted_answer": "D",
+        "status": "CORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "CONTRADICTED",
+          "II": "CONTRADICTED",
+          "III": "CONTRADICTED"
+        }
+      },
+      {
+        "q_number": 64,
+        "official_answer": "C",
+        "predicted_answer": "D",
+        "status": "INCORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "INSUFFICIENT"
+        }
+      },
+      {
+        "q_number": 65,
+        "official_answer": "D",
+        "predicted_answer": "B",
+        "status": "INCORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "SUPPORTED"
+        }
+      },
+      {
+        "q_number": 66,
+        "official_answer": "B",
+        "predicted_answer": "A",
+        "status": "INCORRECT",
+        "abstention_reason": null,
+        "statement_statuses": {
+          "I": "INSUFFICIENT",
+          "II": "INSUFFICIENT",
+          "III": "SUPPORTED",
+          "IV": "INSUFFICIENT"
+        }
+      }
+    ]
+  }
+}

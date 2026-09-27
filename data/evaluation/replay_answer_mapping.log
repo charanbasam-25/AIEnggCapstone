@@ -1,0 +1,60 @@
+parsing fixes verified
+
+--- policy: strict ---
+answered 4/13   correct 4/13
+coverage 30.77%   precision 100.00%   accuracy 30.77%
+vs vanilla RAG (38.46%): -7.69%
+
+  --  Q54  predicted=None  official=A  [policy_insufficient_evidence]
+  --  Q55  predicted=None  official=A  [policy_insufficient_evidence]
+  ok  Q56  predicted=C     official=C
+  --  Q57  predicted=None  official=A  [policy_insufficient_evidence]
+  --  Q58  predicted=None  official=A  [policy_insufficient_evidence]
+  --  Q59  predicted=None  official=C  [policy_insufficient_evidence]
+  --  Q60  predicted=None  official=D  [policy_insufficient_evidence]
+  ok  Q61  predicted=A     official=A
+  ok  Q62  predicted=D     official=D
+  ok  Q63  predicted=D     official=D
+  --  Q64  predicted=None  official=C  [policy_insufficient_evidence]
+  --  Q65  predicted=None  official=D  [policy_insufficient_evidence]
+  --  Q66  predicted=None  official=B  [policy_insufficient_evidence]
+
+--- policy: elimination ---
+answered 4/13   correct 4/13
+coverage 30.77%   precision 100.00%   accuracy 30.77%
+vs vanilla RAG (38.46%): -7.69%
+
+  --  Q54  predicted=None  official=A  [multiple_options_possible]
+  --  Q55  predicted=None  official=A  [multiple_options_possible]
+  ok  Q56  predicted=C     official=C
+  --  Q57  predicted=None  official=A  [multiple_options_possible]
+  --  Q58  predicted=None  official=A  [multiple_options_possible]
+  --  Q59  predicted=None  official=C  [multiple_options_possible]
+  --  Q60  predicted=None  official=D  [multiple_options_possible]
+  ok  Q61  predicted=A     official=A
+  ok  Q62  predicted=D     official=D
+  ok  Q63  predicted=D     official=D
+  --  Q64  predicted=None  official=C  [multiple_options_possible]
+  --  Q65  predicted=None  official=D  [multiple_options_possible]
+  --  Q66  predicted=None  official=B  [multiple_options_possible]
+
+--- policy: closed_world ---
+answered 11/13   correct 6/13
+coverage 84.62%   precision 54.55%   accuracy 46.15%
+vs vanilla RAG (38.46%): +7.69%
+
+  X   Q54  predicted=B     official=A
+  --  Q55  predicted=None  official=A  [no_option_matched]
+  ok  Q56  predicted=C     official=C
+  ok  Q57  predicted=A     official=A
+  X   Q58  predicted=D     official=A
+  ok  Q59  predicted=C     official=C
+  --  Q60  predicted=None  official=D  [no_option_matched]
+  ok  Q61  predicted=A     official=A
+  ok  Q62  predicted=D     official=D
+  ok  Q63  predicted=D     official=D
+  X   Q64  predicted=D     official=C
+  X   Q65  predicted=B     official=D
+  X   Q66  predicted=A     official=B
+
+Saved replay to: data/evaluation/answer_mapping_replay.json

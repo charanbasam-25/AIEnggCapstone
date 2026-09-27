@@ -89,9 +89,11 @@ IMPORTANT:
 - Explain each identified issue briefly.
 """
 
+        # Pinned for the same reason as in fact_verifier.py.
         response = self.client.responses.parse(
             model=MODEL_NAME,
             input=prompt,
+            temperature=0,
             text_format=QualityAuditResult,
         )
 

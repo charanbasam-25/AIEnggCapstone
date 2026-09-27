@@ -1,0 +1,805 @@
+{
+  "dataset": "UPSC 2025 Prelims Polity, Q54-Q66",
+  "model": "gpt-4o-mini",
+  "arm": "System B2: direct option verification, declared answer withheld",
+  "note": "Replays stored evidence. Retrieval is held fixed, so differences against System B reflect the inference path only. The existing AnswerKeyVerifier result is not comparable because its prompt contains the official answer.",
+  "reference_accuracy": {
+    "system_a_vanilla_rag": 0.38461538461538464,
+    "system_b_statement_mapping": {
+      "policy": "strict",
+      "total": 13,
+      "answered": 4,
+      "abstained": 9,
+      "correct": 4,
+      "coverage": 0.3076923076923077,
+      "precision_when_answered": 1.0,
+      "accuracy_overall": 0.3076923076923077
+    }
+  },
+  "conditions": {
+    "answer_evidence": {
+      "condition": "answer_evidence",
+      "evidence": "top-5 question-level passages",
+      "total": 13,
+      "answered": 2,
+      "abstained": 11,
+      "correct": 2,
+      "coverage": 0.15384615384615385,
+      "precision_when_answered": 1.0,
+      "accuracy_overall": 0.15384615384615385,
+      "rows": [
+        {
+          "q_number": 54,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            34,
+            145,
+            176,
+            181
+          ],
+          "reasoning": "The provided evidence does not explicitly state the requirements for constitutional amendments regarding the Union List, the extent of the executive power of a State, or the conditions of the Governor’s office. Therefore, it does not settle the question of which options require ratification by the Legislatures of not less than one-half of the States.",
+          "per_option_reasoning": []
+        },
+        {
+          "q_number": 55,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": true,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not support any of the statements regarding Lokpal, confirming that none of them are correct.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not confirm that the age requirement for the Chairperson or Member of Lokpal is 'not less than forty-five years'."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not confirm that only the Chief Justice of India can be the Chairperson of Lokpal."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not support the claim that Lokpal cannot inquire into allegations against a sitting Prime Minister."
+            },
+            {
+              "option": "D",
+              "supported": true,
+              "reason": "Since none of the statements I, II, III, or IV are supported by the evidence, this option is correct."
+            }
+          ]
+        },
+        {
+          "q_number": 56,
+          "official_answer": "C",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not explicitly confirm or deny the correctness of any of the pairs listed in the question. Therefore, it does not settle the question.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "q_number": 57,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            8,
+            57,
+            64,
+            180
+          ],
+          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the President's pardoning power.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not confirm that the exercise of the President's pardoning power can be subjected to limited judicial review."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President can exercise the pardoning power without the advice of the Central Government."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+            }
+          ]
+        },
+        {
+          "q_number": 58,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            376
+          ],
+          "reasoning": "The evidence does not conclusively support any of the statements as correct, leading to the conclusion that none of the options can be validated.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President's decision is final regarding disqualification under the 10th Schedule for the House of the People specifically, as it refers to both Houses of Parliament."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence indicates that the term 'political party' is indeed mentioned in the Constitution, specifically in the context of disqualifications under the 10th Schedule."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Since statement I is not fully supported and statement II is false, both cannot be correct."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "Since neither statement I nor II is correct, this option is also not supported."
+            }
+          ]
+        },
+        {
+          "q_number": 59,
+          "official_answer": "C",
+          "predicted_answer": "C",
+          "status": "CORRECT",
+          "abstention_reason": null,
+          "supported_options": [
+            "C"
+          ],
+          "evidence_is_sufficient": true,
+          "cited_pages": [
+            73
+          ],
+          "reasoning": "The evidence clearly supports statements I and III, but does not support statement II, making option C the only supported choice.",
+          "per_option_reasoning": [
+            {
+              "option": "C",
+              "supported": true,
+              "reason": "The evidence explicitly states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution (supporting statement I) and that the Speaker may be removed from office by a resolution passed by a majority of all the then members of the House, provided that at least fourteen days' notice has been given (supporting statement III). However, there is no evidence supporting statement II, which claims that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+            }
+          ]
+        },
+        {
+          "q_number": 60,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            34,
+            143,
+            147,
+            173
+          ],
+          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the powers of an Ordinance in relation to amending Central Acts, abridging Fundamental Rights, or coming into effect from a back date.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can amend any Central Act."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can abridge a Fundamental Right."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can come into effect from a back date."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support any of the claims made in the statements."
+            }
+          ]
+        },
+        {
+          "q_number": 61,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not support any of the statements regarding the powers of the Governor or the President in relation to State Legislatures.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not explicitly mention that the Governor of a State acts in his/her own discretion in certain spheres."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President can reserve a bill passed by a State Legislature without it being forwarded by the Governor."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+            }
+          ]
+        },
+        {
+          "q_number": 62,
+          "official_answer": "D",
+          "predicted_answer": "D",
+          "status": "CORRECT",
+          "abstention_reason": null,
+          "supported_options": [
+            "D"
+          ],
+          "evidence_is_sufficient": true,
+          "cited_pages": [
+            250,
+            321
+          ],
+          "reasoning": "The evidence explicitly supports all three statements regarding the Governor's immunity and the protection of State Legislature members, confirming that all statements are correct.",
+          "per_option_reasoning": [
+            {
+              "option": "D",
+              "supported": true,
+              "reason": "All three statements are supported by the evidence. Statement I is supported by Article 361(1), which states that the Governor is not answerable to any court for the exercise and performance of the powers and duties of his office. Statement II is supported by Article 361(2), which states that no criminal proceedings shall be instituted or continued against the Governor during his term of office. Statement III is supported by Article 194(2), which states that members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House."
+            }
+          ]
+        },
+        {
+          "q_number": 63,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            150,
+            151,
+            154,
+            155
+          ],
+          "reasoning": "The evidence does not provide sufficient information to confirm or deny the correctness of any of the statements regarding Panchayats at the intermediate level.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that Panchayats at the intermediate level exist in all States."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that a person should attain the age of thirty years to be eligible for a Panchayat at the intermediate level."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the Chief Minister constitutes a commission for reviewing the financial position of Panchayats at the intermediate level."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "None of the statements are supported by the evidence."
+            }
+          ]
+        },
+        {
+          "q_number": 64,
+          "official_answer": "C",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            127,
+            221,
+            275,
+            289,
+            290
+          ],
+          "reasoning": "The provided evidence does not explicitly confirm or deny the correctness of the pairs described in the question. It contains references to the states mentioned but does not provide specific information that would validate or invalidate the claims made about Arunachal Pradesh, Nagaland, and Tripura.",
+          "per_option_reasoning": []
+        },
+        {
+          "q_number": 65,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            164,
+            174,
+            199,
+            307
+          ],
+          "reasoning": "The evidence does not provide sufficient information to support any of the statements regarding the administration of Scheduled Areas under the Fifth Schedule.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the State Government loses its executive power in Scheduled Areas."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not confirm that the Union Government can take over total administration of Scheduled Areas under certain circumstances."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+            }
+          ]
+        },
+        {
+          "q_number": 66,
+          "official_answer": "B",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            344
+          ],
+          "reasoning": "The evidence provided does not specify how many of the listed activities are regulated by the Petroleum and Natural Gas Regulatory Board. It mentions the regulation of petroleum and petroleum products but does not clarify the specific activities listed in the question.",
+          "per_option_reasoning": []
+        }
+      ]
+    },
+    "union": {
+      "condition": "union",
+      "evidence": "question-level plus per-statement passages",
+      "total": 13,
+      "answered": 1,
+      "abstained": 12,
+      "correct": 1,
+      "coverage": 0.07692307692307693,
+      "precision_when_answered": 1.0,
+      "accuracy_overall": 0.07692307692307693,
+      "rows": [
+        {
+          "q_number": 54,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            260
+          ],
+          "reasoning": "The evidence provided does not explicitly confirm any of the options regarding the requirement for ratification by the Legislatures of not less than one-half of the States for constitutional amendments related to the Union List, executive power of a State, or conditions of the Governor's office. It only mentions the general requirement for ratification by the Legislatures of not less than one-half of the States for certain amendments, without specifying which subjects this applies to.",
+          "per_option_reasoning": []
+        },
+        {
+          "q_number": 55,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The provided evidence does not explicitly support any of the statements regarding Lokpal, thus none can be confirmed as correct.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not confirm that the age requirement for the Chairperson or Member of Lokpal is 'forty-five years'."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not confirm that only the Chief Justice of India has to be the Chairperson of Lokpal."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not confirm that Lokpal cannot inquire into allegations against a sitting Prime Minister."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support any of the statements as correct."
+            }
+          ]
+        },
+        {
+          "q_number": 56,
+          "official_answer": "C",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not explicitly confirm or deny the correctness of any of the pairs listed in the question. Therefore, it does not settle the question.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": ""
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "q_number": 57,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not contain specific information that confirms or denies the correctness of either statement I or II regarding the President's pardoning power.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not explicitly support the claim that the exercise of the President's pardoning power can be subjected to limited judicial review."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President can exercise the pardoning power without the advice of the Central Government."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support the claim that neither statement I nor II is correct."
+            }
+          ]
+        },
+        {
+          "q_number": 58,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the Union Executive or the mention of 'political party' in the Constitution.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President's decision regarding disqualification under the 10th Schedule is final without any mention of the Council of Union Ministers."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not confirm that there is no mention of the term 'political party' in the Constitution."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            }
+          ]
+        },
+        {
+          "q_number": 59,
+          "official_answer": "C",
+          "predicted_answer": "C",
+          "status": "CORRECT",
+          "abstention_reason": null,
+          "supported_options": [
+            "C"
+          ],
+          "evidence_is_sufficient": true,
+          "cited_pages": [
+            73
+          ],
+          "reasoning": "The evidence explicitly supports Statement I and Statement III, while Statement II is not mentioned in the provided evidence.",
+          "per_option_reasoning": [
+            {
+              "option": "C",
+              "supported": true,
+              "reason": "Statement I is supported by the evidence on page 73, which states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution. Statement III is also supported by the same page, which details the process for removing the Speaker, including the requirement for a majority and a 14-day notice. Statement II is not supported by the evidence, as it does not mention that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+            }
+          ]
+        },
+        {
+          "q_number": 60,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            87
+          ],
+          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the powers of an Ordinance in relation to amending Central Acts, abridging Fundamental Rights, or coming into effect from a back date.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can amend any Central Act."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can abridge a Fundamental Right."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not support the claim that an Ordinance can come into effect from a back date."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "The evidence does not support any of the claims made in the statements."
+            }
+          ]
+        },
+        {
+          "q_number": 61,
+          "official_answer": "A",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": true,
+          "cited_pages": [],
+          "reasoning": "The evidence does not provide support for either statement I or II, thus confirming that neither is correct.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not explicitly mention that the Governor acts in his/her own discretion in certain spheres."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the President can reserve a bill passed by a State Legislature without it being forwarded by the Governor."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": true,
+              "reason": "Both statements I and II are not supported by the evidence, making this option correct."
+            }
+          ]
+        },
+        {
+          "q_number": 62,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "multiple_options_supported",
+          "supported_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "evidence_is_sufficient": true,
+          "cited_pages": [
+            250,
+            118,
+            251
+          ],
+          "reasoning": "The evidence explicitly supports all three statements regarding the Governor's immunity and the immunity of State Legislature members, thus confirming that all options A, B, C, and D are correct.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": true,
+              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no criminal proceedings shall be instituted or continued against the Governor during his term of office', supporting statements I and II."
+            },
+            {
+              "option": "B",
+              "supported": true,
+              "reason": "The evidence states that 'no criminal proceedings shall be instituted or continued against the Governor during his term of office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature', supporting statements II and III."
+            },
+            {
+              "option": "C",
+              "supported": true,
+              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature', supporting statements I and III."
+            },
+            {
+              "option": "D",
+              "supported": true,
+              "reason": "The evidence supports all three statements: I (Governor not answerable to court), II (no criminal proceedings against Governor), and III (members of State Legislature not liable for proceedings in court for statements made in the House)."
+            }
+          ]
+        },
+        {
+          "q_number": 63,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            150,
+            151,
+            153,
+            154,
+            155
+          ],
+          "reasoning": "The evidence does not provide sufficient information to confirm or deny the correctness of any of the statements regarding Panchayats at the intermediate level.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that Panchayats at the intermediate level exist in all States."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not support the claim that a person should attain the age of thirty years to be eligible for a Panchayat at the intermediate level."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the Chief Minister constitutes a commission for reviewing the financial position of Panchayats at the intermediate level."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "All statements I, II, and III are not correct based on the evidence."
+            }
+          ]
+        },
+        {
+          "q_number": 64,
+          "official_answer": "C",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The provided evidence does not contain specific information that confirms or denies the correctness of the pairs described in the question regarding Arunachal Pradesh, Nagaland, and Tripura. Therefore, it does not settle the question.",
+          "per_option_reasoning": []
+        },
+        {
+          "q_number": 65,
+          "official_answer": "D",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [
+            307,
+            308,
+            309
+          ],
+          "reasoning": "The evidence does not provide sufficient information to confirm the correctness of either statement I or II regarding the administration of Scheduled Areas.",
+          "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "The evidence does not support the claim that the State Government loses its executive power entirely in Scheduled Areas."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "The evidence does not confirm that the Union Government can take over total administration of Scheduled Areas under any circumstances."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Neither statement I nor II is supported by the evidence."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "Both statements I and II are not supported by the evidence."
+            }
+          ]
+        },
+        {
+          "q_number": 66,
+          "official_answer": "B",
+          "predicted_answer": null,
+          "status": "ABSTAINED",
+          "abstention_reason": "no_option_supported",
+          "supported_options": [],
+          "evidence_is_sufficient": false,
+          "cited_pages": [],
+          "reasoning": "The provided evidence does not explicitly mention the activities regulated by the Petroleum and Natural Gas Regulatory Board or specify how many of the listed activities are regulated. Therefore, it does not settle the question.",
+          "per_option_reasoning": []
+        }
+      ]
+    }
+  }
+}

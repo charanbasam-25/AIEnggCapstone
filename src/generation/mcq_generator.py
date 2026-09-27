@@ -75,9 +75,14 @@ Requirements:
 11. Do not claim that the question has already been verified.
 """
 
+        # Pinned for reproducibility, same as the verification modules.
+        # Question generation is the one place where sampling diversity
+        # would arguably be wanted, but the generated questions feed the
+        # evaluation set, so a fixed corpus matters more than variety.
         response = self.client.responses.parse(
             model=MODEL_NAME,
             input=prompt,
+            temperature=0,
             text_format=MCQ,
         )
 

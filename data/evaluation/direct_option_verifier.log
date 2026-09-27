@@ -1,0 +1,78 @@
+Running condition: answer_evidence
+  [answer_evidence] 1/13: Q54
+  [answer_evidence] 2/13: Q55
+  [answer_evidence] 3/13: Q56
+  [answer_evidence] 4/13: Q57
+  [answer_evidence] 5/13: Q58
+  [answer_evidence] 6/13: Q59
+  [answer_evidence] 7/13: Q60
+  [answer_evidence] 8/13: Q61
+  [answer_evidence] 9/13: Q62
+  [answer_evidence] 10/13: Q63
+  [answer_evidence] 11/13: Q64
+  [answer_evidence] 12/13: Q65
+  [answer_evidence] 13/13: Q66
+
+--- condition: answer_evidence ---
+evidence: top-5 question-level passages
+answered 2/13   correct 2/13
+coverage 15.38%   precision 100.00%   accuracy 15.38%
+vs vanilla RAG 38.46%: -23.08%
+
+  --  Q54  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q55  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q56  predicted=None  official=C  supported=[]  [no_option_supported]
+  --  Q57  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q58  predicted=None  official=A  supported=[]  [no_option_supported]
+  ok  Q59  predicted=C     official=C  supported=['C']
+  --  Q60  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q61  predicted=None  official=A  supported=[]  [no_option_supported]
+  ok  Q62  predicted=D     official=D  supported=['D']
+  --  Q63  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q64  predicted=None  official=C  supported=[]  [no_option_supported]
+  --  Q65  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q66  predicted=None  official=B  supported=[]  [no_option_supported]
+Running condition: union
+  [union] 1/13: Q54
+  [union] 2/13: Q55
+  [union] 3/13: Q56
+  [union] 4/13: Q57
+  [union] 5/13: Q58
+  [union] 6/13: Q59
+  [union] 7/13: Q60
+  [union] 8/13: Q61
+  [union] 9/13: Q62
+  [union] 10/13: Q63
+  [union] 11/13: Q64
+  [union] 12/13: Q65
+  [union] 13/13: Q66
+
+--- condition: union ---
+evidence: question-level plus per-statement passages
+answered 1/13   correct 1/13
+coverage 7.69%   precision 100.00%   accuracy 7.69%
+vs vanilla RAG 38.46%: -30.77%
+
+  --  Q54  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q55  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q56  predicted=None  official=C  supported=[]  [no_option_supported]
+  --  Q57  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q58  predicted=None  official=A  supported=[]  [no_option_supported]
+  ok  Q59  predicted=C     official=C  supported=['C']
+  --  Q60  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q61  predicted=None  official=A  supported=[]  [no_option_supported]
+  --  Q62  predicted=None  official=D  supported=['A', 'B', 'C', 'D']  [multiple_options_supported]
+  --  Q63  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q64  predicted=None  official=C  supported=[]  [no_option_supported]
+  --  Q65  predicted=None  official=D  supported=[]  [no_option_supported]
+  --  Q66  predicted=None  official=B  supported=[]  [no_option_supported]
+
+=== SUMMARY ===
+arm                                    cov     prec      acc
+------------------------------------------------------------
+System A vanilla RAG               100.00%   38.46%   38.46%
+System B statement mapping          30.77%  100.00%   30.77%
+System B2 answer_evidence           15.38%  100.00%   15.38%
+System B2 union                      7.69%  100.00%    7.69%
+
+Saved results to: data/evaluation/direct_option_results.json

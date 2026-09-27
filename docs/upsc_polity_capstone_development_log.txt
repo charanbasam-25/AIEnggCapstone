@@ -385,4 +385,439 @@ NEXT STEP:
 
 This template will be appended for future development steps.
 
+============================================================
+14. FIX PASS: 2026-09-27
+============================================================
+
+DATE:
+2026-09-27
+
+STEP:
+Apply every defect found by the System C ablation and the label audit to
+the real pipeline, before writing any deliverable.
+
+WHAT WE DID:
+Ran the six-arm single-variable ablation, audited the gold labels, then
+fixed what the measurements exposed rather than what looked wrong.
+
+WHAT WENT WRONG / OBSERVATION:
+
+1. Retrieval depth. Claim verification queried top_k=3 while the
+   retriever was selected on a Recall@5 benchmark. One integer. It was
+   the largest single accuracy change in the project and it beat both
+   interventions that were actually designed.
+
+2. Gold label Q58 is wrong. Stored label A ("I only"); both statements
+   are false against the corpus, so the answer is D. Five of six arms
+   said D. The label error inverted the gradient: it made a FALSE
+   SUPPORTED look like the project's best result.
+   Statement II (no mention of the phrase "political party") is false:
+   an exhaustive scan of all 1149 chunks finds the phrase 12 times
+   across pages 65, 104, 251, 376, 377, 378, 379. Pages 65 and 104
+   never appeared in any top-k retrieval, which is why the scan had to
+   be exhaustive rather than ranked.
+
+3. Answer-key verifier leaked the answer. The prompt contained a
+   DECLARED ANSWER block plus a rule telling the model not to treat it
+   as evidence. Independence was conditional on instruction-following.
+
+4. The absence checker used BM25 top-5 to decide a claim that
+   quantifies over the whole corpus. On this data it was correct by
+   luck.
+
+5. The orchestration node built FactVerifier() with no corpus, which
+   silently disabled the absence checker, so the orchestrated pipeline
+   was weaker than the thing being measured.
+
+6. The evaluation harness carried a second copy of the option-mapping
+   logic, and the copy held the bugs: the negated flag was computed then
+   discarded, and the option text "None" parsed as neither a statement
+   set nor a count, so it could never match.
+
+7. The harness scored abstention as an incorrect answer, so every
+   abstention the verifier added read as a regression.
+
+8. The ablation harness hard-coded the vanilla RAG baseline at the
+   stored-label figure (38.46%) while reporting every arm under stored
+   AND audited labels. Under audited labels the baseline is 46.15%,
+   because vanilla RAG answered D on Q58.
+
+WHAT WE MODIFIED:
+
+src/verification/answer_key_verifier.py
+    Removed the declared-answer block and its guard rule. The Python
+    comparison in verify() was already doing the work.
+
+src/verification/claim_extractor.py
+    Rewritten as deterministic-first, LLM only on parse failure. Client
+    construction is lazy so the deterministic path needs no API key.
+
+src/verification/claim_builder.py
+    Added leading-predicate binding and a guard on leading-condition
+    binding. Both fix defects found by a synthetic test, not by the 13
+    questions; confirmed they do not fire on the real set before fixing.
+
+src/verification/question_parser.py
+    Added CLOSING_INSTRUCTION so "Select the correct answer using the
+    code given below" stops being swallowed into the last item.
+
+src/verification/negative_claim_checker.py
+    Full-corpus scan, whitespace- and case-normalised, stdlib only.
+    Reports chunks_scanned so the conclusion can be audited.
+
+src/verification/fact_verifier.py
+    Numeric rules 25-26. Absence branch now returns SUPPORTED on an
+    exhaustive null result, with both residual assumptions named in the
+    emitted reasoning.
+
+src/verification/claim_retriever.py
+    Default top_k 3 -> 5.
+
+src/orchestration/nodes.py
+    lru_cache on chunks/retriever/verifier, corpus passed to
+    FactVerifier, CLAIM_TOP_K = ANSWER_TOP_K = 5.
+
+src/evaluation/answer_mapping.py
+    Single mapping implementation. Three abstention policies as named
+    parameters. Added a self_check with an assertion per fixed defect.
+
+src/evaluation/evaluate_verified_pyqs.py
+    Delegates to answer_mapping. Bound claims by default. Three-way
+    status (CORRECT / INCORRECT / ABSTAINED). Reports selective
+    prediction under both label sets plus claim soundness.
+
+src/evaluation/system_c_pipeline.py
+    Baseline computed from vanilla_rag_scored.json under both label
+    sets.
+
+src/evaluation/label_audit.py
+    Q58 finding corrected to the real scan numbers.
+
+src/evaluation/selective_metrics.py
+    Header stating its one non-duplicated job (the paired comparison on
+    the attempted subset) so it is not mistaken for a stale duplicate of
+    system_b_metrics.py.
+
+Deleted: scratch_policy_sim.py. Its logic now lives, tested, in
+answer_mapping.py.
+
+WHAT WE TESTED:
+
+python -m src.verification.claim_builder
+    37 claims, 37/37 propositional, 0 invented tokens,
+    bindings trailing_predicate 7, none 22, pair 6,
+    leading_condition 2
+python -m src.verification.negative_claim_checker  -> self-check passed
+python -m src.evaluation.answer_mapping           -> self-check passed
+python -m src.evaluation.label_audit              -> self-check passed
+python -m src.evaluation.selective_metrics        -> ran
+python -m src.evaluation.system_c_pipeline        -> 216 cache hits, 0 misses
+python -m compileall src/                         -> all modules compile
+
+RESULT:
+
+Ablation, audited labels, strict policy:
+
+Arm   change                         cov      prec     acc      wrong
+A     vanilla RAG (always answers)   100.00%  46.15%   46.15%   53.85%
+C0    stored claims, k=3              38.46%  80.00%   30.77%    7.69%
+C1    + binding           (vs C0)     46.15%  66.67%   30.77%   15.38%
+C1d   k=3->5 only         (vs C0)     53.85%  71.43%   38.46%   15.38%
+C2    binding at k=5      (vs C1d)    61.54%  75.00%   46.15%   15.38%
+C3    + numeric rules     (vs C2)     69.23%  77.78%   53.85%   15.38%
+C3d   numeric, no binding (vs C1d)    61.54%  87.50%   53.85%    7.69%
+
+Claim soundness: stored/verbatim claims 70.27% propositional with 8-9
+false SUPPORTED; bound claims 100% with 0.
+
+LLM-as-a-judge (gpt-4o, blind, reasoning quality only), A -> B:
+factual correctness 2.85 -> 3.69, evidence faithfulness 2.54 -> 4.38,
+reasoning validity 2.69 -> 4.31, epistemic honesty 2.38 -> 4.69;
+head-to-head 10-2-1 for B; hallucinated claims 16 -> 2.
+
+DECISION:
+
+Ship bound claims even though C3d ties C3 on accuracy and beats it on
+wrong answers. Claim soundness is measured over 37 claims and needs no
+gold label; the one-question accuracy difference is measured over 13
+questions against a label set with a confirmed error. The tie is
+recorded in both modules rather than buried, and a reader who reverses
+the call on this evidence is not making a mistake.
+
+Do not claim the accuracy lead. Against the corrected baseline the best
+arm leads by one question, which at 7.7 points per question is noise.
+The claim that survives is the error rate: 7 of 13 wrong for vanilla RAG
+against 1 of 13, bought by answering 8 of 13 instead of all 13.
+
+Stop adding rules to the fact verifier. Appending rules 25-26 fixed
+Q63 II and also flipped Q58 I on identical evidence at temperature 0,
+with no rule mentioning anything in it. At 26 rules a rule is not an
+isolated control. The next verifier change should decompose the prompt.
+
+KNOWN GAP:
+
+openai, pydantic, dotenv and rank_bm25 are not installed in the
+environment these fixes were authored in. Every deterministic module is
+covered by an executable self-check; the LLM-dependent modules
+(claim_extractor, fact_verifier, answer_key_verifier, nodes,
+evaluate_verified_pyqs) were edited and compile-checked but not re-run.
+data/evaluation/verified_pyq_results.json therefore predates this pass:
+it was produced at top_k=3 with verbatim claims. The ablation in
+system_c_pipeline.py is what compares the two settings directly, and it
+runs entirely from its verdict cache.
+
+NEXT STEP:
+
+Install the runtime dependencies, re-run evaluate_verified_pyqs under
+the new defaults, and regenerate the downstream metric files from it.
+Then decompose the fact-verifier prompt instead of extending it.
+
+============================================================
+15. RE-MEASUREMENT PASS: 2026-09-27
+============================================================
+
+DATE:
+2026-09-27
+
+STEP:
+Install the dependencies, re-run everything on the real retriever, and
+find out which conclusions from entry 14 survive. Several did not.
+
+WHAT WE DID:
+
+Installed the runtime dependencies, regenerated the whole evaluation
+chain on the shipped semantic + cross-encoder retriever, then chased a
+single disagreement between two harnesses until it explained itself. The
+disagreement turned out to be the most important finding in the project.
+
+WHAT WENT WRONG / OBSERVATION:
+
+1. The install failure was misdiagnosed for weeks. huggingface_hub
+   reported LocalEntryNotFoundError "check your connection", so it was
+   recorded as a network block. It was not. urllib reached huggingface.co
+   with status 200 while httpx failed on the same URL, which isolates it:
+   the connection is TLS-intercepted by a corporate proxy, the private
+   root is in the Windows certificate store (which urllib uses) and
+   absent from certifi (which httpx pins). Four lines fix it -
+   truststore.inject_into_ssl(), the same mechanism as pip's
+   --use-feature=truststore.
+
+   Cost of the misdiagnosis: the main ablation table ran on a stdlib
+   BM25 index, which is what produced the retracted conclusions below.
+   A library's error classification is a hypothesis, not evidence.
+
+2. FactVerifier never set temperature. The Responses API defaults to 1.0,
+   so the verifier was a stochastic classifier. Meanwhile
+   rag/vanilla_rag.py DID pass temperature=0. So every System B number
+   ever reported was a single draw measured against a deterministic
+   reference, and the whole difference was attributed to verification.
+
+   Five call sites were unpinned: fact_verifier, claim_extractor,
+   answer_key_verifier, mcq_quality_auditor, mcq_generator. All pinned.
+
+   Found by noticing the ablation harness returned SUPPORTED 3/3 on
+   Q58 item I while the shipped pipeline returned CONTRADICTED,
+   CONTRADICTED, INSUFFICIENT on what should have been the same input.
+
+3. Temperature 0 is not determinism. verdict_stability.py re-verified all
+   37 claims 5x in both conditions:
+
+     unpinned  28/37 stable (75.68%), 9 unstable, 2 emitting all three
+               verdicts across 5 identical calls
+     pinned    35/37 stable (94.59%), 2 unstable, 1 still emitting all
+               three verdicts
+
+   Recombining the independent per-claim draws into 5 independent
+   pipeline runs gives a metric RANGE rather than a point estimate:
+
+     unpinned  acc 23.08-38.46%  (spread 15.38 pts)
+     pinned    acc 23.08-38.46%  (spread 15.38 pts)
+
+   Pinning cut the number of unstable claims by 78% and moved the
+   accuracy spread by zero, because the two survivors (Q58, Q63) are
+   exactly the ones that swing a predicted option.
+
+   Three harness runs disagreed with each other on the unstable count
+   (27, 29, 28 of 37 unpinned), so at REPEATS=5 the measured instability
+   is a LOWER BOUND, not an estimate.
+
+4. Q58 item I is a decision-boundary claim, and the boundary is made of
+   nuisance factors. Holding the claim and its five evidence pages fixed,
+   at temperature 0 throughout, a 2x2 over {shipped prompt, harness
+   prompt} x {responses.parse, chat.completions}:
+
+     shipped prompt + responses.parse    -> INSUFFICIENT x3
+     shipped prompt + chat.completions   -> SUPPORTED x3
+     harness prompt + responses.parse    -> SUPPORTED x3
+     harness prompt + chat.completions   -> SUPPORTED x3
+
+   The two prompts differ by THREE CHARACTERS OF WHITESPACE and are
+   otherwise byte-identical, rules included. Only the conjunction of the
+   shipped prompt and the responses.parse endpoint gives INSUFFICIENT.
+   Both factors necessary, neither sufficient.
+
+5. THREE CONCLUSIONS FROM ENTRY 14 ARE RETRACTED. They were artifacts of
+   the BM25 index, and this is the direct cost of item 1.
+
+   (a) "Retrieval depth 3->5 was the largest single accuracy change in
+       the project." False. On the real retriever the sign depends on the
+       label set - stored labels say depth helps (15.38 -> 30.77% acc),
+       audited labels say it hurts (precision 75.00 -> 60.00%, error rate
+       7.69 -> 15.38%). A change whose sign depends on the label set is
+       not an effect. And the whole of it runs through one verdict:
+       Q58 I CONTRADICTED at k=3 -> SUPPORTED at k=5, which is precisely
+       the boundary claim from item 4. The "depth effect" was one unstable
+       claim being resampled.
+
+       What survives is the weaker, cheaper version: the retriever was
+       validated at Recall@5 and queried at k=3, so a configuration was
+       running at settings it was never validated at. Worth fixing on
+       principle. Not worth an accuracy claim.
+
+   (b) "Rules 25-26 fixed Q63 II." False on the real retriever: C2->C3
+       and C1d->C3d both change NO verdict at all. Byte-identical metrics
+       and verdict counts. The rules stay in the prompt as harmless, not
+       as measured. Entry 14 also said the Q58 flip happened "at
+       temperature 0" - see item 2; temperature was never set, so that
+       was one sample from an unpinned sampler.
+
+   (c) "C3d ties C3 on accuracy and beats it on wrong answers, so the arm
+       I did not ship looks better." Gone. C3 and C3d are now identical
+       on every end-to-end metric (38.46/60.00/23.08/15.38 audited) and
+       differ only in claim soundness. The decision got easier for the
+       reason it should have been easy all along.
+
+6. THE WHOLE SIX-ARM TABLE IS INSIDE THE NOISE BAND. Every arm-to-arm
+   difference is 7.69 points (one question) or zero. The measured spread
+   from item 3 is 15.38 points. So none of the six arms can be
+   distinguished end to end at n=13, and the table must be reported as
+   six null results rather than as a set of effects.
+
+   What DOES clear the band, because it has 37 observations instead of 13
+   and needs no gold label at all:
+
+     propositional rate    70.27% -> 100%   (binding, both depths)
+     false SUPPORTED       7-8    -> 0      (binding, both depths)
+     hallucinated claims   19     -> 1      (A vs B, judge, extractive)
+
+   These are the signals the architecture argument now rests on.
+
+7. Nothing enforced the order the evaluation modules run in, and they
+   read each other's output files. Running them out of order does not
+   fail - it prints a document-ready table built from a previous run's
+   inputs. It happened twice: system_b_metrics before
+   replay_answer_mapping (making a consistency check appear to fail), and
+   direct_option_verifier before it (printing System B at
+   38.46/60.00/23.08 while the fresh results file said 30.77/100/30.77).
+
+8. THE SAME BUG AS ENTRY 14 ITEM 5, IN THE MODULE WRITTEN TO AUDIT THE
+   SYSTEM. verdict_stability.py initially built FactVerifier() with no
+   chunks, silently disabling the absence-claim scanner, while its own
+   docstring claimed the checker was left in. Symptom: the resampled runs
+   abstained on Q58 in every draw while the headline pipeline answered
+   it, so the reported metric spread was the spread of a system nobody
+   ships. Caught by noticing the resample could not reproduce the
+   headline. Three weeks after fixing the identical one-line omission in
+   the orchestrator.
+
+WHAT WE MODIFIED:
+
+  src/tls_trust.py                      NEW - truststore injection, with
+                                        the two rejected alternatives and
+                                        why each fails
+  src/verification/fact_verifier.py     temperature pinned; made
+                                        injectable so the stability
+                                        harness measures the real code
+                                        path; prompt-accretion comment
+                                        corrected with the retraction
+  src/verification/claim_extractor.py   temperature=0
+  src/verification/answer_key_verifier.py  temperature=0
+  src/verification/mcq_quality_auditor.py  temperature=0
+  src/generation/mcq_generator.py       temperature=0
+  src/evaluation/verdict_stability.py   NEW - repeatability + resampled
+                                        metric noise band
+  src/evaluation/run_all.py             NEW - declares the evaluation DAG
+                                        as data, runs it topologically,
+                                        and asserts every report is at
+                                        least as new as its inputs.
+                                        --check verifies the chain for
+                                        zero tokens.
+  src/evaluation/system_c_pipeline.py   RETRIEVER default -> reranker;
+                                        docstring records the three
+                                        retractions and the noise band
+  src/retrieval/lexical_index.py        docstring no longer claims the
+                                        environment cannot install
+                                        packages
+  src/evaluation/evaluate_verified_pyqs.py  reproducibility note rewritten:
+                                        the file on disk is current, and
+                                        re-running still will not
+                                        reproduce it exactly
+  EVALUATION.md                         rewritten against the pinned
+                                        reranker numbers; new section 0.1
+                                        on measurement noise
+  DESIGN.md                             sections 5-8 rewritten; BM25
+                                        caveat and environment-gap
+                                        limitation removed
+
+DECISION / REASONING:
+
+Report the six-arm table as null. It is tempting to keep the depth
+finding - it was the cleanest story in the project - but a difference
+smaller than the measured noise floor is not a finding, and the specific
+verdict it runs through is the one claim that returns all three verdicts
+for a living. Keeping it would be the same error as entry 14 item 2,
+where a wrong label made a false SUPPORTED look like the best result:
+optimising against a signal that is not measuring what it appears to.
+
+Move the architecture argument to claim-level metrics. 37 observations,
+no gold-label dependency, and the effects are large (70.27% -> 100%,
+8 -> 0, 19 -> 1) rather than one-question. This is also the honest
+answer to "why ship bound claims" now that the accuracy columns are
+indistinguishable.
+
+Keep the headline. Vanilla RAG states a false answer on 7 of 13
+(audited) or 8 of 13 (stored); the verified system on 0 of 13 under both.
+That is roughly six questions, retriever-matched, far outside a
+two-question band. It is the one end-to-end result worth defending, and
+it is a coverage trade, not an accuracy win - vanilla RAG beats every
+verified arm on accuracy under both label sets, which the write-up now
+states plainly instead of arranging around.
+
+Measure the instrument before the system. The verifier's noise floor
+should have been the first thing measured, not the last. Every
+single-variable ablation run before it was an attempt to resolve
+differences smaller than the measurement error, which is why two of them
+produced confident conclusions that a retriever swap deleted.
+
+Prefer structural fixes to discipline. The ordering hazard in item 7 was
+"just remember to run them in order" twice, and it failed twice. run_all
+--check makes it checkable in a second, and it caught a stale output the
+first time it ran.
+
+KNOWN GAP:
+
+The five retrieval benchmarks in EVALUATION.md section 1 (75.00 / 81.25 /
+87.50 / 87.50 / 93.75 Recall@5) were NOT re-run in this pass. They are
+deterministic given the corpus, so they should reproduce, but that is
+unverified and the document says so rather than implying otherwise.
+
+REPEATS=5 in verdict_stability.py is too few. Three runs of the harness
+disagreed on the unstable-claim count, so the 9-and-2 figures are lower
+bounds. 20 repeats would give a usable interval, and the claims and
+evidence are already stored, so it is pure resampling.
+
+Nothing is committed. All of this sits uncommitted on main.
+
+NEXT STEP:
+
+Raise REPEATS and get a real confidence interval, because every other
+number's interpretation depends on it and it is cheap. Then extend the
+dataset past 13 questions - not because n is merely small, but because n
+is smaller than the measurement error, so no architectural difference
+below two questions is detectable at all and no further architecture work
+on this problem is measurable until that changes. Then decompose the
+fact-verifier prompt instead of extending it; item 4 strengthens that,
+since a decomposed verifier lets one check be tested for stability in
+isolation, which a 26-rule monolith does not.
+
 END OF CURRENT LOG

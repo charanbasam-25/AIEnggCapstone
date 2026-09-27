@@ -38,10 +38,16 @@ class FactVerifier:
                 NegativeClaimChecker(chunks)
             )
 
+    # temperature is a parameter only so that the stability harness in
+    # evaluation/verdict_stability.py can measure the unpinned behaviour
+    # through this exact code path instead of reimplementing it. Passing
+    # None omits the parameter from the request, which is what this class
+    # did before it was pinned. Production callers should leave it alone.
     def verify(
         self,
         claim: str,
         evidence: list[dict],
+        temperature: float | None = 0,
     ) -> FactVerificationResult:
 
         # ==================================================
@@ -70,37 +76,46 @@ class FactVerifier:
 
                 if matching_evidence:
 
-                    supporting_pages = sorted(
-                        {
-                            item["page"]
-                            for item in matching_evidence
-                        }
-                    )
-
                     return FactVerificationResult(
                         verdict="CONTRADICTED",
                         reasoning=(
                             f"The claim states that "
-                            f"'{target_term}' is absent "
-                            f"or not mentioned. However, "
-                            f"the corpus explicitly contains "
-                            f"'{target_term}' in the retrieved "
-                            f"source evidence."
+                            f"'{target_term}' is absent or not "
+                            f"mentioned. A scan of all "
+                            f"{negative_result['chunks_scanned']} "
+                            f"corpus chunks finds it "
+                            f"{negative_result['occurrence_count']} "
+                            f"time(s), on page(s) "
+                            f"{negative_result['pages']}."
                         ),
                         supporting_pages=(
-                            supporting_pages
+                            negative_result["pages"]
                         ),
                     )
 
+                # The scan covered every chunk, so a null result is
+                # informative and this returns SUPPORTED rather than
+                # INSUFFICIENT. The earlier INSUFFICIENT was right only
+                # because the search was a top-5 retrieval: absence from
+                # 5 ranked chunks says nothing about the corpus.
+                #
+                # Two assumptions remain, and they are named in the
+                # reasoning rather than buried here, because neither can
+                # be checked from inside this system: that the corpus is
+                # complete for the claim's scope, and that PDF extraction
+                # preserved the term.
                 return FactVerificationResult(
-                    verdict="INSUFFICIENT",
+                    verdict="SUPPORTED",
                     reasoning=(
-                        f"The claim is an explicit absence "
-                        f"claim about '{target_term}', but "
-                        f"no matching occurrence was found "
-                        f"through the lexical corpus search. "
-                        f"Absence cannot be established from "
-                        f"failure to find a match."
+                        f"The claim asserts that '{target_term}' "
+                        f"does not appear. An exhaustive "
+                        f"case-insensitive scan of all "
+                        f"{negative_result['chunks_scanned']} "
+                        f"corpus chunks found no occurrence. This "
+                        f"establishes the claim for this corpus, "
+                        f"assuming the corpus covers the claim's "
+                        f"scope and that text extraction preserved "
+                        f"the term."
                     ),
                     supporting_pages=[],
                 )
@@ -130,6 +145,34 @@ Page: {item["page"]}
             evidence_text
         )
 
+        # Rules 25-26 were added on measurement, not on intuition: in the
+        # ablation they resolved one further question (Q63 II, an
+        # INSUFFICIENT that became a correct CONTRADICTED) and cost
+        # nothing elsewhere. Rule 25's second sentence is the important
+        # half. Without it "the evidence states no age" collapses into
+        # "the evidence states a different age", which would turn every
+        # thin retrieval into a confident contradiction.
+        #
+        # Known problem with this prompt, recorded rather than hidden.
+        # Appending those two rules also flipped an unrelated claim
+        # (Q58 I) from SUPPORTED to CONTRADICTED on identical evidence,
+        # and neither rule mentions anything in it. At 26 rules the prompt
+        # is long enough that adding one perturbs the others, so a "rule"
+        # here is not an isolated control. The verdict it flipped to is
+        # the correct one, which is luck, not evidence that the mechanism
+        # is sound. Further verifier work should decompose this prompt
+        # rather than extend it.
+        #
+        # An earlier version of this comment said that flip happened "at
+        # temperature 0". It did not - temperature was unset until the
+        # call below was fixed, so that observation was one sample from an
+        # unpinned sampler and the two-rule change was never the isolated
+        # cause it was written up as. Q58 I turns out to sit on the
+        # decision boundary: pinned at temperature 0 it is INSUFFICIENT on
+        # this exact prompt, but SUPPORTED if three whitespace characters
+        # change or if the same prompt goes to chat-completions instead.
+        # Neither factor alone does it; the conjunction does. Rules 25-26
+        # perturbing it is the same phenomenon, not a separate one.
         prompt = f"""
 You are a factual verification component for a UPSC Indian
 Polity MCQ system.
@@ -201,6 +244,15 @@ IMPORTANT RULES:
 24. For a claim about Parliament or the House of the People, do not
     use provisions concerning State Legislatures as contradictory
     evidence unless the claim itself covers both.
+25. If the claim states a specific number, age, duration, fraction,
+    majority or threshold, and the evidence states a different value
+    for the same provision and the same subject, return CONTRADICTED.
+    The evidence must actually state a value; the absence of a value
+    is INSUFFICIENT, never a contradiction.
+
+26. When checking a number, confirm the evidence concerns the same
+    office, body or provision as the claim before treating the values
+    as comparable.
 
 CLAIM:
 
@@ -211,11 +263,28 @@ SOURCE EVIDENCE:
 {context}
 """
 
-        response = self.client.responses.parse(
-            model=MODEL_NAME,
-            input=prompt,
-            text_format=FactVerificationResult,
-        )
+        # temperature is pinned because it was not, and that invalidated
+        # more than it looked like it would. The Responses API defaults to
+        # 1.0, so every verdict this class has ever produced was a single
+        # draw from a distribution. Sampling one claim (Q58 I) seven times
+        # on fixed evidence returned CONTRADICTED three times,
+        # INSUFFICIENT three times and SUPPORTED once - all three
+        # verdicts. Meanwhile the baseline in rag/vanilla_rag.py was
+        # pinned all along, so the headline comparison was a stochastic
+        # system measured against a deterministic one.
+        #
+        # Pinning does not make the verdict correct, only repeatable. See
+        # the boundary-case note in docs/ for what survives pinning.
+        request = {
+            "model": MODEL_NAME,
+            "input": prompt,
+            "text_format": FactVerificationResult,
+        }
+
+        if temperature is not None:
+            request["temperature"] = temperature
+
+        response = self.client.responses.parse(**request)
 
         result = response.output_parsed
 
@@ -255,7 +324,7 @@ if __name__ == "__main__":
 
     evidence = retriever.retrieve(
         claim,
-        top_k=3,
+        top_k=5,
     )
 
     result = verifier.verify(

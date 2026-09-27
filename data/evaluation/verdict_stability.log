@@ -1,0 +1,62 @@
+=== VERDICT STABILITY ===
+model    : gpt-4o-mini
+source   : data/evaluation/verified_pyq_results.json
+claims   : 37
+repeats  : 5
+
+  unpinned: 37 claims x 5 samples
+
+--- unpinned ---
+stable claims        : 28/37 (75.68%)
+unstable claims      : 9
+questions affected   : [55, 57, 58, 60, 63, 64, 65, 66]
+all-three-verdict    : ['Q57:claim_1', 'Q58:claim_1']
+  Q55  II  pages [76, 117, 77, 117, 211]  INSUFFICIENT x4  SUPPORTED x1
+  Q57   I  pages [250, 87, 63, 276, 96]  SUPPORTED x3  INSUFFICIENT x1  CONTRADICTED x1
+  Q58   I  pages [77, 378, 117, 153, 65]  INSUFFICIENT x2  CONTRADICTED x2  SUPPORTED x1
+  Q60  II  pages [5, 87, 49, 48, 49]  INSUFFICIENT x4  CONTRADICTED x1
+  Q63  II  pages [153, 151, 151, 162, 151]  INSUFFICIENT x3  CONTRADICTED x2
+  Q64 III  pages [290, 286, 287, 284, 288]  INSUFFICIENT x4  SUPPORTED x1
+  Q65   I  pages [307, 174, 31, 175, 308]  INSUFFICIENT x4  CONTRADICTED x1
+  Q66   I  pages [344, 192, 346, 351, 344]  INSUFFICIENT x4  CONTRADICTED x1
+  Q66 III  pages [344, 192, 351, 344, 346]  SUPPORTED x4  INSUFFICIENT x1
+
+--- unpinned: 5 independent pipeline runs (strict, audited labels) ---
+ draw      cov     prec      acc      err
+    0   23.08%  100.00%   23.08%    0.00%
+    1   38.46%  100.00%   38.46%    0.00%
+    2   30.77%   75.00%   23.08%    7.69%
+    3   46.15%   83.33%   38.46%    7.69%
+    4   23.08%  100.00%   23.08%    0.00%
+  coverage    range 23.08% - 46.15% (mean 32.31%, spread 23.08 pts)
+  precision   range 75.00% - 100.00% (mean 91.67%, spread 25.00 pts)
+  accuracy    range 23.08% - 38.46% (mean 29.23%, spread 15.38 pts)
+  error_rate  range 0.00% - 7.69% (mean 3.08%, spread 7.69 pts)
+  pinned: 37 claims x 5 samples
+
+--- pinned ---
+stable claims        : 35/37 (94.59%)
+unstable claims      : 2
+questions affected   : [58, 63]
+all-three-verdict    : ['Q58:claim_1']
+  Q58   I  pages [77, 378, 117, 153, 65]  INSUFFICIENT x3  CONTRADICTED x1  SUPPORTED x1
+  Q63  II  pages [153, 151, 151, 162, 151]  CONTRADICTED x3  INSUFFICIENT x2
+
+--- pinned: 5 independent pipeline runs (strict, audited labels) ---
+ draw      cov     prec      acc      err
+    0   30.77%  100.00%   30.77%    0.00%
+    1   38.46%  100.00%   38.46%    0.00%
+    2   23.08%  100.00%   23.08%    0.00%
+    3   30.77%   75.00%   23.08%    7.69%
+    4   30.77%  100.00%   30.77%    0.00%
+  coverage    range 23.08% - 38.46% (mean 30.77%, spread 15.38 pts)
+  precision   range 75.00% - 100.00% (mean 95.00%, spread 25.00 pts)
+  accuracy    range 23.08% - 38.46% (mean 29.23%, spread 15.38 pts)
+  error_rate  range 0.00% - 7.69% (mean 1.54%, spread 7.69 pts)
+
+--- what pinning bought ---
+unstable claims: 9 -> 2
+questions whose verdicts were a coin flip: [55, 57, 58, 60, 63, 64, 65, 66]
+Stability is not correctness. A pinned verdict can be repeatably wrong.
+
+Saved results to: data/evaluation/verdict_stability.json
