@@ -1,6 +1,6 @@
 from functools import lru_cache
 
-from src.generation.mcq_generator import MCQGenerator
+from src.generation.mcq_generator import FORMAT_SIMPLE, MCQGenerator
 from src.orchestration.state import MCQVerificationState
 from src.verification.claim_extractor import ClaimExtractor
 from src.verification.claim_retriever import ClaimRetriever
@@ -79,6 +79,7 @@ def generate_mcq(state: MCQVerificationState) -> dict:
         topic=state["topic"],
         difficulty=state.get("difficulty", "medium"),
         failure_reasons=failure_reasons,
+        question_format=state.get("question_format", FORMAT_SIMPLE),
     )
 
     return {
@@ -201,10 +202,26 @@ def decide(state: MCQVerificationState) -> dict:
             )
 
     # Determine final decision.
+    #
+    # The bound is `<=`, not `<`, and the difference was a real off-by-one.
+    # `retry_count` is incremented in generate_mcq *before* the gates run
+    # (nodes.py:86), so by the time it is read here it counts attempts
+    # made, not retries taken: it is 1 on the first pass, never 0. Compared
+    # with `<`, a max_retries of 2 therefore granted exactly one revision
+    # and the loop could never reach a third attempt - measured over 15
+    # topics, every REJECT terminated at attempt 2 and attempt 3 never
+    # occurred. That silently halved the revision budget the loop claimed
+    # to have, and understated the repair rate, which is the one metric
+    # that says whether feeding failure_reasons back into the prompt does
+    # anything at all.
+    #
+    # The counter's name is the trap. Renaming it would touch state.py and
+    # every caller, so it is documented instead: retry_count counts
+    # attempts, max_retries counts retries, and attempts = retries + 1.
     if not failure_reasons:
         decision = "ACCEPT"
 
-    elif state.get("retry_count", 0) < state.get("max_retries", 2):
+    elif state.get("retry_count", 0) <= state.get("max_retries", 2):
         decision = "REVISE"
 
     else:

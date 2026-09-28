@@ -62,6 +62,17 @@ vanilla_rag is excluded for the opposite reason: its outputs
 chain but are treated as fixed baseline artifacts. Regenerating the
 baseline is a deliberate act, not part of a routine re-run, because every
 comparison in the project is against it.
+
+evaluate_generation_loop is excluded because it measures a different flow.
+Every stage below measures the verifier *answering* the 13 PYQs; the
+generation loop measures it *gating* a generated question, shares no output
+file with this chain, and costs roughly 250 API calls per arm across its
+two arms. It is named here rather than left undiscoverable, because an
+unfindable measurement is very nearly as bad as a missing one:
+
+    python -m src.evaluation.evaluate_generation_loop --format simple
+    python -m src.evaluation.evaluate_generation_loop --format statements
+    python -m src.evaluation.evaluate_generation_loop --summarise-only
 """
 
 import argparse

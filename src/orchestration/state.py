@@ -12,6 +12,11 @@ class MCQVerificationState(TypedDict, total=False):
     topic: str
     difficulty: str
 
+    # Question format: "simple" or "statements". Absent means "simple",
+    # which is the format this loop shipped with. See mcq_generator for why
+    # the difference is measured rather than assumed.
+    question_format: str
+
     # Generated candidate
     mcq: MCQ
 

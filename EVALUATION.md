@@ -209,6 +209,121 @@ column above.
 
 ---
 
+## 2.5 The same verifier as a gate: generate-and-verify, two format arms
+
+Everything above measures the verifier **answering** questions. This section
+measures it **gating** questions it generated itself — the same claim
+verification, the same corpus, applied to text the system has never seen
+scored. It is a second consumer of the verifier, not a second product, and it
+is reported here because it stresses the verifier on input that was not
+curated by UPSC.
+
+**Protocol.** `src/evaluation/evaluate_generation_loop.py`, 15 Polity topics per
+arm, `max_retries=2`. The LangGraph loop is
+`generate → extract claims → verify claims → verify answer key → audit quality
+→ decide`, with `decide` emitting ACCEPT, REVISE (loop back to generate) or
+REJECT. Per-attempt state recovered with `stream_mode="updates"`; `invoke`
+returns only the final state and would have made every table below impossible.
+One draw per topic — see the noise caveat at the end.
+
+| | `simple` | `statements` |
+|---|---|---|
+| Topics completed | 15 | 15 |
+| ACCEPT | **8 (53.33%)** | **0 (0.0%)** |
+| REJECT | 7 (46.67%) | 15 (100.0%) |
+| Total attempts | 34 | 45 |
+| Blocked attempts | 26 | 45 |
+| Attempt-1 defect rate | 73.33% | **100.0%** |
+| Repair rate (blocked → eventually accepted) | 36.36% | **0.0%** |
+| Claims verified | 35 | 149 |
+| Mean claims per attempt | 1.03 | **3.31** |
+| Verdicts | SUPP 26 / INSUFF 9 | SUPP 105 / **CONTRA 22** / INSUFF 22 |
+
+### 2.5.1 The unverified-generator baseline, for free
+
+Attempt 1 of every topic is what a RAG generator with **no gate in front of it**
+would have shipped. That makes the baseline free — no extra arm, no extra
+tokens:
+
+| | `simple` | `statements` |
+|---|---|---|
+| n | 15 | 15 |
+| Clean | 4 | **0** |
+| Defective | 11 (**73.33%**) | 15 (**100.0%**) |
+
+**This is the strongest single argument for the gate in the whole report.**
+Roughly three of four ungated questions carry a defect the pipeline can detect,
+and in the multi-statement format it is four of four. Unlike the §2 comparison,
+this does not depend on a 13-question dataset or on my audited labels — the
+defects are found by the system's own gates and each one is attributable.
+
+### 2.5.2 Gate attribution
+
+Gates are not mutually exclusive. `blocked_by` counts every gate that fired;
+`sole_blocker` counts attempts where exactly one did — which is the column that
+says whether a gate is earning its place.
+
+| gate | `simple` blocked / sole | `statements` blocked / sole |
+|---|---|---|
+| fact | 9 / **6** | 38 / 1 |
+| answer_key | 10 / 2 | 41 / 1 |
+| quality | 17 / **8** | 42 / 0 |
+
+In the `simple` arm all three gates catch things nothing else catches, so all
+three are justified. In the `statements` arm `sole_blocker` collapses to 2 of 45:
+almost every attempt trips **all three gates at once**. That is not three
+independent checks agreeing; it is one underlying defect visible three ways, and
+it is why the 0% accept rate should be read as a calibration problem rather than
+as three-fold confirmation that the output was bad.
+
+### 2.5.3 What the 0% accept rate actually shows
+
+The tempting headline — "the gate rejects 100% of multi-statement questions, so
+it is strict and therefore good" — is wrong, and the claims column is what
+refutes it. The `statements` arm produced **22 CONTRADICTED verdicts**; the
+`simple` arm produced zero. Generating three statements per question instead of
+roughly one does not just triple the claim count (1.03 → 3.31 per attempt), it
+changes the *kind* of error: the generator starts asserting things the corpus
+actively denies, not merely things it cannot confirm.
+
+So two findings sit here, and only the first is flattering:
+
+1. The gate detects a real, format-dependent degradation in generation quality
+   that an accuracy number alone would have hidden.
+2. **A gate that accepts 0 of 15 is not usable**, however correct each
+   individual rejection is. With `max_retries=2` there is no path to ACCEPT if
+   the generator reliably produces at least one contradicted statement per
+   attempt. Either the retry budget or the quality bar is mis-set for this
+   format, and §2.5.2's `sole_blocker` collapse says the bar.
+
+### 2.5.4 Two defects this measurement exposed
+
+**The attempt counter was off by one.** `attempts = retries + 1`, so
+`max_retries=2` permits three generations, not two. Every per-attempt rate
+computed before the fix was wrong in the denominator. The bug was invisible
+while the loop was unmeasured, which is the general hazard of §16.1: an
+unmeasured component's defects are not *absent*, only *unobserved*.
+
+**A 3-of-15 run was nearly published.** An earlier `statements` run lost three
+topics to connection errors and reported ACCEPT 2/12 = 16.67%. That file is
+retained as `generation_loop_results.statements.partial12.json` rather than
+deleted, because the two files side by side are the evidence for why
+`topics_errored` is a reported field and not a log line. The numbers in this
+section are the complete 15-topic re-run.
+
+### 2.5.5 Noise
+
+**One draw per topic.** §0.1 applies here with more force than to the verifier:
+a topic's outcome is the product of up to three sequential LLM calls, each of
+which the stability harness shows is not reproducible even at temperature 0
+(35/37 claim verdicts stable when pinned, 28/37 unpinned). Treat 53.33% as "about
+half" and 0% as "none of 15" — the second is robust because the floor is not
+reachable by chance drift, the first is not. No resampling was run for this arm;
+at roughly 250 API calls per arm, five draws was not affordable, and saying so is
+more useful than presenting 53.33% as a point estimate.
+
+---
+
 ## 3. Judge evaluation: LLM-as-a-judge on reasoning quality
 
 **Protocol.** Judge `gpt-4o`; generator `gpt-4o-mini`. Both systems' outputs
@@ -788,6 +903,59 @@ The lesson is about diagnosis, not TLS: **a library's error classification is a
 hypothesis, not evidence.** Taking "check your connection" at face value cost
 weeks of the ablation running on the wrong retriever, which in turn produced the
 three conclusions retracted in §4.2, §4.3 and §4.5.
+
+### 7.11 `attempts = retries + 1` — an off-by-one hidden by not measuring
+
+The generation loop took `max_retries`, and I read it as a cap on total
+generations. It is a cap on *re*-generations: `max_retries=2` permits three
+calls to the generator. Every per-attempt rate — defect rate, repair rate, mean
+claims per attempt — was therefore computed against a denominator one too small
+for any topic that exhausted its budget, which in the `statements` arm was all
+15 of them.
+
+What makes this worth reporting is not the arithmetic, which is trivial, but
+**when** it was found: the moment the loop was measured, and not before. The
+orchestration had been running and visibly "working" for days. A three-gate
+retry cycle that produces plausible output on inspection can be wrong in its
+control flow without anything looking wrong, because the only observable is the
+final decision and the final decision is reached either way.
+
+This is the concrete form of §16.1's general claim: an unmeasured component's
+defects are not absent, only unobserved. It also argues for measuring the *cheap*
+structural properties of an orchestration — attempt counts, loop bounds — before
+the expensive semantic ones, since they are the ones an eyeball cannot audit.
+
+### 7.12 Run-to-run instability is topic-level, not just claim-level
+
+§0.1 establishes that individual claim verdicts are unstable: 35 of 37 stable
+when pinned to temperature 0, 28 of 37 unpinned. The generation-loop measurement
+showed that this does not stay contained at the claim level.
+
+Resampling the verifier five times at temperature 0 moves **coverage between
+23.1% and 38.5%**, and precision-when-answered from 1.00 in four draws to 0.75
+in the fifth — a wrong answer got through on one draw of five. The headline
+"100% precision when answered" in §2 is therefore a property of *one run*, and
+the defensible statement is precision 0.95 ± 0.11 over 5 draws against vanilla
+RAG's 0.38. The comparison survives; the perfect score does not.
+
+Two consequences I had to accept rather than work around:
+
+1. **ACCEPT/REJECT rates from §2.5 must not be quoted as point estimates.** A
+   topic's outcome is the product of up to three sequential unstable LLM calls,
+   so the compounding is worse than for a single verdict, and no resampling was
+   affordable at ~250 API calls per arm. "About half" and "none of 15" are the
+   strongest honest readings of 53.33% and 0%.
+2. **A single run cannot establish a small improvement in this system.** Any
+   change worth less than roughly 2 questions on a 13-question set is
+   indistinguishable from redraw noise. This is why §2's argument rests on the
+   error column — 8 wrong versus 0 — rather than on the coverage difference, and
+   why §4.2, §4.3 and §4.5 are retractions: each claimed a difference smaller
+   than the noise I had not yet measured.
+
+The uncomfortable implication is that temperature pinning is a *reproducibility*
+measure, not a determinism guarantee, and I had been treating the two as the same
+thing. Pinning improved stability from 75.7% to 94.6% of claims; it did not reach
+100%, and the residual is enough to move a headline metric.
 
 ---
 
