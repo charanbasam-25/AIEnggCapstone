@@ -2,7 +2,15 @@ import json
 from pathlib import Path
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+
+from src.tls_trust import enable_os_trust_store
+
+# Must run before the first model download opens a TLS connection. See
+# src/tls_trust.py for why the default certifi bundle is not sufficient
+# here and why the failure presents as a network error.
+enable_os_trust_store()
+
+from sentence_transformers import SentenceTransformer  # noqa: E402
 
 
 MODEL_NAME = "BAAI/bge-small-en-v1.5"

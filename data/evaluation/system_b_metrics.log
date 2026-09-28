@@ -1,0 +1,79 @@
+
+========================================================================
+SYSTEM B QUANTITATIVE METRICS
+========================================================================
+
+--- 1. SELECTIVE PREDICTION (all arms) ---
+
+arm                                     cov     prec      acc      err
+----------------------------------------------------------------------
+A_vanilla_rag                       100.00%   38.46%   38.46%   61.54%
+B_statement_mapping_strict           30.77%  100.00%   30.77%    0.00%
+B_mapping_fixed_strict               30.77%  100.00%   30.77%    0.00%
+B_mapping_fixed_closed_world         84.62%   54.55%   46.15%   38.46%
+B2_direct_option_answer_evidence     15.38%  100.00%   15.38%    0.00%
+B2_direct_option_union                7.69%  100.00%    7.69%    0.00%
+
+cov = coverage, prec = precision when answered, acc = accuracy over all questions,
+err = rate of stating a wrong answer.
+
+--- 2. VERDICT DISTRIBUTION ---
+
+claim level    (n=37): {'INSUFFICIENT': 18, 'SUPPORTED': 14, 'CONTRADICTED': 5}
+statement level(n=37): {'INSUFFICIENT': 18, 'SUPPORTED': 14, 'CONTRADICTED': 5}
+
+--- 3. EVIDENCE GROUNDING ---
+
+committed verdicts (SUPPORTED/CONTRADICTED): 19
+evidence support rate: 100.00%
+mean pages cited per grounded verdict: 1.42
+ungrounded committed verdicts: 0
+
+--- 4. CLAIM CONSTRUCTION QUALITY ---
+
+total claims: 37
+non-propositional claims: 0 (0.00%)
+of those, returned SUPPORTED (false SUPPORTED): 0 (0.00%)
+questions affected: []
+
+flagged claims (a bare noun phrase has no truth value):
+
+--- 5. CORPUS ANSWERABILITY ---
+
+chunks probed: 1149
+OUT_OF_CORPUS (no concept present): [55, 66]
+PARTIAL (some concepts absent): [64]
+
+  Q55 [OUT_OF_CORPUS]: zero hits for ['lokpal institution']
+  Q64 [PARTIAL]: zero hits for ['national parks']
+  Q66 [OUT_OF_CORPUS]: zero hits for ['crude oil', 'petroleum regulator']
+
+answerability-adjusted System B (strict policy):
+  scope: 11 questions (excluded [55, 66])
+  coverage 36.36%   precision 100.00%   accuracy 36.36%
+
+--- 6. ABSTENTION TAXONOMY ---
+
+abstentions: 9
+causes: {'pipeline_defect': 6, 'corpus_limit': 2, 'partial_corpus_limit': 1}
+share that is CORRECT behaviour (corpus limit): 22.22%
+
+  Q54  pipeline_defect  mapping=policy_insufficient_evidence
+  Q55  corpus_limit     mapping=policy_insufficient_evidence
+  Q57  pipeline_defect  mapping=policy_insufficient_evidence
+  Q58  pipeline_defect  mapping=policy_insufficient_evidence
+  Q59  pipeline_defect  mapping=policy_insufficient_evidence
+  Q60  pipeline_defect  mapping=policy_insufficient_evidence
+  Q64  partial_corpus_limit mapping=policy_insufficient_evidence
+  Q65  pipeline_defect  mapping=policy_insufficient_evidence
+  Q66  corpus_limit     mapping=policy_insufficient_evidence
+
+--- 7. ANSWER-KEY VERIFIER (CONTAMINATED) ---
+
+verdicts: {'INSUFFICIENT': 3, 'INVALID': 8, 'VALID': 2}
+apparent agreement with official key: 15.38%
+leak-free accuracy: {'answer_evidence': 0.15384615384615385, 'union': 0.07692307692307693}
+
+WARNING: the apparent rate is inflated by answer leakage and is not a result.
+
+Saved metrics to: data/evaluation/system_b_metrics.json

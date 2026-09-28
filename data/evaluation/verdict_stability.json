@@ -1,0 +1,2288 @@
+{
+  "model": "gpt-4o-mini",
+  "repeats": 5,
+  "claims": 37,
+  "conditions": {
+    "unpinned": {
+      "temperature": null,
+      "summary": {
+        "claims": 37,
+        "repeats": 5,
+        "stable_claims": 28,
+        "unstable_claims": 9,
+        "stability_rate": 0.7567567567567568,
+        "unstable_questions": [
+          55,
+          57,
+          58,
+          60,
+          63,
+          64,
+          65,
+          66
+        ],
+        "three_way_claims": [
+          "Q57:claim_1",
+          "Q58:claim_1"
+        ]
+      },
+      "resample": {
+        "policy": "strict",
+        "labels": "audited",
+        "runs": [
+          {
+            "draw": 0,
+            "questions": 13,
+            "answered": 3,
+            "correct": 3,
+            "wrong": 0,
+            "coverage": 0.23076923076923078,
+            "precision": 1.0,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 1,
+            "questions": 13,
+            "answered": 5,
+            "correct": 5,
+            "wrong": 0,
+            "coverage": 0.38461538461538464,
+            "precision": 1.0,
+            "accuracy": 0.38461538461538464,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": "D",
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": "D",
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 2,
+            "questions": 13,
+            "answered": 4,
+            "correct": 3,
+            "wrong": 1,
+            "coverage": 0.3076923076923077,
+            "precision": 0.75,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.07692307692307693,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": "A",
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 3,
+            "questions": 13,
+            "answered": 6,
+            "correct": 5,
+            "wrong": 1,
+            "coverage": 0.46153846153846156,
+            "precision": 0.8333333333333334,
+            "accuracy": 0.38461538461538464,
+            "error_rate": 0.07692307692307693,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": "D",
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": "D",
+              "64": null,
+              "65": "B",
+              "66": null
+            }
+          },
+          {
+            "draw": 4,
+            "questions": 13,
+            "answered": 3,
+            "correct": 3,
+            "wrong": 0,
+            "coverage": 0.23076923076923078,
+            "precision": 1.0,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          }
+        ],
+        "spread": {
+          "coverage": {
+            "min": 0.23076923076923078,
+            "max": 0.46153846153846156,
+            "mean": 0.3230769230769231,
+            "values": [
+              0.23076923076923078,
+              0.38461538461538464,
+              0.3076923076923077,
+              0.46153846153846156,
+              0.23076923076923078
+            ]
+          },
+          "precision": {
+            "min": 0.75,
+            "max": 1.0,
+            "mean": 0.9166666666666666,
+            "values": [
+              1.0,
+              1.0,
+              0.75,
+              0.8333333333333334,
+              1.0
+            ]
+          },
+          "accuracy": {
+            "min": 0.23076923076923078,
+            "max": 0.38461538461538464,
+            "mean": 0.2923076923076923,
+            "values": [
+              0.23076923076923078,
+              0.38461538461538464,
+              0.23076923076923078,
+              0.38461538461538464,
+              0.23076923076923078
+            ]
+          },
+          "error_rate": {
+            "min": 0.0,
+            "max": 0.07692307692307693,
+            "mean": 0.03076923076923077,
+            "values": [
+              0.0,
+              0.0,
+              0.07692307692307693,
+              0.07692307692307693,
+              0.0
+            ]
+          }
+        }
+      },
+      "rows": [
+        {
+          "q_number": 54,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "For a constitutional amendment with respect to List I-Union List, in the Seventh Schedule, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            341,
+            31,
+            145,
+            184,
+            142
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 54,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "For a constitutional amendment with respect to Extent of the executive power of a State, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            260,
+            200,
+            64,
+            129,
+            175
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 54,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "For a constitutional amendment with respect to Conditions of the Governor's office, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            260,
+            129,
+            122,
+            243,
+            122
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The power of Lokpal applies to public servants of India, but not to the Indian public servants posted outside India.",
+          "pages": [
+            21,
+            211,
+            181,
+            181,
+            211
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The Chairperson or a Member shall not be a Member of the Parliament or a Member of the Legislature of any State or Union Territory, and only the Chief Justice of India, whether incumbent or retired, has to be its Chairperson.",
+          "pages": [
+            76,
+            117,
+            77,
+            117,
+            211
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Chairperson or a Member shall not be a person of less than forty-five years of age on the date of assuming office as the Chairperson or Member, as the case may be.",
+          "pages": [
+            209,
+            162,
+            209,
+            61,
+            153
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_4",
+          "statement_number": "IV",
+          "claim": "Lokpal cannot inquire into the allegations of corruption against a sitting Prime Minister of India.",
+          "pages": [
+            90,
+            250,
+            117,
+            66,
+            274
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "\"Separation of Judiciary from the Executive in the public services of the State\" is stated under The Directive Principles of the State Policy.",
+          "pages": [
+            52,
+            12,
+            7,
+            6,
+            49
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "\"Valuing and preserving of the rich heritage of our composite culture\" is stated under The Fundamental Duties.",
+          "pages": [
+            56,
+            14,
+            18,
+            18,
+            7
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "\"Prohibition of employment of children below the age of 14 years in factories\" is stated under The Fundamental Rights.",
+          "pages": [
+            45,
+            5,
+            52,
+            42,
+            56
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 57,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The exercise of this power by the President can be subjected to limited judicial review.",
+          "pages": [
+            250,
+            87,
+            63,
+            276,
+            96
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "INSUFFICIENT",
+            "SUPPORTED",
+            "SUPPORTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": false
+        },
+        {
+          "q_number": 57,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The President can exercise this power without the advice of the Central Government.",
+          "pages": [
+            250,
+            146,
+            180,
+            63,
+            87
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 58,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "If any question arises as to whether a Member of the House of the People has become subject to disqualification under the 10th Schedule, the President's decision in accordance with the opinion of the Council of Union Ministers shall be final.",
+          "pages": [
+            77,
+            378,
+            117,
+            153,
+            65
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "SUPPORTED",
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 58,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "There is no mention of the word 'political party' in the Constitution of India.",
+          "pages": [
+            17,
+            32,
+            201,
+            203,
+            19
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "On the dissolution of the House of the People, the Speaker shall not vacate his/her office until immediately before the first meeting of the House of the People after the dissolution.",
+          "pages": [
+            112,
+            73,
+            73,
+            74,
+            249
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "According to the provisions of the Constitution of India, a Member of the House of the People on being elected as Speaker shall resign from his/her political party immediately.",
+          "pages": [
+            73,
+            116,
+            76,
+            73,
+            76
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Speaker of the House of the People may be may be removed from his/her office by a resolution of the House of the People passed by a majority of all the then Members of the House, provided that no resolution shall be moved unless at least fourteen days' notice has been given of the intention to move the resolution.",
+          "pages": [
+            73,
+            74,
+            73,
+            112,
+            62
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "An Ordinance can amend any Central Act.",
+          "pages": [
+            173,
+            87,
+            129,
+            147,
+            147
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "An Ordinance can abridge a Fundamental Right.",
+          "pages": [
+            5,
+            87,
+            49,
+            48,
+            49
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "An Ordinance can come into effect from a back date.",
+          "pages": [
+            278,
+            87,
+            129,
+            147,
+            129
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 61,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The Constitution of India/explicitly mentions that in certain spheres the Governor of a State acts in his/her own discretion.",
+          "pages": [
+            105,
+            181,
+            262,
+            258,
+            331
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 61,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The President of India can, of his/her own, reserve a bill passed by a State Legislature for his/her consideration without it being forwarded by the Governor of the State concerned.",
+          "pages": [
+            128,
+            122,
+            203,
+            122,
+            317
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The Governor of a State is not answerable to any court for the exercise and performance of the powers and duties of his/her office.",
+          "pages": [
+            250,
+            276,
+            128,
+            250,
+            243
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "No criminal proceedings shall be instituted or continued against the Governor during his/her term of office.",
+          "pages": [
+            250,
+            250,
+            102,
+            102,
+            321
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House.",
+          "pages": [
+            118,
+            251,
+            78,
+            128,
+            379
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Panchayats at the intermediate level exist in all States.",
+          "pages": [
+            151,
+            150,
+            150,
+            151,
+            151
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "To be eligible to be a Member of a Panchayat at the intermediate level, a person should attain the age of thirty years.",
+          "pages": [
+            153,
+            151,
+            151,
+            162,
+            151
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Chief Minister of a State constitutes a commission to review the financial position of Panchayats at the intermediate levels and to make recommendations regarding the distribution of net proceeds of taxes and duties, leviable by the State, between the State and Panchayats at the intermediate level.",
+          "pages": [
+            154,
+            154,
+            155,
+            193,
+            163
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Regarding Arunachal Pradesh, the following is correct: The capital is named after a fort, and the State has two National Parks.",
+          "pages": [
+            290,
+            127,
+            157,
+            275,
+            276
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "Regarding Nagaland, the following is correct: The State came into existence on the basis of a Constitutional Amendment Act.",
+          "pages": [
+            264,
+            267,
+            221,
+            284,
+            266
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Regarding Tripura, the following is correct: Initially a Part 'C' State, it became a centrally administered territory with the reorganisation of States in 1956 and later attained the status of a full- fledged State.",
+          "pages": [
+            290,
+            286,
+            287,
+            284,
+            288
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 65,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "With reference to the Constitution of India, if an area in a State is declared as Scheduled Area under the Fifth Schedule, the State Government loses its executive power in such areas and a local body assumes total administration.",
+          "pages": [
+            307,
+            174,
+            31,
+            175,
+            308
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 65,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "With reference to the Constitution of India, if an area in a State is declared as Scheduled Area under the Fifth Schedule, the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor.",
+          "pages": [
+            307,
+            174,
+            309,
+            31,
+            308
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Production of crude oil-free is regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            346,
+            351,
+            344
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "Refining, storage and distribution of petroleum are regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            344,
+            351,
+            346
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Marketing and sale of petroleum products are regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            351,
+            344,
+            346
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "INSUFFICIENT",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": false
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_4",
+          "statement_number": "IV",
+          "claim": "Production of natural gas is regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            346,
+            344,
+            194
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        }
+      ]
+    },
+    "pinned": {
+      "temperature": 0,
+      "summary": {
+        "claims": 37,
+        "repeats": 5,
+        "stable_claims": 35,
+        "unstable_claims": 2,
+        "stability_rate": 0.9459459459459459,
+        "unstable_questions": [
+          58,
+          63
+        ],
+        "three_way_claims": [
+          "Q58:claim_1"
+        ]
+      },
+      "resample": {
+        "policy": "strict",
+        "labels": "audited",
+        "runs": [
+          {
+            "draw": 0,
+            "questions": 13,
+            "answered": 4,
+            "correct": 4,
+            "wrong": 0,
+            "coverage": 0.3076923076923077,
+            "precision": 1.0,
+            "accuracy": 0.3076923076923077,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": "D",
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 1,
+            "questions": 13,
+            "answered": 5,
+            "correct": 5,
+            "wrong": 0,
+            "coverage": 0.38461538461538464,
+            "precision": 1.0,
+            "accuracy": 0.38461538461538464,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": "D",
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": "D",
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 2,
+            "questions": 13,
+            "answered": 3,
+            "correct": 3,
+            "wrong": 0,
+            "coverage": 0.23076923076923078,
+            "precision": 1.0,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 3,
+            "questions": 13,
+            "answered": 4,
+            "correct": 3,
+            "wrong": 1,
+            "coverage": 0.3076923076923077,
+            "precision": 0.75,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.07692307692307693,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": "A",
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          },
+          {
+            "draw": 4,
+            "questions": 13,
+            "answered": 4,
+            "correct": 4,
+            "wrong": 0,
+            "coverage": 0.3076923076923077,
+            "precision": 1.0,
+            "accuracy": 0.3076923076923077,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": "D",
+              "64": null,
+              "65": null,
+              "66": null
+            }
+          }
+        ],
+        "spread": {
+          "coverage": {
+            "min": 0.23076923076923078,
+            "max": 0.38461538461538464,
+            "mean": 0.3076923076923077,
+            "values": [
+              0.3076923076923077,
+              0.38461538461538464,
+              0.23076923076923078,
+              0.3076923076923077,
+              0.3076923076923077
+            ]
+          },
+          "precision": {
+            "min": 0.75,
+            "max": 1.0,
+            "mean": 0.95,
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              0.75,
+              1.0
+            ]
+          },
+          "accuracy": {
+            "min": 0.23076923076923078,
+            "max": 0.38461538461538464,
+            "mean": 0.2923076923076923,
+            "values": [
+              0.3076923076923077,
+              0.38461538461538464,
+              0.23076923076923078,
+              0.23076923076923078,
+              0.3076923076923077
+            ]
+          },
+          "error_rate": {
+            "min": 0.0,
+            "max": 0.07692307692307693,
+            "mean": 0.015384615384615385,
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.07692307692307693,
+              0.0
+            ]
+          }
+        }
+      },
+      "rows": [
+        {
+          "q_number": 54,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "For a constitutional amendment with respect to List I-Union List, in the Seventh Schedule, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            341,
+            31,
+            145,
+            184,
+            142
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 54,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "For a constitutional amendment with respect to Extent of the executive power of a State, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            260,
+            200,
+            64,
+            129,
+            175
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 54,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "For a constitutional amendment with respect to Conditions of the Governor's office, ratification by the Legislatures of not less than one-half of the States is required before presenting the bill to the President of India for assent.",
+          "pages": [
+            260,
+            129,
+            122,
+            243,
+            122
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The power of Lokpal applies to public servants of India, but not to the Indian public servants posted outside India.",
+          "pages": [
+            21,
+            211,
+            181,
+            181,
+            211
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The Chairperson or a Member shall not be a Member of the Parliament or a Member of the Legislature of any State or Union Territory, and only the Chief Justice of India, whether incumbent or retired, has to be its Chairperson.",
+          "pages": [
+            76,
+            117,
+            77,
+            117,
+            211
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Chairperson or a Member shall not be a person of less than forty-five years of age on the date of assuming office as the Chairperson or Member, as the case may be.",
+          "pages": [
+            209,
+            162,
+            209,
+            61,
+            153
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 55,
+          "claim_id": "claim_4",
+          "statement_number": "IV",
+          "claim": "Lokpal cannot inquire into the allegations of corruption against a sitting Prime Minister of India.",
+          "pages": [
+            90,
+            250,
+            117,
+            66,
+            274
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "\"Separation of Judiciary from the Executive in the public services of the State\" is stated under The Directive Principles of the State Policy.",
+          "pages": [
+            52,
+            12,
+            7,
+            6,
+            49
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "\"Valuing and preserving of the rich heritage of our composite culture\" is stated under The Fundamental Duties.",
+          "pages": [
+            56,
+            14,
+            18,
+            18,
+            7
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 56,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "\"Prohibition of employment of children below the age of 14 years in factories\" is stated under The Fundamental Rights.",
+          "pages": [
+            45,
+            5,
+            52,
+            42,
+            56
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 57,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The exercise of this power by the President can be subjected to limited judicial review.",
+          "pages": [
+            250,
+            87,
+            63,
+            276,
+            96
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 57,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The President can exercise this power without the advice of the Central Government.",
+          "pages": [
+            250,
+            146,
+            180,
+            63,
+            87
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 58,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "If any question arises as to whether a Member of the House of the People has become subject to disqualification under the 10th Schedule, the President's decision in accordance with the opinion of the Council of Union Ministers shall be final.",
+          "pages": [
+            77,
+            378,
+            117,
+            153,
+            65
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "SUPPORTED",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "SUPPORTED"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": false
+        },
+        {
+          "q_number": 58,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "There is no mention of the word 'political party' in the Constitution of India.",
+          "pages": [
+            17,
+            32,
+            201,
+            203,
+            19
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "On the dissolution of the House of the People, the Speaker shall not vacate his/her office until immediately before the first meeting of the House of the People after the dissolution.",
+          "pages": [
+            112,
+            73,
+            73,
+            74,
+            249
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "According to the provisions of the Constitution of India, a Member of the House of the People on being elected as Speaker shall resign from his/her political party immediately.",
+          "pages": [
+            73,
+            116,
+            76,
+            73,
+            76
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 59,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Speaker of the House of the People may be may be removed from his/her office by a resolution of the House of the People passed by a majority of all the then Members of the House, provided that no resolution shall be moved unless at least fourteen days' notice has been given of the intention to move the resolution.",
+          "pages": [
+            73,
+            74,
+            73,
+            112,
+            62
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "An Ordinance can amend any Central Act.",
+          "pages": [
+            173,
+            87,
+            129,
+            147,
+            147
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "An Ordinance can abridge a Fundamental Right.",
+          "pages": [
+            5,
+            87,
+            49,
+            48,
+            49
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 60,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "An Ordinance can come into effect from a back date.",
+          "pages": [
+            278,
+            87,
+            129,
+            147,
+            129
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 61,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The Constitution of India/explicitly mentions that in certain spheres the Governor of a State acts in his/her own discretion.",
+          "pages": [
+            105,
+            181,
+            262,
+            258,
+            331
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 61,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "The President of India can, of his/her own, reserve a bill passed by a State Legislature for his/her consideration without it being forwarded by the Governor of the State concerned.",
+          "pages": [
+            128,
+            122,
+            203,
+            122,
+            317
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "The Governor of a State is not answerable to any court for the exercise and performance of the powers and duties of his/her office.",
+          "pages": [
+            250,
+            276,
+            128,
+            250,
+            243
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "No criminal proceedings shall be instituted or continued against the Governor during his/her term of office.",
+          "pages": [
+            250,
+            250,
+            102,
+            102,
+            321
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 62,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House.",
+          "pages": [
+            118,
+            251,
+            78,
+            128,
+            379
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Panchayats at the intermediate level exist in all States.",
+          "pages": [
+            151,
+            150,
+            150,
+            151,
+            151
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "To be eligible to be a Member of a Panchayat at the intermediate level, a person should attain the age of thirty years.",
+          "pages": [
+            153,
+            151,
+            151,
+            162,
+            151
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED",
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": false
+        },
+        {
+          "q_number": 63,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "The Chief Minister of a State constitutes a commission to review the financial position of Panchayats at the intermediate levels and to make recommendations regarding the distribution of net proceeds of taxes and duties, leviable by the State, between the State and Panchayats at the intermediate level.",
+          "pages": [
+            154,
+            154,
+            155,
+            193,
+            163
+          ],
+          "verdicts": [
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED",
+            "CONTRADICTED"
+          ],
+          "distinct_verdicts": [
+            "CONTRADICTED"
+          ],
+          "modal_verdict": "CONTRADICTED",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Regarding Arunachal Pradesh, the following is correct: The capital is named after a fort, and the State has two National Parks.",
+          "pages": [
+            290,
+            127,
+            157,
+            275,
+            276
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "Regarding Nagaland, the following is correct: The State came into existence on the basis of a Constitutional Amendment Act.",
+          "pages": [
+            264,
+            267,
+            221,
+            284,
+            266
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 64,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Regarding Tripura, the following is correct: Initially a Part 'C' State, it became a centrally administered territory with the reorganisation of States in 1956 and later attained the status of a full- fledged State.",
+          "pages": [
+            290,
+            286,
+            287,
+            284,
+            288
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 65,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "With reference to the Constitution of India, if an area in a State is declared as Scheduled Area under the Fifth Schedule, the State Government loses its executive power in such areas and a local body assumes total administration.",
+          "pages": [
+            307,
+            174,
+            31,
+            175,
+            308
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 65,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "With reference to the Constitution of India, if an area in a State is declared as Scheduled Area under the Fifth Schedule, the Union Government can take over the total administration of such areas under certain circumstances on the recommendations of the Governor.",
+          "pages": [
+            307,
+            174,
+            309,
+            31,
+            308
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_1",
+          "statement_number": "I",
+          "claim": "Production of crude oil-free is regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            346,
+            351,
+            344
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_2",
+          "statement_number": "II",
+          "claim": "Refining, storage and distribution of petroleum are regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            344,
+            351,
+            346
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_3",
+          "statement_number": "III",
+          "claim": "Marketing and sale of petroleum products are regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            351,
+            344,
+            346
+          ],
+          "verdicts": [
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED",
+            "SUPPORTED"
+          ],
+          "distinct_verdicts": [
+            "SUPPORTED"
+          ],
+          "modal_verdict": "SUPPORTED",
+          "stable": true
+        },
+        {
+          "q_number": 66,
+          "claim_id": "claim_4",
+          "statement_number": "IV",
+          "claim": "Production of natural gas is regulated by the Petroleum and Natural Gas Regulatory Board in our country.",
+          "pages": [
+            344,
+            192,
+            346,
+            344,
+            194
+          ],
+          "verdicts": [
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT"
+          ],
+          "distinct_verdicts": [
+            "INSUFFICIENT"
+          ],
+          "modal_verdict": "INSUFFICIENT",
+          "stable": true
+        }
+      ]
+    }
+  }
+}

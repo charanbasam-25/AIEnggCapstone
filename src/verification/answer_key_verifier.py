@@ -61,6 +61,19 @@ Page: {item["page"]}
 
         context = "\n".join(evidence_text)
 
+        # The declared answer is deliberately withheld from this prompt.
+        # An earlier version included it under a "DECLARED ANSWER"
+        # heading and relied on a prompt rule to tell the model not to
+        # treat it as evidence. That made the component's independence
+        # conditional on the model obeying an instruction, which is not a
+        # guarantee: a model that anchors on the declared answer would
+        # confirm the key it was meant to audit, and the resulting VALID
+        # verdict would be indistinguishable from a real one.
+        #
+        # Withholding it costs nothing, because `verify` below already
+        # compares supported_options against mcq.correct_answer in
+        # Python. The comparison is the deterministic part and belongs
+        # outside the model.
         prompt = f"""
 You are an independent answer analysis component for a UPSC
 Indian Polity MCQ verification system.
@@ -76,10 +89,6 @@ OPTIONS:
 
 {options}
 
-DECLARED ANSWER:
-
-{mcq.correct_answer}
-
 SOURCE EVIDENCE:
 
 {context}
@@ -94,14 +103,15 @@ RULES:
 5. If the evidence is insufficient to establish an option,
    do not include it.
 6. If multiple options are explicitly supported, include all of them.
-7. Do not use the declared answer as evidence that an option is correct.
-8. Do not make a final VALID or INVALID decision.
-9. Return only option letters A, B, C or D in supported_options.
+7. Do not make a final VALID or INVALID decision.
+8. Return only option letters A, B, C or D in supported_options.
 """
 
+        # Pinned for the same reason as in fact_verifier.py.
         response = self.client.responses.parse(
             model=MODEL_NAME,
             input=prompt,
+            temperature=0,
             text_format=AnswerAnalysis,
         )
 

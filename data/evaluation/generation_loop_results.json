@@ -1,0 +1,1013 @@
+{
+  "config": {
+    "topics": [
+      "Fundamental Rights",
+      "Directive Principles of State Policy",
+      "Fundamental Duties",
+      "Amendment of the Constitution",
+      "Emergency Provisions",
+      "The President of India",
+      "Parliament of India",
+      "The Supreme Court of India",
+      "Union Public Service Commission",
+      "Election Commission of India",
+      "Panchayats",
+      "Municipalities",
+      "Finance Commission",
+      "Official Language",
+      "Citizenship"
+    ],
+    "difficulty": "medium",
+    "question_format": "simple",
+    "max_retries": 2
+  },
+  "summary": {
+    "topics_run": 15,
+    "topics_completed": 15,
+    "topics_errored": 0,
+    "errors": [],
+    "terminal_decisions": {
+      "ACCEPT": 8,
+      "REJECT": 7,
+      "accept_rate": 53.33,
+      "reject_rate": 46.67
+    },
+    "attempts": {
+      "distribution": {
+        "1": 4,
+        "2": 3,
+        "3": 8
+      },
+      "total_attempts": 34,
+      "blocked_attempts": 26
+    },
+    "gate_attribution": {
+      "blocked_by": {
+        "answer_key": 10,
+        "quality": 17,
+        "fact": 9
+      },
+      "sole_blocker": {
+        "quality": 8,
+        "fact": 6,
+        "answer_key": 2
+      },
+      "note": "gates are not mutually exclusive; blocked_by counts overlaps, sole_blocker counts attempts where exactly one gate fired"
+    },
+    "unverified_baseline": {
+      "description": "attempt 1 of every topic, i.e. what a RAG generator with no gate in front of it would have shipped",
+      "n": 15,
+      "clean": 4,
+      "defective": 11,
+      "defect_rate": 73.33,
+      "gates_that_would_have_caught_it": {
+        "answer_key": 7,
+        "quality": 6,
+        "fact": 4
+      }
+    },
+    "repair": {
+      "first_attempt_blocked": 11,
+      "eventually_accepted": 4,
+      "repair_rate": 36.36
+    },
+    "claims": {
+      "verdict_distribution": {
+        "SUPPORTED": 26,
+        "INSUFFICIENT": 9
+      },
+      "total_claims_verified": 35,
+      "mean_claims_per_attempt": 1.03
+    }
+  },
+  "results": [
+    {
+      "topic": "Fundamental Rights",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following Fundamental Rights is specifically aimed at ensuring equality before the law and equal protection of the laws within the territory of India?",
+            "option_a": "Right to Equality",
+            "option_b": "Right to Freedom",
+            "option_c": "Right against Exploitation",
+            "option_d": "Right to Constitutional Remedies",
+            "correct_answer": "A",
+            "explanation": "The Right to Equality, enshrined in Articles 14 to 18 of the Constitution of India, guarantees that every individual is equal before the law and has the right to equal protection of the laws. This is fundamental to ensuring that all citizens are treated equally and without discrimination."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 1
+    },
+    {
+      "topic": "Directive Principles of State Policy",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following is NOT a Directive Principle of State Policy as enshrined in the Constitution of India?",
+            "option_a": "Promotion of educational and economic interests of Scheduled Castes and Scheduled Tribes",
+            "option_b": "Right to work, to education and to public assistance in certain cases",
+            "option_c": "Uniform civil code for all citizens",
+            "option_d": "Separation of the judiciary from the executive",
+            "correct_answer": "B",
+            "explanation": "The Right to work, to education and to public assistance in certain cases is a Fundamental Right under Article 21 of the Constitution, while the other options are Directive Principles of State Policy."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (B) is incorrect; the Right to work, to education and to public assistance is not a Fundamental Right under Article 21, but rather a part of the Directive Principles of State Policy under Article 41. This creates confusion regarding the correct answer.",
+            "The question does not have a single best answer because the declared answer is incorrect, leading to ambiguity in the evaluation of the question."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 3 and 4 discuss the Directive Principles of State Policy (DPSP) and outline their nature and purpose. Option B, 'Right to work, to education and to public assistance in certain cases,' is not explicitly mentioned as a Directive Principle in the provided evidence. Option D, 'Separation of the judiciary from the executive,' is also not identified as a Directive Principle in the evidence. Therefore, both B and D are supported as not being Directive Principles.",
+            "quality: The declared answer (B) is incorrect; the Right to work, to education and to public assistance is not a Fundamental Right under Article 21, but rather a part of the Directive Principles of State Policy under Article 41. This creates confusion regarding the correct answer.",
+            "quality: The question does not have a single best answer because the declared answer is incorrect, leading to ambiguity in the evaluation of the question."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following is NOT a Directive Principle of State Policy as enshrined in the Constitution of India?",
+            "option_a": "Promotion of educational and economic interests of Scheduled Castes and Scheduled Tribes",
+            "option_b": "Right to free legal aid",
+            "option_c": "Uniform civil code for all citizens",
+            "option_d": "Right to work, to education and to public assistance in certain cases",
+            "correct_answer": "B",
+            "explanation": "The 'Right to free legal aid' is not explicitly mentioned as a Directive Principle of State Policy in the Constitution. It is a part of the Fundamental Rights under Article 39A, which aims to ensure justice for all. The other options are indeed Directive Principles outlined in the Constitution."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 2
+    },
+    {
+      "topic": "Fundamental Duties",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following is NOT a Fundamental Duty of Indian citizens as per Article 51A of the Constitution of India?",
+            "option_a": "To promote harmony and the spirit of common brotherhood among all the people of India",
+            "option_b": "To safeguard public property and to abjure violence",
+            "option_c": "To pay taxes honestly and regularly",
+            "option_d": "To develop the scientific temper, humanism and the spirit of inquiry and reform",
+            "correct_answer": "C",
+            "explanation": "Option C is correct because while paying taxes is a civic responsibility, it is not listed as a Fundamental Duty under Article 51A of the Constitution of India. The other options are explicitly mentioned as Fundamental Duties."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 1
+    },
+    {
+      "topic": "Amendment of the Constitution",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following amendments to the Constitution of India introduced the 73rd and 74th Amendments, which provided for the establishment of Panchayati Raj institutions and urban local bodies?",
+            "option_a": "73rd Amendment",
+            "option_b": "74th Amendment",
+            "option_c": "86th Amendment",
+            "option_d": "91st Amendment",
+            "correct_answer": "A",
+            "explanation": "The 73rd Amendment, enacted in 1992, specifically aimed at enhancing the democratic process at the grassroots level by establishing Panchayati Raj institutions in rural areas. The 74th Amendment, also enacted in 1992, focused on urban local governance. Therefore, the correct answer is the 73rd Amendment."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED",
+            "2": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The question asks for the amendment that introduced both the 73rd and 74th Amendments, which is misleading as they are separate amendments. This creates ambiguity regarding the correct answer.",
+            "The declared answer (A) is not the single best answer because the question implies a need for a single amendment that introduced both, which does not exist."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: EVIDENCE 1 and EVIDENCE 2 explicitly mention the Constitution (Seventy-third Amendment) Act, 1992, which introduced provisions for Panchayati Raj institutions, and the Constitution (Seventy-fourth Amendment) Act, which relates to urban local bodies. Therefore, both the 73rd and 74th Amendments are supported by the evidence.",
+            "quality: The question asks for the amendment that introduced both the 73rd and 74th Amendments, which is misleading as they are separate amendments. This creates ambiguity regarding the correct answer.",
+            "quality: The declared answer (A) is not the single best answer because the question implies a need for a single amendment that introduced both, which does not exist."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following amendments to the Constitution of India provided for the establishment of the Panchayati Raj system?",
+            "option_a": "73rd Amendment",
+            "option_b": "74th Amendment",
+            "option_c": "86th Amendment",
+            "option_d": "61st Amendment",
+            "correct_answer": "A",
+            "explanation": "The 73rd Amendment, enacted in 1992, specifically introduced provisions for the establishment of the Panchayati Raj system in rural areas, empowering local self-governments. This amendment is crucial for decentralizing power and enhancing grassroots democracy."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 2
+    },
+    {
+      "topic": "Emergency Provisions",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following Articles of the Indian Constitution empowers the President to proclaim a National Emergency?",
+            "option_a": "Article 352",
+            "option_b": "Article 356",
+            "option_c": "Article 360",
+            "option_d": "Article 370",
+            "correct_answer": "A",
+            "explanation": "Article 352 of the Indian Constitution allows the President to proclaim a National Emergency if the security of India or any part thereof is threatened by war, external aggression, or armed rebellion."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as the declared answer is wrong.",
+            "The presence of plausible distractors is good, but since the declared answer is incorrect, it undermines the overall quality of the question."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "quality: The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as the declared answer is wrong.",
+            "quality: The presence of plausible distractors is good, but since the declared answer is incorrect, it undermines the overall quality of the question."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following Articles of the Indian Constitution empowers the President to proclaim a National Emergency?",
+            "option_a": "Article 352",
+            "option_b": "Article 356",
+            "option_c": "Article 360",
+            "option_d": "Article 370",
+            "correct_answer": "A",
+            "explanation": "Article 352 of the Indian Constitution empowers the President to proclaim a National Emergency when the security of India or any part thereof is threatened by war, external aggression, or armed rebellion."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as it is based on the assumption that the declared answer is correct without verification.",
+            "The options provided include Article 370, which is not relevant to the context of National Emergency, making it a less plausible distractor."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "quality: The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as it is based on the assumption that the declared answer is correct without verification.",
+            "quality: The options provided include Article 370, which is not relevant to the context of National Emergency, making it a less plausible distractor."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following Articles of the Indian Constitution empowers the President to proclaim a National Emergency?",
+            "option_a": "Article 352",
+            "option_b": "Article 356",
+            "option_c": "Article 360",
+            "option_d": "Article 370",
+            "correct_answer": "A",
+            "explanation": "Article 352 of the Indian Constitution empowers the President to proclaim a National Emergency when the security of India or any part thereof is threatened by war, external aggression, or armed rebellion."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as the declared answer is wrong.",
+            "The presence of plausible distractors is good, but since the declared answer is incorrect, it undermines the overall quality of the question."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "quality: The declared answer (A) is incorrect; Article 352 does empower the President to proclaim a National Emergency, but the question does not allow for a single best answer as the declared answer is wrong.",
+            "quality: The presence of plausible distractors is good, but since the declared answer is incorrect, it undermines the overall quality of the question."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "The President of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the President of India is NOT correct?",
+            "option_a": "The President is the constitutional head of the state.",
+            "option_b": "The President can dissolve the Lok Sabha at any time.",
+            "option_c": "The President is elected by an electoral college consisting of the elected members of both Houses of Parliament and the elected members of the Legislative Assemblies of States and Union territories.",
+            "option_d": "The President has the power to grant pardons under Article 72 of the Constitution.",
+            "correct_answer": "B",
+            "explanation": "The President of India cannot dissolve the Lok Sabha at any time; this power is exercised only under specific circumstances, such as when the Lok Sabha loses its majority or when the Prime Minister advises the President to dissolve it."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statement about the President of India is NOT correct.",
+            "answer_key: INVALID. Reason: Evidence 2 explicitly states that the President is the constitutional head of the state (supporting option A). It also confirms that the President is elected by an electoral college consisting of the elected members of both Houses of Parliament and the elected members of the Legislative Assemblies of States and Union territories (supporting option C). Additionally, Evidence 2 and other parts of the Constitution affirm the President's power to grant pardons under Article 72 (supporting option D). However, Evidence does not support option B, as the President cannot dissolve the Lok Sabha at any time; this power is exercised on the advice of the Council of Ministers."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements about the President of India is correct?",
+            "option_a": "The President of India is the constitutional head of the state.",
+            "option_b": "The President can unilaterally dissolve the Rajya Sabha.",
+            "option_c": "The President is elected by a direct popular vote.",
+            "option_d": "The President has the power to appoint the Prime Minister without any conditions.",
+            "correct_answer": "A",
+            "explanation": "The President of India is indeed the constitutional head of the state, as defined in the Constitution. This role includes various ceremonial duties and functions, but the President acts on the advice of the Council of Ministers. The other options are incorrect: the President cannot dissolve the Rajya Sabha, is not elected by direct popular vote (but by an electoral college), and must appoint the Prime Minister who has the confidence of the Lok Sabha."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statement about the President of India is correct."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about the President of India is correct?",
+            "option_a": "The President can appoint the Prime Minister without any restrictions.",
+            "option_b": "The President is the constitutional head of the state and exercises powers on the advice of the Council of Ministers.",
+            "option_c": "The President has the power to dissolve the Lok Sabha at any time without any conditions.",
+            "option_d": "The President can unilaterally declare a state of emergency without the approval of the Parliament.",
+            "correct_answer": "B",
+            "explanation": "The President of India is the constitutional head of the state and acts on the advice of the Council of Ministers as per Article 74 of the Constitution. This means that the President's powers are exercised in accordance with the advice given by the Prime Minister and the Council."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Parliament of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the Parliament of India is correct?",
+            "option_a": "The Parliament of India consists of two houses: the Lok Sabha and the Rajya Sabha.",
+            "option_b": "The Rajya Sabha is the lower house of Parliament.",
+            "option_c": "Members of the Lok Sabha are elected for a term of six years.",
+            "option_d": "The President of India is a member of the Lok Sabha.",
+            "correct_answer": "A",
+            "explanation": "The Parliament of India is bicameral, consisting of the Lok Sabha (House of the People) and the Rajya Sabha (Council of States). The Lok Sabha is the lower house, while the Rajya Sabha is the upper house. Members of the Lok Sabha serve a term of five years, not six, and the President is not a member of either house."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Option B incorrectly states that the Rajya Sabha is the lower house, which is factually incorrect and misleads the candidate.",
+            "Option C incorrectly states that members of the Lok Sabha are elected for a term of six years instead of the correct five years.",
+            "Option D incorrectly states that the President of India is a member of the Lok Sabha, which is also factually incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statement about the Parliament of India is correct.",
+            "quality: Option B incorrectly states that the Rajya Sabha is the lower house, which is factually incorrect and misleads the candidate.",
+            "quality: Option C incorrectly states that members of the Lok Sabha are elected for a term of six years instead of the correct five years.",
+            "quality: Option D incorrectly states that the President of India is a member of the Lok Sabha, which is also factually incorrect."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements about the Parliament of India is correct?",
+            "option_a": "The Lok Sabha is the lower house of Parliament.",
+            "option_b": "The Rajya Sabha can be dissolved by the President of India.",
+            "option_c": "Members of the Rajya Sabha are directly elected by the public.",
+            "option_d": "The maximum strength of the Lok Sabha is 500 members.",
+            "correct_answer": "A",
+            "explanation": "The Lok Sabha is indeed the lower house of Parliament, while the Rajya Sabha is the upper house. The Rajya Sabha cannot be dissolved; it is a permanent body. Members of the Rajya Sabha are elected by the elected members of the State Legislative Assemblies, not directly by the public. The maximum strength of the Lok Sabha is 552 members, not 500."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is correct, but the question allows for multiple interpretations due to the incorrectness of the other options, which could mislead candidates about the nature of the question.",
+            "Option B is misleading as it suggests that the Rajya Sabha can be dissolved, which is incorrect; this could confuse candidates about the nature of the Rajya Sabha.",
+            "Option C incorrectly states that Rajya Sabha members are directly elected by the public, which is a significant factual error that could mislead candidates.",
+            "Option D states an incorrect maximum strength for the Lok Sabha, which is 552, not 500; this could mislead candidates about the composition of the Lok Sabha."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statement about the Parliament of India is correct.",
+            "quality: The declared answer (A) is correct, but the question allows for multiple interpretations due to the incorrectness of the other options, which could mislead candidates about the nature of the question.",
+            "quality: Option B is misleading as it suggests that the Rajya Sabha can be dissolved, which is incorrect; this could confuse candidates about the nature of the Rajya Sabha.",
+            "quality: Option C incorrectly states that Rajya Sabha members are directly elected by the public, which is a significant factual error that could mislead candidates.",
+            "quality: Option D states an incorrect maximum strength for the Lok Sabha, which is 552, not 500; this could mislead candidates about the composition of the Lok Sabha."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about the Parliament of India is correct?",
+            "option_a": "The Lok Sabha is the lower house of Parliament and its members are directly elected by the people.",
+            "option_b": "The Rajya Sabha can be dissolved by the President of India at any time.",
+            "option_c": "The total number of members in the Lok Sabha is fixed at 500.",
+            "option_d": "The Speaker of the Lok Sabha is elected by the members of the Rajya Sabha.",
+            "correct_answer": "A",
+            "explanation": "Option A is correct because the Lok Sabha is indeed the lower house of Parliament, and its members are directly elected by the citizens of India. Option B is incorrect as the Rajya Sabha is a permanent house and cannot be dissolved. Option C is incorrect because the maximum strength of the Lok Sabha is 552, not 500. Option D is incorrect as the Speaker of the Lok Sabha is elected by the members of the Lok Sabha, not the Rajya Sabha."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statement about the Parliament of India is correct."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "The Supreme Court of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following articles of the Constitution of India empowers the Supreme Court to issue directions or orders for the enforcement of fundamental rights?",
+            "option_a": "Article 32",
+            "option_b": "Article 136",
+            "option_c": "Article 141",
+            "option_d": "Article 226",
+            "correct_answer": "A",
+            "explanation": "Article 32 of the Constitution of India specifically provides the right to individuals to approach the Supreme Court for the enforcement of their fundamental rights. It is often referred to as the 'heart and soul' of the Constitution."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 1 explicitly states that Article 32 empowers the Supreme Court to issue directions or orders for the enforcement of fundamental rights. Evidence 2 discusses Article 226, which grants High Courts the power to issue writs for the enforcement of rights conferred by Part III, but does not pertain to the Supreme Court. Articles 136 and 141 do not relate to the enforcement of fundamental rights as per the provided evidence."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following Articles of the Constitution of India empowers the Supreme Court to review its own judgments?",
+            "option_a": "Article 137",
+            "option_b": "Article 145",
+            "option_c": "Article 141",
+            "option_d": "Article 32",
+            "correct_answer": "A",
+            "explanation": "Article 137 of the Constitution of India explicitly states that the Supreme Court shall have the power to review any judgment pronounced or order made by it. This provision allows the Supreme Court to correct any errors in its previous decisions."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 2
+    },
+    {
+      "topic": "Union Public Service Commission",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the Union Public Service Commission (UPSC) is correct?",
+            "option_a": "The UPSC is responsible for conducting examinations for appointments to the services of the Union and the services of the States.",
+            "option_b": "The UPSC can recommend the appointment of members of the State Public Service Commissions.",
+            "option_c": "The UPSC is a constitutional body established under Article 315 of the Constitution of India.",
+            "option_d": "The UPSC has the authority to dismiss a member of the civil services directly.",
+            "correct_answer": "C",
+            "explanation": "The UPSC is indeed a constitutional body established under Article 315 of the Constitution of India, which mandates the commission to conduct examinations for appointments to the services of the Union and the States."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 2 explicitly states that it is the duty of the Union Public Service Commission to conduct examinations for appointments to the services of the Union and the services of the State, supporting option A. Evidence 1 confirms that the UPSC is a constitutional body established under Article 315 of the Constitution of India, supporting option C. Options B and D are not supported by the provided evidence."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements about the Union Public Service Commission (UPSC) is correct?",
+            "option_a": "The UPSC is responsible for conducting examinations for appointments to the services of the Union and the services of the States.",
+            "option_b": "The UPSC is a statutory body established by an act of Parliament.",
+            "option_c": "The members of the UPSC are appointed by the Prime Minister of India.",
+            "option_d": "The UPSC can be dissolved by the President of India at any time.",
+            "correct_answer": "A",
+            "explanation": "Option A is correct because the UPSC is indeed responsible for conducting examinations for appointments to the services of the Union and the services of the States, as stated in Article 320 of the Constitution of India. Option B is incorrect as the UPSC is a constitutional body, not a statutory one. Option C is incorrect because the President of India appoints the members of the UPSC, not the Prime Minister. Option D is misleading as the UPSC cannot be dissolved at any time; it can only be removed under specific conditions as laid out in the Constitution."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; the correct answer is B, as the UPSC is a constitutional body, not a statutory one. This creates confusion regarding the single best answer.",
+            "Option C is misleading; while the President appoints members, the phrasing could lead to misinterpretation about the role of the Prime Minister, affecting clarity."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 1 and Evidence 2 explicitly state that the UPSC conducts examinations for appointments to the services of the Union and the States, supporting option A. Evidence 1 also indicates that the UPSC is established by an act of Parliament, supporting option B. However, there is no evidence supporting options C and D.",
+            "quality: The declared answer (A) is incorrect; the correct answer is B, as the UPSC is a constitutional body, not a statutory one. This creates confusion regarding the single best answer.",
+            "quality: Option C is misleading; while the President appoints members, the phrasing could lead to misinterpretation about the role of the Prime Minister, affecting clarity."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about the Union Public Service Commission (UPSC) is correct?",
+            "option_a": "The UPSC is a constitutional body established under Article 315 of the Constitution of India.",
+            "option_b": "The UPSC is a statutory body established by an act of Parliament.",
+            "option_c": "The members of the UPSC are appointed by the Prime Minister of India.",
+            "option_d": "The UPSC conducts examinations only for central government services.",
+            "correct_answer": "A",
+            "explanation": "The UPSC is indeed a constitutional body established under Article 315 of the Constitution of India, which provides for the establishment of a Public Service Commission for the Union and for each State. This makes option A the correct answer."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Option C is misleading as the President of India appoints the members of the UPSC, not the Prime Minister.",
+            "Option D is incorrect because the UPSC conducts examinations for both central and state government services, not just central government services."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "quality: Option C is misleading as the President of India appoints the members of the UPSC, not the Prime Minister.",
+            "quality: Option D is incorrect because the UPSC conducts examinations for both central and state government services, not just central government services."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Election Commission of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the Election Commission of India is correct?",
+            "option_a": "The Election Commission is a constitutional authority established under Article 324 of the Constitution of India.",
+            "option_b": "The Chief Election Commissioner can be removed from office only by a two-thirds majority in the Lok Sabha.",
+            "option_c": "The Election Commission is responsible for conducting elections to the Panchayati Raj institutions only.",
+            "option_d": "The Election Commission consists of a Chief Election Commissioner and two Election Commissioners appointed by the President of India.",
+            "correct_answer": "A",
+            "explanation": "Option A is correct because the Election Commission of India is indeed established under Article 324 of the Constitution, which provides for the supervision, direction, and control of the entire process of elections in India."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Option B is incorrect because the Chief Election Commissioner can be removed by a process similar to that of removing a Supreme Court judge, which requires a two-thirds majority in both Houses of Parliament, not just the Lok Sabha.",
+            "Option C is misleading as the Election Commission is responsible for conducting elections at all levels, including the Lok Sabha, Rajya Sabha, and State Assemblies, not just the Panchayati Raj institutions.",
+            "Option D is partially correct but incomplete; while it mentions the Chief Election Commissioner and two Election Commissioners, it does not specify that the number of Election Commissioners can vary, as the President can appoint more than two if needed."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 2 explicitly states that the Election Commission is established under Article 324 of the Constitution, confirming option A. Additionally, it mentions that the Election Commission consists of a Chief Election Commissioner and other Election Commissioners appointed by the President, which supports option D. There is no evidence supporting options B and C.",
+            "quality: Option B is incorrect because the Chief Election Commissioner can be removed by a process similar to that of removing a Supreme Court judge, which requires a two-thirds majority in both Houses of Parliament, not just the Lok Sabha.",
+            "quality: Option C is misleading as the Election Commission is responsible for conducting elections at all levels, including the Lok Sabha, Rajya Sabha, and State Assemblies, not just the Panchayati Raj institutions.",
+            "quality: Option D is partially correct but incomplete; while it mentions the Chief Election Commissioner and two Election Commissioners, it does not specify that the number of Election Commissioners can vary, as the President can appoint more than two if needed."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements about the Election Commission of India is correct?",
+            "option_a": "The Election Commission is responsible for conducting elections for the President of India.",
+            "option_b": "The Chief Election Commissioner can be appointed by the Prime Minister of India.",
+            "option_c": "The Election Commission consists of only one member, the Chief Election Commissioner.",
+            "option_d": "The Election Commission is a permanent body that can be dissolved by the Parliament.",
+            "correct_answer": "A",
+            "explanation": "The Election Commission of India is indeed responsible for conducting elections for the President of India, along with other elections at various levels. This is explicitly stated in Article 324 of the Constitution. Options B and C are incorrect as the Chief Election Commissioner is appointed by the President, not the Prime Minister, and the Commission consists of multiple members, not just one. Option D is misleading because the Election Commission is a permanent body and cannot be dissolved by Parliament."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is correct, but the question allows for multiple interpretations regarding the correctness of the options, particularly B and C, which could confuse candidates about the appointment process and composition of the Election Commission.",
+            "Option D is misleading as it suggests the possibility of dissolution by Parliament, which is incorrect, leading to ambiguity in the assessment of the options."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "quality: The declared answer (A) is correct, but the question allows for multiple interpretations regarding the correctness of the options, particularly B and C, which could confuse candidates about the appointment process and composition of the Election Commission.",
+            "quality: Option D is misleading as it suggests the possibility of dissolution by Parliament, which is incorrect, leading to ambiguity in the assessment of the options."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about the Election Commission of India is correct?",
+            "option_a": "The Election Commission is a constitutional authority established under Article 324 of the Constitution of India.",
+            "option_b": "The Chief Election Commissioner can be removed from office by a simple majority in Parliament.",
+            "option_c": "The Election Commission consists of a Chief Election Commissioner and two Election Commissioners, all appointed by the President of India.",
+            "option_d": "The Election Commission is responsible for conducting elections only for the Lok Sabha and not for State Assemblies.",
+            "correct_answer": "A",
+            "explanation": "Option A is correct because the Election Commission of India is indeed established under Article 324 of the Constitution, which provides for the supervision, direction, and control of the electoral process. Option B is incorrect as the Chief Election Commissioner can only be removed through a process similar to that of removing a Supreme Court judge, requiring a two-thirds majority in both Houses of Parliament. Option C is partially correct but misleading as it does not mention that the President appoints the Election Commissioners based on the advice of the Prime Minister. Option D is incorrect because the Election Commission conducts elections for both the Lok Sabha and State Assemblies."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Option B is misleading regarding the removal process of the Chief Election Commissioner, which could confuse candidates.",
+            "Option C is partially correct but lacks clarity about the appointment process, which may mislead candidates about the role of the Prime Minister in the appointment."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 2 explicitly states that the Election Commission is established under Article 324 of the Constitution of India, confirming option A. It also mentions that the Election Commission consists of the Chief Election Commissioner and other Election Commissioners appointed by the President, supporting option C. However, there is no evidence to support options B and D.",
+            "quality: Option B is misleading regarding the removal process of the Chief Election Commissioner, which could confuse candidates.",
+            "quality: Option C is partially correct but lacks clarity about the appointment process, which may mislead candidates about the role of the Prime Minister in the appointment."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Panchayats",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the Panchayati Raj system in India is correct?",
+            "option_a": "Panchayati Raj is a three-tier system consisting of the Gram Panchayat, Panchayat Samiti, and Zila Parishad.",
+            "option_b": "Panchayati Raj is only applicable to urban areas in India.",
+            "option_c": "The members of the Gram Panchayat are elected by the Zila Parishad.",
+            "option_d": "Panchayati Raj institutions are not mentioned in the Constitution of India.",
+            "correct_answer": "A",
+            "explanation": "Option A is correct because the Panchayati Raj system in India is indeed a three-tier structure comprising the Gram Panchayat at the village level, the Panchayat Samiti at the block level, and the Zila Parishad at the district level, as outlined in the 73rd Amendment of the Constitution."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 1
+    },
+    {
+      "topic": "Municipalities",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following articles of the Constitution of India provides for the establishment of Municipalities?",
+            "option_a": "Article 243P",
+            "option_b": "Article 246",
+            "option_c": "Article 280",
+            "option_d": "Article 32",
+            "correct_answer": "A",
+            "explanation": "Article 243P of the Constitution of India specifically mandates the establishment of Municipalities in urban areas, detailing the framework for their governance and structure."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "ACCEPT",
+          "failure_reasons": []
+        }
+      ],
+      "terminal_decision": "ACCEPT",
+      "attempt_count": 1
+    },
+    {
+      "topic": "Finance Commission",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following statements about the Finance Commission of India is NOT correct?",
+            "option_a": "The Finance Commission is constituted every five years by the President of India.",
+            "option_b": "The Finance Commission recommends the distribution of taxes between the Centre and the States.",
+            "option_c": "The Finance Commission has the power to levy taxes directly.",
+            "option_d": "The Finance Commission also recommends measures to augment the Consolidated Fund of the States.",
+            "correct_answer": "C",
+            "explanation": "The Finance Commission does not have the power to levy taxes directly; it only makes recommendations regarding the distribution of tax revenues and grants between the Centre and the States."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The statements about the Finance Commission of India are NOT correct."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements about the Finance Commission of India is correct?",
+            "option_a": "The Finance Commission is constituted every five years by the President of India.",
+            "option_b": "The Finance Commission's recommendations are binding on the government.",
+            "option_c": "The Finance Commission is responsible for the distribution of taxes between the central and state governments only.",
+            "option_d": "The Finance Commission can only recommend the distribution of grants-in-aid to states.",
+            "correct_answer": "A",
+            "explanation": "The Finance Commission is indeed constituted every five years by the President of India as per Article 280 of the Constitution. This is a key feature of its role in ensuring fiscal federalism in India."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is correct, but the other options contain inaccuracies that could mislead candidates, making it difficult to identify a single best answer.",
+            "Option B is misleading as the recommendations of the Finance Commission are not binding, which could confuse candidates about the nature of its authority.",
+            "Option C is incorrect because the Finance Commission also deals with the distribution of taxes between local bodies, not just central and state governments.",
+            "Option D is also misleading as it implies a limitation on the Finance Commission's role, which is broader than just grants-in-aid."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "quality: The declared answer (A) is correct, but the other options contain inaccuracies that could mislead candidates, making it difficult to identify a single best answer.",
+            "quality: Option B is misleading as the recommendations of the Finance Commission are not binding, which could confuse candidates about the nature of its authority.",
+            "quality: Option C is incorrect because the Finance Commission also deals with the distribution of taxes between local bodies, not just central and state governments.",
+            "quality: Option D is also misleading as it implies a limitation on the Finance Commission's role, which is broader than just grants-in-aid."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about the Finance Commission of India is correct?",
+            "option_a": "The Finance Commission is constituted every five years by the President of India.",
+            "option_b": "The recommendations of the Finance Commission are binding on the central government.",
+            "option_c": "The Finance Commission only recommends the distribution of taxes between the central and state governments.",
+            "option_d": "The Finance Commission is responsible for the allocation of funds to the judiciary.",
+            "correct_answer": "A",
+            "explanation": "The Finance Commission is indeed constituted every five years by the President of India as per Article 280 of the Constitution. This ensures a regular assessment of the financial relations between the central and state governments."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is correct, but the other options contain misleading information that could confuse candidates, particularly option B, which implies a stronger authority than exists."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "quality: The declared answer (A) is correct, but the other options contain misleading information that could confuse candidates, particularly option B, which implies a stronger authority than exists."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Official Language",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following languages is recognized as an official language of the Indian Union according to the Eighth Schedule of the Constitution of India?",
+            "option_a": "Sanskrit",
+            "option_b": "English",
+            "option_c": "Urdu",
+            "option_d": "French",
+            "correct_answer": "A",
+            "explanation": "Sanskrit is one of the 22 languages recognized in the Eighth Schedule of the Constitution of India as an official language. While English is used for official purposes, it is not included in the Eighth Schedule."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A. Sanskrit) is incorrect; the correct answer should be C. Urdu, as both Sanskrit and Urdu are recognized in the Eighth Schedule, but the question implies only one correct answer.",
+            "The question does not specify that there can be multiple correct answers, leading to confusion regarding the single best answer."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: EVIDENCE 3 and EVIDENCE 4 explicitly list languages recognized in the Eighth Schedule of the Constitution of India, which includes Sanskrit (A) and Urdu (C). English (B) is mentioned in the context of official language but is not part of the Eighth Schedule. French (D) is not mentioned in any of the evidence.",
+            "quality: The declared answer (A. Sanskrit) is incorrect; the correct answer should be C. Urdu, as both Sanskrit and Urdu are recognized in the Eighth Schedule, but the question implies only one correct answer.",
+            "quality: The question does not specify that there can be multiple correct answers, leading to confusion regarding the single best answer."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following languages is recognized as an official language of the Union of India under the Eighth Schedule of the Constitution?",
+            "option_a": "Sanskrit",
+            "option_b": "Bengali",
+            "option_c": "English",
+            "option_d": "French",
+            "correct_answer": "B",
+            "explanation": "Bengali is one of the languages recognized in the Eighth Schedule of the Constitution of India, which lists the official languages of the country. While Sanskrit is also included, the question specifically asks for one language, and Bengali is a prominent official language used in several states."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (Bengali) is not the only correct answer, as Sanskrit is also included in the Eighth Schedule, making the question ambiguous regarding the 'one' language asked for.",
+            "The question does not specify that only one language should be chosen from the options, which could lead to confusion about whether multiple answers could be correct."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: EVIDENCE 2 explicitly lists 'Sanskrit' and 'Bengali' as languages included in the Eighth Schedule of the Constitution, which recognizes them as official languages of the Union of India. EVIDENCE 1 and EVIDENCE 4 discuss the official language of the Union but do not support any of the options other than those mentioned in EVIDENCE 2.",
+            "quality: The declared answer (Bengali) is not the only correct answer, as Sanskrit is also included in the Eighth Schedule, making the question ambiguous regarding the 'one' language asked for.",
+            "quality: The question does not specify that only one language should be chosen from the options, which could lead to confusion about whether multiple answers could be correct."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following languages is NOT included in the Eighth Schedule of the Constitution of India?",
+            "option_a": "Sanskrit",
+            "option_b": "Bengali",
+            "option_c": "English",
+            "option_d": "Telugu",
+            "correct_answer": "C",
+            "explanation": "English is not included in the Eighth Schedule of the Constitution of India, which lists the official languages recognized by the Union. The other options—Sanskrit, Bengali, and Telugu—are all part of the Eighth Schedule."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The question states that a language is NOT included in the Eighth Schedule of the Constitution of India."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Citizenship",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Which of the following is NOT a condition for acquiring Indian citizenship by naturalization as per the Citizenship Act, 1955?",
+            "option_a": "The applicant must have resided in India for at least 12 years.",
+            "option_b": "The applicant must be a person of good character.",
+            "option_c": "The applicant must have knowledge of any Indian language.",
+            "option_d": "The applicant must have been born in India.",
+            "correct_answer": "D",
+            "explanation": "According to the Citizenship Act, 1955, one of the conditions for acquiring Indian citizenship by naturalization is that the applicant must have resided in India for at least 12 years, be of good character, and have knowledge of any Indian language. Being born in India is a separate provision under the Act and does not apply to naturalization."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The condition for acquiring Indian citizenship by naturalization as per the Citizenship Act, 1955 is NOT met."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Which of the following statements is true regarding the acquisition of Indian citizenship by naturalization under the Citizenship Act, 1955?",
+            "option_a": "An applicant must have resided in India for at least 12 years immediately preceding the application.",
+            "option_b": "An applicant must have been born in India to acquire citizenship by naturalization.",
+            "option_c": "An applicant must have a valid visa for at least 5 years before applying for citizenship.",
+            "option_d": "An applicant must have served in the Indian Armed Forces for a minimum of 3 years.",
+            "correct_answer": "A",
+            "explanation": "According to the Citizenship Act, 1955, an applicant for Indian citizenship by naturalization must have resided in India for at least 12 years immediately preceding the application. This is a specific requirement that distinguishes it from other forms of citizenship."
+          },
+          "fact_verdicts": {
+            "1": "INSUFFICIENT"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "1: INSUFFICIENT. Claim: The acquisition of Indian citizenship by naturalization is governed by the Citizenship Act, 1955."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Which of the following statements about Indian citizenship is correct?",
+            "option_a": "A person born in India after 2004 is not automatically a citizen if their parents are illegal immigrants.",
+            "option_b": "All persons of Indian origin are automatically granted Indian citizenship regardless of their current nationality.",
+            "option_c": "Citizenship can only be acquired by birth and not by descent or naturalization.",
+            "option_d": "A foreign national can acquire Indian citizenship solely by residing in India for 5 years without any other conditions.",
+            "correct_answer": "A",
+            "explanation": "According to the Citizenship Act, 1955, a person born in India after January 26, 2004, is not automatically a citizen if their parents are illegal immigrants. This reflects the legal framework governing citizenship in India."
+          },
+          "fact_verdicts": {
+            "1": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Option B is misleading as not all persons of Indian origin are automatically granted citizenship regardless of their current nationality; there are specific conditions under the Citizenship Act.",
+            "Option C is incorrect because citizenship can be acquired by birth, descent, and naturalization, not just by birth.",
+            "Option D is misleading as it oversimplifies the process of acquiring citizenship; residency alone for 5 years is not sufficient without fulfilling other conditions."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "quality: Option B is misleading as not all persons of Indian origin are automatically granted citizenship regardless of their current nationality; there are specific conditions under the Citizenship Act.",
+            "quality: Option C is incorrect because citizenship can be acquired by birth, descent, and naturalization, not just by birth.",
+            "quality: Option D is misleading as it oversimplifies the process of acquiring citizenship; residency alone for 5 years is not sufficient without fulfilling other conditions."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    }
+  ]
+}

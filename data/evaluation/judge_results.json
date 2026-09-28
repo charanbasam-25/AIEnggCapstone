@@ -1,0 +1,610 @@
+{
+  "dataset": "UPSC 2025 Prelims Polity, Q54-Q66",
+  "judge_model": "gpt-4o",
+  "judge_model_is_fallback": false,
+  "generator_model": "gpt-4o-mini",
+  "questions_judged": 13,
+  "systems": {
+    "A": "Vanilla RAG (retrieve -> generate)",
+    "B": "RAG + independent claim verification (may abstain)"
+  },
+  "note": "The judge evaluates reasoning quality only. Answer correctness is determined by the official UPSC answer key, never by the judge.",
+  "summary": {
+    "A": {
+      "factual_correctness": 2.769230769230769,
+      "evidence_faithfulness": 2.4615384615384617,
+      "reasoning_validity": 2.6923076923076925,
+      "epistemic_honesty": 2.3846153846153846,
+      "mean_across_dimensions": 2.576923076923077,
+      "hallucinated_claim_count": 19,
+      "questions_with_hallucinations": 12
+    },
+    "B": {
+      "factual_correctness": 3.6923076923076925,
+      "evidence_faithfulness": 4.6923076923076925,
+      "reasoning_validity": 4.538461538461538,
+      "epistemic_honesty": 5.0,
+      "mean_across_dimensions": 4.480769230769231,
+      "hallucinated_claim_count": 1,
+      "questions_with_hallucinations": 1
+    },
+    "head_to_head": {
+      "A": 1,
+      "B": 12,
+      "TIE": 0
+    },
+    "slot_preference_check": {
+      "1": 5,
+      "2": 8,
+      "TIE": 0
+    }
+  },
+  "rows": [
+    {
+      "q_number": 54,
+      "official_answer": "A",
+      "answers": {
+        "A": "D",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 1,
+          "reasoning_validity": 1,
+          "epistemic_honesty": 1
+        },
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 4,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 1.0,
+        "B": 4.0
+      },
+      "hallucinated_claims": {
+        "A": [
+          "According to Article 368 of the Constitution of India, any amendment that seeks to alter the provisions related to the Union List, the extent of the executive power of a State, and the conditions of the Governor’s office requires ratification by the Legislatures of not less than one-half of the States before being presented to the President for assent."
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 incorrectly asserts that all three subjects require ratification by the Legislatures of not less than one-half of the States, which contradicts the official answer key. The reasoning is flawed, and the claims are not supported by the provided evidence.",
+        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and supports Statements II and III with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence for a complete conclusion."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better because it accurately identifies the insufficiency of evidence for Statement I and supports the other statements with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence, aligning with the critical scoring rules."
+    },
+    {
+      "q_number": 55,
+      "official_answer": "A",
+      "answers": {
+        "A": "D",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 3,
+          "reasoning_validity": 3,
+          "epistemic_honesty": 2
+        }
+      },
+      "mean": {
+        "B": 5.0,
+        "A": 2.75
+      },
+      "hallucinated_claims": {
+        "B": [],
+        "A": [
+          "The provided sources do not contain specific information regarding the statements about Lokpal."
+        ]
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies that the provided evidence is insufficient to verify any of the statements about Lokpal. It does not attempt to make unsupported claims and accurately reflects the limitations of the evidence. This aligns with the critical scoring rules, particularly rule 3, which values abstention when evidence is genuinely insufficient.",
+        "A": "Response 2 incorrectly asserts that the answer is D, despite acknowledging the insufficiency of evidence. This response fails to adhere to the critical scoring rules, particularly rule 3, as it commits to an unsupported answer. The claim that the sources do not contain specific information is not fully justified by the evidence provided."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "1",
+      "preference_reason": "Response 1 is better because it accurately reflects the insufficiency of the evidence and does not make unsupported claims. It demonstrates epistemic honesty by declining to answer due to lack of evidence, which is preferable to Response 2's unsupported conclusion."
+    },
+    {
+      "q_number": 56,
+      "official_answer": "C",
+      "answers": {
+        "A": "A",
+        "B": "C"
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 2,
+          "reasoning_validity": 2,
+          "epistemic_honesty": 3
+        },
+        "B": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 2.5,
+        "B": 5.0
+      },
+      "hallucinated_claims": {
+        "A": [
+          "The second pair, 'Valuing and preserving of the rich heritage of our composite culture', is part of the Fundamental Duties, not Fundamental Rights."
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 incorrectly concludes that only one pair is correctly matched, which contradicts the official answer key. The reasoning is partially correct for the third pair but fails to accurately interpret the evidence for the first and second pairs. The evidence cited does not fully support the claims made, leading to a lower score in evidence faithfulness and reasoning validity.",
+        "B": "Response 2 correctly identifies all three pairs as correctly matched, aligning with the official answer key. Each claim is well-supported by the evidence provided, and the reasoning is valid and clearly articulated. The response accurately reflects the certainty warranted by the evidence, resulting in high scores across all dimensions."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better overall as it correctly identifies all pairs as correctly matched, consistent with the official answer key. It provides accurate citations and valid reasoning, making it a more reliable tutoring content for students."
+    },
+    {
+      "q_number": 57,
+      "official_answer": "A",
+      "answers": {
+        "A": "A",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 4,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 3,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 3
+        }
+      },
+      "mean": {
+        "B": 4.0,
+        "A": 3.75
+      },
+      "hallucinated_claims": {
+        "B": [
+          ""
+        ],
+        "A": [
+          "Statement I is correct because the exercise of the pardoning power by the President can indeed be subjected to limited judicial review, as established by the Supreme Court in various judgments.",
+          "Statement II is incorrect because the President exercises this power on the advice of the Council of Ministers, as per Article 74 of the Constitution."
+        ]
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies that the evidence supports Statement I but finds the evidence insufficient for Statement II. The decision to decline an answer due to insufficient evidence is epistemically honest and aligns with the critical scoring rules.",
+        "A": "Response 2 reaches the correct answer (A) with valid reasoning for Statement I. However, it relies on external knowledge about Supreme Court judgments and Article 74, which are not part of the provided evidence, affecting evidence faithfulness and epistemic honesty."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "1",
+      "preference_reason": "Response 1 is better due to its adherence to the evidence provided and its epistemic honesty in declining to answer when evidence was insufficient. While Response 2 reaches the correct answer, it relies on external knowledge not present in the supplied evidence, which is against the evaluation criteria."
+    },
+    {
+      "q_number": 58,
+      "official_answer": "A",
+      "answers": {
+        "A": "D",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 3,
+          "reasoning_validity": 3,
+          "epistemic_honesty": 2
+        },
+        "B": {
+          "factual_correctness": 4,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 2.75,
+        "B": 4.5
+      },
+      "hallucinated_claims": {
+        "A": [
+          "Statement I is incorrect because the President's decision regarding disqualification under the Tenth Schedule is final for members of Parliament, not for members of the House of the People; it is the Governor's decision that is final for State Legislature members"
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 incorrectly asserts that the President's decision is not final for members of the House of the People, which is not supported by the evidence. The response correctly identifies that 'political party' is mentioned in the Constitution, but the reasoning for Statement I is flawed. The response reaches the wrong conclusion (D) based on partially incorrect reasoning.",
+        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and accurately contradicts Statement II based on the evidence. The response demonstrates epistemic honesty by declining to answer due to insufficient evidence for Statement I, which aligns with the critical scoring rules."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better because it demonstrates a higher level of epistemic honesty by acknowledging the insufficiency of evidence for Statement I and correctly contradicts Statement II based on the evidence. It avoids making unsupported claims, which is crucial for tutoring content."
+    },
+    {
+      "q_number": 59,
+      "official_answer": "C",
+      "answers": {
+        "A": "C",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "B": 4.25,
+        "A": 5.0
+      },
+      "hallucinated_claims": {
+        "B": [],
+        "A": []
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies the support for statements I and III based on the evidence provided. However, it declines to answer due to insufficient evidence for statement II, which aligns with the critical scoring rules. The response demonstrates epistemic honesty by acknowledging the lack of evidence for statement II and not committing to an unsupported answer.",
+        "A": "Response 2 accurately identifies the correct answer (C) and provides valid reasoning for each statement. It correctly cites the evidence for statements I and III and acknowledges the lack of constitutional requirement for statement II, aligning with the official answer key. The response is well-grounded in the provided evidence and demonstrates clear reasoning."
+      },
+      "preferred_system": "A",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better as it correctly identifies the official answer (C) and provides valid reasoning for each statement, supported by the evidence. It demonstrates a comprehensive understanding of the question and the evidence, making it more effective as tutoring content."
+    },
+    {
+      "q_number": 60,
+      "official_answer": "D",
+      "answers": {
+        "A": "A",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 1,
+          "reasoning_validity": 1,
+          "epistemic_honesty": 1
+        },
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 1.0,
+        "B": 4.5
+      },
+      "hallucinated_claims": {
+        "A": [
+          "An Ordinance can amend any Central Act as per the provisions of the Constitution.",
+          "An Ordinance cannot abridge a Fundamental Right, as it must conform to the Constitution.",
+          "An Ordinance cannot come into effect from a back date; it takes effect from the date of promulgation."
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 incorrectly asserts constitutional facts that are not supported by the provided evidence. It confidently reaches an incorrect conclusion (Option A) and misrepresents the nature of Ordinances without grounding in the source material.",
+        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to conclusively answer the question. It refrains from making unsupported claims and accurately reflects the limitations of the evidence, demonstrating strong epistemic honesty and reasoning validity."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better because it accurately identifies the insufficiency of the evidence and refrains from making unsupported claims, demonstrating strong epistemic honesty and reasoning validity. In contrast, Response 1 confidently asserts incorrect constitutional facts and reaches an incorrect conclusion without proper grounding in the evidence."
+    },
+    {
+      "q_number": 61,
+      "official_answer": "A",
+      "answers": {
+        "A": "A",
+        "B": "A"
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 4,
+          "evidence_faithfulness": 3,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 4
+        }
+      },
+      "mean": {
+        "B": 5.0,
+        "A": 3.75
+      },
+      "hallucinated_claims": {
+        "B": [],
+        "A": [
+          "Article 163",
+          "Article 200"
+        ]
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies that Statement I is supported by the evidence on page 105, which mentions the Governor's discretionary powers. It also accurately contradicts Statement II based on the evidence from pages 122, 128, and 203, which indicate that the President cannot reserve a bill without the Governor's forwarding. The reasoning is valid, and the response is epistemically honest, clearly stating what the evidence supports and does not support.",
+        "A": "Response 2 correctly identifies the correct answer as A, but it cites incorrect articles (Article 163 and Article 200) that are not present in the provided evidence. This affects the evidence faithfulness score. The reasoning is mostly valid, but the reliance on incorrect citations slightly undermines the epistemic honesty. The response does not hallucinate any claims beyond the incorrect article references."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "1",
+      "preference_reason": "Response 1 is better because it accurately cites the provided evidence and uses it to support its conclusions without introducing incorrect references. It demonstrates a clear understanding of the evidence and maintains epistemic honesty throughout, making it more reliable as tutoring content."
+    },
+    {
+      "q_number": 62,
+      "official_answer": "D",
+      "answers": {
+        "A": "D",
+        "B": "D"
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 4,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        },
+        "B": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 4.75,
+        "B": 5.0
+      },
+      "hallucinated_claims": {
+        "A": [
+          "Constitution of India, p. 250 for Statement III"
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 correctly identifies the official answer as D and provides accurate reasoning for each statement. However, it incorrectly cites page 250 for Statement III, which should be page 118. This affects the evidence faithfulness score.",
+        "B": "Response 2 accurately identifies the official answer as D and provides correct reasoning for each statement. It correctly cites the relevant pages for each statement, ensuring all claims are grounded in the provided evidence."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better because it accurately cites the correct pages for each statement, ensuring complete evidence faithfulness. Response 1, while correct in reasoning, incorrectly cites the page for Statement III, affecting its evidence faithfulness score."
+    },
+    {
+      "q_number": 63,
+      "official_answer": "D",
+      "answers": {
+        "A": "A",
+        "B": "D"
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 5,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 2,
+          "reasoning_validity": 1,
+          "epistemic_honesty": 1
+        }
+      },
+      "mean": {
+        "B": 5.0,
+        "A": 1.25
+      },
+      "hallucinated_claims": {
+        "B": [],
+        "A": [
+          "Statement III is correct as the Chief Minister does constitute a commission to review the financial position of Panchayats"
+        ]
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies all three statements as incorrect based on the provided evidence. It accurately cites the relevant constitutional provisions to support its conclusions, aligning with the official UPSC answer key. The reasoning is valid, and the response maintains epistemic honesty by clearly stating the contradictions found in the evidence.",
+        "A": "Response 2 incorrectly identifies Statement III as correct, which contradicts the evidence that states the Governor, not the Chief Minister, constitutes the Finance Commission. This leads to an incorrect answer choice (A) instead of the correct one (D). The response also misrepresents the evidence by claiming the Chief Minister's role in constituting the commission, which is not supported by the provided passages."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "1",
+      "preference_reason": "Response 1 is superior as it accurately identifies all statements as incorrect, aligns with the official answer key, and provides valid reasoning based on the supplied evidence. Response 2, on the other hand, incorrectly interprets the role of the Chief Minister, leading to an incorrect answer and misrepresentation of the evidence."
+    },
+    {
+      "q_number": 64,
+      "official_answer": "C",
+      "answers": {
+        "A": "A",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 1,
+          "reasoning_validity": 1,
+          "epistemic_honesty": 1
+        },
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 5,
+          "reasoning_validity": 5,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 1.0,
+        "B": 4.5
+      },
+      "hallucinated_claims": {
+        "A": [
+          "Arunachal Pradesh is correctly described as having a capital named after a fort and having two National Parks.",
+          "Nagaland's existence is based on the State of Nagaland Act, 1962, not a Constitutional Amendment Act.",
+          "Tripura was initially a Part 'C' State but did not become a centrally administered territory in 1956; it became a full-fledged State in 1972."
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 confidently asserts facts about Arunachal Pradesh, Nagaland, and Tripura that are not supported by the provided evidence. The reasoning is flawed as it incorrectly identifies the number of correctly matched pairs, contradicting the official answer key. The response also fails to cite relevant pages from the source evidence, leading to a low score across all dimensions.",
+        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to verify the claims about Arunachal Pradesh, Nagaland, and Tripura. It does not attempt to assert unsupported conclusions, demonstrating epistemic honesty. The response accurately reflects the limitations of the evidence, leading to high scores in evidence faithfulness, reasoning validity, and epistemic honesty."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better as it accurately identifies the insufficiency of the evidence to support any of the claims, demonstrating strong epistemic honesty and evidence faithfulness. It avoids making unsupported assertions, unlike Response 1, which confidently presents incorrect information without proper evidence."
+    },
+    {
+      "q_number": 65,
+      "official_answer": "D",
+      "answers": {
+        "A": "B",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "B",
+        "2": "A"
+      },
+      "scores": {
+        "B": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 4,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        },
+        "A": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 2,
+          "reasoning_validity": 2,
+          "epistemic_honesty": 1
+        }
+      },
+      "mean": {
+        "B": 4.0,
+        "A": 1.5
+      },
+      "hallucinated_claims": {
+        "B": [],
+        "A": [
+          "Statement II is correct as the Union Government can take over the administration of Scheduled Areas under certain circumstances on the recommendations of the Governor"
+        ]
+      },
+      "justification": {
+        "B": "Response 1 correctly identifies that the evidence is insufficient to fully support Statement I and partially supports Statement II. The decision to decline an answer due to insufficient evidence is epistemically honest and aligns with the critical scoring rules.",
+        "A": "Response 2 incorrectly asserts that Statement II is correct, which contradicts the official answer key. The reasoning is flawed as it misinterprets the evidence, leading to a wrong conclusion. The response also lacks epistemic honesty by confidently asserting an incorrect answer."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "1",
+      "preference_reason": "Response 1 is better because it correctly identifies the insufficiency of evidence to support the statements and abstains from providing an incorrect answer. This demonstrates a higher level of epistemic honesty and reasoning validity compared to Response 2, which incorrectly asserts a conclusion not supported by the evidence."
+    },
+    {
+      "q_number": 66,
+      "official_answer": "B",
+      "answers": {
+        "A": "B",
+        "B": null
+      },
+      "slot_assignment": {
+        "1": "A",
+        "2": "B"
+      },
+      "scores": {
+        "A": {
+          "factual_correctness": 3,
+          "evidence_faithfulness": 2,
+          "reasoning_validity": 3,
+          "epistemic_honesty": 2
+        },
+        "B": {
+          "factual_correctness": 1,
+          "evidence_faithfulness": 4,
+          "reasoning_validity": 4,
+          "epistemic_honesty": 5
+        }
+      },
+      "mean": {
+        "A": 2.5,
+        "B": 3.5
+      },
+      "hallucinated_claims": {
+        "A": [
+          "The Petroleum and Natural Gas Regulatory Board regulates the refining, storage, and distribution of petroleum",
+          "The Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of petroleum products"
+        ],
+        "B": []
+      },
+      "justification": {
+        "A": "Response 1 correctly identifies the official answer (B) but does so with reasoning that is not fully supported by the provided evidence. The claims about the Petroleum and Natural Gas Regulatory Board's regulatory scope are not directly traceable to the source evidence, leading to a lower score in evidence faithfulness and epistemic honesty.",
+        "B": "Response 2 declines to answer due to insufficient evidence, which is a valid approach given the lack of explicit support in the provided passages. This response demonstrates high epistemic honesty and reasoning validity by acknowledging the limitations of the evidence."
+      },
+      "preferred_system": "B",
+      "preferred_slot": "2",
+      "preference_reason": "Response 2 is better overall as it demonstrates a higher level of epistemic honesty and reasoning validity by acknowledging the insufficiency of the evidence to support a definitive answer. This approach is more aligned with the critical scoring rules, particularly the emphasis on not committing to unsupported conclusions."
+    }
+  ]
+}

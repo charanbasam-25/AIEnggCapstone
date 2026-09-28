@@ -1,9 +1,16 @@
 import json
 from pathlib import Path
 
-from sentence_transformers import CrossEncoder
+from src.tls_trust import enable_os_trust_store
 
-from src.retrieval.semantic_retriever import SemanticRetriever
+# Same reason as in semantic_retriever.py: this has to happen before the
+# cross-encoder weights are fetched. Both are guarded because either
+# module can be the first one imported.
+enable_os_trust_store()
+
+from sentence_transformers import CrossEncoder  # noqa: E402
+
+from src.retrieval.semantic_retriever import SemanticRetriever  # noqa: E402
 
 
 MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"

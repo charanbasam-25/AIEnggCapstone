@@ -7,4 +7,5 @@ sentence-transformers
 rank-bm25
 pymupdf
 python-dotenv
+streamlit
 pytest

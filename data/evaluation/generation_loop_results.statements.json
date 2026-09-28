@@ -1,0 +1,1482 @@
+{
+  "config": {
+    "topics": [
+      "Fundamental Rights",
+      "Directive Principles of State Policy",
+      "Fundamental Duties",
+      "Amendment of the Constitution",
+      "Emergency Provisions",
+      "The President of India",
+      "Parliament of India",
+      "The Supreme Court of India",
+      "Union Public Service Commission",
+      "Election Commission of India",
+      "Panchayats",
+      "Municipalities",
+      "Finance Commission",
+      "Official Language",
+      "Citizenship"
+    ],
+    "difficulty": "medium",
+    "question_format": "statements",
+    "max_retries": 2
+  },
+  "summary": {
+    "topics_run": 15,
+    "topics_completed": 15,
+    "topics_errored": 0,
+    "errors": [],
+    "terminal_decisions": {
+      "ACCEPT": 0,
+      "REJECT": 15,
+      "accept_rate": 0.0,
+      "reject_rate": 100.0
+    },
+    "attempts": {
+      "distribution": {
+        "3": 15
+      },
+      "total_attempts": 45,
+      "blocked_attempts": 45
+    },
+    "gate_attribution": {
+      "blocked_by": {
+        "fact": 38,
+        "answer_key": 41,
+        "quality": 42
+      },
+      "sole_blocker": {
+        "fact": 1,
+        "answer_key": 1
+      },
+      "note": "gates are not mutually exclusive; blocked_by counts overlaps, sole_blocker counts attempts where exactly one gate fired"
+    },
+    "unverified_baseline": {
+      "description": "attempt 1 of every topic, i.e. what a RAG generator with no gate in front of it would have shipped",
+      "n": 15,
+      "clean": 0,
+      "defective": 15,
+      "defect_rate": 100.0,
+      "gates_that_would_have_caught_it": {
+        "fact": 13,
+        "answer_key": 13,
+        "quality": 13
+      }
+    },
+    "repair": {
+      "first_attempt_blocked": 15,
+      "eventually_accepted": 0,
+      "repair_rate": 0.0
+    },
+    "claims": {
+      "verdict_distribution": {
+        "SUPPORTED": 105,
+        "CONTRADICTED": 22,
+        "INSUFFICIENT": 22
+      },
+      "total_claims_verified": 149,
+      "mean_claims_per_attempt": 3.31
+    }
+  },
+  "results": [
+    {
+      "topic": "Fundamental Rights",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding Fundamental Rights in the Constitution of India:\n\nI. Fundamental Rights are enshrined in Part III of the Constitution.\nII. The Right to Property is a Fundamental Right under the Constitution.\nIII. Fundamental Rights can be suspended during a national emergency.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I and II only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as Fundamental Rights are indeed enshrined in Part III of the Constitution. Statement II is incorrect because the Right to Property was removed from the list of Fundamental Rights by the 44th Amendment Act in 1978 and is now a legal right. Statement III is correct as Fundamental Rights can be suspended during a national emergency under Article 359 of the Constitution. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Right to Property is a Fundamental Right under the Constitution."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding Fundamental Rights in the Constitution of India:\n\nI. The Right to Equality includes the prohibition of discrimination on grounds of religion, race, caste, sex, or place of birth.\n\nII. The Right to Freedom of Speech and Expression is absolute and cannot be restricted under any circumstances.\n\nIII. The Right to Constitutional Remedies allows individuals to approach the Supreme Court for the enforcement of their Fundamental Rights.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I, II and III",
+            "option_d": "I and II only",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as it accurately describes the provisions of the Right to Equality. Statement II is incorrect because the Right to Freedom of Speech and Expression is subject to reasonable restrictions. Statement III is correct as it reflects the provision for Constitutional Remedies. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is misleading as it suggests that the Right to Freedom of Speech and Expression is absolute, which is not true; it is subject to reasonable restrictions."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Right to Freedom of Speech and Expression is absolute and cannot be restricted under any circumstances.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which explicitly mentions the prohibition of discrimination on grounds of religion, race, caste, sex, or place of birth. Statement III is also supported by the Constitution, as it allows individuals to approach the Supreme Court for the enforcement of their Fundamental Rights. However, Statement II is incorrect because the Right to Freedom of Speech and Expression is not absolute and can be restricted under certain circumstances, which is not supported by the evidence.",
+            "quality: Statement II is misleading as it suggests that the Right to Freedom of Speech and Expression is absolute, which is not true; it is subject to reasonable restrictions."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding Fundamental Rights in the Constitution of India:\n\nI. The Right to Equality includes the prohibition of discrimination on grounds of religion, race, caste, sex, or place of birth.\n\nII. The Right to Freedom of Speech and Expression is absolute and cannot be restricted under any circumstances.\n\nIII. The Right to Constitutional Remedies allows individuals to approach the Supreme Court for the enforcement of their Fundamental Rights.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as it reflects Article 15 of the Constitution, which prohibits discrimination. Statement II is incorrect because the Right to Freedom of Speech and Expression is subject to reasonable restrictions as per Article 19(2). Statement III is correct as it pertains to Article 32, which provides the right to approach the Supreme Court for enforcement of Fundamental Rights. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is misleading as it suggests that the Right to Freedom of Speech and Expression is absolute, which is incorrect. This could confuse candidates about the nature of this right."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Right to Freedom of Speech and Expression is absolute and cannot be restricted under any circumstances.",
+            "answer_key: INVALID. Reason: Statement I is supported by the evidence, which explicitly mentions the prohibition of discrimination on grounds of religion, race, caste, sex, or place of birth. Statement III is also supported as it refers to the Right to Constitutional Remedies, allowing individuals to approach the Supreme Court for enforcement of their Fundamental Rights. However, Statement II is incorrect because the Right to Freedom of Speech and Expression is not absolute and can be restricted under certain circumstances, which is not supported by the evidence.",
+            "quality: Statement II is misleading as it suggests that the Right to Freedom of Speech and Expression is absolute, which is incorrect. This could confuse candidates about the nature of this right."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Directive Principles of State Policy",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Directive Principles of State Policy in the Indian Constitution:  \nI. The Directive Principles are justiciable in nature and can be enforced in a court of law.  \nII. They aim to promote social and economic welfare of the people.  \nIII. The Directive Principles are fundamental in the governance of the country.  \nIV. They are applicable only to the Union government and not to the State governments.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and IV only",
+            "option_b": "II and III only",
+            "option_c": "I, II and III",
+            "option_d": "None",
+            "correct_answer": "B",
+            "explanation": "Statement I is incorrect because Directive Principles are not justiciable; they are non-enforceable in courts. Statement II is correct as they aim to promote social and economic welfare. Statement III is also correct as they are fundamental in governance. Statement IV is incorrect because they apply to both Union and State governments. Therefore, only statements II and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (B) is incorrect; the correct answer should be C (II and III) as both are correct statements. Statement I is incorrect, and Statement IV is also incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: The Directive Principles are justiciable in nature and can be enforced in a court of law.",
+            "claim_IV: INSUFFICIENT. Claim: They are applicable only to the Union government and not to the State governments.",
+            "answer_key: INVALID. Reason: Statement II is supported by Evidence 1, which states that the State shall strive to promote the welfare of the people. Statement III is also supported by Evidence 1, which mentions that the principles are fundamental in the governance of the country. However, Statement I is incorrect as the evidence states that the Directive Principles are not enforceable by any court, and Statement IV is incorrect as the Directive Principles apply to both the Union and State governments.",
+            "quality: The declared answer (B) is incorrect; the correct answer should be C (II and III) as both are correct statements. Statement I is incorrect, and Statement IV is also incorrect."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Directive Principles of State Policy in the Constitution of India:\n\nI. The Directive Principles are enforceable by the courts of law.\nII. They aim to promote social and economic welfare of the people.\nIII. The principles are fundamental in the governance of the country.\nIV. They are applicable only to the Union government and not to the State governments.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I, II and III",
+            "option_d": "None",
+            "correct_answer": "B",
+            "explanation": "Statement I is incorrect because the Directive Principles are not enforceable by courts. Statement II is correct as they aim to promote social and economic welfare. Statement III is also correct as they are fundamental in governance. Statement IV is incorrect because the Directive Principles apply to both Union and State governments. Therefore, the correct answer is II and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement I is incorrectly stated as enforceable by courts, which is a fundamental aspect of the Directive Principles.",
+            "The declared answer (B) is incorrect; the correct answer should be C (II and III) as both are correct, while I and IV are incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: The Directive Principles are enforceable by the courts of law.",
+            "claim_IV: INSUFFICIENT. Claim: They are applicable only to the Union government and not to the State governments.",
+            "answer_key: INVALID. Reason: Evidence 1 states that the Directive Principles are not enforceable by courts but are fundamental in governance, supporting statement II and III. Evidence 2 reinforces that they are more like guidelines than strict rules, confirming that they are not enforceable (contradicting statement I). There is no evidence supporting that they are applicable only to the Union government (statement IV). Therefore, options B (II and III) and C (I, II, and III) are supported.",
+            "quality: Statement I is incorrectly stated as enforceable by courts, which is a fundamental aspect of the Directive Principles.",
+            "quality: The declared answer (B) is incorrect; the correct answer should be C (II and III) as both are correct, while I and IV are incorrect."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Directive Principles of State Policy in the Indian Constitution:\n\nI. The Directive Principles are justiciable and can be enforced in a court of law.\nII. They aim to promote social and economic welfare in the country.\nIII. The Directive Principles are applicable to both the Union and State governments.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I only",
+            "option_b": "II and III only",
+            "option_c": "I and II only",
+            "option_d": "I, II and III",
+            "correct_answer": "B",
+            "explanation": "Statement I is incorrect because the Directive Principles are not justiciable; they are guidelines for the State policy and cannot be enforced by courts. Statement II is correct as they aim to promote social and economic welfare. Statement III is also correct since these principles apply to both the Union and State governments. Therefore, the correct answer is B (II and III only)."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement I is factually incorrect, leading to confusion about the nature of Directive Principles.",
+            "The declared answer (B) is incorrect; the correct answer should be D (II and III only) as both statements II and III are correct."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: The Directive Principles are justiciable and can be enforced in a court of law.",
+            "answer_key: INVALID. Reason: Statement I is incorrect as the evidence explicitly states that the provisions of the Directive Principles are not enforceable by any court. Statement II is correct as the evidence indicates that the Directive Principles aim to promote social and economic welfare. Statement III is also correct as the Directive Principles are applicable to both the Union and State governments. Therefore, options B, C, and D are supported.",
+            "quality: Statement I is factually incorrect, leading to confusion about the nature of Directive Principles.",
+            "quality: The declared answer (B) is incorrect; the correct answer should be D (II and III only) as both statements II and III are correct."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Fundamental Duties",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Fundamental Duties enshrined in the Constitution of India:\n\nI. Fundamental Duties are mentioned in Article 51A of the Constitution.\n\nII. The Fundamental Duties are legally enforceable by the courts.\n\nIII. There are a total of eleven Fundamental Duties listed in the Constitution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as Fundamental Duties are indeed mentioned in Article 51A. Statement II is incorrect because the Fundamental Duties are not legally enforceable by the courts; they serve as moral obligations. Statement III is correct as there are a total of eleven Fundamental Duties listed in the Constitution. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be 'I and III only' as stated in the explanation, but the reasoning for Statement II is flawed. It states that Fundamental Duties are not legally enforceable, which is misleading as they can be enforced indirectly through other laws."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The Fundamental Duties are legally enforceable by the courts.",
+            "answer_key: INVALID. Reason: Evidence 1 confirms that Fundamental Duties are mentioned in Article 51A, supporting statement I. Evidence 4 indicates that Fundamental Duties are not legally enforceable by the courts, contradicting statement II. Evidence 1 also confirms that there are a total of eleven Fundamental Duties, supporting statement III. Therefore, options A (I and III only) and B (I only) are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be 'I and III only' as stated in the explanation, but the reasoning for Statement II is flawed. It states that Fundamental Duties are not legally enforceable, which is misleading as they can be enforced indirectly through other laws."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Fundamental Duties enshrined in the Constitution of India:  \nI. The Fundamental Duties were added to the Constitution by the 42nd Amendment in 1976.  \nII. There are a total of twelve Fundamental Duties listed in Article 51A.  \nIII. The Fundamental Duties are applicable to all citizens of India.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Fundamental Duties were indeed added by the 42nd Amendment in 1976. Statement II is incorrect because there are eleven Fundamental Duties listed in Article 51A, not twelve. Statement III is correct as these duties are applicable to all citizens of India. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be B (II and III only) as Statement II is incorrect, making the combination of I and III incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 1 and Evidence 2 confirm that the Fundamental Duties were added by the 42nd Amendment in 1976 (Statement I). Evidence 1 lists the Fundamental Duties, confirming there are twelve (Statement II). Evidence 3 and Evidence 4 indicate that these duties are applicable to all citizens (Statement III). Therefore, all statements are correct.",
+            "quality: The declared answer is incorrect; the correct answer should be B (II and III only) as Statement II is incorrect, making the combination of I and III incorrect."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Fundamental Duties enshrined in the Constitution of India:\n\nI. The Fundamental Duties were added by the 42nd Amendment in 1976.\n\nII. There are a total of ten Fundamental Duties listed in the Constitution.\n\nIII. Fundamental Duties are applicable to all citizens of India.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I and II only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Fundamental Duties were indeed added by the 42nd Amendment in 1976. Statement II is incorrect because there are actually eleven Fundamental Duties listed in the Constitution. Statement III is correct as these duties are applicable to all citizens of India. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be C (II and III only) as Statement II is incorrect, and thus the combination of I and III cannot be correct."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 1 and Evidence 2 confirm that the Fundamental Duties were added by the 42nd Amendment in 1976 (Statement I). Evidence 1 also indicates that there are a total of ten Fundamental Duties listed in the Constitution (Statement II). Furthermore, it is stated that these duties are applicable to every citizen of India (Statement III). Therefore, all three statements are correct.",
+            "quality: The declared answer is incorrect; the correct answer should be C (II and III only) as Statement II is incorrect, and thus the combination of I and III cannot be correct."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Amendment of the Constitution",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the amendment of the Constitution of India:  \nI. The Constitution can be amended by a simple majority of the Parliament.  \nII. The President of India has the power to initiate amendments to the Constitution.  \nIII. Certain amendments require ratification by at least half of the state legislatures.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "C",
+            "explanation": "Statement I is correct as some amendments can be made by a simple majority. Statement II is incorrect because the President cannot initiate amendments; it is the Parliament that does so. Statement III is correct as certain amendments do require ratification by at least half of the state legislatures. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be C, as only statements I and III are correct."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: The Constitution can be amended by a simple majority of the Parliament.",
+            "claim_II: INSUFFICIENT. Claim: The President of India has the power to initiate amendments to the Constitution.",
+            "quality: The declared answer is incorrect; the correct answer should be C, as only statements I and III are correct."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the amendment of the Constitution of India:\n\nI. An amendment to the Constitution can be initiated by either House of Parliament.\n\nII. The President of India must give assent to every constitutional amendment.\n\nIII. Certain amendments require ratification by at least half of the state legislatures.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct because either House of Parliament can initiate an amendment. Statement II is incorrect; while the President's assent is required, it is not mandatory for all amendments (e.g., certain amendments can be enacted without the President's assent). Statement III is correct as some amendments do require ratification by at least half of the state legislatures. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is misleading; it implies that the President's assent is required for all amendments, which is incorrect as some amendments do not require it."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The President of India must give assent to every constitutional amendment.",
+            "answer_key: INVALID. Reason: Evidence 1 supports statement I, indicating that an amendment can be initiated by either House of Parliament. Evidence 2 supports statement III, which states that certain amendments require ratification by at least half of the state legislatures. However, Evidence 1 also indicates that the President must give assent to the amendment, which supports statement II. Therefore, options A (I and III only) and C (I only) are supported.",
+            "quality: Statement II is misleading; it implies that the President's assent is required for all amendments, which is incorrect as some amendments do not require it."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the amendment of the Constitution of India:\n\nI. A constitutional amendment can be initiated by either House of Parliament.\n\nII. The President of India has the power to veto any constitutional amendment.\n\nIII. Certain amendments require ratification by at least half of the state legislatures.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as amendments can be initiated by either House of Parliament. Statement II is incorrect because the President does not have the power to veto constitutional amendments; they must be either accepted or returned for reconsideration. Statement III is correct as certain amendments do require ratification by at least half of the state legislatures. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be C (I and III only) as Statement II is indeed incorrect, but the explanation incorrectly states that the answer is A."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The President of India has the power to veto any constitutional amendment.",
+            "answer_key: INVALID. Reason: Evidence 1 supports statement I, indicating that a constitutional amendment can be initiated by either House of Parliament. Evidence 2 supports statement III, which states that certain amendments require ratification by at least half of the state legislatures. However, there is no evidence supporting statement II, which claims that the President has the power to veto any constitutional amendment. Therefore, options A (I and III only) and C (I only) are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be C (I and III only) as Statement II is indeed incorrect, but the explanation incorrectly states that the answer is A."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Emergency Provisions",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Emergency Provisions in the Constitution of India:\n\nI. The President can declare a National Emergency under Article 352 only on the grounds of war or external aggression.\n\nII. During a National Emergency, the fundamental rights of citizens can be suspended as per Article 358.\n\nIII. The President can declare a State Emergency under Article 356 if the governance of a state cannot be carried on in accordance with the Constitution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "B",
+            "explanation": "Statement I is incorrect because a National Emergency can also be declared on the grounds of internal disturbance, not just war or external aggression. Statement II is correct as Article 358 allows for the suspension of fundamental rights during a National Emergency. Statement III is also correct as Article 356 provides for the imposition of President's Rule in a state when the governance cannot be carried out according to the Constitution. Therefore, the correct answer is II and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement I is misleading as it does not mention internal disturbance as a valid ground for declaring a National Emergency, leading to ambiguity in interpretation.",
+            "The declared answer (B) is incorrect; the correct answer should be D, as both Statements II and III are correct, and Statement I is incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: The President can declare a National Emergency under Article 352 only on the grounds of war or external aggression.",
+            "answer_key: INVALID. Reason: Statement I is incorrect because the President can declare a National Emergency not only on the grounds of war or external aggression but also on the grounds of armed rebellion, as stated in Evidence 1. Statement II is correct as Article 358 allows for the suspension of Article 19 during emergencies. Statement III is also correct because Article 356 allows the President to declare a State Emergency if the governance of a state cannot be carried on in accordance with the Constitution.",
+            "quality: Statement I is misleading as it does not mention internal disturbance as a valid ground for declaring a National Emergency, leading to ambiguity in interpretation.",
+            "quality: The declared answer (B) is incorrect; the correct answer should be D, as both Statements II and III are correct, and Statement I is incorrect."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Emergency Provisions in the Constitution of India:\n\nI. A National Emergency can be declared by the President only on the grounds of war or external aggression.\nII. During a National Emergency, the President can legislate by ordinance.\nIII. A State Emergency can be declared if the governance of a state cannot be carried on in accordance with the Constitution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I only",
+            "option_b": "II and III only",
+            "option_c": "I and III only",
+            "option_d": "None",
+            "correct_answer": "B",
+            "explanation": "Statement I is incorrect because a National Emergency can also be declared on the grounds of internal disturbance, not just war or external aggression. Statement II is correct as the President can legislate by ordinance during a National Emergency. Statement III is also correct, as a State Emergency can be declared under Article 356 if the governance of a state cannot be carried out according to the Constitution. Therefore, the correct answer is II and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement I is misleading as it does not include internal disturbance as a ground for declaring a National Emergency, leading to ambiguity in interpretation.",
+            "The declared answer (B) is incorrect based on the evaluation of Statement I, which affects the clarity of the single best answer."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: A National Emergency can be declared by the President only on the grounds of war or external aggression.",
+            "answer_key: INVALID. Reason: Statement I is incorrect because a National Emergency can be declared not only on the grounds of war or external aggression but also on the grounds of armed rebellion, as per Evidence 1. Statement II is correct as the President can legislate by ordinance during a National Emergency, as indicated in Evidence 5. Statement III is also correct, as a State Emergency can be declared if the governance of a state cannot be carried on in accordance with the Constitution, which is supported by the general provisions regarding emergencies.",
+            "quality: Statement I is misleading as it does not include internal disturbance as a ground for declaring a National Emergency, leading to ambiguity in interpretation.",
+            "quality: The declared answer (B) is incorrect based on the evaluation of Statement I, which affects the clarity of the single best answer."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Emergency Provisions in the Constitution of India:\n\nI. A National Emergency can be declared on the grounds of war, external aggression, or armed rebellion.\n\nII. During a National Emergency, the President can legislate by ordinance without the approval of Parliament.\n\nIII. A State Emergency can be declared if the governance of a state cannot be carried on in accordance with the Constitution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "I, II and III",
+            "option_c": "II and III only",
+            "option_d": "I only",
+            "correct_answer": "B",
+            "explanation": "All three statements are correct. A National Emergency can indeed be declared on the grounds of war, external aggression, or armed rebellion (Statement I). During such an emergency, the President has the power to legislate by ordinance (Statement II). Additionally, a State Emergency can be declared if the governance of a state cannot be carried on in accordance with the Constitution (Statement III). Therefore, the correct answer is I, II and III."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (B) is incorrect; Statement II is misleading as the President can legislate by ordinance only under specific conditions, not unconditionally during a National Emergency."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: During a National Emergency, the President can legislate by ordinance without the approval of Parliament.",
+            "quality: The declared answer (B) is incorrect; Statement II is misleading as the President can legislate by ordinance only under specific conditions, not unconditionally during a National Emergency."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "The President of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the President of India:  \nI. The President is the constitutional head of the executive of the Union.  \nII. The President can appoint the Prime Minister without any restrictions.  \nIII. The President has the power to dissolve the Lok Sabha.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the President is indeed the constitutional head of the executive. Statement II is incorrect because the President must appoint the Prime Minister from among the members of the Lok Sabha, typically the leader of the majority party. Statement III is correct as the President has the authority to dissolve the Lok Sabha. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be A (I and III only) as per the explanation provided, but the question allows for multiple interpretations regarding the appointment of the Prime Minister."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The President can appoint the Prime Minister without any restrictions.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which states that the executive power of the Union is vested in the President, making him the constitutional head of the executive. Statement III is also supported by the Constitution, as the President has the power to dissolve the Lok Sabha. However, Statement II is not supported, as the appointment of the Prime Minister is subject to the condition that the Prime Minister must be a member of the Lok Sabha and is typically the leader of the majority party, indicating restrictions. Therefore, options A (I and III only) and B (I only) are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be A (I and III only) as per the explanation provided, but the question allows for multiple interpretations regarding the appointment of the Prime Minister."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the President of India:  \nI. The President is the constitutional head of the state and exercises executive powers on the advice of the Council of Ministers.  \nII. The President can unilaterally appoint the Governors of the states without any consultation.  \nIII. The President has the authority to summon and prorogue Parliament sessions.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I, II and III",
+            "option_d": "I only",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the President acts on the advice of the Council of Ministers, making him the constitutional head. Statement II is incorrect because the appointment of Governors is typically made after consultation with the Prime Minister. Statement III is correct as the President has the power to summon and prorogue Parliament sessions. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be A (I and III only) as II is not accurate regarding the appointment of Governors."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The President can unilaterally appoint the Governors of the states without any consultation.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which states that the executive power of the Union is vested in the President and exercised on the advice of the Council of Ministers. Statement III is also supported by the Constitution, as the President has the authority to summon and prorogue Parliament sessions. However, Statement II is not supported, as the President does not have the power to unilaterally appoint Governors without consultation; this is typically done on the advice of the Council of Ministers.",
+            "quality: The declared answer is incorrect; the correct answer should be A (I and III only) as II is not accurate regarding the appointment of Governors."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the President of India:\n\nI. The President is the constitutional head of the state and acts on the advice of the Council of Ministers.\n\nII. The President has the power to dissolve the Lok Sabha at any time.\n\nIII. The President can appoint the Prime Minister only if they are a member of the Lok Sabha.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I only",
+            "option_b": "I and II only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the President acts on the advice of the Council of Ministers, making them the constitutional head. Statement II is incorrect because the President can dissolve the Lok Sabha only on the advice of the Prime Minister. Statement III is also incorrect; the President can appoint a Prime Minister who is not a member of the Lok Sabha, provided they can secure a majority in the House."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect based on the evaluation of the statements. Statement II and III are both incorrect, which means the correct answer should be B (I only).",
+            "The question does not allow for a single best answer due to the incorrectness of the declared answer."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: The President can appoint the Prime Minister only if they are a member of the Lok Sabha.",
+            "answer_key: INVALID. Reason: Statement I is correct as the President is indeed the constitutional head of the state and acts on the advice of the Council of Ministers, which is supported by Evidence 2. Statement II is also correct because the President has the power to dissolve the Lok Sabha, which is a recognized function of the President. However, Statement III is incorrect; the President can appoint the Prime Minister regardless of whether they are a member of the Lok Sabha or not, as long as they can command a majority in the Lok Sabha. Therefore, options A (I only) and B (I and II only) are supported.",
+            "quality: The declared answer (A) is incorrect based on the evaluation of the statements. Statement II and III are both incorrect, which means the correct answer should be B (I only).",
+            "quality: The question does not allow for a single best answer due to the incorrectness of the declared answer."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Parliament of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Parliament of India:  \nI. The Parliament of India consists of two houses: the Lok Sabha and the Rajya Sabha.  \nII. The President of India is a member of the Lok Sabha.  \nIII. The Rajya Sabha is a permanent house and is not subject to dissolution.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Parliament of India is indeed made up of the Lok Sabha and the Rajya Sabha. Statement II is incorrect because the President of India is not a member of the Lok Sabha; rather, the President is an integral part of the Parliament but does not belong to either house. Statement III is correct as the Rajya Sabha is a permanent house and is not subject to dissolution, although one-third of its members retire every two years. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is incorrect, which leads to ambiguity in the declared answer as it suggests that all statements must be correct for the answer to be valid."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The President of India is a member of the Lok Sabha.",
+            "answer_key: INVALID. Reason: Statement I is correct as the Parliament of India consists of two houses: the Lok Sabha and the Rajya Sabha. Statement II is incorrect because the President of India is not a member of the Lok Sabha; the President is a separate entity. Statement III is correct as the Rajya Sabha is indeed a permanent house and is not subject to dissolution, although one-third of its members retire every two years. Therefore, options A (I and III only) and B (I only) are supported by the evidence.",
+            "quality: Statement II is incorrect, which leads to ambiguity in the declared answer as it suggests that all statements must be correct for the answer to be valid."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Parliament of India:\n\nI. The Parliament of India consists of the President, the Lok Sabha, and the Rajya Sabha.\n\nII. The Lok Sabha is a permanent house and is not subject to dissolution.\n\nIII. The Rajya Sabha has a term of six years for its members, with one-third of its members retiring every two years.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I only",
+            "option_b": "I and III only",
+            "option_c": "II and III only",
+            "option_d": "None",
+            "correct_answer": "B",
+            "explanation": "Statement I is correct as the Parliament of India indeed consists of the President, the Lok Sabha, and the Rajya Sabha. Statement II is incorrect because the Lok Sabha is not a permanent house; it is dissolved every five years or earlier. Statement III is correct as it accurately describes the Rajya Sabha's structure. Therefore, the correct answer is B (I and III only)."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is incorrect, leading to confusion about the nature of the Lok Sabha, which is not a permanent house and is subject to dissolution.",
+            "The declared answer (B) is incorrect because it includes an incorrect statement (II), making it misleading for candidates."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Lok Sabha is a permanent house and is not subject to dissolution.",
+            "answer_key: INVALID. Reason: Statement I is correct as the Parliament of India consists of the President, Lok Sabha, and Rajya Sabha. Statement II is incorrect because the Lok Sabha is not a permanent house and is subject to dissolution. Statement III is correct as the Rajya Sabha has a term of six years for its members, with one-third of its members retiring every two years. Therefore, options B (I and III) and C (II and III) are supported.",
+            "quality: Statement II is incorrect, leading to confusion about the nature of the Lok Sabha, which is not a permanent house and is subject to dissolution.",
+            "quality: The declared answer (B) is incorrect because it includes an incorrect statement (II), making it misleading for candidates."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Parliament of India:\n\nI. The Parliament of India consists of the President, the Lok Sabha, and the Rajya Sabha.\n\nII. The Lok Sabha has a term of five years unless dissolved earlier.\n\nIII. The Rajya Sabha is a permanent house and is not subject to dissolution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "I and III only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Parliament of India is composed of the President, Lok Sabha, and Rajya Sabha. Statement II is also correct because the Lok Sabha has a term of five years unless it is dissolved earlier. Statement III is correct as the Rajya Sabha is indeed a permanent house and is not subject to dissolution. Therefore, the correct answer is A (I and II only) because the question requires identifying the correct statements, and all three statements are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be D (I, II, and III) as all statements are true.",
+            "The question misleads candidates by suggesting that only statements I and II are correct, which is not the case."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: All three statements are supported by the provided evidence. Statement I is correct as the Parliament of India consists of the President, Lok Sabha, and Rajya Sabha. Statement II is correct as the Lok Sabha has a term of five years unless dissolved earlier, which is supported by the Constitution. Statement III is also correct as the Rajya Sabha is a permanent house and is not subject to dissolution, as stated in the Constitution.",
+            "quality: The declared answer is incorrect; the correct answer should be D (I, II, and III) as all statements are true.",
+            "quality: The question misleads candidates by suggesting that only statements I and II are correct, which is not the case."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "The Supreme Court of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Supreme Court of India:  \nI. The Supreme Court has the power to issue writs for the enforcement of fundamental rights.  \nII. The Chief Justice of India is appointed by the President of India without any consultation.  \nIII. The Supreme Court consists of a maximum of 30 judges, including the Chief Justice.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I only",
+            "option_b": "I and III only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Supreme Court can issue writs under Article 32 for the enforcement of fundamental rights. Statement II is incorrect because the President appoints the Chief Justice after consultation with other judges of the Supreme Court and High Courts. Statement III is also incorrect as the Supreme Court can have a maximum of 34 judges, including the Chief Justice. Therefore, only Statement I is correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect as Statement III is factually wrong; the maximum number of judges in the Supreme Court is 34, not 30, which affects the validity of the answer options.",
+            "The question allows for multiple interpretations regarding the correctness of the statements, particularly Statement II, which could lead to confusion about the appointment process."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Chief Justice of India is appointed by the President of India without any consultation.",
+            "claim_III: INSUFFICIENT. Claim: The Supreme Court consists of a maximum of 30 judges, including the Chief Justice.",
+            "answer_key: INVALID. Reason: Statement I is correct as the Supreme Court has the power to issue writs for the enforcement of fundamental rights, as indicated in Evidence 2. Statement II is incorrect because the Chief Justice of India is appointed by the President after consultation with other judges, which is not supported by the evidence. Statement III is correct as the Supreme Court consists of a maximum of 30 judges, including the Chief Justice, which aligns with the constitutional provisions. Therefore, options A (I only) and B (I and III only) are supported.",
+            "quality: The declared answer is incorrect as Statement III is factually wrong; the maximum number of judges in the Supreme Court is 34, not 30, which affects the validity of the answer options.",
+            "quality: The question allows for multiple interpretations regarding the correctness of the statements, particularly Statement II, which could lead to confusion about the appointment process."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Supreme Court of India:\n\nI. The Supreme Court has the power to review its own judgments.\n\nII. The Chief Justice of India is the highest-ranking judge in the Supreme Court and has the authority to allocate cases to other judges.\n\nIII. The Supreme Court can issue advisory opinions to the President of India on legal matters.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I, II and III",
+            "option_d": "Only II",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Supreme Court can review its own judgments under Article 137 of the Constitution. Statement II is also correct as the Chief Justice of India indeed has the authority to allocate cases. However, Statement III is incorrect; the Supreme Court does not have the power to issue advisory opinions to the President, as this is not provided for in the Constitution. Therefore, the correct answer is 'I and II only'."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be C (I, II and III) as the Supreme Court can issue advisory opinions in certain contexts, which is a nuanced aspect of its powers."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence supports that the Supreme Court has the power to review its own judgments (Statement I), the Chief Justice of India is the highest-ranking judge and allocates cases (Statement II), and the Supreme Court can issue advisory opinions to the President (Statement III). Therefore, options A (I and II only) and C (I, II and III) are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be C (I, II and III) as the Supreme Court can issue advisory opinions in certain contexts, which is a nuanced aspect of its powers."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Supreme Court of India:  \nI. The Supreme Court has the power to issue writs for the enforcement of fundamental rights.  \nII. The Supreme Court can be dissolved by the President of India.  \nIII. The Supreme Court has the authority to interpret the Constitution of India.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I, II and III",
+            "option_d": "I and II only",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Supreme Court can issue writs under Article 32 for the enforcement of fundamental rights. Statement II is incorrect; the Supreme Court cannot be dissolved by the President. Statement III is correct as the Supreme Court has the authority to interpret the Constitution. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "VALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be A (I and III only) as II is false, making the declared answer misleading.",
+            "The presence of statement II, which is incorrect, creates confusion regarding the correct answer, affecting clarity."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Supreme Court can be dissolved by the President of India.",
+            "quality: The declared answer is incorrect; the correct answer should be A (I and III only) as II is false, making the declared answer misleading.",
+            "quality: The presence of statement II, which is incorrect, creates confusion regarding the correct answer, affecting clarity."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Union Public Service Commission",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Union Public Service Commission (UPSC):  \nI. The UPSC is responsible for conducting examinations for recruitment to the All India Services and Central Services.  \nII. The members of the UPSC are appointed by the President of India and can be removed by the Prime Minister.  \nIII. The UPSC operates under the provisions of Article 315 of the Constitution of India.  \nIV. The UPSC can advise the government on matters related to the recruitment of personnel in the armed forces.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II and IV only",
+            "option_c": "I, II and III",
+            "option_d": "I, III and IV",
+            "correct_answer": "A",
+            "explanation": "Statements I and III are correct: the UPSC conducts examinations for All India Services and operates under Article 315. Statement II is incorrect because members can only be removed by the President, not the Prime Minister. Statement IV is also incorrect as the UPSC does not advise on armed forces recruitment."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; the correct answer should be D, as statements I, III, and IV are correct, while II is incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The members of the UPSC are appointed by the President of India and can be removed by the Prime Minister.",
+            "claim_IV: INSUFFICIENT. Claim: The UPSC can advise the government on matters related to the recruitment of personnel in the armed forces.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which states that the UPSC conducts examinations for appointments to the services of the Union. Statement III is supported by Evidence 3, which mentions that the UPSC operates under Article 315 of the Constitution. Statement II is not supported because the evidence indicates that members are appointed by the President, but does not state that they can be removed by the Prime Minister; rather, it refers to the Governor in the case of State Commissions. Statement IV is not explicitly supported by the evidence provided.",
+            "quality: The declared answer (A) is incorrect; the correct answer should be D, as statements I, III, and IV are correct, while II is incorrect."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Union Public Service Commission (UPSC):  \n\nI. The UPSC is responsible for conducting examinations for appointments to the services of the Union.  \nII. The members of the UPSC are appointed by the Prime Minister of India.  \nIII. The UPSC operates under Article 315 of the Constitution of India.  \nIV. The UPSC can advise the government on matters related to the recruitment of personnel in civil services.  \n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and IV only",
+            "option_b": "I, III and IV only",
+            "option_c": "II and III only",
+            "option_d": "I, II, III and IV",
+            "correct_answer": "B",
+            "explanation": "Statement I is correct as the UPSC conducts examinations for Union services. Statement II is incorrect; members are appointed by the President of India, not the Prime Minister. Statement III is correct as the UPSC operates under Article 315. Statement IV is also correct; the UPSC advises on civil service recruitment. Therefore, the correct answer is B: I, III and IV only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is incorrect, leading to confusion about the correct answer.",
+            "The declared answer does not align with the correct interpretation of the statements."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The members of the UPSC are appointed by the Prime Minister of India.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which states that it is the duty of the UPSC to conduct examinations for appointments to the services of the Union. Statement III is supported by Evidence 2, which mentions that the UPSC operates under Article 315 of the Constitution. Statement IV is also supported by Evidence 1, as it implies that the UPSC can assist in recruitment matters. However, Statement II is incorrect because Evidence 2 states that members of the UPSC are appointed by the President, not the Prime Minister. Therefore, options B (I, III, IV) and D (I, II, III, IV) are supported.",
+            "quality: Statement II is incorrect, leading to confusion about the correct answer.",
+            "quality: The declared answer does not align with the correct interpretation of the statements."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Union Public Service Commission (UPSC):\n\nI. The UPSC is responsible for conducting examinations for appointments to the services of the Union.\nII. The members of the UPSC are appointed by the Prime Minister of India.\nIII. The UPSC operates under Article 315 of the Constitution of India.\nIV. The UPSC can advise the President of India on matters related to the recruitment of civil services.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II and IV only",
+            "option_c": "I, III and IV",
+            "option_d": "None",
+            "correct_answer": "A",
+            "explanation": "Statements I and III are correct: the UPSC conducts examinations for Union services and operates under Article 315. Statement II is incorrect because members are appointed by the President, not the Prime Minister. Statement IV is correct, but since the question asks for the correct subset, the best answer is A."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect as it does not include statement IV, which is also correct. Therefore, there is no single best answer among the options provided."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The members of the UPSC are appointed by the Prime Minister of India.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 1, which states that it is the duty of the UPSC to conduct examinations for appointments to the services of the Union. Statement III is supported by Evidence 2, which mentions that the UPSC operates under Article 315 of the Constitution. Statement IV is also supported by the Constitution, as it implies that the UPSC can advise on recruitment matters. However, Statement II is incorrect because Evidence 2 states that members of the UPSC are appointed by the President, not the Prime Minister. Therefore, options A (I and III only) and C (I, III and IV) are supported.",
+            "quality: The declared answer (A) is incorrect as it does not include statement IV, which is also correct. Therefore, there is no single best answer among the options provided."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Election Commission of India",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Election Commission of India:  \nI. The Election Commission is responsible for administering elections in India at both the central and state levels.  \nII. The Chief Election Commissioner can be removed from office only through a process similar to that of the removal of a Supreme Court judge.  \nIII. The Election Commission has the authority to regulate the conduct of political parties and candidates during elections.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "C",
+            "explanation": "Statement I is correct as the Election Commission oversees elections at both levels. Statement II is correct because the Chief Election Commissioner can only be removed through impeachment, similar to a Supreme Court judge. Statement III is incorrect; while the Election Commission regulates elections, it does not have the authority to regulate the conduct of political parties outside of the election period."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (C) is incorrect because Statement III is not accurate; the Election Commission does not regulate the conduct of political parties outside of elections, making the correct answer actually A (I and II only).",
+            "The explanation provided for Statement III is misleading, as it implies that the Election Commission has no authority over political parties during elections, which is not entirely correct; it does regulate their conduct during elections."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: Evidence 4 explicitly states that the Election Commission is responsible for the superintendence, direction, and control of elections at both the central and state levels, supporting statement I. Evidence 1 confirms that the Chief Election Commissioner can only be removed through a process similar to that of a Supreme Court judge, supporting statement II. Evidence 4 also implies that the Election Commission has the authority to regulate the conduct of political parties and candidates during elections, supporting statement III. Therefore, options A, C, and D are supported.",
+            "quality: The declared answer (C) is incorrect because Statement III is not accurate; the Election Commission does not regulate the conduct of political parties outside of elections, making the correct answer actually A (I and II only).",
+            "quality: The explanation provided for Statement III is misleading, as it implies that the Election Commission has no authority over political parties during elections, which is not entirely correct; it does regulate their conduct during elections."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Election Commission of India:  \nI. The Election Commission is responsible for conducting elections in both the central and state legislatures.  \nII. The Chief Election Commissioner can be removed from office by a simple majority in Parliament.  \nIII. The Election Commission has the authority to supervise the conduct of political parties during elections.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Election Commission conducts elections for both central and state legislatures. Statement II is incorrect because the Chief Election Commissioner can only be removed through a process similar to that of a Supreme Court judge, which requires a two-thirds majority in both Houses of Parliament. Statement III is correct as the Election Commission does supervise the conduct of political parties during elections. Therefore, the correct answer is A (I and III only)."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is factually incorrect, leading to confusion about the removal process of the Chief Election Commissioner."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Chief Election Commissioner can be removed from office by a simple majority in Parliament.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 2, which states that the Election Commission is responsible for the conduct of elections to Parliament and State Legislatures. Statement II is incorrect as the Chief Election Commissioner can only be removed through a process similar to that of a Supreme Court judge, which requires a two-thirds majority in Parliament, not a simple majority. Statement III is supported by Evidence 2, which implies the Election Commission has authority over the conduct of elections, including political parties.",
+            "quality: Statement II is factually incorrect, leading to confusion about the removal process of the Chief Election Commissioner."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Election Commission of India:  \nI. The Election Commission is responsible for administering elections in India at both the national and state levels.  \nII. The Chief Election Commissioner is appointed by the President of India and can be removed by a simple majority in Parliament.  \nIII. The Election Commission has the authority to supervise the conduct of elections and ensure free and fair elections in the country.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II only",
+            "option_c": "I, II and III",
+            "option_d": "I and II only",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the Election Commission oversees elections at both national and state levels. Statement II is incorrect because the Chief Election Commissioner can only be removed through a process requiring a two-thirds majority in Parliament, not a simple majority. Statement III is correct as the Election Commission is indeed responsible for ensuring free and fair elections. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be A (I and III only) as per the explanation provided, but the declared answer is A, which is misleading in the context of the explanation given.",
+            "Statement II is misleading as it incorrectly states the removal process of the Chief Election Commissioner, which could confuse candidates."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: The Chief Election Commissioner is appointed by the President of India and can be removed by a simple majority in Parliament.",
+            "answer_key: INVALID. Reason: Statement I is supported by Evidence 2, which states that the Election Commission is responsible for the conduct of elections at both national and state levels. Statement II is partially incorrect; while the Chief Election Commissioner is appointed by the President, the removal process requires a two-thirds majority in Parliament, not a simple majority, which is not supported by the evidence. Statement III is supported by Evidence 2, which indicates that the Election Commission has the authority to supervise elections to ensure they are conducted fairly. Therefore, options A (I and III only) and C (I, II and III) are supported, but II is not fully correct.",
+            "quality: The declared answer is incorrect; the correct answer should be A (I and III only) as per the explanation provided, but the declared answer is A, which is misleading in the context of the explanation given.",
+            "quality: Statement II is misleading as it incorrectly states the removal process of the Chief Election Commissioner, which could confuse candidates."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Panchayats",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding Panchayati Raj in India:  \nI. The Panchayati Raj system is a three-tier system consisting of the Gram Panchayat, Panchayat Samiti, and Zila Parishad.  \nII. The 73rd Amendment to the Constitution of India was enacted in 1992 to enhance the democratic process at the grassroots level through the establishment of Panchayati Raj institutions.  \nIII. The State Election Commission is responsible for conducting elections to the Panchayati Raj institutions in the states.  \nIV. The members of the Gram Panchayat are elected for a term of five years.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I, II and III",
+            "option_b": "I and IV only",
+            "option_c": "II and III only",
+            "option_d": "I, II, III and IV",
+            "correct_answer": "D",
+            "explanation": "All statements are correct. The Panchayati Raj system indeed consists of three tiers: Gram Panchayat, Panchayat Samiti, and Zila Parishad (I). The 73rd Amendment was enacted in 1992 to establish these institutions (II). The State Election Commission conducts elections for these bodies (III). Additionally, the members of the Gram Panchayat are elected for a term of five years (IV). Thus, all four statements are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: All statements I, II, III, and IV regarding Panchayati Raj in India are supported by the provided evidence. Evidence 4 confirms the three-tier system (I), Evidence 4 also states the enactment of the 73rd Amendment in 1992 (II), Evidence 1 and 2 indicate the role of the State Election Commission in conducting elections (III), and Evidence 5 confirms that members of the Gram Panchayat are elected for a term of five years (IV). Therefore, all options A, B, C, and D are supported."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Panchayati Raj system in India:  \nI. The Panchayati Raj system is a three-tier system consisting of the Gram Panchayat, Panchayat Samiti, and Zila Parishad.  \nII. The 73rd Amendment to the Constitution of India was enacted in 1992 to enhance the powers of the Panchayati Raj institutions.  \nIII. The members of the Gram Panchayat are appointed by the state government.  \nIV. The State Election Commission is responsible for conducting elections to the Panchayati Raj institutions.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and IV only",
+            "option_c": "I, II and IV",
+            "option_d": "III only",
+            "correct_answer": "A",
+            "explanation": "Statements I and II are correct as they accurately describe the structure and constitutional amendment related to the Panchayati Raj system. Statement III is incorrect because members of the Gram Panchayat are elected, not appointed. Statement IV is also correct, but since the question asks for the correct subset, the best answer is A."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect; the correct answer should be C, as statements I, II, and IV are correct, while III is incorrect."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: The members of the Gram Panchayat are appointed by the state government.",
+            "answer_key: INVALID. Reason: Statement I is correct as it describes the three-tier structure of the Panchayati Raj system. Statement II is also correct as the 73rd Amendment was enacted to enhance the powers of these institutions. Statement IV is correct because the State Election Commission is responsible for conducting elections to the Panchayati Raj institutions. However, Statement III is incorrect because the members of the Gram Panchayat are elected, not appointed by the state government. Therefore, options A, B, and C are supported.",
+            "quality: The declared answer (A) is incorrect; the correct answer should be C, as statements I, II, and IV are correct, while III is incorrect."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Panchayati Raj system in India:\n\nI. The Panchayati Raj system is a three-tier system consisting of the Gram Panchayat, Panchayat Samiti, and Zila Parishad.\n\nII. The 73rd Amendment to the Constitution of India was enacted in 1992 to enhance the democratic process at the grassroots level.\n\nIII. The members of the Panchayat Samiti are directly elected by the voters of the respective blocks.\n\nIV. The State Election Commission is responsible for conducting elections to the Gram Panchayats only.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I, II and III",
+            "option_b": "I and II only",
+            "option_c": "II and IV only",
+            "option_d": "Only III",
+            "correct_answer": "A",
+            "explanation": "Statements I, II, and III are correct. The Panchayati Raj system indeed consists of three tiers: the Gram Panchayat, Panchayat Samiti, and Zila Parishad. The 73rd Amendment was enacted to strengthen local self-governance, and the members of the Panchayat Samiti are directly elected by the voters. Statement IV is incorrect because the State Election Commission conducts elections for all levels of Panchayati Raj institutions, not just the Gram Panchayats."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "CONTRADICTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "PASS",
+          "quality_issues": [],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_IV: CONTRADICTED. Claim: The State Election Commission is responsible for conducting elections to the Gram Panchayats only.",
+            "answer_key: INVALID. Reason: Statement I is correct as it describes the three-tier structure of the Panchayati Raj system. Statement II is also correct as it refers to the 73rd Amendment enacted in 1992 to enhance grassroots democracy. Statement III is correct because the members of the Panchayat Samiti are indeed directly elected by voters. However, Statement IV is incorrect; the State Election Commission is responsible for conducting elections to all levels of Panchayati Raj, not just the Gram Panchayats. Therefore, options A (I, II, and III) and B (I and II only) are supported."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Municipalities",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding Municipalities in India:\n\nI. Municipalities are governed by the 73rd Amendment of the Constitution of India.\n\nII. The Constitution mandates the establishment of a three-tier system of local governance in urban areas.\n\nIII. The State Legislature has the power to make laws regarding the composition and powers of Municipalities.\n\nIV. Municipalities are responsible for the maintenance of public health and sanitation in urban areas.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II and IV only",
+            "option_c": "I, III and IV",
+            "option_d": "I, II, III and IV",
+            "correct_answer": "C",
+            "explanation": "Statement I is correct as Municipalities are indeed governed by the 73rd Amendment, which primarily deals with rural local governance but also influences urban governance. Statement II is incorrect because the 73rd Amendment pertains to rural areas; urban local bodies are governed by the 74th Amendment. Statement III is correct as the State Legislature can legislate on the structure and powers of Municipalities. Statement IV is also correct as Municipalities are responsible for public health and sanitation. Therefore, the correct answer is I, III, and IV."
+          },
+          "fact_verdicts": {
+            "claim_I": "CONTRADICTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement I incorrectly attributes the governance of Municipalities to the 73rd Amendment, which actually pertains to rural local governance, while the 74th Amendment governs urban local bodies.",
+            "Statement II is misleading as it incorrectly states that the 73rd Amendment mandates a three-tier system for urban areas, when it is the 74th Amendment that does so."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_I: CONTRADICTED. Claim: Municipalities are governed by the 73rd Amendment of the Constitution of India.",
+            "answer_key: INVALID. Reason: The evidence supports the following statements: I (Municipalities are governed by the 74th Amendment, not the 73rd), II (the Constitution does mandate a three-tier system of local governance in urban areas), III (the State Legislature has the power to make laws regarding the composition and powers of Municipalities), and IV (Municipalities are responsible for the maintenance of public health and sanitation in urban areas). Therefore, options C and D are supported.",
+            "quality: Statement I incorrectly attributes the governance of Municipalities to the 73rd Amendment, which actually pertains to rural local governance, while the 74th Amendment governs urban local bodies.",
+            "quality: Statement II is misleading as it incorrectly states that the 73rd Amendment mandates a three-tier system for urban areas, when it is the 74th Amendment that does so."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding Municipalities in India:\n\nI. The 74th Amendment to the Constitution of India provides for the establishment of Municipalities in urban areas.\n\nII. Municipalities are required to hold elections every five years as per the provisions of the Constitution.\n\nIII. The State Legislature has the authority to determine the composition and powers of Municipalities.\n\nIV. Municipalities are responsible for the maintenance of public health and sanitation in urban areas.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I, II and III",
+            "option_b": "II and IV only",
+            "option_c": "I, III and IV",
+            "option_d": "I and II only",
+            "correct_answer": "C",
+            "explanation": "Statements I, III, and IV are correct. The 74th Amendment establishes Municipalities, allows State Legislatures to define their composition and powers, and assigns them responsibilities like public health and sanitation. Statement II is incorrect as the Constitution does not mandate the frequency of elections; it is determined by state laws."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (C) is incorrect because Statement II is not accurate; the Constitution does not specify the frequency of elections, which makes the answer misleading.",
+            "The presence of Statement II as a correct option creates ambiguity in determining the single best answer."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "answer_key: INVALID. Reason: The evidence supports the following statements: \n\nI. The 74th Amendment provides for the establishment of Municipalities in urban areas (EVIDENCE 1). \n\nII. The Constitution mandates that elections to the Municipalities are to be held, but it does not specify a five-year term (EVIDENCE 4). Therefore, this statement is not fully supported. \n\nIII. The State Legislature has the authority to determine the composition and powers of Municipalities (EVIDENCE 5). \n\nIV. Municipalities are responsible for the maintenance of public health and sanitation in urban areas, as they are endowed with powers to perform functions related to matters listed in the Twelfth Schedule (EVIDENCE 5). \n\nThus, options A (I, II, III), C (I, III, IV), and D (I, II) are supported, but option B (II and IV only) is not supported.",
+            "quality: The declared answer (C) is incorrect because Statement II is not accurate; the Constitution does not specify the frequency of elections, which makes the answer misleading.",
+            "quality: The presence of Statement II as a correct option creates ambiguity in determining the single best answer."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding Municipalities in India:  \nI. The 74th Amendment to the Constitution of India provides for the establishment of Municipalities in urban areas.  \nII. The Constitution mandates that the elections to the Municipalities must be held every three years.  \nIII. The State Legislature has the authority to make laws regarding the composition and powers of Municipalities.  \nIV. Municipalities are responsible for the maintenance of public health and sanitation in urban areas.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "II and IV only",
+            "option_c": "I, II and IV",
+            "option_d": "I, III and IV",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as the 74th Amendment indeed provides for the establishment of Municipalities. Statement II is incorrect because the Constitution does not specify a three-year term for elections; it only mandates that elections should be held. Statement III is correct as the State Legislature can determine the composition and powers of Municipalities. Statement IV is also correct as Municipalities are responsible for public health and sanitation. Therefore, only statements I and III are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "INSUFFICIENT",
+            "claim_III": "SUPPORTED",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should include statements I, III, and IV as correct, making option D the right choice.",
+            "Statement II is misleading as it implies a specific term for elections, which is not mandated by the Constitution."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_II: INSUFFICIENT. Claim: The Constitution mandates that the elections to the Municipalities must be held every three years.",
+            "answer_key: INVALID. Reason: The evidence supports the following statements: \n- Statement I is supported by Evidence 1, which states that the 74th Amendment provides for the establishment of Municipalities in urban areas. \n- Statement III is supported by Evidence 3, which indicates that the State Legislature has the authority to make laws regarding the composition of Municipalities. \n- Statement IV is supported by the general understanding of Municipalities' responsibilities, which include public health and sanitation, although not explicitly stated in the provided evidence. \n- Statement II is not explicitly supported by the evidence, as it does not mention the three-year election cycle. Therefore, options A (I and III), C (I, II, and IV), and D (I, III, and IV) are supported.",
+            "quality: The declared answer is incorrect; the correct answer should include statements I, III, and IV as correct, making option D the right choice.",
+            "quality: Statement II is misleading as it implies a specific term for elections, which is not mandated by the Constitution."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Finance Commission",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Finance Commission in India:  \nI. The Finance Commission is constituted by the President of India every five years.  \nII. The primary role of the Finance Commission is to recommend the distribution of taxes between the Centre and the States.  \nIII. The recommendations of the Finance Commission are binding on the government.  \nIV. The Finance Commission also reviews the financial position of the States and suggests measures to improve it.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I, II and IV",
+            "option_b": "I and III only",
+            "option_c": "II and IV only",
+            "option_d": "I, II, III and IV",
+            "correct_answer": "A",
+            "explanation": "Statements I, II, and IV are correct. The Finance Commission is indeed constituted by the President every five years (I), it recommends the distribution of taxes between the Centre and the States (II), and it reviews the financial position of the States (IV). However, statement III is incorrect because the recommendations of the Finance Commission are advisory in nature and not binding on the government."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect because statement III is false, making it impossible for A to be the correct answer. The correct answer should be C (II and IV only).",
+            "The question does not allow for a single best answer due to the incorrectness of the declared answer."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: The recommendations of the Finance Commission are binding on the government.",
+            "answer_key: INVALID. Reason: Evidence 1 confirms that the Finance Commission is constituted by the President every five years (Statement I). Evidence 1 and Evidence 2 support that its primary role is to recommend the distribution of taxes between the Centre and the States (Statement II). Evidence 1 does not support Statement III, as the recommendations are not binding on the government. Evidence 1 and Evidence 3 support that the Finance Commission reviews the financial position of the States and suggests measures to improve it (Statement IV). Therefore, options A (I, II, IV) and C (II, IV) are supported.",
+            "quality: The declared answer (A) is incorrect because statement III is false, making it impossible for A to be the correct answer. The correct answer should be C (II and IV only).",
+            "quality: The question does not allow for a single best answer due to the incorrectness of the declared answer."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Finance Commission in India:\n\nI. The Finance Commission is constituted by the President of India every five years.\n\nII. The primary role of the Finance Commission is to recommend the distribution of taxes between the Centre and the States.\n\nIII. The recommendations of the Finance Commission are mandatory for the government to implement.\n\nIV. The Finance Commission also reviews the financial position of the States and suggests measures to improve it.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and IV only",
+            "option_c": "I, II and IV",
+            "option_d": "III only",
+            "correct_answer": "C",
+            "explanation": "Statements I, II, and IV are correct. The Finance Commission is indeed constituted by the President every five years (I), its primary role is to recommend the distribution of taxes between the Centre and the States (II), and it reviews the financial position of the States and suggests measures to improve it (IV). However, Statement III is incorrect as the recommendations of the Finance Commission are not mandatory for the government to implement."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be B (II and IV only) as Statement I is correct, but Statement III is incorrect, making the overall answer not defensible."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: The recommendations of the Finance Commission are mandatory for the government to implement.",
+            "answer_key: INVALID. Reason: I. The Finance Commission is constituted by the President every five years, which is supported by Evidence 1. II. The primary role of the Finance Commission is to recommend the distribution of taxes between the Centre and the States, which is also supported by Evidence 5. III. The recommendations of the Finance Commission are not mandatory for the government to implement, as the evidence does not support this statement. IV. The Finance Commission reviews the financial position of the States and suggests measures to improve it, which is supported by Evidence 1 and 5. Therefore, options A, B, and C are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be B (II and IV only) as Statement I is correct, but Statement III is incorrect, making the overall answer not defensible."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the Finance Commission in India:\n\nI. The Finance Commission is constituted by the President of India every five years.\n\nII. The primary function of the Finance Commission is to recommend the distribution of taxes between the Centre and the States.\n\nIII. The recommendations made by the Finance Commission are binding on the government.\n\nIV. The Finance Commission also reviews the financial position of the States and suggests measures to improve it.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I, II and IV only",
+            "option_b": "II and III only",
+            "option_c": "I and III only",
+            "option_d": "I, II, III and IV",
+            "correct_answer": "A",
+            "explanation": "Statements I, II, and IV are correct. The Finance Commission is indeed constituted by the President every five years (I), its primary role is to recommend the distribution of taxes between the Centre and the States (II), and it reviews the financial position of the States (IV). However, Statement III is incorrect as the recommendations of the Finance Commission are advisory in nature and not binding on the government."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT",
+            "claim_IV": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; Statement III is not true, as the recommendations are advisory, not binding."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: The recommendations made by the Finance Commission are binding on the government.",
+            "answer_key: INVALID. Reason: Statement I is correct as the Finance Commission is constituted by the President every five years. Statement II is also correct as its primary function is to recommend the distribution of taxes between the Centre and the States. Statement III is incorrect because the recommendations are not binding on the government; they are advisory. Statement IV is correct as the Finance Commission reviews the financial position of the States and suggests measures to improve it. Therefore, options A (I, II, and IV) and D (I, II, III, and IV) are supported.",
+            "quality: The declared answer is incorrect; Statement III is not true, as the recommendations are advisory, not binding."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Official Language",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding the Official Language of India:\n\nI. Hindi is the official language of the Union government as per the Constitution of India.\n\nII. English is also recognized as an official language for official purposes at the national level.\n\nIII. The Eighth Schedule of the Constitution lists the languages recognized as official languages of the states only.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statements I and II are correct as Hindi is the official language of the Union government and English is also used for official purposes. Statement III is incorrect because the Eighth Schedule includes languages recognized at both the national and state levels."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "CONTRADICTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect because Statement III is misleading; the Eighth Schedule includes languages recognized at both national and state levels, which contradicts the statement."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: CONTRADICTED. Claim: regarding the Official Language of India, The Eighth Schedule of the Constitution lists the languages recognized as official languages of the states only.",
+            "answer_key: INVALID. Reason: Statement I is correct as per Evidence 1, which states that Hindi is the official language of the Union. Statement II is also correct, as Evidence 1 mentions that English shall continue to be used for official purposes for a period of fifteen years. However, Statement III is incorrect because the Eighth Schedule lists languages recognized for both official languages of the states and the Union, not just for states. Therefore, options A (I and II only) and C (I only) are supported.",
+            "quality: The declared answer (A) is incorrect because Statement III is misleading; the Eighth Schedule includes languages recognized at both national and state levels, which contradicts the statement."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding the Official Language of India:\n\nI. Hindi is the official language of the Union of India as per the Constitution.\n\nII. The Eighth Schedule of the Constitution includes languages that are recognized for official use at both the Union and State levels.\n\nIII. English is no longer used for official purposes after the expiration of the fifteen-year period from the commencement of the Constitution.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "I and III only",
+            "option_c": "II only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as Hindi is indeed the official language of the Union. Statement II is also correct because the Eighth Schedule lists languages recognized for both Union and State official use. However, Statement III is incorrect; English continues to be used for official purposes even after the fifteen-year period, as per the Official Languages Act, 1963. Therefore, the correct answer is A (I and II only)."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "CONTRADICTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement III is incorrect, leading to confusion about the correct answer; it should be noted that English is still used for official purposes, which makes the declared answer misleading."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: CONTRADICTED. Claim: English is no longer used for official purposes after the expiration of the fifteen-year period from the commencement of the Constitution.",
+            "answer_key: INVALID. Reason: Statement I is correct as per Evidence 1, which states that Hindi is the official language of the Union. Statement II is also correct, as the Eighth Schedule includes languages recognized for official use at both Union and State levels, which is implied in the context of the Constitution. Statement III is incorrect because Evidence 1 indicates that English continues to be used for official purposes for a period of fifteen years from the commencement of the Constitution, meaning it is still in use during that time.",
+            "quality: Statement III is incorrect, leading to confusion about the correct answer; it should be noted that English is still used for official purposes, which makes the declared answer misleading."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding the official languages of India:\n\nI. Hindi is the official language of the Union as per the Constitution of India.\n\nII. The Eighth Schedule of the Constitution lists the languages recognized for official use in India.\n\nIII. English is the only language used for official communication in the Union government.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as Hindi is indeed the official language of the Union. Statement II is also correct as the Eighth Schedule includes languages recognized for official use. However, Statement III is incorrect because English is not the only language used for official communication; both Hindi and English are used for this purpose."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "CONTRADICTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (A) is incorrect because Statement III is false, leading to ambiguity in the correct answer choice."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_III: CONTRADICTED. Claim: English is the only language used for official communication in the Union government.",
+            "answer_key: INVALID. Reason: Statement I is correct as per Evidence 1, which states that Hindi is the official language of the Union. Statement II is also correct as the Eighth Schedule lists languages recognized for official use, which is implied in the context of the Constitution. However, Statement III is incorrect because the evidence indicates that English is not the only language used for official communication; it is used alongside Hindi. Therefore, options A (I and II only) and C (I only) are supported.",
+            "quality: The declared answer (A) is incorrect because Statement III is false, leading to ambiguity in the correct answer choice."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    },
+    {
+      "topic": "Citizenship",
+      "attempts": [
+        {
+          "attempt": 1,
+          "mcq": {
+            "question": "Consider the following statements regarding citizenship in India:\n\nI. Citizenship can be acquired by birth, descent, registration, and naturalization.\n\nII. A person who is a citizen of India cannot lose their citizenship under any circumstances.\n\nIII. The Constitution of India provides for the termination of citizenship under certain conditions.\n\nWhich of the statements given above is/are correct?",
+            "option_a": "I and III only",
+            "option_b": "I only",
+            "option_c": "II and III only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as it lists the ways in which citizenship can be acquired in India. Statement II is incorrect because a citizen can lose their citizenship under certain conditions, such as acquiring citizenship of another country. Statement III is correct as the Constitution does provide for termination of citizenship under specific circumstances. Therefore, the correct answer is I and III only."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "CONTRADICTED",
+            "claim_III": "SUPPORTED"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "Statement II is misleading as it implies absolute certainty regarding citizenship, which is not true; citizens can lose citizenship under specific conditions."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_II: CONTRADICTED. Claim: A person who is a citizen of India cannot lose their citizenship under any circumstances.",
+            "answer_key: INVALID. Reason: Statement I is correct as the evidence mentions various ways to acquire citizenship, including birth, descent, registration, and naturalization. Statement II is incorrect because the evidence indicates that a person can lose citizenship if they voluntarily acquire citizenship of another country. Statement III is correct as the evidence states that Parliament has the power to regulate the acquisition and termination of citizenship.",
+            "quality: Statement II is misleading as it implies absolute certainty regarding citizenship, which is not true; citizens can lose citizenship under specific conditions."
+          ]
+        },
+        {
+          "attempt": 2,
+          "mcq": {
+            "question": "Consider the following statements regarding Indian citizenship:  \nI. A person born in India after January 26, 1950, is a citizen of India by birth only if at least one parent is an Indian citizen.  \nII. The Constitution of India allows for the termination of citizenship under certain conditions.  \nIII. A person can acquire Indian citizenship through naturalization after residing in India for a minimum of 5 years.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "D",
+            "explanation": "All three statements are correct. Statement I is true as per Article 5 of the Constitution, which states that a person born in India is a citizen if at least one parent is a citizen. Statement II is correct because Article 9 allows for termination of citizenship if a citizen voluntarily acquires citizenship of another country. Statement III is also correct as per the Citizenship Act, which allows for naturalization after a minimum of 5 years of residence."
+          },
+          "fact_verdicts": {
+            "claim_I": "SUPPORTED",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer (D) is not the only correct answer; statement III is misleading as the minimum residency requirement for naturalization is actually 11 years, not 5 years, which makes the answer ambiguous.",
+            "The question does not provide a clear basis for determining the correctness of statement III, leading to confusion about the correct answer."
+          ],
+          "decision": "REVISE",
+          "failure_reasons": [
+            "claim_III: INSUFFICIENT. Claim: A person can acquire Indian citizenship through naturalization after residing in India for a minimum of 5 years.",
+            "answer_key: INVALID. Reason: Statement I is correct as it aligns with the provisions regarding citizenship by birth, which state that a person born in India after January 26, 1950, is a citizen only if at least one parent is an Indian citizen. Statement II is also correct, as the Constitution allows for the termination of citizenship under certain conditions. Statement III is correct as well, as the Constitution provides for naturalization after residing in India for a minimum of 5 years. Therefore, all statements I, II, and III are supported by the evidence.",
+            "quality: The declared answer (D) is not the only correct answer; statement III is misleading as the minimum residency requirement for naturalization is actually 11 years, not 5 years, which makes the answer ambiguous.",
+            "quality: The question does not provide a clear basis for determining the correctness of statement III, leading to confusion about the correct answer."
+          ]
+        },
+        {
+          "attempt": 3,
+          "mcq": {
+            "question": "Consider the following statements regarding Indian citizenship:  \nI. A person born in India after January 26, 1950, is a citizen of India if both parents are Indian citizens.  \nII. The Constitution of India allows for the renunciation of citizenship.  \nIII. A foreign national can acquire Indian citizenship by naturalization after residing in India for a minimum of 5 years.  \nWhich of the statements given above is/are correct?",
+            "option_a": "I and II only",
+            "option_b": "II and III only",
+            "option_c": "I only",
+            "option_d": "I, II and III",
+            "correct_answer": "A",
+            "explanation": "Statement I is correct as it aligns with the provisions regarding citizenship by birth. Statement II is also correct, as the Constitution allows for the renunciation of citizenship. However, Statement III is incorrect because the minimum residency requirement for naturalization is 11 years, not 5 years. Therefore, only statements I and II are correct."
+          },
+          "fact_verdicts": {
+            "claim_I": "INSUFFICIENT",
+            "claim_II": "SUPPORTED",
+            "claim_III": "INSUFFICIENT"
+          },
+          "answer_verdict": "INVALID",
+          "quality": "FAIL",
+          "quality_issues": [
+            "The declared answer is incorrect; the correct answer should be D, as both I and II are correct, and III is incorrect."
+          ],
+          "decision": "REJECT",
+          "failure_reasons": [
+            "claim_I: INSUFFICIENT. Claim: A person born in India after January 26, 1950, is a citizen of India if both parents are Indian citizens.",
+            "claim_III: INSUFFICIENT. Claim: A foreign national can acquire Indian citizenship by naturalization after residing in India for a minimum of 5 years.",
+            "answer_key: INVALID. Reason: Statement I is correct as a person born in India after January 26, 1950, is a citizen if both parents are Indian citizens. Statement II is correct as the Constitution allows for the renunciation of citizenship. Statement III is also correct as a foreign national can acquire Indian citizenship by naturalization after residing in India for a minimum of 5 years. Therefore, options A, B, and D are supported.",
+            "quality: The declared answer is incorrect; the correct answer should be D, as both I and II are correct, and III is incorrect."
+          ]
+        }
+      ],
+      "terminal_decision": "REJECT",
+      "attempt_count": 3
+    }
+  ]
+}

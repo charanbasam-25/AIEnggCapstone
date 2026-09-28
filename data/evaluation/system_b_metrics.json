@@ -1,0 +1,458 @@
+{
+  "dataset": "UPSC 2025 Prelims Polity, Q54-Q66",
+  "questions": 13,
+  "arms": {
+    "A_vanilla_rag": {
+      "description": "Retrieve then generate. Always answers.",
+      "metrics": {
+        "total": 13,
+        "answered": 13,
+        "abstained": 0,
+        "correct": 5,
+        "wrong": 8,
+        "coverage": 1.0,
+        "precision_when_answered": 0.38461538461538464,
+        "accuracy_overall": 0.38461538461538464,
+        "error_rate_overall": 0.6153846153846154
+      }
+    },
+    "B_statement_mapping_strict": {
+      "description": "Verify each statement, map verdicts to an option, abstain if any statement is unresolved.",
+      "metrics": {
+        "total": 13,
+        "answered": 4,
+        "abstained": 9,
+        "correct": 4,
+        "wrong": 0,
+        "coverage": 0.3076923076923077,
+        "precision_when_answered": 1.0,
+        "accuracy_overall": 0.3076923076923077,
+        "error_rate_overall": 0.0
+      }
+    },
+    "B_mapping_fixed_strict": {
+      "description": "Corrected mapping, verdicts held fixed, strict abstention policy.",
+      "metrics": {
+        "total": 13,
+        "answered": 4,
+        "abstained": 9,
+        "correct": 4,
+        "wrong": 0,
+        "coverage": 0.3076923076923077,
+        "precision_when_answered": 1.0,
+        "accuracy_overall": 0.3076923076923077,
+        "error_rate_overall": 0.0
+      }
+    },
+    "B_mapping_fixed_closed_world": {
+      "description": "Corrected mapping, verdicts held fixed, closed_world abstention policy.",
+      "metrics": {
+        "total": 13,
+        "answered": 11,
+        "abstained": 2,
+        "correct": 6,
+        "wrong": 5,
+        "coverage": 0.8461538461538461,
+        "precision_when_answered": 0.5454545454545454,
+        "accuracy_overall": 0.46153846153846156,
+        "error_rate_overall": 0.38461538461538464
+      }
+    },
+    "B2_direct_option_answer_evidence": {
+      "description": "Verify options directly from evidence, declared answer withheld, evidence = top-5 question-level passages.",
+      "metrics": {
+        "total": 13,
+        "answered": 2,
+        "abstained": 11,
+        "correct": 2,
+        "wrong": 0,
+        "coverage": 0.15384615384615385,
+        "precision_when_answered": 1.0,
+        "accuracy_overall": 0.15384615384615385,
+        "error_rate_overall": 0.0
+      }
+    },
+    "B2_direct_option_union": {
+      "description": "Verify options directly from evidence, declared answer withheld, evidence = question-level plus per-statement passages.",
+      "metrics": {
+        "total": 13,
+        "answered": 1,
+        "abstained": 12,
+        "correct": 1,
+        "wrong": 0,
+        "coverage": 0.07692307692307693,
+        "precision_when_answered": 1.0,
+        "accuracy_overall": 0.07692307692307693,
+        "error_rate_overall": 0.0
+      }
+    }
+  },
+  "verdict_distributions": {
+    "claim_level": {
+      "counts": {
+        "INSUFFICIENT": 18,
+        "SUPPORTED": 14,
+        "CONTRADICTED": 5
+      },
+      "total": 37,
+      "rates": {
+        "INSUFFICIENT": 0.4864864864864865,
+        "SUPPORTED": 0.3783783783783784,
+        "CONTRADICTED": 0.13513513513513514
+      }
+    },
+    "statement_level": {
+      "counts": {
+        "INSUFFICIENT": 18,
+        "SUPPORTED": 14,
+        "CONTRADICTED": 5
+      },
+      "total": 37,
+      "rates": {
+        "INSUFFICIENT": 0.4864864864864865,
+        "SUPPORTED": 0.3783783783783784,
+        "CONTRADICTED": 0.13513513513513514
+      }
+    }
+  },
+  "grounding": {
+    "committed_verdicts": 19,
+    "grounded_verdicts": 19,
+    "evidence_support_rate": 1.0,
+    "mean_pages_per_grounded_verdict": 1.4210526315789473,
+    "ungrounded_verdicts": []
+  },
+  "claim_construction": {
+    "total_claims": 37,
+    "non_propositional_claims": 0,
+    "non_propositional_rate": 0.0,
+    "false_supported_count": 0,
+    "false_supported_rate": 0.0,
+    "questions_affected": [],
+    "flagged": []
+  },
+  "answerability": {
+    "chunks_probed": 1149,
+    "method": "Lexical probe over every chunk. A concept is absent only if all its surface variants score zero. Absence is decisive (no retriever could find it); presence is only weak evidence of answerability.",
+    "out_of_corpus_questions": [
+      55,
+      66
+    ],
+    "partial_questions": [
+      64
+    ],
+    "in_corpus_questions": [
+      54,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "per_question": {
+      "54": {
+        "concept_hits": {
+          "union list": {
+            "union list": 12
+          },
+          "ratification by states": {
+            "ratification": 1,
+            "ratified": 1
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "55": {
+        "concept_hits": {
+          "lokpal institution": {
+            "lokpal": 0,
+            "lokayukta": 0,
+            "ombudsman": 0
+          }
+        },
+        "absent_concepts": [
+          "lokpal institution"
+        ],
+        "classification": "OUT_OF_CORPUS",
+        "corpus_can_answer": false
+      },
+      "56": {
+        "concept_hits": {
+          "directive principles": {
+            "directive principles": 8
+          },
+          "fundamental duties": {
+            "fundamental duties": 7
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "57": {
+        "concept_hits": {
+          "pardoning power": {
+            "pardon": 5,
+            "reprieve": 3,
+            "remission": 11
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "58": {
+        "concept_hits": {
+          "tenth schedule": {
+            "tenth schedule": 10,
+            "10th schedule": 0
+          },
+          "council of ministers": {
+            "council of ministers": 27
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "59": {
+        "concept_hits": {
+          "speaker's office": {
+            "speaker": 51
+          },
+          "dissolution of the house": {
+            "dissolution": 35
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "60": {
+        "concept_hits": {
+          "ordinance power": {
+            "ordinance": 24
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "61": {
+        "concept_hits": {
+          "governor's discretion": {
+            "discretion": 16
+          },
+          "reservation of state bills": {
+            "reserve": 51,
+            "reserved": 41
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "62": {
+        "concept_hits": {
+          "governor's immunity": {
+            "governor": 200
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "63": {
+        "concept_hits": {
+          "panchayat": {
+            "panchayat": 39
+          },
+          "age qualification": {
+            "twenty-one years": 1,
+            "twenty one years": 0,
+            "21 years": 0
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "64": {
+        "concept_hits": {
+          "national parks": {
+            "national park": 0,
+            "sanctuary": 0
+          },
+          "part c states": {
+            "part c": 12
+          },
+          "north-eastern states": {
+            "arunachal": 16,
+            "nagaland": 22,
+            "tripura": 33
+          }
+        },
+        "absent_concepts": [
+          "national parks"
+        ],
+        "classification": "PARTIAL",
+        "corpus_can_answer": true
+      },
+      "65": {
+        "concept_hits": {
+          "fifth schedule": {
+            "fifth schedule": 3
+          },
+          "scheduled areas": {
+            "scheduled areas": 21
+          }
+        },
+        "absent_concepts": [],
+        "classification": "IN_CORPUS",
+        "corpus_can_answer": true
+      },
+      "66": {
+        "concept_hits": {
+          "petroleum regulator": {
+            "petroleum and natural gas": 0,
+            "regulatory board": 0
+          },
+          "crude oil": {
+            "crude oil": 0
+          }
+        },
+        "absent_concepts": [
+          "crude oil",
+          "petroleum regulator"
+        ],
+        "classification": "OUT_OF_CORPUS",
+        "corpus_can_answer": false
+      }
+    }
+  },
+  "answerability_adjusted": {
+    "questions_in_scope": [
+      54,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "excluded_as_out_of_corpus": [
+      55,
+      66
+    ],
+    "metrics": {
+      "total": 11,
+      "answered": 4,
+      "abstained": 7,
+      "correct": 4,
+      "wrong": 0,
+      "coverage": 0.36363636363636365,
+      "precision_when_answered": 1.0,
+      "accuracy_overall": 0.36363636363636365,
+      "error_rate_overall": 0.0
+    }
+  },
+  "abstention_taxonomy": {
+    "abstentions": 9,
+    "causes": {
+      "pipeline_defect": 6,
+      "corpus_limit": 2,
+      "partial_corpus_limit": 1
+    },
+    "correct_abstention_share": 0.2222222222222222,
+    "per_question": [
+      {
+        "q_number": 54,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 55,
+        "cause": "corpus_limit",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": [
+          "lokpal institution"
+        ]
+      },
+      {
+        "q_number": 57,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 58,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 59,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 60,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 64,
+        "cause": "partial_corpus_limit",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": [
+          "national parks"
+        ]
+      },
+      {
+        "q_number": 65,
+        "cause": "pipeline_defect",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": []
+      },
+      {
+        "q_number": 66,
+        "cause": "corpus_limit",
+        "mapping_reason": "policy_insufficient_evidence",
+        "absent_concepts": [
+          "crude oil",
+          "petroleum regulator"
+        ]
+      }
+    ]
+  },
+  "answer_key_verifier": {
+    "CONTAMINATED": true,
+    "contamination": "The prompt in src/verification/answer_key_verifier.py includes the declared answer, which pyq_to_mcq sets to the official UPSC answer. Rule 7 instructs the model not to rely on it, but the correct letter is in the context window. These figures must not be reported as a result.",
+    "verdicts": {
+      "INSUFFICIENT": 3,
+      "INVALID": 8,
+      "VALID": 2
+    },
+    "selected_exactly_the_official_option": 2,
+    "apparent_agreement_rate": 0.15384615384615385,
+    "leak_free_accuracy": {
+      "answer_evidence": 0.15384615384615385,
+      "union": 0.07692307692307693
+    },
+    "interpretation": "Compare apparent_agreement_rate against leak_free_accuracy. The gap is the size of the leak, not a measure of verification quality."
+  }
+}

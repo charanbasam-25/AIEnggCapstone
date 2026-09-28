@@ -1,0 +1,53 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading embedding model: BAAI/bge-small-en-v1.5
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 3941.12it/s]
+Embedding 1149 chunks...
+Batches:   0%|          | 0/36 [00:00<?, ?it/s]Batches:   3%|2         | 1/36 [00:01<00:45,  1.29s/it]Batches:   6%|5         | 2/36 [00:03<00:58,  1.72s/it]Batches:   8%|8         | 3/36 [00:05<00:59,  1.79s/it]Batches:  11%|#1        | 4/36 [00:06<00:56,  1.76s/it]Batches:  14%|#3        | 5/36 [00:08<00:55,  1.79s/it]Batches:  17%|#6        | 6/36 [00:10<00:53,  1.78s/it]Batches:  19%|#9        | 7/36 [00:12<00:52,  1.80s/it]Batches:  22%|##2       | 8/36 [00:14<00:55,  1.98s/it]Batches:  25%|##5       | 9/36 [00:16<00:50,  1.88s/it]Batches:  28%|##7       | 10/36 [00:18<00:50,  1.95s/it]Batches:  31%|###       | 11/36 [00:20<00:50,  2.03s/it]Batches:  33%|###3      | 12/36 [00:22<00:47,  1.98s/it]Batches:  36%|###6      | 13/36 [00:24<00:43,  1.91s/it]Batches:  39%|###8      | 14/36 [00:26<00:42,  1.94s/it]Batches:  42%|####1     | 15/36 [00:29<00:50,  2.40s/it]Batches:  44%|####4     | 16/36 [00:31<00:45,  2.28s/it]Batches:  47%|####7     | 17/36 [00:33<00:38,  2.04s/it]Batches:  50%|#####     | 18/36 [00:36<00:43,  2.44s/it]Batches:  53%|#####2    | 19/36 [00:38<00:40,  2.38s/it]Batches:  56%|#####5    | 20/36 [00:40<00:36,  2.29s/it]Batches:  58%|#####8    | 21/36 [00:42<00:31,  2.13s/it]Batches:  61%|######1   | 22/36 [00:44<00:29,  2.10s/it]Batches:  64%|######3   | 23/36 [00:46<00:26,  2.03s/it]Batches:  67%|######6   | 24/36 [00:50<00:30,  2.50s/it]Batches:  69%|######9   | 25/36 [00:52<00:25,  2.32s/it]Batches:  72%|#######2  | 26/36 [00:54<00:22,  2.20s/it]Batches:  75%|#######5  | 27/36 [00:55<00:18,  2.04s/it]Batches:  78%|#######7  | 28/36 [00:57<00:15,  1.89s/it]Batches:  81%|########  | 29/36 [00:58<00:12,  1.78s/it]Batches:  83%|########3 | 30/36 [01:00<00:09,  1.66s/it]Batches:  86%|########6 | 31/36 [01:01<00:07,  1.54s/it]Batches:  89%|########8 | 32/36 [01:02<00:05,  1.45s/it]Batches:  92%|#########1| 33/36 [01:03<00:03,  1.30s/it]Batches:  94%|#########4| 34/36 [01:04<00:02,  1.16s/it]Batches:  97%|#########7| 35/36 [01:05<00:01,  1.05s/it]Batches: 100%|##########| 36/36 [01:05<00:00,  1.10it/s]Batches: 100%|##########| 36/36 [01:05<00:00,  1.83s/it]
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|##########| 105/105 [00:00<00:00, 2604.28it/s]
+Evaluating 1/13: Q54
+Evaluating 2/13: Q55
+Evaluating 3/13: Q56
+Evaluating 4/13: Q57
+Evaluating 5/13: Q58
+Evaluating 6/13: Q59
+Evaluating 7/13: Q60
+Evaluating 8/13: Q61
+Evaluating 9/13: Q62
+Evaluating 10/13: Q63
+Evaluating 11/13: Q64
+Evaluating 12/13: Q65
+Evaluating 13/13: Q66
+
+=== VERIFIED PYQ EVALUATION ===
+claim mode: bound   policy: strict   claim top_k: 5   answer top_k: 5
+
+--- stored labels ---
+Total:                   13
+Answered:                4
+Abstained:               9
+Correct:                 4
+Wrong:                   0
+Coverage:                30.77%
+Precision when answered: 100.00%
+Accuracy overall:        30.77%
+Error rate overall:      0.00%
+
+--- audited labels ---
+Total:                   13
+Answered:                4
+Abstained:               9
+Correct:                 4
+Wrong:                   0
+Coverage:                30.77%
+Precision when answered: 100.00%
+Accuracy overall:        30.77%
+Error rate overall:      0.00%
+
+Abstained on:            [54, 55, 57, 58, 59, 60, 64, 65, 66]
+Wrong (audited labels):  []
+
+Claims:                  37
+Propositional:           37/37
+Claims with new tokens:  0
+
+Saved results to: data/evaluation/verified_pyq_results.json
