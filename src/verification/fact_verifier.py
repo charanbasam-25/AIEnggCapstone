@@ -322,10 +322,7 @@ if __name__ == "__main__":
         "'political party' in the Constitution of India."
     )
 
-    evidence = retriever.retrieve(
-        claim,
-        top_k=5,
-    )
+    evidence = retriever.retrieve(claim)
 
     result = verifier.verify(
         claim,

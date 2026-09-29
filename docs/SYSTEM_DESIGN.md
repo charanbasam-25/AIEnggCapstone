@@ -373,22 +373,44 @@ state, so an evaluation of this loop must consume
 
 ## 8. Retrieval depth as a design parameter
 
-`CLAIM_TOP_K = 5` and `ANSWER_TOP_K = 5` (`nodes.py:27`, `nodes.py:30`).
+Both depths now come from one place — `RETRIEVAL_TOP_K` in
+`src/retrieval/retrieval_config.py` — which the five retrieval benchmarks and the
+verification pipeline import.
 
-These were `3` while the retrieval benchmark that selected the retriever was
-tuned on **Recall@5** — so the pipeline ran one setting and was argued for with
-another. Correcting it was the single largest accuracy change of any intervention
-in the project: coverage **38.46% → 53.85%**, accuracy **30.77% → 38.46%**, with
-claims and prompt held fixed. Four claims that had been `INSUFFICIENT` resolved
-purely because the supporting page was now in range.
+They were `3` in the pipeline while the retrieval benchmark that selected the
+retriever was tuned on **Recall@5** — so the pipeline ran one setting and was
+argued for with another, and the 93.75% quoted for semantic+cross-encoder
+described a configuration nothing ran at. Correcting it was the single largest
+accuracy change of any intervention in the project. Isolated by the `C0` vs `C1d`
+arms (stored claims and base prompt held fixed, `k` the only moving part;
+`data/evaluation/system_c_results.json`, STRICT against stored labels):
+
+| Metric | `C0` (k=3) | `C1d` (k=5) |
+|---|---|---|
+| Coverage | 30.77% (4/13) | **38.46%** (5/13) |
+| Precision when answered | 50.00% | **80.00%** |
+| Accuracy overall | 15.38% | **30.77%** |
+| Error rate overall | 15.38% | **7.69%** |
+
+One question moved abstain → correct and one wrong → correct; across the 37
+claims `INSUFFICIENT` fell 18 → 16 and `SUPPORTED` rose 14 → 17. Against the
+*audited* labels accuracy is flat (23.08% in both arms) and precision drops
+75.00% → 60.00%, so the size of the win depends on which label set is scored.
+With n=13 and a measured 15.38-point accuracy spread across repeats
+(§13), this is directional evidence, not a two-decimal result.
 
 Worth stating plainly: **the winning fix was one integer, and it beat both of the
 designed interventions.** That is the project's clearest evidence against
 complexity bias.
 
-The default in `ClaimRetriever.retrieve` is now aligned with the benchmark
-(`claim_retriever.py:28`) so that a future caller who omits `top_k` inherits the
-measured setting rather than the one that caused the defect.
+> **Corrected.** Earlier revisions of this section, of `nodes.py`, and of the
+> `ClaimRetriever.retrieve` docstring quoted coverage **38.46% → 53.85%** and
+> accuracy **30.77% → 38.46%** here, and said four `INSUFFICIENT` claims
+> resolved. Those are the table above misread one row across — 38.46% is where
+> coverage *ended* — and 53.85% appears in no arm of any stored run. The
+> correction is recorded rather than silently applied because it is the same
+> error as the defect the section is about: a figure sitting next to a setting it
+> was never measured at.
 
 ---
 

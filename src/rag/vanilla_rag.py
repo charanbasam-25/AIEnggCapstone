@@ -4,6 +4,10 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
+from src.retrieval.retrieval_config import (
+    RERANK_CANDIDATE_K,
+    RETRIEVAL_TOP_K,
+)
 from src.retrieval.semantic_reranker import (
     SemanticReranker,
     load_chunks,
@@ -24,9 +28,15 @@ class VanillaRAG:
 
     def __init__(self, chunks: list[dict]):
 
+        # The baseline shares the verifier's retrieval depths on purpose.
+        # System A vs System B is meant to isolate the verification layer;
+        # if the two arms retrieved at different depths the comparison
+        # would be measuring retrieval as well, which is the confound that
+        # produced the k=3 defect. Importing both from one place makes
+        # that impossible to break by editing one file.
         self.retriever = SemanticReranker(
             chunks,
-            candidate_k=20,
+            candidate_k=RERANK_CANDIDATE_K,
         )
 
         self.client = OpenAI(
@@ -36,7 +46,7 @@ class VanillaRAG:
     def answer(
         self,
         query: str,
-        top_k: int = 5,
+        top_k: int = RETRIEVAL_TOP_K,
     ) -> dict:
 
         # ---------------------------------------------

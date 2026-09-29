@@ -5,6 +5,10 @@ from src.retrieval.semantic_reranker import (
     SemanticReranker,
     load_chunks,
 )
+from src.retrieval.retrieval_config import (
+    RERANK_CANDIDATE_K,
+    RETRIEVAL_TOP_K,
+)
 
 
 QUERIES_FILE = "src/evaluation/retrieval_queries_gold.json"
@@ -30,7 +34,7 @@ def main():
 
     reranker = SemanticReranker(
         chunks,
-        candidate_k=20,
+        candidate_k=RERANK_CANDIDATE_K,
     )
 
     hits = 0
@@ -45,7 +49,7 @@ def main():
 
         results = reranker.retrieve(
             query,
-            top_k=5,
+            top_k=RETRIEVAL_TOP_K,
         )
 
         hit = any(
@@ -76,7 +80,7 @@ def main():
 
     print(f"Hits: {hits}")
     print(f"Queries: {len(queries)}")
-    print(f"Recall@5: {recall:.2%}")
+    print(f"Recall@{RETRIEVAL_TOP_K}: {recall:.2%}")
 
 
 if __name__ == "__main__":

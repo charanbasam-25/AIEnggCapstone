@@ -183,10 +183,7 @@ if __name__ == "__main__":
 
     retriever = ClaimRetriever(chunks)
 
-    evidence = retriever.retrieve(
-        mcq.question,
-        top_k=5,
-    )
+    evidence = retriever.retrieve(mcq.question)
 
     verifier = AnswerKeyVerifier()
 

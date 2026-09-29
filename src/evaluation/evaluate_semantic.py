@@ -4,6 +4,7 @@ from src.retrieval.semantic_retriever import (
     SemanticRetriever,
     load_chunks,
 )
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 
 
 def load_queries(file_path: str) -> list[dict]:
@@ -24,7 +25,7 @@ def main():
 
     retriever = SemanticRetriever(chunks)
 
-    top_k = 5
+    top_k = RETRIEVAL_TOP_K
     hits = 0
 
     print()

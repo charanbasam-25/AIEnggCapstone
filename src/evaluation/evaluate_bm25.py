@@ -5,6 +5,7 @@ from src.retrieval.bm25_retriever import (
     BM25Retriever,
     load_chunks,
 )
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 
 
 QUERIES_PATH = "src/evaluation/retrieval_queries_gold.json"
@@ -26,7 +27,7 @@ def is_relevant(result: dict, query: dict) -> bool:
 def evaluate_recall_at_k(
     retriever: BM25Retriever,
     queries: list[dict],
-    k: int = 5,
+    k: int = RETRIEVAL_TOP_K,
 ) -> float:
 
     hits = 0
@@ -73,11 +74,11 @@ if __name__ == "__main__":
 
     retriever = BM25Retriever(chunks)
 
-    recall_at_5 = evaluate_recall_at_k(
+    recall = evaluate_recall_at_k(
         retriever,
         queries,
-        k=5,
+        k=RETRIEVAL_TOP_K,
     )
 
     print()
-    print(f"Recall@5: {recall_at_5:.2%}")
+    print(f"Recall@{RETRIEVAL_TOP_K}: {recall:.2%}")

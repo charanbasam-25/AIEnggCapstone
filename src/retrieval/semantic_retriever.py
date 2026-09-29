@@ -3,6 +3,7 @@ from pathlib import Path
 
 import numpy as np
 
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 from src.tls_trust import enable_os_trust_store
 
 # Must run before the first model download opens a TLS connection. See
@@ -42,7 +43,7 @@ class SemanticRetriever:
             show_progress_bar=True,
         )
 
-    def retrieve(self, query: str, top_k: int = 5) -> list[dict]:
+    def retrieve(self, query: str, top_k: int = RETRIEVAL_TOP_K) -> list[dict]:
         """Retrieve the most semantically similar chunks."""
 
         query_embedding = self.model.encode(
@@ -72,7 +73,7 @@ if __name__ == "__main__":
 
     query = "What are the Fundamental Rights guaranteed by the Constitution?"
 
-    results = retriever.retrieve(query, top_k=5)
+    results = retriever.retrieve(query)
 
     print()
     print(f"Query: {query}")

@@ -4,6 +4,8 @@ from pathlib import Path
 
 from rank_bm25 import BM25Okapi
 
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
+
 
 def tokenize(text: str) -> list[str]:
     """Convert text into tokens for BM25."""
@@ -38,7 +40,7 @@ class BM25Retriever:
     def retrieve(
         self,
         query: str,
-        top_k: int = 5,
+        top_k: int = RETRIEVAL_TOP_K,
     ) -> list[dict]:
         """Retrieve the most relevant chunks."""
 
@@ -72,10 +74,7 @@ if __name__ == "__main__":
 
     query = "What are the fundamental rights guaranteed by the Constitution?"
 
-    results = retriever.retrieve(
-        query,
-        top_k=5,
-    )
+    results = retriever.retrieve(query)
 
     print(f"Query: {query}")
     print()

@@ -1,6 +1,10 @@
 import json
 from pathlib import Path
 
+from src.retrieval.retrieval_config import (
+    RERANK_CANDIDATE_K,
+    RETRIEVAL_TOP_K,
+)
 from src.tls_trust import enable_os_trust_store
 
 # Same reason as in semantic_retriever.py: this has to happen before the
@@ -18,7 +22,11 @@ MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
 class SemanticReranker:
 
-    def __init__(self, chunks: list[dict], candidate_k: int = 20):
+    def __init__(
+        self,
+        chunks: list[dict],
+        candidate_k: int = RERANK_CANDIDATE_K,
+    ):
         self.candidate_k = candidate_k
 
         # First-stage semantic retrieval
@@ -27,7 +35,11 @@ class SemanticReranker:
         # Second-stage cross-encoder reranking
         self.reranker = CrossEncoder(MODEL_NAME)
 
-    def retrieve(self, query: str, top_k: int = 5) -> list[dict]:
+    def retrieve(
+        self,
+        query: str,
+        top_k: int = RETRIEVAL_TOP_K,
+    ) -> list[dict]:
         """
         Retrieve candidates using semantic search,
         then rerank them using a cross-encoder.
@@ -76,17 +88,11 @@ if __name__ == "__main__":
         "data/processed/chunks.jsonl"
     )
 
-    reranker = SemanticReranker(
-        chunks,
-        candidate_k=20,
-    )
+    reranker = SemanticReranker(chunks)
 
     query = "How is the President of India elected?"
 
-    results = reranker.retrieve(
-        query,
-        top_k=5,
-    )
+    results = reranker.retrieve(query)
 
     print(f"Query: {query}")
     print()

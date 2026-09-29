@@ -38,6 +38,16 @@ rewritten with identical content. Content hashing would be stricter and
 is not worth it here, because the modules are not idempotent across runs
 anyway - they call an LLM.
 
+A second, non-mtime check runs alongside it. Changing RETRIEVAL_TOP_K in
+src/retrieval/retrieval_config.py invalidates every number in
+data/evaluation/ without modifying anything in it, so the ordering check
+would pass while the reports had quietly stopped describing the system -
+the same shape as the project's worst defect, where the pipeline ran at
+k=3 and the benchmark that justified it was tuned at k=5. So
+check_retrieval_depth compares the claim_top_k recorded in
+verified_pyq_results.json against the constant the code now imports, and
+fails if they differ. See its docstring.
+
 Usage
 -----
 
@@ -76,9 +86,12 @@ unfindable measurement is very nearly as bad as a missing one:
 """
 
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
+
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 
 VERIFIED = "data/evaluation/verified_pyq_results.json"
 REPLAY = "data/evaluation/answer_mapping_replay.json"
@@ -222,6 +235,89 @@ def check_freshness(stages: list[dict]) -> list[str]:
     return problems
 
 
+def check_retrieval_depth() -> list[str]:
+    """
+    Return complaints if the stored results were produced at a retrieval
+    depth other than the one the code now uses.
+
+    This is a different failure from staleness and mtimes cannot catch it.
+    Editing RETRIEVAL_TOP_K invalidates every number in data/evaluation/
+    without touching a single file in it, so the reports stay newer than
+    their inputs and the freshness check passes while the numbers have
+    quietly stopped describing the system. That is the exact shape of the
+    project's worst defect - the pipeline ran at k=3 while the retrieval
+    benchmark that justified it was tuned at k=5 - so the invariant is
+    asserted here rather than left to memory.
+
+    evaluate_verified_pyqs.py records claim_top_k on every question, so
+    the depth a run was produced at is recoverable from the artifact
+    itself. Costs no API calls.
+
+    verified_pyq_results.k3_verbatim.json is deliberately not checked: it
+    is a frozen k=3 archive that system_c_pipeline.py replays as the C0
+    arm, and it is supposed to disagree.
+    """
+
+    problems = []
+    path = Path(VERIFIED)
+
+    if not path.exists():
+        # Already reported as a missing output by check_freshness.
+        return problems
+
+    try:
+        records = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as error:
+        return [f"retrieval depth: cannot parse {VERIFIED}: {error}"]
+
+    recorded = {
+        record.get("claim_top_k")
+        for record in records
+        if isinstance(record, dict)
+    }
+
+    # Three distinct states, worth distinguishing because they call for
+    # different actions: no field at all means the file predates the
+    # field (the k3_verbatim archive looks like this), while a field
+    # present on some records only means two runs got merged.
+    if not recorded or recorded == {None}:
+        return [
+            f"retrieval depth: no question in {VERIFIED} records a "
+            f"claim_top_k, so the depth it was produced at cannot be "
+            f"verified. Either it predates the field or it is an archive "
+            f"that does not belong here - rerun evaluate_verified_pyqs"
+        ]
+
+    if None in recorded:
+        problems.append(
+            f"retrieval depth: some but not all questions in {VERIFIED} "
+            f"record a claim_top_k, so the file merges two runs - rerun "
+            f"evaluate_verified_pyqs"
+        )
+        recorded.discard(None)
+
+    if len(recorded) > 1:
+        problems.append(
+            f"retrieval depth: {VERIFIED} contains more than one depth "
+            f"{sorted(recorded)}, so it is a mix of runs - rerun "
+            f"evaluate_verified_pyqs"
+        )
+
+    stale = sorted(depth for depth in recorded if depth != RETRIEVAL_TOP_K)
+
+    if stale:
+        problems.append(
+            f"retrieval depth: {VERIFIED} was produced at claim_top_k="
+            f"{stale[0] if len(stale) == 1 else stale} but "
+            f"RETRIEVAL_TOP_K is now {RETRIEVAL_TOP_K} "
+            f"(src/retrieval/retrieval_config.py). Every number derived "
+            f"from this file describes a configuration the code no longer "
+            f"runs - rerun evaluate_verified_pyqs, or put the depth back"
+        )
+
+    return problems
+
+
 def main() -> None:
 
     parser = argparse.ArgumentParser(
@@ -274,14 +370,16 @@ def main() -> None:
             run_stage(stage)
         print()
 
-    print("=== FRESHNESS CHECK (whole chain) ===")
+    print("=== CONSISTENCY CHECK (whole chain) ===")
 
-    problems = check_freshness(STAGES)
+    problems = check_freshness(STAGES) + check_retrieval_depth()
 
     if not problems:
         print(
-            "every report is at least as new as its inputs; the numbers "
-            "in data/evaluation/ are mutually consistent"
+            f"every report is at least as new as its inputs, and the "
+            f"stored results were produced at the current retrieval depth "
+            f"(claim_top_k={RETRIEVAL_TOP_K}); the numbers in "
+            f"data/evaluation/ are mutually consistent"
         )
         return
 

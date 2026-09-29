@@ -5,6 +5,7 @@ from src.orchestration.state import MCQVerificationState
 from src.verification.claim_extractor import ClaimExtractor
 from src.verification.claim_retriever import ClaimRetriever
 from src.verification.fact_verifier import FactVerifier
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 from src.retrieval.semantic_reranker import load_chunks
 from src.verification.answer_key_verifier import AnswerKeyVerifier
 from src.verification.mcq_quality_auditor import MCQQualityAuditor
@@ -16,18 +17,24 @@ CHUNKS_PATH = "data/processed/chunks.jsonl"
 #
 # This was 3 while the retrieval benchmark that justified the retriever
 # was tuned on Recall@5, so the pipeline ran one setting and was argued
-# for with another. Measured on the ablation, raising it to 5 was the
-# single largest accuracy change of any intervention in the project:
-# coverage 38.46% -> 53.85% and accuracy 30.77% -> 38.46% with claims and
-# prompt held fixed. Four claims that had been INSUFFICIENT resolved
-# purely because the supporting page was now in range.
+# for with another. Raising it to 5 was the single largest accuracy change
+# of any intervention in the project. Isolated by the C0 vs C1d arms of
+# system_c_pipeline.py, which hold claims and prompt fixed and move only
+# k: coverage 30.77% -> 38.46%, accuracy 15.38% -> 30.77%, error rate
+# 15.38% -> 7.69% (STRICT, stored labels). See the docstring on
+# ClaimRetriever.retrieve for the audited-label caveat and for the wrong
+# numbers this comment used to carry.
 #
 # Worth noting how dull the winning fix was. It is one integer, not an
 # architecture, and it beat both of the designed interventions.
-CLAIM_TOP_K = 5
+#
+# Both depths are imported rather than written here. They used to be
+# independent literals that happened to agree, which is the condition that
+# produced the k=3 defect in the first place.
+CLAIM_TOP_K = RETRIEVAL_TOP_K
 
 # Retrieval depth for whole-question answer-key verification.
-ANSWER_TOP_K = 5
+ANSWER_TOP_K = RETRIEVAL_TOP_K
 
 
 @lru_cache(maxsize=1)

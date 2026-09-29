@@ -135,6 +135,7 @@ from src.evaluation.judge_llm import load_api_key, post_chat_completion
 from src.evaluation.label_audit import audit_status, corrected_label
 from src.evaluation.system_b_metrics import selective_metrics
 from src.retrieval.lexical_index import LexicalIndex, load_chunks
+from src.retrieval.retrieval_config import RERANK_CANDIDATE_K
 from src.verification.claim_builder import build_claims_for_question
 from src.verification.question_parser import is_propositional
 
@@ -551,9 +552,21 @@ class RerankerIndex:
         from src.retrieval.semantic_reranker import SemanticReranker
 
         self.chunks = chunks
-        self.retriever = SemanticReranker(chunks, candidate_k=20)
 
-    def retrieve(self, query: str, top_k: int = 5) -> "list[dict]":
+        # candidate_k is imported, unlike the per-arm top_k values below.
+        # The arms exist to vary the depth handed to the LLM, so those
+        # literals are the measurement; the first-stage candidate depth is
+        # not varied by any arm, so if it drifted from the shipped value
+        # this ablation would silently stop describing the shipped
+        # retriever.
+        self.retriever = SemanticReranker(
+            chunks,
+            candidate_k=RERANK_CANDIDATE_K,
+        )
+
+    def retrieve(self, query: str, top_k: int) -> "list[dict]":
+        # No default on purpose. Every arm states its own depth, and a
+        # default here would be a fourth place for the depth to live.
         return self.retriever.retrieve(query, top_k=top_k)
 
 
@@ -571,7 +584,8 @@ def build_index(chunks: "list[dict]"):
 RETRIEVER_DESCRIPTIONS = {
     RETRIEVER_RERANKER: (
         "semantic (BAAI/bge-small-en-v1.5) -> cross-encoder rerank "
-        "(cross-encoder/ms-marco-MiniLM-L-6-v2), candidate_k=20"
+        "(cross-encoder/ms-marco-MiniLM-L-6-v2), "
+        f"candidate_k={RERANK_CANDIDATE_K}"
     ),
     RETRIEVER_BM25: "stdlib BM25 (LexicalIndex)",
 }

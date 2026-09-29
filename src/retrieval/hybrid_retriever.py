@@ -3,6 +3,10 @@ from pathlib import Path
 
 from src.retrieval.bm25_retriever import BM25Retriever, load_chunks as load_bm25_chunks
 from src.retrieval.semantic_retriever import SemanticRetriever
+from src.retrieval.retrieval_config import (
+    RERANK_CANDIDATE_K,
+    RETRIEVAL_TOP_K,
+)
 
 
 def reciprocal_rank_fusion(
@@ -62,8 +66,8 @@ class HybridRetriever:
     def retrieve(
         self,
         query: str,
-        top_k: int = 5,
-        candidate_k: int = 20,
+        top_k: int = RETRIEVAL_TOP_K,
+        candidate_k: int = RERANK_CANDIDATE_K,
     ) -> list[dict]:
         """
         Retrieve using BM25 + semantic retrieval,
@@ -97,10 +101,7 @@ if __name__ == "__main__":
 
     query = "What are the Fundamental Rights guaranteed by the Constitution?"
 
-    results = retriever.retrieve(
-        query,
-        top_k=5,
-    )
+    results = retriever.retrieve(query)
 
     print()
     print(f"Query: {query}")

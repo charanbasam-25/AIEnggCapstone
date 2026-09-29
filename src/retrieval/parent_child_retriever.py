@@ -5,6 +5,10 @@ from pathlib import Path
 from sentence_transformers import CrossEncoder
 
 from src.retrieval.semantic_retriever import SemanticRetriever
+from src.retrieval.retrieval_config import (
+    RERANK_CANDIDATE_K,
+    RETRIEVAL_TOP_K,
+)
 
 
 RERANKER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
@@ -25,7 +29,7 @@ class ParentChildRetriever:
     def __init__(
         self,
         chunks: list[dict],
-        candidate_k: int = 20,
+        candidate_k: int = RERANK_CANDIDATE_K,
     ):
         self.chunks = chunks
         self.candidate_k = candidate_k
@@ -85,7 +89,7 @@ class ParentChildRetriever:
     def retrieve(
         self,
         query: str,
-        top_k: int = 5,
+        top_k: int = RETRIEVAL_TOP_K,
     ) -> list[dict]:
 
         # -------------------------------------------------
@@ -160,17 +164,11 @@ if __name__ == "__main__":
         "data/processed/chunks.jsonl"
     )
 
-    retriever = ParentChildRetriever(
-        chunks,
-        candidate_k=20,
-    )
+    retriever = ParentChildRetriever(chunks)
 
     query = "How is the President of India elected?"
 
-    results = retriever.retrieve(
-        query,
-        top_k=5,
-    )
+    results = retriever.retrieve(query)
 
     print(f"Query: {query}")
     print()

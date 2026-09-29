@@ -62,6 +62,7 @@ from src.evaluation.answer_mapping import (
 from src.evaluation.label_audit import audit_status, corrected_label
 from src.evaluation.system_b_metrics import percent, selective_metrics
 from src.generation.mcq_generator import MCQ
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
 from src.retrieval.semantic_reranker import load_chunks
 from src.verification.answer_key_verifier import AnswerKeyVerifier
 from src.verification.claim_builder import build_claims_for_question
@@ -75,11 +76,14 @@ CHUNKS_PATH = "data/processed/chunks.jsonl"
 OUTPUT_PATH = "data/evaluation/verified_pyq_results.json"
 
 # Retrieval depth per claim. See note 1 in the module docstring: this was
-# 3, which is the defect that cost the most.
-CLAIM_TOP_K = 5
+# 3, which is the defect that cost the most. Imported rather than written
+# here so that it cannot drift from the depth the retrieval benchmarks
+# measure; run_all.py --check asserts the value recorded in the stored
+# results still matches it.
+CLAIM_TOP_K = RETRIEVAL_TOP_K
 
 # Retrieval depth for the whole-question answer-key verifier.
-ANSWER_TOP_K = 5
+ANSWER_TOP_K = RETRIEVAL_TOP_K
 
 CLAIM_MODE_BOUND = "bound"
 CLAIM_MODE_VERBATIM = "verbatim"

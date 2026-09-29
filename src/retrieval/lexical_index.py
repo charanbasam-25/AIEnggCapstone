@@ -53,6 +53,10 @@ import re
 from collections import Counter
 from pathlib import Path
 
+# Pure constants, no third-party imports, so the zero-dependency property
+# this module exists for is preserved.
+from src.retrieval.retrieval_config import RETRIEVAL_TOP_K
+
 
 K1 = 1.5
 B = 0.75
@@ -172,7 +176,11 @@ class LexicalIndex:
 
         return totals
 
-    def retrieve(self, query: str, top_k: int = 5) -> "list[dict]":
+    def retrieve(
+        self,
+        query: str,
+        top_k: int = RETRIEVAL_TOP_K,
+    ) -> "list[dict]":
         """
         Return the top_k highest scoring chunks, each with its score.
 
