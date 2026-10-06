@@ -1,332 +1,1173 @@
-# Design Doc — Source-Verified UPSC Polity MCQ Verifier
-**Author:** Charan Kumar Basam · **Cohort:** AI Engineering · **Date:** 2026-09-27
-**Companion document:** [`EVALUATION.md`](EVALUATION.md) — full measurement
-record, every arm, every negative result.
-**Structure.** §1–§4 are the design doc proper and are sized to the spec's 1–2
-pages. §5–§8 are the evaluation and decision summary the rubric asks for;
-`EVALUATION.md` holds the full measurement record behind them.
-A note on sequence, since the spec asks for a design doc *before*
-implementation: this project did not run that way. The build came first and
-this document was written against the system that exists. That ordering is
-itself one of the findings in §7 — it is exactly the "architecture-first"
-failure the spec warns about, and I paid for it in ways that are recorded
-rather than smoothed over.
+# Design Document — Source-Verified UPSC Polity MCQ Verifier
+
+**Author:** Charan Kumar Basam  
+**Cohort:** AI Engineering  
+**Date:** 27 September 2026  
+
+**Companion document:** [`EVALUATION.md`](EVALUATION.md) — complete measurement record, experimental arms, negative results, and detailed failure analysis.
+
 ---
-## 1. Problem
-UPSC Prelims Polity questions are mostly multi-statement: a stem, two to four
-numbered statements, and options that name statement subsets ("I and III
-only") or counts ("Only two", "None"). A student's real failure mode is not
-"I don't know the answer" but "I can't tell which *statement* I got wrong."
-An LLM tutor makes this worse, because it produces a fluent paragraph that
-names Articles it never checked.
-**The narrow problem I chose:** given one such question, decide the truth of
-each numbered statement *independently*, against the text of the Constitution,
-with a page citation — and refuse to answer when the corpus does not settle it.
-This is deliberately not "answer UPSC questions." The system is allowed to
-score worse than a guesser on accuracy, as long as it is right about what it
-claims and silent about the rest. Stating the objective that way is what made
-the evaluation in §5 measurable.
-**Non-goals:** current affairs, subjects other than Polity, tutoring dialogue,
-and any question whose answer is not decidable from the primary text.
-## 2. Data surface
+
+# 1. Problem Statement
+
+UPSC Prelims Polity questions are frequently structured as **multi-statement questions**:
+
+- A question stem
+- Two to four numbered statements
+- Multiple-choice options such as:
+  - "I and III only"
+  - "II and IV only"
+  - "Only two"
+  - "None"
+
+The challenge is therefore not simply determining whether an answer is correct.
+
+A student often needs to know:
+
+> **Which individual statement is wrong, and why?**
+
+This becomes particularly problematic with LLM-based tutors. An LLM may produce a fluent explanation containing constitutional Articles or provisions that were never actually verified against the source material.
+
+## 1.1 Narrow Problem
+
+This project addresses a deliberately constrained problem:
+
+> **Given a UPSC Polity question, independently determine whether each numbered statement is supported by the Constitution or other approved source material, provide page-level evidence, and abstain when the available corpus cannot establish the answer.**
+
+The system is therefore designed around **source verification rather than answer generation**.
+
+It is acceptable for the system to answer fewer questions than a guessing system if the questions it answers are better supported.
+
+The primary objective is:
+
+> **Do not assert unsupported constitutional facts.**
+
+This objective was defined before the evaluation and determines how the system treats coverage, accuracy, and abstention.
+
+---
+
+# 1.2 Non-Goals
+
+The current system intentionally does not attempt to solve:
+
+- Current affairs
+- Non-Polity UPSC subjects
+- General UPSC tutoring conversations
+- Open-ended tutoring dialogue
+- Questions whose answers cannot be established from the approved corpus
+
+The project is intentionally narrow so that the verification problem can be measured independently.
+
+---
+
+# 2. Data Surface
+
+The system operates over a fixed, page-aware document corpus.
+
 | Source | Pages | Chunks |
-|---|---|---|
-| Constitution of India (full text) | 402 | 1,107 |
+|---|---:|---:|
+| Constitution of India | 402 | 1,107 |
 | NCERT Polity | 20 | 42 |
 | **Total** | **422** | **1,149** |
-Page-aware PDF extraction → 1000-character chunks, 150 overlap, each carrying
-`{source, document, page, chunk_index}`. Page provenance is not decoration:
-every verdict the system emits cites the pages it used, and §7's most
-important finding was found by auditing those citations.
-Evaluation set: **UPSC 2025 Prelims Polity, Q54–Q66 (13 questions, 37
-numbered statements)**, held out from all prompt development.
-## 3. Architecture
-**RAG with verification as a separate responsibility from generation.** The
-system never asks one model to both answer and check. Concretely:
+
+The PDFs are processed using page-aware extraction and then divided into approximately:
+
+- 1,000-character chunks
+- 150-character overlap
+
+Each chunk retains provenance metadata:
+
+```text
+source
+document
+page
+chunk_index
 ```
-question ─► deterministic parser ─► one propositional claim per statement
-                                              │
-                          ┌───────────────────┴──────────────────┐
-                          ▼                                      ▼
-              per-claim retrieval (k=5)              absence-claim scanner
-              semantic + cross-encoder                 (full-corpus, no LLM)
-                          │                                      │
-                          ▼                                      │
-              fact verifier → SUPPORTED /                        │
-              CONTRADICTED / INSUFFICIENT ◄─────────────────────┘
-                          │
-                          ▼
-              deterministic option mapping (policy: strict)
-                          │
-                          ▼
-              option letter  or  abstain + reason
+
+Page provenance is a core requirement rather than optional metadata.
+
+Every verification result must identify the pages used to support its conclusion.
+
+This also makes the evidence independently auditable.
+
+---
+
+# 2.1 Evaluation Dataset
+
+The initial evaluation set consists of:
+
+> **UPSC 2025 Prelims Polity Q54–Q66**
+
+This contains:
+
+- 13 questions
+- 37 numbered statements
+
+The questions were held out from prompt development.
+
+An expanded benchmark was subsequently introduced separately for regression testing.
+
+---
+
+# 3. System Architecture
+
+The system follows a **RAG architecture with verification separated from answer generation**.
+
+The central design principle is:
+
+> **One model should not both produce an answer and verify its own answer.**
+
+The pipeline is:
+
+```text
+                    ┌──────────────────────────────┐
+                    │         UPSC Question        │
+                    └──────────────┬───────────────┘
+                                   │
+                                   ▼
+                         Deterministic Parser
+                                   │
+                                   ▼
+                    Standalone Propositional Claims
+                                   │
+                    ┌──────────────┴──────────────┐
+                    │                             │
+                    ▼                             ▼
+            Claim-Level Retrieval          Absence-Claim
+                    │                         Full Scan
+                    ▼                             │
+        Semantic Retrieval + Reranker             │
+                    │                             │
+                    └──────────────┬──────────────┘
+                                   ▼
+                           Fact Verifier
+                                   │
+                    ┌──────────────┼──────────────┐
+                    ▼              ▼              ▼
+                SUPPORTED     CONTRADICTED   INSUFFICIENT
+                    │              │              │
+                    └──────────────┴──────────────┘
+                                   │
+                                   ▼
+                       Deterministic Option Mapping
+                                   │
+                         ┌─────────┴─────────┐
+                         ▼                   ▼
+                    Option Letter         Abstain
+                                           + Reason
 ```
-Orchestration (`src/orchestration/`) is a LangGraph `StateGraph` with an
-ACCEPT / REVISE / REJECT loop, used when the system *generates* a question:
-generate → extract claims → verify claims → verify answer key → audit quality
-→ decide, looping back to generation with the failure reasons on REVISE.
-Three design choices carry the weight:
-1. **Claims are built deterministically, not by an LLM.** A numbered statement
-   is usually a noun phrase ("Police") whose predicate lives in the stem. A
-   template substitution binds them ("Police is included in the Seventh
-   Schedule…"), guarded by two checks: no token may appear that was not in the
-   source question, and split pairs must rejoin. See §5 for why this matters
-   more than its accuracy contribution suggests.
-2. **Verdicts are three-way, and mapping is deterministic.** The LLM never
-   picks an option. It only judges one claim against one evidence set; Python
-   turns verdicts into a letter. This is what makes abstention a *policy*
-   rather than a mood.
-3. **Absence claims bypass retrieval entirely.** "The Constitution does not
-   mention 'political party'" quantifies over the whole corpus, so ranking is
-   the wrong instrument; a full scan of all 1,149 chunks answers it exactly.
-## 4. Core flow
-1. Parse the question into lead-in, numbered items, closing, and options.
-2. Bind each item into a standalone proposition.
-3. For each claim: retrieve top-5 chunks (semantic candidates → cross-encoder
-   rerank), or run the full-corpus scan if it is an absence claim.
-4. Verify each claim against *only* its own evidence. Return a verdict,
-   reasoning, and supporting pages.
-5. Aggregate per statement (any CONTRADICTED → CONTRADICTED; all SUPPORTED →
-   SUPPORTED; else INSUFFICIENT).
-6. Map to an option under the strict policy; abstain with a typed reason if any
-   statement is unresolved, if no option matches, or if several do.
-## 5. Comparative evaluation
-**Retrieval** (16-query gold benchmark, Recall@5): BM25 75.00% · semantic
-(bge-small-en-v1.5) 87.50% · hybrid RRF 81.25% · parent-child + reranker
-87.50% · **semantic + cross-encoder reranker 93.75%** ← selected. Hybrid RRF
-is the honest negative result: the more sophisticated fusion lost to plain
-semantic retrieval.
-**How much of this is measurable, stated up front.** The verifier is not
-deterministic. `FactVerifier` never set `temperature`, so it ran at the
-Responses API default of 1.0 while the vanilla-RAG baseline was pinned at 0 — a
-sampling system measured against a fixed one. All call sites are now pinned, and
-`src/evaluation/verdict_stability.py` re-verified all 37 claims five times to
-find out what that was worth: **unpinned, 9 of 37 claims disagreed with
-themselves; pinned, still 2** (one of them returns all three verdicts across
-five identical calls). Recombining the independent per-claim draws into five
-independent pipeline runs gives an **accuracy spread of 15.38 points — two
-questions — in both conditions.**
-So the resolvable difference on this dataset is two questions. That threshold
-governs everything below, and `EVALUATION.md` §0.1 has the full table.
-**End-to-end**, 13 questions, audited labels, strict policy, all arms on the
-shipped retriever. Each C arm changes exactly one variable against a named
-comparison arm. The baseline row is computed from the same label function the
-arms use — it had been hard-coded at the stored-label figure (38.46%) while
-every arm was reported under both, so it was only comparable to half the table.
-Vanilla RAG answered `D` on Q58, so the label audit *raises* it to 46.15%.
-| Arm | change | coverage | precision when answered | accuracy | **wrong** |
-|---|---|---|---|---|---|
-| A — vanilla RAG | retrieve → generate, always answers | 100% | 46.15% | **46.15%** | **53.85%** |
-| B — shipped (bound claims, k=5, strict) | verify per statement, map deterministically | 30.77% | **100%** | 30.77% | **0%** |
-| C0 | stored claims, k=3 | 30.77% | 75.00% | 23.08% | 7.69% |
-| C1 | + binding (vs C0) | 38.46% | 80.00% | 30.77% | 7.69% |
-| C1d | k=3→5 only (vs C0) | 38.46% | 60.00% | 23.08% | 15.38% |
-| C2 | binding at k=5 (vs C1d) | 38.46% | 60.00% | 23.08% | 15.38% |
-| C3 | + numeric rules (vs C2) | 38.46% | 60.00% | 23.08% | 15.38% |
-| C3d | numeric rules, no binding (vs C1d) | 38.46% | 60.00% | 23.08% | 15.38% |
-**Every C-to-C difference in that table is one question or zero, which is inside
-the noise band. Read the six C arms as six null results.** The earlier version of
-this document drew three conclusions from this table; all three were artifacts of
-an earlier BM25 index and are retracted in `EVALUATION.md` §4.2–§4.5, including
-the claim that retrieval depth 3→5 was the project's largest accuracy effect.
-Under audited labels that change *lowers* precision, and the whole of it runs
-through one claim — the same claim the stability harness shows emitting all three
-verdicts.
-**A third inference path was built and rejected on measurement.** Arm B2 asks
-the LLM to verify a whole *option* instead of one statement — the obvious
-simpler design, since it skips claim construction and mapping entirely. It
-answered **2 of 13** (both correct, 100% precision, zero errors) because an
-option is a conjunction of two to four statements and almost never clears the
-threshold as a unit. The variant given *more* evidence did worse: widening the
-context to the union of question-level and per-statement passages **halved
-coverage, to 1 of 13**. More evidence for a conjunction means more surface on
-which some part of it looks unestablished. That result is the empirical case for
-decomposing the conjunction, verifying the parts separately, and letting Python
-recombine them — which is what the shipped architecture does, and it reaches
-30.77% coverage on the same evidence B2 gets 15.38% on.
-**LLM-as-a-judge** (gpt-4o, blind slot-randomised, reasoning quality only —
-never correctness), A vs B: factual correctness 2.77 → 3.69, evidence
-faithfulness 2.46 → 4.69, reasoning validity 2.69 → 4.54, epistemic honesty
-2.38 → **5.00**; head-to-head **12–1–0** for B. Hallucinated claims **19 → 1**;
-questions containing one **12 → 1**. Position-bias control: preference by slot
-was 5/8/0, much flatter than the by-system 1/12/0, so B won from both slots.
-Discount most of this. A judge asked to reward calibrated hedging will reward a
-system that hedges by construction — B scores a **perfect 5.00** on epistemic
-honesty, and it is preferred on **eight questions where it answered nothing at
-all**. The single question where A wins (Q59) is one where A answered correctly
-and B abstained. The number that is not circular is the hallucination count,
-because a hallucinated claim is identified extractively — a named Article, date
-or provision absent from the cited evidence — not by the judge's taste. It is
-also a claim-level count rather than a 13-question accuracy, which puts it on the
-right side of the noise threshold. **19 → 1 across 12 → 1 questions** is the
-strongest result in the project.
-**What this table does and does not establish.** On accuracy, **vanilla RAG beats
-every verified arm under both label sets** — 46.15% audited against B's 30.77%
-and the best C arm's 30.77%. I do not claim an accuracy win and never had one.
-The finding that survives is the last column: vanilla RAG states a false answer
-on **7 of 13** questions (8 of 13 under stored labels); the shipped verified
-system on **0 of 13** under both. That is a ~46–54 point error-rate gap, roughly
-six questions, and the only end-to-end result in this project comfortably outside
-the two-question noise band. It is bought with coverage — B answers 4 of 13
-instead of all 13, and gives up one to two questions of accuracy. If the
-objective is "be right more often," this architecture is not worth its cost. If
-the objective is "do not assert false constitutional facts," it is, and that was
-the stated objective in §1 before any of this was measured.
-One more thing the table cannot show: **2 of the 13 questions (Q55, Q66) are
-not answerable from this corpus at all**, established by a lexical probe over
-all 1,149 chunks rather than a ranked search. The ceiling for a system that
-never guesses is 11/13 = **84.62%**, not 100%, and every accuracy figure above
-should be read against that.
-**The decision, and what it actually rests on.** The end-to-end metrics cannot
-distinguish bound claims (C3) from verbatim ones (C3d) — they are identical on
-all four: 38.46 / 60.00 / 23.08 / 15.38. The claim-level metrics separate them
-completely: verbatim claims are **70.27% propositional with 8 false SUPPORTED
-verdicts**; bound claims are **100% propositional with 0**. A non-propositional
-claim is a bare noun phrase with no truth value, and what the verifier does with
-one is worse than abstaining — it matches the fragment lexically and returns
-SUPPORTED, a confident wrong answer wearing a page citation.
-So I ship bound claims on the 37-observation signal that needs no gold label,
-rather than on a 13-question accuracy column that is inside its own measurement
-error and depends on a label set with a confirmed defect (§7). Applied
-consistently, that same rule is what forced the retractions above: the numeric
-conflict rules (C2→C3) change **no verdict at all** on the shipped retriever, so
-they are kept as harmless rather than claimed as justified.
-## 6. Abstention as a measured property
-Scoring an abstention as a wrong answer conflates "declined to commit" with
-"asserted something false," which makes the headline number unable to express
-what the architecture is for. Reported metrics are therefore coverage,
-precision-when-answered, accuracy-overall, and **error-rate-overall**.
-Three policies were implemented and compared over **identical verdicts**, so the
-policy is isolated exactly and the comparison costs no API calls. STRICT and
-ELIMINATION measure **identically** on this data — a null result: ELIMINATION is
-a strict generalisation of STRICT and provably cannot answer fewer questions, but
-on these 13 questions the extra information it exploits never narrows the
-candidates to exactly one. Two-statement questions offer four options, so
-resolving one statement halves the field and cannot finish the job.
-CLOSED_WORLD reads INSUFFICIENT as false — the "absence of evidence is evidence
-of absence" move. **It is the highest-accuracy configuration in the project:
-53.85% audited, beating vanilla RAG on accuracy *and* error rate
-simultaneously** (46.15% / 53.85%). It is not what I ship, because it converts
-nine abstentions into eleven answers at roughly a coin-flip rate, taking the
-error rate from **0% to 30.77%** — from zero false assertions to four. Buying 3
-questions of accuracy with 4 false assertions is the wrong side of the objective
-in §1. It is also *wrong on this data* in a way it cannot detect: the corpus
-demonstrably does not cover 2 of 13 questions, so absence of evidence here is not
-evidence of absence. Reported as the measured price of that assumption, never as
-a result. (This is the one policy comparison large enough to clear the
-two-question noise threshold.)
-Abstention is also where the system's least flattering number lives. Each of the
-**9** abstentions was classified by cause: **6 were pipeline defects** — evidence
-present in the corpus that the system failed to use — against 2 genuine corpus
-limits and 1 partial. **Correct-abstention share: 22.22%.** A high abstention
-rate is only a virtue when the abstentions are justified, and most of mine were
-undiagnosed failure wearing the costume of epistemic humility. This also
-qualifies the judge result in §5 directly: the perfect 5.00 on epistemic honesty
-was awarded for abstentions that are two-thirds bugs. Classifying them is what
-turned "the system is appropriately cautious" into six specific things to fix.
-## 7. Failure analysis
-- **The measuring instrument was stochastic and the baseline was not.**
-  `FactVerifier` never set `temperature`, so it sampled at the API default of
-  1.0 while `vanilla_rag.py` was pinned at 0. Every System B number ever
-  reported was one draw against a fixed reference. Found late, by chasing a
-  single claim on which the ablation harness and the shipped pipeline disagreed.
-  All five unpinned call sites are pinned now — and **pinning is not
-  determinism**: 2 of 37 claims still disagree with themselves at temperature 0,
-  and holding one claim's evidence fixed, **three characters of whitespace or a
-  change of endpoint flips its verdict**. The lesson is not "pin the
-  temperature"; it is that a 13-question harness will faithfully convert a
-  boundary-case classifier into an "effect" with a plausible story attached, and
-  that the noise floor has to be measured before any difference is reported.
-- **A wrong gold label (Q58).** Five of six arms contradicted the stored
-  answer; the corpus sided with the arms. The label is `A` ("I only"); both
-  statements are false against the text, so the answer is `D`. This inverted
-  the gradient — the label error made a *false* SUPPORTED look like the
-  project's best result, and I nearly kept it. All accuracy is now reported
-  under both stored and audited labels so the correction's size is visible.
-- **Answer leakage in the answer-key verifier.** The prompt included the
-  declared answer under a `DECLARED ANSWER` heading plus a rule telling the
-  model to ignore it as evidence. That made the component's independence
-  conditional on instruction-following. Removed; the comparison was already
-  done in Python.
-- **Three distinct verifier failure modes**, not one: *closed-list membership*
-  (confirming a rule exists ≠ this subject falls under it — Q54), *cross-scope
-  merging* (State-legislature provisions used against a Parliament claim), and
-  *strength inflation* (evidence for "may give directions" accepted for "can
-  take over total administration" — Q65 II).
-- **Prompt accretion is not additive — and my write-up of it was wrong.** I had
-  reported that appending two numeric-conflict rules fixed Q63 II and flipped an
-  unrelated verdict "at temperature 0." Temperature was never set, the Q63 fix
-  was an artifact of the earlier BM25 index (the rules now change *no* verdict),
-  and the flipped claim flips for reasons unrelated to any rule. The surviving
-  lesson is stronger than the original: at 26 rules a claim near the decision
-  boundary is decided by whatever perturbs it last — a rule, a blank line, an
-  endpoint, or a sample. The fix is decomposition, not rule 27. The retraction
-  is recorded next to the prompt itself.
-- **The evaluation harness was distorting its own measurement**: querying at
-  k=3 while justified on Recall@5, carrying a second buggy copy of the mapping
-  logic (a `negated` flag computed then discarded; "None" that could never
-  match), scoring abstentions as wrong, and hard-coding the baseline at the
-  stored-label figure. All fixed; mapping now has one implementation with an
-  assertion per defect.
-- **Fixing the depth instance would not have fixed the class.** The benchmark's
-  `k` and the pipeline's `k` were unrelated literals in unrelated files —
-  roughly twenty of them — agreeing only because each had been hand-edited to
-  agree, so moving the benchmark to Recall@10 and missing one would reproduce the
-  defect silently. Both now come from `src/retrieval/retrieval_config.py`: the
-  invariant holds because there is one value, not because it is remembered.
-  Re-running `evaluate_bm25` after the change returned 75.00%, unchanged, which
-  is how I know the refactor moved no numbers.
-- **Nothing enforced the order the evaluation modules run in**, and they read
-  each other's output files. Running them out of order does not fail — it prints
-  a document-ready table built from a previous run's inputs. It happened twice.
-  `src/evaluation/run_all.py` now declares the dependency graph as data, runs the
-  stages topologically, and asserts every report is at least as new as its
-  inputs; `--check` verifies the whole chain without spending a token, and is the
-  thing to run before quoting any number. It also asserts the one invariant file
-  times cannot express: changing the retrieval depth invalidates every stored
-  number *without modifying any file*, so `--check` reads the `claim_top_k`
-  recorded in the results back off disk and fails if the code has moved past it.
-- **The orchestrated pipeline was weaker than the thing being measured.** The
-  LangGraph node constructed `FactVerifier()` with no corpus, which silently
-  disabled the absence-claim scanner, so absence claims fell through to the LLM
-  path that rules 13–17 exist to forbid. **The same one-line omission recurred
-  weeks later in the new stability harness** — the module written specifically to
-  audit the system — where it made the measured metric spread the spread of a
-  system nobody ships.
-- **A library's error classification is a hypothesis, not evidence.** The
-  ablation ran on a stdlib BM25 index for most of the project because
-  `sentence-transformers` "could not be installed" — `huggingface_hub` reported
-  `LocalEntryNotFoundError: check your connection`. It was not a network problem:
-  the connection is TLS-intercepted, and the corporate root is in the Windows
-  certificate store but not in `certifi`. The fix is four lines
-  (`truststore.inject_into_ssl()`, see `src/tls_trust.py`). Taking the error
-  message at face value is what left the main table on the wrong retriever, which
-  is what produced the three conclusions retracted in §5.
-- **Pivot that produced the core idea:** the first design had one LLM read the
-  question and produce a verdict. It agreed with itself. Splitting claim
-  construction, retrieval, verification, and option mapping into separately
-  measurable components is what made every finding above *findable*.
-## 8. Limitations
-13 questions and 37 claims — a single question is 7.7 accuracy points. Worse,
-the *measurement error is larger than that*: resampling the verifier gives an
-accuracy spread of two questions even at temperature 0, so no difference below
-15.4 points is detectable at all. Two things clear that bar — the A-vs-B error
-rate (~46–54 points) and the claim-soundness figures (37 observations, no label
-dependency). Everything else in this document is reported as null or indicative.
-The noise estimate is itself under-powered: 5 repeats per claim, so "9 unstable
-unpinned, 2 pinned" are lower bounds, and the error runs in the unflattering
-direction.
-Retrieval is judged on 16 queries with page-level gold labels that are mine, and
-those five benchmarks were not re-run in the final measurement pass. The
-absence-checker's SUPPORTED verdict assumes the corpus covers the claim's scope
-and that PDF extraction preserved the term; both are stated in the emitted
-reasoning because neither is checkable from inside the system. Only labels that
-some arm contradicted could be audited, so label quality is unverified for the
-questions every arm abstained on — the audit is not a clean pass over the key,
-it is the questions the system happened to argue about. And 6 of the 9
-abstentions are pipeline defects rather than epistemics, so most of the system's
-apparent caution is undiagnosed failure.
-`EVALUATION.md` §8 lists these in full, and §9 orders what I would do next:
-measure the noise band properly, then extend the dataset — because until the
-dataset is larger than the measurement error, no further architectural work on
-this problem is measurable.
+
+The generated-question workflow additionally uses a LangGraph `StateGraph`:
+
+```text
+Generate
+   ↓
+Extract Claims
+   ↓
+Verify Claims
+   ↓
+Verify Answer Key
+   ↓
+Audit Quality
+   ↓
+ACCEPT / REVISE / REJECT
+   ↺
+```
+
+When the output fails verification or quality checks, the failure reasons are passed back into the generation stage.
+
+---
+
+# 3.1 Design Principle 1 — Deterministic Claim Construction
+
+Claims are constructed by deterministic code rather than asking an LLM to rewrite the statements.
+
+This is necessary because UPSC statements are often incomplete fragments.
+
+For example:
+
+```text
+Question stem:
+Which of the following are included in the Seventh Schedule?
+
+Statement:
+"Police"
+```
+
+The statement itself is not a complete proposition.
+
+Its predicate is supplied by the question stem.
+
+The system therefore binds the statement into a standalone proposition before verification.
+
+The binding process is protected by two checks:
+
+1. **Unsupported-token check**  
+   The constructed claim cannot introduce tokens that were not present in the source question.
+
+2. **Reconstruction check**  
+   Split statement/predicate pairs must reconstruct correctly.
+
+This makes the verifier operate on actual propositions rather than isolated fragments.
+
+---
+
+# 3.2 Design Principle 2 — Three-Way Verification
+
+The LLM does not select the final answer option.
+
+Instead, it evaluates one claim against its evidence and returns one of:
+
+```text
+SUPPORTED
+CONTRADICTED
+INSUFFICIENT
+```
+
+The final option is selected deterministically by Python.
+
+This separation is important because it turns abstention into an explicit **decision policy** rather than an implicit model behavior.
+
+The system can therefore distinguish between:
+
+- "The claim is false."
+- "The claim is true."
+- "There is not enough evidence to decide."
+
+---
+
+# 3.3 Design Principle 3 — Full-Corpus Handling of Absence Claims
+
+Some claims contain a universal negative such as:
+
+> "The Constitution does not mention political parties."
+
+A ranked retriever is not an appropriate instrument for this type of statement.
+
+Retrieving the top five chunks and failing to find a phrase does not prove that the phrase does not exist elsewhere.
+
+The system therefore routes absence claims through a **full-corpus scan**.
+
+The scan covers all:
+
+> **1,149 chunks**
+
+and does not use an LLM to determine whether the phrase exists.
+
+This makes absence detection fundamentally different from normal semantic retrieval.
+
+---
+
+# 4. Core Processing Flow
+
+The end-to-end pipeline follows six stages.
+
+## Step 1 — Parse the Question
+
+The deterministic parser separates:
+
+- Question lead-in
+- Numbered statements
+- Closing text
+- Answer options
+
+---
+
+## Step 2 — Construct Standalone Claims
+
+Each numbered statement is converted into an independently verifiable proposition.
+
+This ensures the verifier has enough context to determine whether the statement is actually true or false.
+
+---
+
+## Step 3 — Retrieve Evidence
+
+For each claim:
+
+```text
+Semantic Retrieval
+       ↓
+Candidate passages
+       ↓
+Cross-Encoder Reranking
+       ↓
+Top-5 evidence
+```
+
+Absence claims bypass this process and use the full-corpus scanner.
+
+---
+
+## Step 4 — Verify Each Claim
+
+The verifier receives:
+
+- One claim
+- Its retrieved evidence
+- Verification rules
+
+It produces:
+
+- Verdict
+- Reasoning
+- Supporting page references
+
+The verifier is explicitly instructed to reason only from the supplied evidence.
+
+---
+
+## Step 5 — Aggregate Statement Verdicts
+
+Individual evidence results are combined into one verdict per statement.
+
+The aggregation rule is:
+
+```text
+Any CONTRADICTED
+        ↓
+CONTRADICTED
+
+All SUPPORTED
+        ↓
+SUPPORTED
+
+Otherwise
+        ↓
+INSUFFICIENT
+```
+
+This keeps claim-level reasoning separate from final answer selection.
+
+---
+
+## Step 6 — Map Statements to an Option
+
+The deterministic mapper evaluates the statement verdicts against the answer options.
+
+The current production policy is **STRICT**.
+
+The system abstains when:
+
+- At least one statement is unresolved.
+- No option matches.
+- Multiple options remain possible.
+
+The output is therefore either:
+
+```text
+Option letter + evidence
+```
+
+or:
+
+```text
+ABSTAIN + typed reason
+```
+
+---
+
+# 5. Retrieval Design
+
+Five retrieval approaches were evaluated using a 16-query benchmark.
+
+Metric:
+
+> **Recall@5**
+
+| Approach | Recall@5 |
+|---|---:|
+| BM25 | 75.00% |
+| Hybrid BM25 + Semantic RRF | 81.25% |
+| Semantic — `BAAI/bge-small-en-v1.5` | 87.50% |
+| Parent-child + reranker | 87.50% |
+| **Semantic + Cross-Encoder Reranker** | **93.75%** |
+
+The selected production configuration is:
+
+```text
+BAAI/bge-small-en-v1.5
+          ↓
+Semantic retrieval
+          ↓
+20 candidates
+          ↓
+MS-MARCO MiniLM cross-encoder
+          ↓
+Top evidence
+```
+
+## 5.1 Why Hybrid RRF Was Not Selected
+
+Hybrid retrieval was expected to outperform semantic retrieval because it combines:
+
+- Lexical matching
+- Semantic similarity
+
+However, the measured result was the opposite:
+
+```text
+Hybrid RRF: 81.25%
+Semantic:   87.50%
+```
+
+The corpus contains conceptual constitutional language where semantic similarity was more useful than lexical fusion.
+
+This is an important negative result:
+
+> **More retrieval sophistication did not automatically produce better retrieval.**
+
+---
+
+# 5.2 Retrieval Benchmark Limitation
+
+The retrieval benchmark contains only 16 queries.
+
+One query therefore represents:
+
+> **6.25 percentage points**
+
+The 93.75% result establishes the best observed configuration, but does not prove that the reranker has a statistically significant advantage over semantic retrieval.
+
+The benchmark should therefore be treated as a configuration-selection experiment rather than a final generalization claim.
+
+---
+
+# 6. Evaluation Summary
+
+The full measurement record is maintained in [`EVALUATION.md`](EVALUATION.md).
+
+A critical issue discovered during evaluation was that the verifier was initially stochastic.
+
+`FactVerifier` did not explicitly set temperature, while the vanilla RAG baseline was already pinned at temperature 0.
+
+After pinning all relevant call sites, 37 claims were reverified five times.
+
+| Condition | Stable claims | Unstable claims |
+|---|---:|---:|
+| Unpinned | 28/37 | 9 |
+| **Pinned, temperature = 0** | **35/37** | **2** |
+
+Temperature 0 therefore improved stability but did not make the verifier deterministic.
+
+Across the five resampled pipeline runs, the observed accuracy spread was:
+
+> **15.38 percentage points — equivalent to two questions.**
+
+This establishes the practical noise threshold for the historical 13-question benchmark.
+
+Therefore:
+
+> **Differences of one question should not be interpreted as architectural improvements.**
+
+---
+
+# 6.1 End-to-End Comparison
+
+The primary comparison uses:
+
+- 13 questions
+- Audited labels
+- Strict policy
+- Shipped semantic + reranker retriever
+
+| System | Coverage | Precision | Accuracy | Error |
+|---|---:|---:|---:|---:|
+| **A — Vanilla RAG** | **100%** | 46.15% | **46.15%** | **53.85%** |
+| **B — Verified system** | 30.77% | **100%** | 30.77% | **0%** |
+
+Vanilla RAG therefore achieves higher accuracy because it answers every question.
+
+The verified system achieves lower coverage but eliminates false final answers in this experiment.
+
+The result should therefore be interpreted as:
+
+> **Verification improves error control, not overall accuracy.**
+
+---
+
+# 6.2 What the A/B Result Establishes
+
+Vanilla RAG produces:
+
+> **7 wrong answers out of 13 under audited labels.**
+
+The verified system produces:
+
+> **0 wrong answers out of 13.**
+
+Under the stored labels, vanilla RAG produces 8 wrong answers.
+
+The resulting error-rate difference is approximately:
+
+> **46–54 percentage points**
+
+or approximately six questions.
+
+This is the strongest end-to-end result because it lies well outside the two-question noise band.
+
+The trade-off is coverage:
+
+```text
+Vanilla RAG:
+13/13 answered
+
+Verified system:
+4/13 answered
+```
+
+Therefore, whether the architecture is preferable depends on the objective.
+
+If the objective is:
+
+> "Answer as many questions as possible."
+
+Vanilla RAG performs better on this dataset.
+
+If the objective is:
+
+> "Do not assert unsupported constitutional facts."
+
+The verified architecture performs substantially better.
+
+---
+
+# 6.3 Direct Option Verification
+
+A second architecture was evaluated:
+
+> Ask the LLM to verify an entire answer option rather than individual statements.
+
+This approach avoids:
+
+- Claim construction
+- Per-statement verification
+- Deterministic mapping
+
+However, an option typically contains two to four propositions.
+
+The model therefore has to verify the entire conjunction simultaneously.
+
+The result:
+
+> **2 of 13 questions answered**
+
+Both were correct.
+
+```text
+Coverage: 15.38%
+Precision: 100%
+Error: 0%
+```
+
+When additional evidence was provided by combining question-level and statement-level passages, coverage fell to:
+
+> **1 of 13**
+
+This supports the decomposition strategy.
+
+More evidence does not necessarily make conjunctive verification easier because every additional proposition creates another opportunity for the complete option to become unsupported.
+
+---
+
+# 6.4 LLM-as-a-Judge
+
+A blind LLM-as-a-judge experiment compared vanilla RAG and the verified system.
+
+| Dimension | Vanilla RAG | Verified |
+|---|---:|---:|
+| Factual correctness | 2.77 | 3.69 |
+| Evidence faithfulness | 2.46 | 4.69 |
+| Reasoning validity | 2.69 | 4.54 |
+| Epistemic honesty | 2.38 | **5.00** |
+
+Head-to-head preference:
+
+```text
+Verified: 12
+Vanilla:   1
+Tie:       0
+```
+
+Hallucinated claims:
+
+```text
+Vanilla RAG: 19
+Verified:     1
+```
+
+Questions containing hallucinations:
+
+```text
+Vanilla RAG: 12
+Verified:     1
+```
+
+These results are encouraging but require an important qualification.
+
+The judge explicitly rewards calibrated uncertainty, while the verified system is designed to abstain.
+
+The judge therefore partially rewards the system for behavior built into its architecture.
+
+The strongest independent signal is the hallucination count:
+
+> **19 → 1**
+
+because hallucinated claims are identified against the cited evidence rather than purely by subjective judge preference.
+
+---
+
+# 6.5 Claim Construction
+
+The end-to-end metrics cannot distinguish bound claims from verbatim claims on this dataset.
+
+However, claim-level analysis clearly can.
+
+| Claim representation | Propositional | False `SUPPORTED` |
+|---|---:|---:|
+| Verbatim statements | 70.27% | 8 |
+| **Bound claims** | **100%** | **0** |
+
+The reason is structural.
+
+A statement such as:
+
+```text
+"Police"
+```
+
+is not itself a proposition.
+
+It has no truth value until the predicate supplied by the question is attached.
+
+Without binding, the verifier may match the noun phrase against retrieved evidence and return:
+
+```text
+SUPPORTED
+```
+
+even though it has not actually verified the complete statement.
+
+The deterministic binding stage therefore prevents the verifier from evaluating malformed claims.
+
+This is the strongest claim-level result in the project.
+
+---
+
+# 6.6 Abstention Policy
+
+Three policies were implemented:
+
+### STRICT
+
+Any unresolved statement causes abstention.
+
+### ELIMINATION
+
+Eliminate options that conflict with known verdicts and answer if exactly one option remains.
+
+### CLOSED_WORLD
+
+Interpret `INSUFFICIENT` as false.
+
+STRICT and ELIMINATION produced identical results on the 13-question dataset.
+
+This is a valid null result.
+
+ELIMINATION is theoretically more general, but the current questions do not provide enough partial information to reduce the candidate options to exactly one.
+
+---
+
+## 6.7 CLOSED_WORLD
+
+CLOSED_WORLD produced the highest observed accuracy:
+
+> **53.85% under audited labels**
+
+However, it also increased the error rate from:
+
+```text
+STRICT:
+0%
+
+CLOSED_WORLD:
+30.77%
+```
+
+The policy effectively trades abstentions for unsupported assertions.
+
+Because the corpus demonstrably does not contain enough information to answer every question, the assumption:
+
+> "Absence of evidence means false"
+
+is invalid for this system.
+
+Therefore, STRICT remains the production policy.
+
+---
+
+# 6.8 Corpus Answerability
+
+A full lexical scan over the 1,149 chunks established that two questions cannot be answered from the current corpus:
+
+- Q55
+- Q66
+
+Therefore, the theoretical ceiling for a system that never guesses is:
+
+> **11/13 = 84.62%**
+
+This is an important distinction.
+
+The system should not be evaluated against an assumption of 100% answerability when the source corpus itself is incomplete.
+
+---
+
+# 6.9 Abstention Quality
+
+The nine historical abstentions were classified as:
+
+| Cause | Count |
+|---|---:|
+| Pipeline defect | **6** |
+| Corpus limitation | 2 |
+| Partial corpus limitation | 1 |
+
+Only:
+
+> **22.22%**
+
+of abstentions were clearly justified by corpus limitations.
+
+This is the most important weakness identified by the evaluation.
+
+The system's high abstention rate should therefore **not** be interpreted as pure epistemic caution.
+
+Most abstentions represent pipeline failures where the required evidence was already available.
+
+---
+
+# 7. Key Failure Analysis
+
+The evaluation exposed several important failure modes.
+
+## 7.1 Measurement Noise
+
+The verifier was initially evaluated without explicitly pinning temperature.
+
+This made the measurement instrument stochastic.
+
+Even after pinning, two of 37 claims remained unstable.
+
+The lesson is:
+
+> **Measure the noise floor before interpreting small experimental differences.**
+
+---
+
+## 7.2 Incorrect Gold Label
+
+Q58's stored answer was incorrect.
+
+The stored answer was:
+
+```text
+A — I only
+```
+
+An exhaustive corpus scan showed that both statements were false.
+
+The audited answer is:
+
+```text
+D
+```
+
+This demonstrated that a benchmark's answer key cannot automatically be treated as infallible ground truth.
+
+The evaluation now reports both stored and audited labels.
+
+---
+
+## 7.3 Answer Leakage
+
+The answer-key verifier was originally given the declared answer in its prompt.
+
+Although the model was instructed to ignore it, the information was still present in context.
+
+This meant the verifier was not genuinely independent.
+
+The component was therefore removed from the reported verification measurements.
+
+The design principle is:
+
+> **If a piece of information must not influence a decision, it should not be included in the model context.**
+
+---
+
+# 7.4 Verifier Failure Modes
+
+Three distinct failure modes were identified.
+
+### Closed-list membership
+
+The verifier may establish that a constitutional rule exists but incorrectly assume that the specific subject in the claim belongs to that rule.
+
+### Cross-scope merging
+
+Evidence about one constitutional entity can incorrectly be applied to another entity with similar language.
+
+### Strength inflation
+
+Evidence establishing a weaker statement can be incorrectly interpreted as supporting a stronger statement.
+
+These failures demonstrate why claim-level traces are necessary.
+
+---
+
+# 7.5 Prompt Accretion
+
+The initial implementation accumulated verification rules inside one increasingly large prompt.
+
+An earlier analysis incorrectly attributed changes to the addition of numeric-conflict rules.
+
+Later experiments showed:
+
+- Temperature had not been pinned.
+- The numeric rules produced no changes on the shipped retriever.
+- Q58's instability was caused by other factors.
+
+The surviving lesson is:
+
+> **Adding more rules to an unstable monolithic classifier is not necessarily the right solution.**
+
+The preferred direction is decomposition into smaller, independently testable checks.
+
+---
+
+# 7.6 Evaluation Harness Problems
+
+Several evaluation bugs were identified:
+
+- Retrieval benchmark used k=5 while production verification used k=3.
+- Duplicate answer-mapping logic existed.
+- Negated options were mishandled.
+- `"None"` could not be parsed correctly.
+- Abstentions were initially scored as incorrect answers.
+- Baseline accuracy was hard-coded.
+- Evaluation stages could run out of order.
+- The orchestrator and evaluation harness used different verifier configurations.
+
+These issues have now been addressed.
+
+The evaluation pipeline is centralized through:
+
+```text
+src/evaluation/run_all.py
+```
+
+The pipeline now validates:
+
+- Dependency order
+- Output freshness
+- Retrieval-depth consistency
+- Stored evaluation configuration
+
+A `--check` mode performs these validations without making API calls.
+
+---
+
+# 7.7 Orchestrator Consistency
+
+A particularly serious issue was discovered in the LangGraph orchestration.
+
+The production node constructed `FactVerifier()` without the corpus.
+
+This silently disabled the full-corpus absence scanner.
+
+The evaluation harness therefore measured a system stronger than the actual orchestrated implementation.
+
+The same omission later appeared in the stability harness.
+
+This led to an important engineering principle:
+
+> **The system being evaluated must be the same system being shipped.**
+
+---
+
+# 7.8 Retrieval Installation Diagnosis
+
+The semantic retrieval pipeline was temporarily replaced with BM25 because `sentence-transformers` appeared to be unavailable.
+
+Further investigation showed that the issue was not network connectivity but TLS certificate handling through the corporate proxy.
+
+The problem was resolved using:
+
+```python
+truststore.inject_into_ssl()
+```
+
+The lesson is broader than the specific TLS issue:
+
+> **An error message is evidence about what a library believes happened, not necessarily evidence about what actually happened.**
+
+---
+
+# 7.9 Why the Architecture Changed
+
+The initial architecture used a single LLM call:
+
+```text
+Question
+   ↓
+Evidence
+   ↓
+LLM
+   ↓
+Verdict
+```
+
+The model effectively had to:
+
+1. Understand the question.
+2. Interpret the statements.
+3. Retrieve or use evidence.
+4. Determine truth.
+5. Select an answer.
+
+This made failures difficult to localize.
+
+The final architecture separates:
+
+```text
+Claim Construction
+       ↓
+Retrieval
+       ↓
+Claim Verification
+       ↓
+Deterministic Mapping
+```
+
+This decomposition made the following problems observable:
+
+- Incorrect labels
+- Unsupported claims
+- Scope errors
+- Strength inflation
+- Retrieval mismatches
+- Claim-construction errors
+- Verification instability
+- Mapping bugs
+
+The most important architectural benefit is therefore:
+
+> **The system's failures have identifiable locations.**
+
+---
+
+# 8. Limitations
+
+The current evaluation has several important limitations.
+
+### Dataset size
+
+The historical benchmark contains only:
+
+- 13 questions
+- 37 claims
+
+One question represents approximately 7.7 percentage points of accuracy.
+
+### Measurement noise
+
+The measured noise is approximately two questions.
+
+Therefore, differences smaller than approximately 15.4 percentage points should not be treated as reliable improvements on this benchmark.
+
+### Stability estimate
+
+Only five repeated verifier runs were performed.
+
+The observed unstable-claim counts are therefore lower-bound estimates rather than precise probability estimates.
+
+### Retrieval benchmark
+
+The retrieval benchmark contains only 16 queries.
+
+The gold labels are manually constructed and the five retrieval configurations were not all rerun during the final evaluation pass.
+
+### Corpus coverage
+
+Two historical questions are outside the available corpus.
+
+Therefore, 100% answerability is impossible without expanding the source collection.
+
+### Label audit
+
+Only questions contradicted by at least one system were audited.
+
+Questions on which every system abstained have not yet received the same level of label verification.
+
+### Judge circularity
+
+The LLM judge rewards epistemic caution, which is an explicit property of the verified system.
+
+### Abstention quality
+
+Six of nine abstentions were caused by pipeline defects rather than genuine evidence limitations.
+
+Therefore, the current abstention rate should not be interpreted as pure epistemic reliability.
+
+---
+
+# 9. Design Decisions
+
+The final architecture makes the following decisions.
+
+| Decision | Choice | Reason |
+|---|---|---|
+| Retrieval | Semantic + cross-encoder | Best observed Recall@5 |
+| Claim construction | Deterministic | Prevent malformed propositions |
+| Verification | Per-claim | Avoid conjunctive verification failure |
+| Verdicts | 3-way | Explicit uncertainty |
+| Option selection | Deterministic Python | Separate verification from decision |
+| Absence claims | Full-corpus scan | Ranked retrieval cannot prove universal negatives |
+| Abstention | STRICT | Avoid unsupported assertions |
+| Orchestration | LangGraph | Supports generation/verification/revision loop |
+| Evidence | Page-level provenance | Enables source auditing |
+| Temperature | Explicitly pinned | Reduce measurement variance |
+| Evaluation | Dependency-aware pipeline | Prevent stale/inconsistent measurements |
+
+---
+
+# 10. What the System Is Designed to Optimize
+
+The system is **not** optimized for maximum answer rate.
+
+Its optimization target is:
+
+> **Minimize unsupported constitutional assertions while providing auditable evidence for answers that are given.**
+
+This leads naturally to the following behavior:
+
+```text
+Strong evidence
+      ↓
+Answer
+
+Conflicting evidence
+      ↓
+Contradicted
+
+Insufficient evidence
+      ↓
+Abstain
+```
+
+This is intentionally different from a conventional RAG chatbot, whose default behavior is to generate an answer whenever possible.
+
+---
+
+# 11. Current Status
+
+The current implementation demonstrates:
+
+- Page-aware document ingestion
+- Semantic retrieval
+- Cross-encoder reranking
+- Deterministic claim construction
+- Claim-level verification
+- Full-corpus negative-claim checking
+- Deterministic answer mapping
+- Explicit abstention
+- LangGraph generation/verification workflow
+- Evaluation replay
+- Stability testing
+- Label auditing
+- Failure attribution
+
+The system is therefore functioning as a complete **source-verification pipeline**, rather than simply a question-answering chatbot.
+
+However, the current benchmark does **not** justify claiming broad accuracy or production readiness.
+
+The main remaining challenge is improving coverage without sacrificing the zero-error objective.
+
+---
+
+# 12. Next Steps
+
+The next development priorities are:
+
+### 1. Increase verifier resampling
+
+Move from five repeats toward approximately 20 to obtain a better estimate of variance.
+
+### 2. Expand the benchmark
+
+Increase the number of evaluation questions so architectural differences become measurable.
+
+### 3. Decompose the verifier
+
+Replace the monolithic prompt with independently testable checks for:
+
+- Scope
+- Membership
+- Strength
+- Numeric consistency
+
+### 4. Fix pipeline-defect abstentions
+
+The six corpus-answerable abstentions are the highest-value coverage improvements.
+
+### 5. Complete the label audit
+
+Audit the remaining benchmark questions, including those where every system abstained.
+
+### 6. Re-run retrieval experiments
+
+Re-run all retrieval configurations using the final retrieval configuration and evaluation pipeline.
+
+---
+
+# Conclusion
+
+The project began as a conventional RAG question-answering problem but evolved into a **source-verification system**.
+
+The key architectural insight is:
+
+> **Do not ask one LLM to answer a multi-statement constitutional question and then trust another generation from the same model to verify it.**
+
+Instead:
+
+```text
+Question
+   ↓
+Deterministic claim construction
+   ↓
+Independent evidence retrieval
+   ↓
+Per-claim verification
+   ↓
+Deterministic option mapping
+   ↓
+Answer or abstain
+```
+
+The historical evaluation shows a clear trade-off:
+
+- Vanilla RAG answers every question but produces many false assertions.
+- The verified system answers fewer questions but produced zero false final answers in the measured 13-question experiment.
+- Predicate binding produced the strongest claim-level improvement.
+- The direct option-verification approach failed primarily because options are conjunctive.
+- The current abstention rate is too high because most historical abstentions were caused by pipeline defects rather than missing evidence.
+
+The project therefore does **not** conclude:
+
+> "Verification makes the model more accurate."
+
+The defensible conclusion is narrower:
+
+> **Separating claim verification from answer selection provides a measurable mechanism for reducing unsupported constitutional assertions, while making individual failures observable and diagnosable.**
+
+The next stage is to increase coverage while preserving that property.
