@@ -71,7 +71,7 @@ vs vanilla RAG 38.46%: -30.77%
 arm                                    cov     prec      acc
 ------------------------------------------------------------
 System A vanilla RAG               100.00%   38.46%   38.46%
-System B statement mapping          30.77%  100.00%   30.77%
+System B statement mapping          23.08%  100.00%   23.08%
 System B2 answer_evidence           15.38%  100.00%   15.38%
 System B2 union                      7.69%  100.00%    7.69%
 

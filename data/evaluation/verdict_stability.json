@@ -8,13 +8,11 @@
       "summary": {
         "claims": 37,
         "repeats": 5,
-        "stable_claims": 28,
-        "unstable_claims": 9,
-        "stability_rate": 0.7567567567567568,
+        "stable_claims": 29,
+        "unstable_claims": 8,
+        "stability_rate": 0.7837837837837838,
         "unstable_questions": [
-          55,
           57,
-          58,
           60,
           63,
           64,
@@ -22,8 +20,7 @@
           66
         ],
         "three_way_claims": [
-          "Q57:claim_1",
-          "Q58:claim_1"
+          "Q66:claim_1"
         ]
       },
       "resample": {
@@ -59,24 +56,24 @@
           {
             "draw": 1,
             "questions": 13,
-            "answered": 5,
-            "correct": 5,
+            "answered": 3,
+            "correct": 3,
             "wrong": 0,
-            "coverage": 0.38461538461538464,
+            "coverage": 0.23076923076923078,
             "precision": 1.0,
-            "accuracy": 0.38461538461538464,
+            "accuracy": 0.23076923076923078,
             "error_rate": 0.0,
             "predictions": {
               "54": null,
               "55": null,
               "56": "C",
               "57": null,
-              "58": "D",
+              "58": null,
               "59": null,
               "60": null,
               "61": "A",
               "62": "D",
-              "63": "D",
+              "63": null,
               "64": null,
               "65": null,
               "66": null
@@ -97,7 +94,33 @@
               "55": null,
               "56": "C",
               "57": null,
-              "58": "A",
+              "58": null,
+              "59": null,
+              "60": null,
+              "61": "A",
+              "62": "D",
+              "63": null,
+              "64": null,
+              "65": "B",
+              "66": null
+            }
+          },
+          {
+            "draw": 3,
+            "questions": 13,
+            "answered": 3,
+            "correct": 3,
+            "wrong": 0,
+            "coverage": 0.23076923076923078,
+            "precision": 1.0,
+            "accuracy": 0.23076923076923078,
+            "error_rate": 0.0,
+            "predictions": {
+              "54": null,
+              "55": null,
+              "56": "C",
+              "57": null,
+              "58": null,
               "59": null,
               "60": null,
               "61": "A",
@@ -105,32 +128,6 @@
               "63": null,
               "64": null,
               "65": null,
-              "66": null
-            }
-          },
-          {
-            "draw": 3,
-            "questions": 13,
-            "answered": 6,
-            "correct": 5,
-            "wrong": 1,
-            "coverage": 0.46153846153846156,
-            "precision": 0.8333333333333334,
-            "accuracy": 0.38461538461538464,
-            "error_rate": 0.07692307692307693,
-            "predictions": {
-              "54": null,
-              "55": null,
-              "56": "C",
-              "57": null,
-              "58": "D",
-              "59": null,
-              "60": null,
-              "61": "A",
-              "62": "D",
-              "63": "D",
-              "64": null,
-              "65": "B",
               "66": null
             }
           },
@@ -164,49 +161,49 @@
         "spread": {
           "coverage": {
             "min": 0.23076923076923078,
-            "max": 0.46153846153846156,
-            "mean": 0.3230769230769231,
+            "max": 0.3076923076923077,
+            "mean": 0.24615384615384617,
             "values": [
               0.23076923076923078,
-              0.38461538461538464,
+              0.23076923076923078,
               0.3076923076923077,
-              0.46153846153846156,
+              0.23076923076923078,
               0.23076923076923078
             ]
           },
           "precision": {
             "min": 0.75,
             "max": 1.0,
-            "mean": 0.9166666666666666,
+            "mean": 0.95,
             "values": [
               1.0,
               1.0,
               0.75,
-              0.8333333333333334,
+              1.0,
               1.0
             ]
           },
           "accuracy": {
             "min": 0.23076923076923078,
-            "max": 0.38461538461538464,
-            "mean": 0.2923076923076923,
+            "max": 0.23076923076923078,
+            "mean": 0.23076923076923078,
             "values": [
               0.23076923076923078,
-              0.38461538461538464,
               0.23076923076923078,
-              0.38461538461538464,
+              0.23076923076923078,
+              0.23076923076923078,
               0.23076923076923078
             ]
           },
           "error_rate": {
             "min": 0.0,
             "max": 0.07692307692307693,
-            "mean": 0.03076923076923077,
+            "mean": 0.015384615384615385,
             "values": [
               0.0,
               0.0,
               0.07692307692307693,
-              0.07692307692307693,
+              0.0,
               0.0
             ]
           }
@@ -330,14 +327,13 @@
             "INSUFFICIENT",
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "SUPPORTED"
+            "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "INSUFFICIENT",
-            "SUPPORTED"
+            "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 55,
@@ -477,18 +473,17 @@
             96
           ],
           "verdicts": [
-            "SUPPORTED",
-            "INSUFFICIENT",
+            "CONTRADICTED",
+            "CONTRADICTED",
             "SUPPORTED",
             "SUPPORTED",
             "CONTRADICTED"
           ],
           "distinct_verdicts": [
             "CONTRADICTED",
-            "INSUFFICIENT",
             "SUPPORTED"
           ],
-          "modal_verdict": "SUPPORTED",
+          "modal_verdict": "CONTRADICTED",
           "stable": false
         },
         {
@@ -530,18 +525,16 @@
           ],
           "verdicts": [
             "INSUFFICIENT",
-            "CONTRADICTED",
-            "SUPPORTED",
-            "CONTRADICTED",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED",
-            "INSUFFICIENT",
-            "SUPPORTED"
+            "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 58,
@@ -656,17 +649,18 @@
             147
           ],
           "verdicts": [
-            "INSUFFICIENT",
+            "CONTRADICTED",
             "INSUFFICIENT",
             "INSUFFICIENT",
             "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
+            "CONTRADICTED",
             "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": true
+          "stable": false
         },
         {
           "q_number": 60,
@@ -684,15 +678,14 @@
             "INSUFFICIENT",
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "CONTRADICTED",
+            "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED",
             "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 60,
@@ -883,17 +876,16 @@
           ],
           "verdicts": [
             "INSUFFICIENT",
-            "CONTRADICTED",
             "INSUFFICIENT",
-            "CONTRADICTED",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED",
             "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 63,
@@ -909,16 +901,17 @@
           ],
           "verdicts": [
             "CONTRADICTED",
+            "INSUFFICIENT",
             "CONTRADICTED",
-            "CONTRADICTED",
-            "CONTRADICTED",
+            "INSUFFICIENT",
             "CONTRADICTED"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED"
+            "CONTRADICTED",
+            "INSUFFICIENT"
           ],
           "modal_verdict": "CONTRADICTED",
-          "stable": true
+          "stable": false
         },
         {
           "q_number": 64,
@@ -958,17 +951,18 @@
             266
           ],
           "verdicts": [
+            "SUPPORTED",
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "INSUFFICIENT",
-            "INSUFFICIENT",
-            "INSUFFICIENT"
+            "SUPPORTED",
+            "SUPPORTED"
           ],
           "distinct_verdicts": [
-            "INSUFFICIENT"
+            "INSUFFICIENT",
+            "SUPPORTED"
           ],
-          "modal_verdict": "INSUFFICIENT",
-          "stable": true
+          "modal_verdict": "SUPPORTED",
+          "stable": false
         },
         {
           "q_number": 64,
@@ -987,14 +981,13 @@
             "INSUFFICIENT",
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "SUPPORTED"
+            "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "INSUFFICIENT",
-            "SUPPORTED"
+            "INSUFFICIENT"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 65,
@@ -1011,8 +1004,8 @@
           "verdicts": [
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "INSUFFICIENT",
             "CONTRADICTED",
+            "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
@@ -1036,16 +1029,17 @@
           ],
           "verdicts": [
             "SUPPORTED",
-            "SUPPORTED",
+            "INSUFFICIENT",
             "SUPPORTED",
             "SUPPORTED",
             "SUPPORTED"
           ],
           "distinct_verdicts": [
+            "INSUFFICIENT",
             "SUPPORTED"
           ],
           "modal_verdict": "SUPPORTED",
-          "stable": true
+          "stable": false
         },
         {
           "q_number": 66,
@@ -1060,17 +1054,18 @@
             344
           ],
           "verdicts": [
-            "INSUFFICIENT",
-            "INSUFFICIENT",
+            "SUPPORTED",
             "CONTRADICTED",
             "INSUFFICIENT",
+            "CONTRADICTED",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
             "CONTRADICTED",
-            "INSUFFICIENT"
+            "INSUFFICIENT",
+            "SUPPORTED"
           ],
-          "modal_verdict": "INSUFFICIENT",
+          "modal_verdict": "CONTRADICTED",
           "stable": false
         },
         {
@@ -1112,17 +1107,16 @@
           ],
           "verdicts": [
             "SUPPORTED",
-            "INSUFFICIENT",
+            "SUPPORTED",
             "SUPPORTED",
             "SUPPORTED",
             "SUPPORTED"
           ],
           "distinct_verdicts": [
-            "INSUFFICIENT",
             "SUPPORTED"
           ],
           "modal_verdict": "SUPPORTED",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 66,
@@ -1139,15 +1133,16 @@
           "verdicts": [
             "INSUFFICIENT",
             "INSUFFICIENT",
-            "INSUFFICIENT",
+            "SUPPORTED",
             "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "INSUFFICIENT"
+            "INSUFFICIENT",
+            "SUPPORTED"
           ],
           "modal_verdict": "INSUFFICIENT",
-          "stable": true
+          "stable": false
         }
       ]
     },
@@ -1156,16 +1151,13 @@
       "summary": {
         "claims": 37,
         "repeats": 5,
-        "stable_claims": 35,
-        "unstable_claims": 2,
-        "stability_rate": 0.9459459459459459,
+        "stable_claims": 36,
+        "unstable_claims": 1,
+        "stability_rate": 0.972972972972973,
         "unstable_questions": [
-          58,
-          63
+          58
         ],
-        "three_way_claims": [
-          "Q58:claim_1"
-        ]
+        "three_way_claims": []
       },
       "resample": {
         "policy": "strict",
@@ -1201,18 +1193,18 @@
             "draw": 1,
             "questions": 13,
             "answered": 5,
-            "correct": 5,
-            "wrong": 0,
+            "correct": 4,
+            "wrong": 1,
             "coverage": 0.38461538461538464,
-            "precision": 1.0,
-            "accuracy": 0.38461538461538464,
-            "error_rate": 0.0,
+            "precision": 0.8,
+            "accuracy": 0.3076923076923077,
+            "error_rate": 0.07692307692307693,
             "predictions": {
               "54": null,
               "55": null,
               "56": "C",
               "57": null,
-              "58": "D",
+              "58": "A",
               "59": null,
               "60": null,
               "61": "A",
@@ -1226,12 +1218,12 @@
           {
             "draw": 2,
             "questions": 13,
-            "answered": 3,
-            "correct": 3,
+            "answered": 4,
+            "correct": 4,
             "wrong": 0,
-            "coverage": 0.23076923076923078,
+            "coverage": 0.3076923076923077,
             "precision": 1.0,
-            "accuracy": 0.23076923076923078,
+            "accuracy": 0.3076923076923077,
             "error_rate": 0.0,
             "predictions": {
               "54": null,
@@ -1243,7 +1235,7 @@
               "60": null,
               "61": "A",
               "62": "D",
-              "63": null,
+              "63": "D",
               "64": null,
               "65": null,
               "66": null
@@ -1253,23 +1245,23 @@
             "draw": 3,
             "questions": 13,
             "answered": 4,
-            "correct": 3,
-            "wrong": 1,
+            "correct": 4,
+            "wrong": 0,
             "coverage": 0.3076923076923077,
-            "precision": 0.75,
-            "accuracy": 0.23076923076923078,
-            "error_rate": 0.07692307692307693,
+            "precision": 1.0,
+            "accuracy": 0.3076923076923077,
+            "error_rate": 0.0,
             "predictions": {
               "54": null,
               "55": null,
               "56": "C",
               "57": null,
-              "58": "A",
+              "58": null,
               "59": null,
               "60": null,
               "61": "A",
               "62": "D",
-              "63": null,
+              "63": "D",
               "64": null,
               "65": null,
               "66": null
@@ -1304,38 +1296,38 @@
         ],
         "spread": {
           "coverage": {
-            "min": 0.23076923076923078,
+            "min": 0.3076923076923077,
             "max": 0.38461538461538464,
-            "mean": 0.3076923076923077,
+            "mean": 0.3230769230769231,
             "values": [
               0.3076923076923077,
               0.38461538461538464,
-              0.23076923076923078,
+              0.3076923076923077,
               0.3076923076923077,
               0.3076923076923077
             ]
           },
           "precision": {
-            "min": 0.75,
+            "min": 0.8,
             "max": 1.0,
-            "mean": 0.95,
+            "mean": 0.96,
             "values": [
               1.0,
+              0.8,
               1.0,
               1.0,
-              0.75,
               1.0
             ]
           },
           "accuracy": {
-            "min": 0.23076923076923078,
-            "max": 0.38461538461538464,
-            "mean": 0.2923076923076923,
+            "min": 0.3076923076923077,
+            "max": 0.3076923076923077,
+            "mean": 0.3076923076923077,
             "values": [
               0.3076923076923077,
-              0.38461538461538464,
-              0.23076923076923078,
-              0.23076923076923078,
+              0.3076923076923077,
+              0.3076923076923077,
+              0.3076923076923077,
               0.3076923076923077
             ]
           },
@@ -1345,9 +1337,9 @@
             "mean": 0.015384615384615385,
             "values": [
               0.0,
-              0.0,
-              0.0,
               0.07692307692307693,
+              0.0,
+              0.0,
               0.0
             ]
           }
@@ -1668,13 +1660,12 @@
           ],
           "verdicts": [
             "INSUFFICIENT",
-            "CONTRADICTED",
-            "INSUFFICIENT",
             "SUPPORTED",
+            "INSUFFICIENT",
+            "INSUFFICIENT",
             "INSUFFICIENT"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED",
             "INSUFFICIENT",
             "SUPPORTED"
           ],
@@ -2021,16 +2012,15 @@
           "verdicts": [
             "CONTRADICTED",
             "CONTRADICTED",
-            "INSUFFICIENT",
-            "INSUFFICIENT",
+            "CONTRADICTED",
+            "CONTRADICTED",
             "CONTRADICTED"
           ],
           "distinct_verdicts": [
-            "CONTRADICTED",
-            "INSUFFICIENT"
+            "CONTRADICTED"
           ],
           "modal_verdict": "CONTRADICTED",
-          "stable": false
+          "stable": true
         },
         {
           "q_number": 63,

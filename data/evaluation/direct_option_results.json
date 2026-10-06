@@ -8,12 +8,12 @@
     "system_b_statement_mapping": {
       "policy": "strict",
       "total": 13,
-      "answered": 4,
-      "abstained": 9,
-      "correct": 4,
-      "coverage": 0.3076923076923077,
+      "answered": 3,
+      "abstained": 10,
+      "correct": 3,
+      "coverage": 0.23076923076923078,
       "precision_when_answered": 1.0,
-      "accuracy_overall": 0.3076923076923077
+      "accuracy_overall": 0.23076923076923078
     }
   },
   "conditions": {
@@ -53,18 +53,24 @@
           "abstention_reason": "no_option_supported",
           "supported_options": [],
           "evidence_is_sufficient": true,
-          "cited_pages": [],
-          "reasoning": "The evidence provided does not support any of the statements regarding Lokpal, confirming that none of them are correct.",
+          "cited_pages": [
+            88,
+            117,
+            207,
+            209,
+            210
+          ],
+          "reasoning": "The evidence does not support any of the statements regarding the Lokpal, confirming that none of them are correct.",
           "per_option_reasoning": [
             {
               "option": "A",
               "supported": false,
-              "reason": "The evidence does not confirm that the age requirement for the Chairperson or Member of Lokpal is 'not less than forty-five years'."
+              "reason": "The evidence does not confirm that the age requirement for the Chairperson or Member is 45 years."
             },
             {
               "option": "B",
               "supported": false,
-              "reason": "The evidence does not confirm that only the Chief Justice of India can be the Chairperson of Lokpal."
+              "reason": "The evidence does not confirm that only the Chief Justice of India can be the Chairperson."
             },
             {
               "option": "C",
@@ -119,18 +125,13 @@
           "abstention_reason": "no_option_supported",
           "supported_options": [],
           "evidence_is_sufficient": false,
-          "cited_pages": [
-            8,
-            57,
-            64,
-            180
-          ],
-          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the President's pardoning power.",
+          "cited_pages": [],
+          "reasoning": "The evidence provided does not contain specific information that confirms or denies the correctness of either statement I or II regarding the President's pardoning power.",
           "per_option_reasoning": [
             {
               "option": "A",
               "supported": false,
-              "reason": "The evidence does not confirm that the exercise of the President's pardoning power can be subjected to limited judicial review."
+              "reason": "The evidence does not explicitly support the claim that the exercise of the President's pardoning power can be subjected to limited judicial review."
             },
             {
               "option": "B",
@@ -145,7 +146,7 @@
             {
               "option": "D",
               "supported": false,
-              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+              "reason": "The evidence does not support the claim that neither statement I nor II is correct."
             }
           ]
         },
@@ -160,7 +161,7 @@
           "cited_pages": [
             376
           ],
-          "reasoning": "The evidence does not conclusively support any of the statements as correct, leading to the conclusion that none of the options can be validated.",
+          "reasoning": "The evidence does not conclusively support any of the statements as correct, particularly because statement II is false and statement I is not fully supported.",
           "per_option_reasoning": [
             {
               "option": "A",
@@ -170,7 +171,7 @@
             {
               "option": "B",
               "supported": false,
-              "reason": "The evidence indicates that the term 'political party' is indeed mentioned in the Constitution, specifically in the context of disqualifications under the 10th Schedule."
+              "reason": "The evidence indicates that the term 'political party' is indeed mentioned in the Constitution, specifically in relation to disqualifications under the 10th Schedule."
             },
             {
               "option": "C",
@@ -180,7 +181,7 @@
             {
               "option": "D",
               "supported": false,
-              "reason": "Since neither statement I nor II is correct, this option is also not supported."
+              "reason": "Since statement I is partially true but not fully supported, and statement II is false, this option cannot be correct either."
             }
           ]
         },
@@ -202,7 +203,7 @@
             {
               "option": "C",
               "supported": true,
-              "reason": "The evidence explicitly states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution (supporting statement I) and that the Speaker may be removed from office by a resolution passed by a majority of all the then members of the House, provided that at least fourteen days' notice has been given (supporting statement III). However, there is no evidence supporting statement II, which claims that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+              "reason": "The evidence explicitly states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution (supporting statement I). It also confirms that the Speaker may be removed by a resolution passed by a majority of all the then members of the House, provided that at least fourteen days' notice has been given (supporting statement III). However, there is no evidence provided that supports statement II, which claims that a Member of the House of the People must resign from their political party upon being elected as Speaker."
             }
           ]
         },
@@ -220,29 +221,8 @@
             147,
             173
           ],
-          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the powers of an Ordinance in relation to amending Central Acts, abridging Fundamental Rights, or coming into effect from a back date.",
-          "per_option_reasoning": [
-            {
-              "option": "A",
-              "supported": false,
-              "reason": "The evidence does not support the claim that an Ordinance can amend any Central Act."
-            },
-            {
-              "option": "B",
-              "supported": false,
-              "reason": "The evidence does not support the claim that an Ordinance can abridge a Fundamental Right."
-            },
-            {
-              "option": "C",
-              "supported": false,
-              "reason": "The evidence does not support the claim that an Ordinance can come into effect from a back date."
-            },
-            {
-              "option": "D",
-              "supported": false,
-              "reason": "The evidence does not support any of the claims made in the statements."
-            }
-          ]
+          "reasoning": "The provided evidence does not explicitly confirm or deny any of the statements regarding the powers of an Ordinance in relation to amending Central Acts, abridging Fundamental Rights, or coming into effect from a back date. Therefore, it does not settle the question.",
+          "per_option_reasoning": []
         },
         {
           "q_number": 61,
@@ -251,9 +231,15 @@
           "status": "ABSTAINED",
           "abstention_reason": "no_option_supported",
           "supported_options": [],
-          "evidence_is_sufficient": false,
-          "cited_pages": [],
-          "reasoning": "The evidence provided does not support any of the statements regarding the powers of the Governor or the President in relation to State Legislatures.",
+          "evidence_is_sufficient": true,
+          "cited_pages": [
+            34,
+            64,
+            181,
+            200,
+            203
+          ],
+          "reasoning": "The evidence does not provide support for either statement I or II, thus confirming that neither is correct.",
           "per_option_reasoning": [
             {
               "option": "A",
@@ -268,12 +254,12 @@
             {
               "option": "C",
               "supported": false,
-              "reason": "Neither statement I nor II is supported by the evidence."
+              "reason": "Since both statements I and II are not supported by the evidence, this option cannot be correct."
             },
             {
               "option": "D",
-              "supported": false,
-              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+              "supported": true,
+              "reason": "Both statements I and II are not supported by the evidence, making this option correct."
             }
           ]
         },
@@ -288,15 +274,29 @@
           ],
           "evidence_is_sufficient": true,
           "cited_pages": [
-            250,
-            321
+            250
           ],
-          "reasoning": "The evidence explicitly supports all three statements regarding the Governor's immunity and the protection of State Legislature members, confirming that all statements are correct.",
+          "reasoning": "The evidence explicitly states that the Governor is not answerable to any court for the exercise of powers (supporting statement I), that no criminal proceedings can be instituted against the Governor during their term (supporting statement II), and that members of the State Legislature are not liable for anything said within the House (supporting statement III). Therefore, all statements are correct.",
           "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "Statement II is supported, but statement I is also supported, making this option incorrect."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "Statement I is supported, but statement III is also supported, making this option incorrect."
+            },
+            {
+              "option": "C",
+              "supported": false,
+              "reason": "Statement II is supported, but statement I is also supported, making this option incorrect."
+            },
             {
               "option": "D",
               "supported": true,
-              "reason": "All three statements are supported by the evidence. Statement I is supported by Article 361(1), which states that the Governor is not answerable to any court for the exercise and performance of the powers and duties of his office. Statement II is supported by Article 361(2), which states that no criminal proceedings shall be instituted or continued against the Governor during his term of office. Statement III is supported by Article 194(2), which states that members of a State Legislature are not liable to any proceedings in any court in respect of anything said within the House."
+              "reason": "All statements I, II, and III are supported by the evidence."
             }
           ]
         },
@@ -314,7 +314,7 @@
             154,
             155
           ],
-          "reasoning": "The evidence does not provide sufficient information to confirm or deny the correctness of any of the statements regarding Panchayats at the intermediate level.",
+          "reasoning": "The evidence does not provide sufficient information to confirm or deny any of the statements regarding Panchayats at the intermediate level.",
           "per_option_reasoning": [
             {
               "option": "A",
@@ -353,7 +353,7 @@
             289,
             290
           ],
-          "reasoning": "The provided evidence does not explicitly confirm or deny the correctness of the pairs described in the question. It contains references to the states mentioned but does not provide specific information that would validate or invalidate the claims made about Arunachal Pradesh, Nagaland, and Tripura.",
+          "reasoning": "The provided evidence does not explicitly confirm or deny the correctness of the pairs described in the question. It contains references to the states mentioned but does not provide specific information that would validate or invalidate the claims made about Arunachal Pradesh, Nagaland, and Tripura. Therefore, it is insufficient to determine how many pairs are correctly matched.",
           "per_option_reasoning": []
         },
         {
@@ -363,34 +363,34 @@
           "status": "ABSTAINED",
           "abstention_reason": "no_option_supported",
           "supported_options": [],
-          "evidence_is_sufficient": false,
+          "evidence_is_sufficient": true,
           "cited_pages": [
             164,
             174,
             199,
             307
           ],
-          "reasoning": "The evidence does not provide sufficient information to support any of the statements regarding the administration of Scheduled Areas under the Fifth Schedule.",
+          "reasoning": "The evidence explicitly supports statement II regarding the Union Government's ability to take over administration under certain circumstances, while it does not support statement I.",
           "per_option_reasoning": [
             {
               "option": "A",
               "supported": false,
-              "reason": "The evidence does not support the claim that the State Government loses its executive power in Scheduled Areas."
+              "reason": "The evidence does not support the claim that the State Government loses its executive power entirely in Scheduled Areas."
             },
             {
               "option": "B",
-              "supported": false,
-              "reason": "The evidence does not confirm that the Union Government can take over total administration of Scheduled Areas under certain circumstances."
+              "supported": true,
+              "reason": "The evidence states that the Union Government can take over the administration of Scheduled Areas under certain circumstances, which aligns with the statement."
             },
             {
               "option": "C",
               "supported": false,
-              "reason": "Neither statement I nor II is supported by the evidence."
+              "reason": "Since statement I is not supported, both statements cannot be correct."
             },
             {
               "option": "D",
               "supported": false,
-              "reason": "The evidence does not support either statement I or II, thus making this option incorrect."
+              "reason": "Statement II is supported, so this option cannot be correct."
             }
           ]
         },
@@ -405,7 +405,7 @@
           "cited_pages": [
             344
           ],
-          "reasoning": "The evidence provided does not specify how many of the listed activities are regulated by the Petroleum and Natural Gas Regulatory Board. It mentions the regulation of petroleum and petroleum products but does not clarify the specific activities listed in the question.",
+          "reasoning": "The evidence provided mentions the regulation and development of oilfields and petroleum products, but it does not specify which of the activities listed in the question are regulated by the Petroleum and Natural Gas Regulatory Board. Therefore, it does not settle the question regarding how many of the activities are regulated.",
           "per_option_reasoning": []
         }
       ]
@@ -432,7 +432,7 @@
           "cited_pages": [
             260
           ],
-          "reasoning": "The evidence provided does not explicitly confirm any of the options regarding the requirement for ratification by the Legislatures of not less than one-half of the States for constitutional amendments related to the Union List, executive power of a State, or conditions of the Governor's office. It only mentions the general requirement for ratification by the Legislatures of not less than one-half of the States for certain amendments, without specifying which subjects this applies to.",
+          "reasoning": "The evidence provided does not explicitly confirm any of the options regarding the requirement for ratification by the Legislatures of not less than one-half of the States for constitutional amendments related to the Union List, executive power of a State, or conditions of the Governor's office. Therefore, it does not settle the question.",
           "per_option_reasoning": []
         },
         {
@@ -580,12 +580,27 @@
           "cited_pages": [
             73
           ],
-          "reasoning": "The evidence explicitly supports Statement I and Statement III, while Statement II is not mentioned in the provided evidence.",
+          "reasoning": "The evidence explicitly supports statements I and III regarding the Speaker's office and removal process, while statement II is not supported.",
           "per_option_reasoning": [
+            {
+              "option": "A",
+              "supported": false,
+              "reason": "Statement II is incorrect as the evidence does not support the claim that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+            },
+            {
+              "option": "B",
+              "supported": false,
+              "reason": "Statement II is incorrect as the evidence does not support the claim that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+            },
             {
               "option": "C",
               "supported": true,
-              "reason": "Statement I is supported by the evidence on page 73, which states that the Speaker shall not vacate his office until immediately before the first meeting of the House of the People after the dissolution. Statement III is also supported by the same page, which details the process for removing the Speaker, including the requirement for a majority and a 14-day notice. Statement II is not supported by the evidence, as it does not mention that a Member of the House of the People must resign from their political party upon being elected as Speaker."
+              "reason": "Both statements I and III are supported by the evidence. Statement I is confirmed as the Speaker does not vacate office until the first meeting after dissolution, and Statement III is confirmed as the Speaker can be removed by a resolution with a 14-day notice."
+            },
+            {
+              "option": "D",
+              "supported": false,
+              "reason": "Statement II is incorrect as the evidence does not support the claim that a Member of the House of the People must resign from their political party upon being elected as Speaker."
             }
           ]
         },
@@ -597,9 +612,7 @@
           "abstention_reason": "no_option_supported",
           "supported_options": [],
           "evidence_is_sufficient": false,
-          "cited_pages": [
-            87
-          ],
+          "cited_pages": [],
           "reasoning": "The evidence provided does not explicitly support any of the statements regarding the powers of an Ordinance in relation to amending Central Acts, abridging Fundamental Rights, or coming into effect from a back date.",
           "per_option_reasoning": [
             {
@@ -631,14 +644,14 @@
           "status": "ABSTAINED",
           "abstention_reason": "no_option_supported",
           "supported_options": [],
-          "evidence_is_sufficient": true,
+          "evidence_is_sufficient": false,
           "cited_pages": [],
-          "reasoning": "The evidence does not provide support for either statement I or II, thus confirming that neither is correct.",
+          "reasoning": "The evidence provided does not explicitly support any of the statements regarding the Governor's discretion or the President's authority to reserve bills.",
           "per_option_reasoning": [
             {
               "option": "A",
               "supported": false,
-              "reason": "The evidence does not explicitly mention that the Governor acts in his/her own discretion in certain spheres."
+              "reason": "The evidence does not explicitly state that the Constitution mentions the Governor acting in his/her own discretion in certain spheres."
             },
             {
               "option": "B",
@@ -652,8 +665,8 @@
             },
             {
               "option": "D",
-              "supported": true,
-              "reason": "Both statements I and II are not supported by the evidence, making this option correct."
+              "supported": false,
+              "reason": "The evidence does not support either statement I or II."
             }
           ]
         },
@@ -675,27 +688,27 @@
             118,
             251
           ],
-          "reasoning": "The evidence explicitly supports all three statements regarding the Governor's immunity and the immunity of State Legislature members, thus confirming that all options A, B, C, and D are correct.",
+          "reasoning": "The evidence explicitly supports all three statements regarding the Governor's immunity and the immunity of State Legislature members, confirming that all options A, B, C, and D are correct.",
           "per_option_reasoning": [
             {
               "option": "A",
               "supported": true,
-              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no criminal proceedings shall be instituted or continued against the Governor during his term of office', supporting statements I and II."
+              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no criminal proceedings shall be instituted or continued against the President, or the Governor of a State, in any court during his term of office'."
             },
             {
               "option": "B",
               "supported": true,
-              "reason": "The evidence states that 'no criminal proceedings shall be instituted or continued against the Governor during his term of office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature', supporting statements II and III."
+              "reason": "The evidence confirms that 'no criminal proceedings shall be instituted or continued against the President, or the Governor of a State, in any court during his term of office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof'."
             },
             {
               "option": "C",
               "supported": true,
-              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature', supporting statements I and III."
+              "reason": "The evidence states that 'the Governor shall not be answerable to any court for the exercise and performance of the powers and duties of his office' and 'no member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof'."
             },
             {
               "option": "D",
               "supported": true,
-              "reason": "The evidence supports all three statements: I (Governor not answerable to court), II (no criminal proceedings against Governor), and III (members of State Legislature not liable for proceedings in court for statements made in the House)."
+              "reason": "The evidence supports all three statements: the Governor's immunity from court for his duties, the prohibition of criminal proceedings against him during his term, and the immunity of State Legislature members for their speech in the House."
             }
           ]
         },
@@ -706,7 +719,7 @@
           "status": "ABSTAINED",
           "abstention_reason": "no_option_supported",
           "supported_options": [],
-          "evidence_is_sufficient": false,
+          "evidence_is_sufficient": true,
           "cited_pages": [
             150,
             151,
@@ -714,7 +727,7 @@
             154,
             155
           ],
-          "reasoning": "The evidence does not provide sufficient information to confirm or deny the correctness of any of the statements regarding Panchayats at the intermediate level.",
+          "reasoning": "The evidence indicates that Panchayats at the intermediate level do not exist in all States (contradicting statement I), the age requirement for membership is twenty-five years (contradicting statement II), and the Finance Commission is constituted by the Governor, not the Chief Minister (contradicting statement III). Therefore, all statements are incorrect.",
           "per_option_reasoning": [
             {
               "option": "A",
@@ -734,7 +747,7 @@
             {
               "option": "D",
               "supported": false,
-              "reason": "All statements I, II, and III are not correct based on the evidence."
+              "reason": "All statements are incorrect based on the evidence provided."
             }
           ]
         },
@@ -747,7 +760,7 @@
           "supported_options": [],
           "evidence_is_sufficient": false,
           "cited_pages": [],
-          "reasoning": "The provided evidence does not contain specific information that confirms or denies the correctness of the pairs described in the question regarding Arunachal Pradesh, Nagaland, and Tripura. Therefore, it does not settle the question.",
+          "reasoning": "The provided evidence does not contain specific information that confirms or denies the correctness of the pairs described in the question. Therefore, it does not settle the question.",
           "per_option_reasoning": []
         },
         {
@@ -760,8 +773,7 @@
           "evidence_is_sufficient": false,
           "cited_pages": [
             307,
-            308,
-            309
+            308
           ],
           "reasoning": "The evidence does not provide sufficient information to confirm the correctness of either statement I or II regarding the administration of Scheduled Areas.",
           "per_option_reasoning": [
@@ -796,7 +808,7 @@
           "supported_options": [],
           "evidence_is_sufficient": false,
           "cited_pages": [],
-          "reasoning": "The provided evidence does not explicitly mention the activities regulated by the Petroleum and Natural Gas Regulatory Board or specify how many of the listed activities are regulated. Therefore, it does not settle the question.",
+          "reasoning": "The provided evidence does not contain specific information regarding the regulation of the activities listed in the question by the Petroleum and Natural Gas Regulatory Board. Therefore, it does not settle how many of the activities are regulated.",
           "per_option_reasoning": []
         }
       ]

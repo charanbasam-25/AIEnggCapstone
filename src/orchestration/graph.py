@@ -7,6 +7,8 @@ from src.orchestration.nodes import (
     generate_mcq,
     verify_answer_key,
     verify_claims,
+    retrieve_sources,
+    explain_question,
 )
 from src.orchestration.state import MCQVerificationState
 
@@ -27,18 +29,22 @@ def build_graph():
     graph = StateGraph(MCQVerificationState)
 
     graph.add_node("generate_mcq", generate_mcq)
+    graph.add_node("retrieve_sources", retrieve_sources)
     graph.add_node("extract_claims", extract_claims)
     graph.add_node("verify_claims", verify_claims)
     graph.add_node("verify_answer_key", verify_answer_key)
     graph.add_node("audit_quality", audit_quality)
+    graph.add_node("explain_question", explain_question)
     graph.add_node("decide", decide)
 
-    graph.add_edge(START, "generate_mcq")
+    graph.add_edge(START, "retrieve_sources")
+    graph.add_edge("retrieve_sources", "generate_mcq")
     graph.add_edge("generate_mcq", "extract_claims")
     graph.add_edge("extract_claims", "verify_claims")
     graph.add_edge("verify_claims", "verify_answer_key")
     graph.add_edge("verify_answer_key", "audit_quality")
-    graph.add_edge("audit_quality", "decide")
+    graph.add_edge("audit_quality", "explain_question")
+    graph.add_edge("explain_question", "decide")
 
     graph.add_conditional_edges(
         "decide",

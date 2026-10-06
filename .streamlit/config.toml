@@ -1,0 +1,12 @@
+[theme]
+base = "light"
+primaryColor = "#2457D6"
+backgroundColor = "#F5F7FB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#17243B"
+font = "sans serif"
+
+[server]
+# Transformers uses lazy modules; Streamlit's module watcher otherwise
+# imports unrelated image/video dependencies while inspecting their paths.
+fileWatcherType = "none"

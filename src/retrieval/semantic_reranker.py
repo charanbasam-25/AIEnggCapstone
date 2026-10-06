@@ -1,5 +1,8 @@
 import json
 from pathlib import Path
+from time import perf_counter
+
+from src.orchestration.telemetry import record_retrieval
 
 from src.retrieval.retrieval_config import (
     RERANK_CANDIDATE_K,
@@ -14,7 +17,9 @@ enable_os_trust_store()
 
 from sentence_transformers import CrossEncoder  # noqa: E402
 
-from src.retrieval.semantic_retriever import SemanticRetriever  # noqa: E402
+from src.retrieval.semantic_retriever import (  # noqa: E402
+    MODEL_NAME as EMBEDDING_MODEL_NAME, SemanticRetriever,
+)
 
 
 MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
@@ -45,31 +50,36 @@ class SemanticReranker:
         then rerank them using a cross-encoder.
         """
 
-        candidates = self.retriever.retrieve(
-            query,
-            top_k=self.candidate_k,
-        )
-
-        pairs = [
-            [query, candidate["text"]]
-            for candidate in candidates
-        ]
-
-        scores = self.reranker.predict(pairs)
-
-        reranked = []
-
-        for candidate, score in zip(candidates, scores):
-            result = candidate.copy()
-            result["reranker_score"] = float(score)
-            reranked.append(result)
-
-        reranked.sort(
-            key=lambda result: result["reranker_score"],
-            reverse=True,
-        )
-
-        return reranked[:top_k]
+        started = perf_counter()
+        candidates, reranked = [], []
+        semantic_seconds, rerank_seconds, error_type = None, None, None
+        try:
+            semantic_started = perf_counter()
+            candidates = self.retriever.retrieve(query, top_k=self.candidate_k)
+            semantic_seconds = perf_counter() - semantic_started
+            if not candidates:
+                return []
+            rerank_started = perf_counter()
+            pairs = [[query, candidate["text"]] for candidate in candidates]
+            scores = self.reranker.predict(pairs)
+            for candidate, score in zip(candidates, scores):
+                result = candidate.copy()
+                result["reranker_score"] = float(score)
+                reranked.append(result)
+            reranked.sort(key=lambda result: result["reranker_score"], reverse=True)
+            rerank_seconds = perf_counter() - rerank_started
+            return reranked[:top_k]
+        except Exception as exception:
+            error_type = type(exception).__name__
+            raise
+        finally:
+            record_retrieval(
+                query=query, candidates=candidates, reranked=reranked, top_k=top_k,
+                candidate_k=self.candidate_k, semantic_seconds=semantic_seconds,
+                rerank_seconds=rerank_seconds, elapsed_seconds=perf_counter() - started,
+                embedding_model=EMBEDDING_MODEL_NAME, reranker_model=MODEL_NAME,
+                error_type=error_type,
+            )
 
 
 def load_chunks(file_path: str) -> list[dict]:
@@ -105,4 +115,3 @@ if __name__ == "__main__":
         print()
         print(result["text"][:500])
         print()
-        

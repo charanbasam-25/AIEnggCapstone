@@ -8,6 +8,31 @@ marked unusable rather than omitted — an omitted arm reads as an arm that was
 never run.
 ---
 ## 0. How to read these numbers
+**Scope of the original results below.** The measurements in the numbered
+sections describe the earlier 13-question numbered-statement pipeline. The
+expanded benchmark now evaluates both that path and the UI/CLI direct-MCQ
+comparison path, including best-answer questions. Its results are reported
+separately in [docs/BENCHMARK.md](docs/BENCHMARK.md). Offline routing, citation,
+decision-rule and UI tests remain functional checks, separate from model
+answer-quality measurements.
+
+**Expanded benchmark: latest source-verifier runs on 3 October 2026.** `data/benchmarks/polity_v1.json`
+adds 75 official 2019–2023 PYQs: 33 development and 42 test questions, with
+booklet-matched official keys, PDF-page provenance and frozen splits. The
+runner evaluates both answering paths and vanilla RAG without overwriting the
+saved results below. The latest source-only runs completed with zero service
+errors and matching corpus, code and model settings: development **2 correct,
+0 wrong, 31 abstentions**; test **0 correct, 0 wrong, 42 abstentions**. There are
+only two attempted answers. Test precision is undefined, and zero observed
+errors does not establish broad accuracy. A preceding reviewed test run still
+accepted one wrong assertion/reason answer; that failure informed the format
+guard. The fixed test split is now used for regression. Fresh untouched data
+is required for an independent estimate. Corpus answerability remains
+unreviewed. The original 2 October comparisons and the failed reviewed run are
+preserved. See [docs/BENCHMARK.md](docs/BENCHMARK.md) for the complete results,
+protocol and commands. The legacy grounding and judge measurements below
+have not been rerun on the new benchmark.
+
 **The dataset is small.** UPSC 2025 Prelims Polity, Q54–Q66: **13 questions,
 37 numbered statements**. One question is 7.69 accuracy points.
 **Two label sets, both reported.** The stored labels come from the published

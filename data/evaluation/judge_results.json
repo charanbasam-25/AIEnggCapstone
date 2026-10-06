@@ -11,12 +11,12 @@
   "note": "The judge evaluates reasoning quality only. Answer correctness is determined by the official UPSC answer key, never by the judge.",
   "summary": {
     "A": {
-      "factual_correctness": 2.769230769230769,
-      "evidence_faithfulness": 2.4615384615384617,
-      "reasoning_validity": 2.6923076923076925,
-      "epistemic_honesty": 2.3846153846153846,
-      "mean_across_dimensions": 2.576923076923077,
-      "hallucinated_claim_count": 19,
+      "factual_correctness": 2.6153846153846154,
+      "evidence_faithfulness": 2.1538461538461537,
+      "reasoning_validity": 2.6153846153846154,
+      "epistemic_honesty": 2.230769230769231,
+      "mean_across_dimensions": 2.4038461538461537,
+      "hallucinated_claim_count": 18,
       "questions_with_hallucinations": 12
     },
     "B": {
@@ -25,8 +25,8 @@
       "reasoning_validity": 4.538461538461538,
       "epistemic_honesty": 5.0,
       "mean_across_dimensions": 4.480769230769231,
-      "hallucinated_claim_count": 1,
-      "questions_with_hallucinations": 1
+      "hallucinated_claim_count": 0,
+      "questions_with_hallucinations": 0
     },
     "head_to_head": {
       "A": 1,
@@ -76,12 +76,12 @@
         "B": []
       },
       "justification": {
-        "A": "Response 1 incorrectly asserts that all three subjects require ratification by the Legislatures of not less than one-half of the States, which contradicts the official answer key. The reasoning is flawed, and the claims are not supported by the provided evidence.",
-        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and supports Statements II and III with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence for a complete conclusion."
+        "A": "Response 1 incorrectly asserts that all three subjects require ratification by the Legislatures of not less than one-half of the States, which contradicts the official answer key. The reasoning is flawed and unsupported by the provided evidence.",
+        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and supports Statements II and III with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence for one of the statements."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better because it accurately identifies the insufficiency of evidence for Statement I and supports the other statements with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence, aligning with the critical scoring rules."
+      "preference_reason": "Response 2 is better because it accurately identifies the insufficiency of evidence for one of the statements and supports the others with the provided evidence. It demonstrates epistemic honesty by declining to answer due to insufficient evidence, aligning with the critical scoring rules."
     },
     {
       "q_number": 55,
@@ -102,15 +102,15 @@
           "epistemic_honesty": 5
         },
         "A": {
-          "factual_correctness": 3,
-          "evidence_faithfulness": 3,
-          "reasoning_validity": 3,
-          "epistemic_honesty": 2
+          "factual_correctness": 1,
+          "evidence_faithfulness": 1,
+          "reasoning_validity": 1,
+          "epistemic_honesty": 1
         }
       },
       "mean": {
         "B": 5.0,
-        "A": 2.75
+        "A": 1.0
       },
       "hallucinated_claims": {
         "B": [],
@@ -119,12 +119,12 @@
         ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies that the provided evidence is insufficient to verify any of the statements about Lokpal. It does not attempt to make unsupported claims and accurately reflects the limitations of the evidence. This aligns with the critical scoring rules, particularly rule 3, which values abstention when evidence is genuinely insufficient.",
-        "A": "Response 2 incorrectly asserts that the answer is D, despite acknowledging the insufficiency of evidence. This response fails to adhere to the critical scoring rules, particularly rule 3, as it commits to an unsupported answer. The claim that the sources do not contain specific information is not fully justified by the evidence provided."
+        "B": "Response 1 correctly identifies that the evidence provided is insufficient to verify any of the statements about Lokpal. It does not attempt to make unsupported claims and accurately reflects the limitations of the evidence.",
+        "A": "Response 2 incorrectly asserts that none of the statements are correct without sufficient evidence. It fails to acknowledge the lack of relevant information in the provided sources and makes an unsupported conclusion."
       },
       "preferred_system": "B",
       "preferred_slot": "1",
-      "preference_reason": "Response 1 is better because it accurately reflects the insufficiency of the evidence and does not make unsupported claims. It demonstrates epistemic honesty by declining to answer due to lack of evidence, which is preferable to Response 2's unsupported conclusion."
+      "preference_reason": "Response 1 is better because it accurately reflects the insufficiency of the evidence and does not make unsupported claims. It demonstrates epistemic honesty by declining to answer due to the lack of evidence, whereas Response 2 incorrectly asserts a conclusion without proper justification."
     },
     {
       "q_number": 56,
@@ -141,7 +141,7 @@
         "A": {
           "factual_correctness": 3,
           "evidence_faithfulness": 2,
-          "reasoning_validity": 2,
+          "reasoning_validity": 3,
           "epistemic_honesty": 3
         },
         "B": {
@@ -152,7 +152,7 @@
         }
       },
       "mean": {
-        "A": 2.5,
+        "A": 2.75,
         "B": 5.0
       },
       "hallucinated_claims": {
@@ -162,12 +162,12 @@
         "B": []
       },
       "justification": {
-        "A": "Response 1 incorrectly concludes that only one pair is correctly matched, which contradicts the official answer key. The reasoning is partially correct for the third pair but fails to accurately interpret the evidence for the first and second pairs. The evidence cited does not fully support the claims made, leading to a lower score in evidence faithfulness and reasoning validity.",
-        "B": "Response 2 correctly identifies all three pairs as correctly matched, aligning with the official answer key. Each claim is well-supported by the evidence provided, and the reasoning is valid and clearly articulated. The response accurately reflects the certainty warranted by the evidence, resulting in high scores across all dimensions."
+        "A": "Response 1 correctly identifies the third pair as a Fundamental Right but incorrectly concludes that only one pair is correctly matched. The reasoning is partially correct but fails to align with the official answer key. The evidence cited does not fully support the claims made, particularly regarding the second pair.",
+        "B": "Response 2 accurately identifies all three pairs as correctly matched according to the official answer key. Each claim is supported by evidence from the provided sources, and the reasoning is valid and consistent with the evidence."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better overall as it correctly identifies all pairs as correctly matched, consistent with the official answer key. It provides accurate citations and valid reasoning, making it a more reliable tutoring content for students."
+      "preference_reason": "Response 2 is better as it correctly identifies all pairs as correctly matched, aligning with the official answer key. It provides accurate evidence and reasoning for each claim, making it a more reliable tutoring content for students."
     },
     {
       "q_number": 57,
@@ -199,21 +199,18 @@
         "A": 3.75
       },
       "hallucinated_claims": {
-        "B": [
-          ""
-        ],
+        "B": [],
         "A": [
-          "Statement I is correct because the exercise of the pardoning power by the President can indeed be subjected to limited judicial review, as established by the Supreme Court in various judgments.",
-          "Statement II is incorrect because the President exercises this power on the advice of the Council of Ministers, as per Article 74 of the Constitution."
+          "Statement I is correct because the exercise of the pardoning power by the President can indeed be subjected to limited judicial review, as established by the Supreme Court in various judgments."
         ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies that the evidence supports Statement I but finds the evidence insufficient for Statement II. The decision to decline an answer due to insufficient evidence is epistemically honest and aligns with the critical scoring rules.",
-        "A": "Response 2 reaches the correct answer (A) with valid reasoning for Statement I. However, it relies on external knowledge about Supreme Court judgments and Article 74, which are not part of the provided evidence, affecting evidence faithfulness and epistemic honesty."
+        "B": "Response 1 correctly identifies that Statement I is supported by the evidence, specifically citing page 250, which aligns with the official answer. However, it declines to answer due to insufficient evidence for Statement II, demonstrating epistemic honesty. The reasoning is valid for Statement I, but the overall factual correctness is limited by the abstention.",
+        "A": "Response 2 reaches the correct answer (A) with valid reasoning for Statement I, but it relies on external knowledge about Supreme Court judgments not present in the provided evidence. This affects evidence faithfulness and epistemic honesty, as it confidently asserts correctness without fully grounding it in the supplied evidence."
       },
       "preferred_system": "B",
       "preferred_slot": "1",
-      "preference_reason": "Response 1 is better due to its adherence to the evidence provided and its epistemic honesty in declining to answer when evidence was insufficient. While Response 2 reaches the correct answer, it relies on external knowledge not present in the supplied evidence, which is against the evaluation criteria."
+      "preference_reason": "Response 1 is better due to its adherence to the evidence provided and its epistemic honesty in declining to answer when evidence was insufficient. While Response 2 reaches the correct answer, it relies on external knowledge not present in the evidence, affecting its faithfulness and honesty."
     },
     {
       "q_number": 58,
@@ -251,12 +248,12 @@
         "B": []
       },
       "justification": {
-        "A": "Response 1 incorrectly asserts that the President's decision is not final for members of the House of the People, which is not supported by the evidence. The response correctly identifies that 'political party' is mentioned in the Constitution, but the reasoning for Statement I is flawed. The response reaches the wrong conclusion (D) based on partially incorrect reasoning.",
-        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and accurately contradicts Statement II based on the evidence. The response demonstrates epistemic honesty by declining to answer due to insufficient evidence for Statement I, which aligns with the critical scoring rules."
+        "A": "Response 1 incorrectly asserts that the President's decision is not final for members of the House of the People, which contradicts the official answer key. The reasoning is partially correct but misinterprets the role of the President in the context of the House of the People. The evidence cited does not fully support the claims made, leading to a lower score in evidence faithfulness and reasoning validity.",
+        "B": "Response 2 correctly identifies the insufficiency of evidence for Statement I and accurately contradicts Statement II based on the evidence provided. The response demonstrates epistemic honesty by declining to answer due to insufficient evidence, aligning with the critical scoring rules. The reasoning is valid as it does not make unsupported claims and accurately reflects the evidence available."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better because it demonstrates a higher level of epistemic honesty by acknowledging the insufficiency of evidence for Statement I and correctly contradicts Statement II based on the evidence. It avoids making unsupported claims, which is crucial for tutoring content."
+      "preference_reason": "Response 2 is better overall as it demonstrates a higher level of epistemic honesty by acknowledging the insufficiency of evidence for Statement I and correctly contradicting Statement II based on the evidence. It avoids making unsupported claims and aligns with the critical scoring rules, making it more reliable as tutoring content."
     },
     {
       "q_number": 59,
@@ -278,26 +275,28 @@
         },
         "A": {
           "factual_correctness": 5,
-          "evidence_faithfulness": 5,
+          "evidence_faithfulness": 4,
           "reasoning_validity": 5,
-          "epistemic_honesty": 5
+          "epistemic_honesty": 4
         }
       },
       "mean": {
         "B": 4.25,
-        "A": 5.0
+        "A": 4.5
       },
       "hallucinated_claims": {
         "B": [],
-        "A": []
+        "A": [
+          "Pages cited by the system: [112, 117, 378]"
+        ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies the support for statements I and III based on the evidence provided. However, it declines to answer due to insufficient evidence for statement II, which aligns with the critical scoring rules. The response demonstrates epistemic honesty by acknowledging the lack of evidence for statement II and not committing to an unsupported answer.",
-        "A": "Response 2 accurately identifies the correct answer (C) and provides valid reasoning for each statement. It correctly cites the evidence for statements I and III and acknowledges the lack of constitutional requirement for statement II, aligning with the official answer key. The response is well-grounded in the provided evidence and demonstrates clear reasoning."
+        "B": "Response 1 correctly identifies the support for Statements I and III based on the evidence provided. However, it declines to answer due to insufficient evidence for Statement II, which aligns with the critical scoring rules. The response demonstrates epistemic honesty by not making unsupported claims.",
+        "A": "Response 2 correctly identifies the support for Statements I and III and the lack of support for Statement II, reaching the correct answer 'C'. However, it cites pages [112, 117, 378] which are not relevant to the question, affecting evidence faithfulness. The reasoning is valid, and the response is mostly epistemically honest, though it could acknowledge the lack of evidence for Statement II more explicitly."
       },
       "preferred_system": "A",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better as it correctly identifies the official answer (C) and provides valid reasoning for each statement, supported by the evidence. It demonstrates a comprehensive understanding of the question and the evidence, making it more effective as tutoring content."
+      "preference_reason": "Response 2 is better overall as it reaches the correct answer 'C' with valid reasoning and mostly accurate evidence citation. While it includes some irrelevant citations, it effectively communicates the correct reasoning process, making it more useful as tutoring content. Response 1, while honest, fails to provide a definitive answer, which is less helpful for a student learning the material."
     },
     {
       "q_number": 60,
@@ -330,19 +329,19 @@
       },
       "hallucinated_claims": {
         "A": [
-          "An Ordinance can amend any Central Act as per the provisions of the Constitution.",
-          "An Ordinance cannot abridge a Fundamental Right, as it must conform to the Constitution.",
-          "An Ordinance cannot come into effect from a back date; it takes effect from the date of promulgation."
+          "Statement I is correct because an Ordinance can amend any Central Act as per the provisions of the Constitution.",
+          "Statement II is incorrect because an Ordinance cannot abridge a Fundamental Right, as it must conform to the Constitution.",
+          "Statement III is also incorrect because an Ordinance cannot come into effect from a back date; it takes effect from the date of promulgation."
         ],
         "B": []
       },
       "justification": {
-        "A": "Response 1 incorrectly asserts constitutional facts that are not supported by the provided evidence. It confidently reaches an incorrect conclusion (Option A) and misrepresents the nature of Ordinances without grounding in the source material.",
-        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to conclusively answer the question. It refrains from making unsupported claims and accurately reflects the limitations of the evidence, demonstrating strong epistemic honesty and reasoning validity."
+        "A": "Response 1 confidently asserts incorrect constitutional facts and fails to reach the correct answer. It incorrectly claims that an Ordinance cannot abridge a Fundamental Right and cannot come into effect from a back date, which contradicts the official answer key. The response also lacks evidence faithfulness as it does not ground its assertions in the provided source evidence.",
+        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to definitively answer the question. It does not make unsupported claims and accurately reflects the limitations of the evidence. This response demonstrates strong epistemic honesty and evidence faithfulness by declining to answer due to insufficient evidence."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better because it accurately identifies the insufficiency of the evidence and refrains from making unsupported claims, demonstrating strong epistemic honesty and reasoning validity. In contrast, Response 1 confidently asserts incorrect constitutional facts and reaches an incorrect conclusion without proper grounding in the evidence."
+      "preference_reason": "Response 2 is better because it accurately reflects the limitations of the provided evidence and does not make unsupported claims. It demonstrates strong epistemic honesty and evidence faithfulness, whereas Response 1 confidently asserts incorrect facts and fails to ground its reasoning in the supplied evidence."
     },
     {
       "q_number": 61,
@@ -381,12 +380,12 @@
         ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies that Statement I is supported by the evidence on page 105, which mentions the Governor's discretionary powers. It also accurately contradicts Statement II based on the evidence from pages 122, 128, and 203, which indicate that the President cannot reserve a bill without the Governor's forwarding. The reasoning is valid, and the response is epistemically honest, clearly stating what the evidence supports and does not support.",
-        "A": "Response 2 correctly identifies the correct answer as A, but it cites incorrect articles (Article 163 and Article 200) that are not present in the provided evidence. This affects the evidence faithfulness score. The reasoning is mostly valid, but the reliance on incorrect citations slightly undermines the epistemic honesty. The response does not hallucinate any claims beyond the incorrect article references."
+        "B": "Response 1 correctly identifies that Statement I is supported by the evidence on page 105, which mentions the Governor's discretionary powers. It also accurately contradicts Statement II based on the evidence from pages 122, 128, and 203, which indicate that the President cannot reserve a bill without the Governor's forwarding. The reasoning is valid, and the response is epistemically honest, acknowledging the evidence's limitations.",
+        "A": "Response 2 correctly concludes that Statement I is true and Statement II is false, aligning with the official answer. However, it cites incorrect articles (Article 163 and Article 200) and pages (64, 77, 117, 181) that do not directly support the claims. The reasoning is mostly valid, but the evidence faithfulness is compromised due to incorrect citations. The response is generally honest but lacks precision in evidence citation."
       },
       "preferred_system": "B",
       "preferred_slot": "1",
-      "preference_reason": "Response 1 is better because it accurately cites the provided evidence and uses it to support its conclusions without introducing incorrect references. It demonstrates a clear understanding of the evidence and maintains epistemic honesty throughout, making it more reliable as tutoring content."
+      "preference_reason": "Response 1 is better due to its accurate citation of evidence and correct reasoning. It provides a clear and well-supported explanation for each statement, aligning with the official answer key. Response 2, while reaching the correct conclusion, suffers from incorrect citations and less precise evidence faithfulness, making Response 1 the superior choice for tutoring content."
     },
     {
       "q_number": 62,
@@ -418,25 +417,23 @@
         "B": 5.0
       },
       "hallucinated_claims": {
-        "A": [
-          "Constitution of India, p. 250 for Statement III"
-        ],
+        "A": [],
         "B": []
       },
       "justification": {
-        "A": "Response 1 correctly identifies the official answer as D and provides accurate reasoning for each statement. However, it incorrectly cites page 250 for Statement III, which should be page 118. This affects the evidence faithfulness score.",
-        "B": "Response 2 accurately identifies the official answer as D and provides correct reasoning for each statement. It correctly cites the relevant pages for each statement, ensuring all claims are grounded in the provided evidence."
+        "A": "Response 1 correctly identifies the official answer as D and provides accurate reasoning for each statement based on the evidence. However, it cites page 250 for all statements, which is not entirely accurate for Statement III, as the correct citation should be page 118. Despite this, the reasoning is valid and aligns with the official answer.",
+        "B": "Response 2 also correctly identifies the official answer as D and provides detailed reasoning for each statement, citing the correct pages for each. The response is well-structured, with each statement being individually verified against the evidence, ensuring high faithfulness and validity."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better because it accurately cites the correct pages for each statement, ensuring complete evidence faithfulness. Response 1, while correct in reasoning, incorrectly cites the page for Statement III, affecting its evidence faithfulness score."
+      "preference_reason": "Response 2 is better overall as it provides a more detailed and accurate citation for each statement, ensuring high evidence faithfulness. It breaks down each statement individually, which enhances its clarity and educational value for students."
     },
     {
       "q_number": 63,
       "official_answer": "D",
       "answers": {
         "A": "A",
-        "B": "D"
+        "B": null
       },
       "slot_assignment": {
         "1": "B",
@@ -451,14 +448,14 @@
         },
         "A": {
           "factual_correctness": 1,
-          "evidence_faithfulness": 2,
+          "evidence_faithfulness": 1,
           "reasoning_validity": 1,
           "epistemic_honesty": 1
         }
       },
       "mean": {
         "B": 5.0,
-        "A": 1.25
+        "A": 1.0
       },
       "hallucinated_claims": {
         "B": [],
@@ -467,12 +464,12 @@
         ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies all three statements as incorrect based on the provided evidence. It accurately cites the relevant constitutional provisions to support its conclusions, aligning with the official UPSC answer key. The reasoning is valid, and the response maintains epistemic honesty by clearly stating the contradictions found in the evidence.",
-        "A": "Response 2 incorrectly identifies Statement III as correct, which contradicts the evidence that states the Governor, not the Chief Minister, constitutes the Finance Commission. This leads to an incorrect answer choice (A) instead of the correct one (D). The response also misrepresents the evidence by claiming the Chief Minister's role in constituting the commission, which is not supported by the provided passages."
+        "B": "Response 1 correctly identifies the contradictions and insufficiencies in the statements based on the provided evidence. It accurately declines to answer due to insufficient evidence to support any option, demonstrating epistemic honesty.",
+        "A": "Response 2 incorrectly asserts that the Chief Minister constitutes a commission, which is contradicted by the evidence stating that the Governor does so. It also incorrectly concludes that the answer is A, which is not supported by the evidence or the official answer key."
       },
       "preferred_system": "B",
       "preferred_slot": "1",
-      "preference_reason": "Response 1 is superior as it accurately identifies all statements as incorrect, aligns with the official answer key, and provides valid reasoning based on the supplied evidence. Response 2, on the other hand, incorrectly interprets the role of the Chief Minister, leading to an incorrect answer and misrepresentation of the evidence."
+      "preference_reason": "Response 1 is better as it accurately identifies the contradictions and insufficiencies in the statements based on the provided evidence, and correctly declines to answer due to insufficient evidence. Response 2, on the other hand, provides incorrect factual assertions and reaches an unsupported conclusion."
     },
     {
       "q_number": 64,
@@ -512,12 +509,12 @@
         "B": []
       },
       "justification": {
-        "A": "Response 1 confidently asserts facts about Arunachal Pradesh, Nagaland, and Tripura that are not supported by the provided evidence. The reasoning is flawed as it incorrectly identifies the number of correctly matched pairs, contradicting the official answer key. The response also fails to cite relevant pages from the source evidence, leading to a low score across all dimensions.",
-        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to verify the claims about Arunachal Pradesh, Nagaland, and Tripura. It does not attempt to assert unsupported conclusions, demonstrating epistemic honesty. The response accurately reflects the limitations of the evidence, leading to high scores in evidence faithfulness, reasoning validity, and epistemic honesty."
+        "A": "Response 1 confidently asserts facts about Arunachal Pradesh, Nagaland, and Tripura that are not supported by the provided evidence. The reasoning is flawed as it incorrectly interprets the official answer and misrepresents the source evidence.",
+        "B": "Response 2 correctly identifies the insufficiency of the provided evidence to verify the claims about Arunachal Pradesh, Nagaland, and Tripura. It demonstrates epistemic honesty by declining to answer due to lack of evidence, aligning with the critical scoring rules."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better as it accurately identifies the insufficiency of the evidence to support any of the claims, demonstrating strong epistemic honesty and evidence faithfulness. It avoids making unsupported assertions, unlike Response 1, which confidently presents incorrect information without proper evidence."
+      "preference_reason": "Response 2 is better as it accurately reflects the insufficiency of the evidence to verify the claims, demonstrating epistemic honesty and valid reasoning. Response 1, on the other hand, makes unsupported assertions and misinterprets the evidence, leading to incorrect conclusions."
     },
     {
       "q_number": 65,
@@ -555,12 +552,12 @@
         ]
       },
       "justification": {
-        "B": "Response 1 correctly identifies that the evidence is insufficient to fully support Statement I and partially supports Statement II. The decision to decline an answer due to insufficient evidence is epistemically honest and aligns with the critical scoring rules.",
-        "A": "Response 2 incorrectly asserts that Statement II is correct, which contradicts the official answer key. The reasoning is flawed as it misinterprets the evidence, leading to a wrong conclusion. The response also lacks epistemic honesty by confidently asserting an incorrect answer."
+        "B": "Response 1 correctly identifies that the evidence is insufficient to fully verify Statement I and partially supports Statement II. The response accurately reflects the limitations of the evidence and does not overstate its conclusions, demonstrating high epistemic honesty.",
+        "A": "Response 2 incorrectly asserts that Statement II is correct, contradicting the official answer key. The reasoning is flawed as it misinterprets the evidence, leading to a wrong conclusion. The response also lacks epistemic honesty by confidently asserting an incorrect answer."
       },
       "preferred_system": "B",
       "preferred_slot": "1",
-      "preference_reason": "Response 1 is better because it correctly identifies the insufficiency of evidence to support the statements and abstains from providing an incorrect answer. This demonstrates a higher level of epistemic honesty and reasoning validity compared to Response 2, which incorrectly asserts a conclusion not supported by the evidence."
+      "preference_reason": "Response 1 is better as it accurately reflects the limitations of the evidence and does not overstate its conclusions, demonstrating high epistemic honesty. In contrast, Response 2 incorrectly asserts a conclusion that contradicts the official answer key, showing poor factual correctness and reasoning validity."
     },
     {
       "q_number": 66,
@@ -600,11 +597,11 @@
       },
       "justification": {
         "A": "Response 1 correctly identifies the official answer (B) but does so with reasoning that is not fully supported by the provided evidence. The claims about the Petroleum and Natural Gas Regulatory Board's regulatory scope are not directly traceable to the source evidence, leading to a lower score in evidence faithfulness and epistemic honesty.",
-        "B": "Response 2 declines to answer due to insufficient evidence, which is a valid approach given the lack of explicit support in the provided passages. This response demonstrates high epistemic honesty and reasoning validity by acknowledging the limitations of the evidence."
+        "B": "Response 2 declines to answer due to insufficient evidence, which is a valid approach given the lack of explicit support in the provided passages. This response demonstrates high epistemic honesty and evidence faithfulness, as it accurately reflects the limitations of the evidence."
       },
       "preferred_system": "B",
       "preferred_slot": "2",
-      "preference_reason": "Response 2 is better overall as it demonstrates a higher level of epistemic honesty and reasoning validity by acknowledging the insufficiency of the evidence to support a definitive answer. This approach is more aligned with the critical scoring rules, particularly the emphasis on not committing to unsupported conclusions."
+      "preference_reason": "Response 2 is better overall as tutoring content because it accurately reflects the limitations of the evidence and does not make unsupported claims. It scores higher in evidence faithfulness, reasoning validity, and epistemic honesty, making it a more reliable guide for students learning to evaluate evidence critically."
     }
   ]
 }

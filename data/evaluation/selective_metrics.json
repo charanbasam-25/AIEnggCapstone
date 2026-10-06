@@ -34,17 +34,16 @@
   },
   "system_b_verified": {
     "total": 13,
-    "answered": 4,
-    "abstained": 9,
-    "correct": 4,
-    "coverage": 0.3076923076923077,
+    "answered": 3,
+    "abstained": 10,
+    "correct": 3,
+    "coverage": 0.23076923076923078,
     "precision_when_answered": 1.0,
-    "accuracy_overall": 0.3076923076923077,
+    "accuracy_overall": 0.23076923076923078,
     "answered_questions": [
       56,
       61,
-      62,
-      63
+      62
     ],
     "abstained_questions": [
       54,
@@ -53,6 +52,7 @@
       58,
       59,
       60,
+      63,
       64,
       65,
       66
@@ -60,8 +60,7 @@
     "correct_questions": [
       56,
       61,
-      62,
-      63
+      62
     ]
   },
   "system_b_abstention_causes": {
@@ -72,33 +71,32 @@
       58,
       59,
       60,
+      63,
       64,
       65,
       66
     ]
   },
   "system_b_statement_verdicts": {
-    "INSUFFICIENT": 18,
+    "INSUFFICIENT": 19,
     "SUPPORTED": 14,
-    "CONTRADICTED": 5
+    "CONTRADICTED": 4
   },
   "paired_comparison_on_attempted": {
     "subset": [
       56,
       61,
-      62,
-      63
+      62
     ],
-    "subset_size": 4,
-    "system_b_correct": 4,
+    "subset_size": 3,
+    "system_b_correct": 3,
     "system_a_correct": 2,
     "system_b_accuracy": 1.0,
-    "system_a_accuracy": 0.5,
+    "system_a_accuracy": 0.6666666666666666,
     "system_b_correct_questions": [
       56,
       61,
-      62,
-      63
+      62
     ],
     "system_a_correct_questions": [
       61,

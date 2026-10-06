@@ -1,9 +1,9 @@
 parsing fixes verified
 
 --- policy: strict ---
-answered 4/13   correct 4/13
-coverage 30.77%   precision 100.00%   accuracy 30.77%
-vs vanilla RAG (38.46%): -7.69%
+answered 3/13   correct 3/13
+coverage 23.08%   precision 100.00%   accuracy 23.08%
+vs vanilla RAG (38.46%): -15.38%
 
   --  Q54  predicted=None  official=A  [policy_insufficient_evidence]
   --  Q55  predicted=None  official=A  [policy_insufficient_evidence]
@@ -14,15 +14,15 @@ vs vanilla RAG (38.46%): -7.69%
   --  Q60  predicted=None  official=D  [policy_insufficient_evidence]
   ok  Q61  predicted=A     official=A
   ok  Q62  predicted=D     official=D
-  ok  Q63  predicted=D     official=D
+  --  Q63  predicted=None  official=D  [policy_insufficient_evidence]
   --  Q64  predicted=None  official=C  [policy_insufficient_evidence]
   --  Q65  predicted=None  official=D  [policy_insufficient_evidence]
   --  Q66  predicted=None  official=B  [policy_insufficient_evidence]
 
 --- policy: elimination ---
-answered 4/13   correct 4/13
-coverage 30.77%   precision 100.00%   accuracy 30.77%
-vs vanilla RAG (38.46%): -7.69%
+answered 3/13   correct 3/13
+coverage 23.08%   precision 100.00%   accuracy 23.08%
+vs vanilla RAG (38.46%): -15.38%
 
   --  Q54  predicted=None  official=A  [multiple_options_possible]
   --  Q55  predicted=None  official=A  [multiple_options_possible]
@@ -33,15 +33,15 @@ vs vanilla RAG (38.46%): -7.69%
   --  Q60  predicted=None  official=D  [multiple_options_possible]
   ok  Q61  predicted=A     official=A
   ok  Q62  predicted=D     official=D
-  ok  Q63  predicted=D     official=D
+  --  Q63  predicted=None  official=D  [multiple_options_possible]
   --  Q64  predicted=None  official=C  [multiple_options_possible]
   --  Q65  predicted=None  official=D  [multiple_options_possible]
   --  Q66  predicted=None  official=B  [multiple_options_possible]
 
 --- policy: closed_world ---
-answered 11/13   correct 6/13
-coverage 84.62%   precision 54.55%   accuracy 46.15%
-vs vanilla RAG (38.46%): +7.69%
+answered 11/13   correct 5/13
+coverage 84.62%   precision 45.45%   accuracy 38.46%
+vs vanilla RAG (38.46%): +0.00%
 
   X   Q54  predicted=B     official=A
   --  Q55  predicted=None  official=A  [no_option_matched]
@@ -52,7 +52,7 @@ vs vanilla RAG (38.46%): +7.69%
   --  Q60  predicted=None  official=D  [no_option_matched]
   ok  Q61  predicted=A     official=A
   ok  Q62  predicted=D     official=D
-  ok  Q63  predicted=D     official=D
+  X   Q63  predicted=C     official=D
   X   Q64  predicted=D     official=C
   X   Q65  predicted=B     official=D
   X   Q66  predicted=A     official=B

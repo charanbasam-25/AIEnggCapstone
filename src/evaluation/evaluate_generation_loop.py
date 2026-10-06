@@ -1,91 +1,21 @@
-"""
-Measure the generate-and-gate loop in src/orchestration/.
+"""Measure the current source-grounded generate → verify → revise workflow.
 
-Why this module exists
-----------------------
+Streamed updates preserve each attempt's checks before revision clears them.
+Simple MCQs use option comparison; statement MCQs use resolved truth patterns,
+where CONTRADICTED is an intentional false statement rather than a defect.
+Current reports are separate from historical generation-loop experiments and
+include the source snapshot and generation-policy version.
 
-The LangGraph loop was the most elaborate piece of orchestration in the
-project and it was the only piece with no metrics attached. Every artifact
-in data/evaluation/ measured the verifier *answering* the 13 PYQs; nothing
-measured it *gating* a generated question. `run_workflow.py` ran one topic
-and printed, so the loop's behaviour was only ever observed anecdotally.
-
-That is a real gap and not a cosmetic one, because the loop is where the
-project's headline claim is supposed to pay off. If verification catches
-defects in generated questions, the rate at which it does so is the number
-that says so.
-
-Two design notes, because both were wrong in the obvious implementation
------------------------------------------------------------------------
-
-1. The loop is driven with `stream(..., stream_mode="updates")`, not
-   `invoke()`. `generate_mcq` clears `failure_reasons` at the start of
-   every attempt (nodes.py:88) and the graph returns only terminal state,
-   so `invoke()` can tell you that a topic was ACCEPTed on attempt 3 but
-   not what was wrong with attempts 1 and 2. The per-attempt history is
-   the entire point of measuring a revision loop, and it exists only in
-   the stream.
-
-2. Gate attribution is computed from the gate *objects*, not by parsing
-   `failure_reasons` strings. The three gates format their reasons
-   differently - the fact gate prefixes a claim_id (nodes.py:176), the
-   others use literal "answer_key: " and "quality: " tags - so string
-   prefixes would attribute the fact gate by whatever a claim_id happens
-   to look like. Reading `fact_verifications`, `answer_verification` and
-   `quality_audit` out of the stream instead means a change to a message
-   format cannot silently corrupt the attribution table.
-
-The free baseline arm
----------------------
-
-Attempt 1 of every topic *is* the unverified generator: an MCQ produced by
-a RAG generator with no gate in front of it. It costs nothing extra to
-record, and the fraction of attempt-1 questions carrying at least one
-detectable defect is the closest analogue in the generation mode to System
-A's error rate. Reporting it is the comparative-evaluation arm for this
-flow.
-
-The two format arms, and why the first one is not enough
--------------------------------------------------------
-
-The first run of this harness produced a result that says more about the
-architecture than about the gates: a generated question decomposed into
-exactly **one** claim, and the loop accepted it on the first attempt. That
-is not a gate working well, it is a gate with almost nothing to hold. The
-generator's eleven requirements never ask for the multi-statement form, so
-every generated question is a single-fact recall item - and the machinery
-this project is actually built out of never runs. question_parser's
-STATEMENTS/STEM_DISTRIBUTED/PAIRS classification, claim_builder's predicate
-binding, and answer_mapping's subset and count parsing are all unreachable
-from a FORMAT_SIMPLE question.
-
-So the generate-and-gate mode had been routing around the verifier's only
-interesting capability, which is a large part of why the project's centre
-of gravity drifted to the PYQ-answering mode. Two arms are therefore run:
-
-  --format simple       what the loop shipped with; one claim per question
-  --format statements   multi-statement UPSC form; exercises the real path
-
-Comparing gate-firing rates between the arms is the comparative evaluation
-for this flow, and it quantifies the format mismatch rather than asserting
-it. Results go to separate files so neither arm overwrites the other.
-
-What is deliberately not claimed
---------------------------------
-
-This measures how often the gates fire and whether revision repairs what
-they caught. It does not establish that the accepted questions are
-*correct*, because the gate that judged them is the only judge in the
-room. A human-reviewed sample, or the LLM-as-a-judge harness pointed at
-accepted-vs-attempt-1 pairs, would be needed for that, and neither is run
-here. n = 15 topics is also small; the attempt-level counts are the
-reliable part and the per-gate splits are indicative.
+First-attempt block rates and repair rates measure the system's own checks.
+They do not establish question correctness or provide an independent accuracy
+benchmark. Accepted questions still need expert adjudication for that claim.
 """
 
 import argparse
 import json
 import time
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
 from src.generation.mcq_generator import (
@@ -94,22 +24,25 @@ from src.generation.mcq_generator import (
     FORMATS,
 )
 from src.orchestration.graph import build_graph
+from src.orchestration.nodes import corpus_hash
+from src.orchestration.telemetry import GENERATION_POLICY
+from src.verification.learning_notes import (
+    citation_issues, explanation_review_passes, notes_issues,
+)
+from src.verification.mcq_quality_auditor import quality_passes
 
 # One file per arm, because the two arms are not the same measurement and
 # overwriting one with the other is exactly the stale-report failure that
 # run_all.py's freshness check exists to prevent.
 OUTPUT_PATHS = {
-    FORMAT_SIMPLE: "data/evaluation/generation_loop_results.json",
+    FORMAT_SIMPLE: "data/evaluation/generation_grounded_results.json",
     FORMAT_STATEMENTS: (
-        "data/evaluation/generation_loop_results.statements.json"
+        "data/evaluation/generation_grounded_results.statements.json"
     ),
 }
 
-# Fixed, ordered, and checked into the repo so a re-run measures the same
-# thing. Every topic is decidable from the corpus described in DESIGN.md
-# section 2 - Constitution full text plus NCERT Polity - because a topic
-# the corpus cannot settle would make the fact gate fire for a reason that
-# has nothing to do with generation quality.
+# Fixed topics for comparable workflow sampling. A retrieval miss or a gap
+# in source coverage can block generation; blocked is not necessarily wrong.
 TOPICS = [
     "Fundamental Rights",
     "Directive Principles of State Policy",
@@ -131,10 +64,7 @@ TOPICS = [
 DIFFICULTY = "medium"
 MAX_RETRIES = 2
 
-# Worst case is MAX_RETRIES + 1 attempts x 6 nodes = 18 steps. The default
-# LangGraph limit of 25 would hold, but it is stated rather than relied on:
-# raising MAX_RETRIES without noticing the limit is exactly the kind of
-# silent truncation this project has been bitten by before.
+# Source retrieval plus three attempts through seven candidate nodes.
 RECURSION_LIMIT = 50
 
 # A 15-topic run makes roughly 250 API calls through an intercepting
@@ -161,6 +91,7 @@ def run_topic(
     """
     attempts = []
     current = None
+    state = {}
 
     config = {"recursion_limit": RECURSION_LIMIT}
 
@@ -178,6 +109,9 @@ def run_topic(
         stream_mode="updates",
     ):
         for node, payload in update.items():
+            state.update(payload)
+            if node == "retrieve_sources":
+                continue
             if node == "generate_mcq":
                 # A new generation starts a new attempt record. The
                 # feedback that produced it is whatever the previous
@@ -191,6 +125,13 @@ def run_topic(
                     "quality_issues": None,
                     "decision": None,
                     "failure_reasons": None,
+                    "generation_policy": GENERATION_POLICY,
+                    "source_count": len(state.get("generation_evidence", [])),
+                    "structural_issues": None,
+                    "fact_review_complete": False,
+                    "answer_passed": False,
+                    "quality_passed": False,
+                    "explanations_passed": False,
                 }
 
                 mcq = payload.get("mcq")
@@ -217,6 +158,9 @@ def run_topic(
                     f"graph shape has changed"
                 )
 
+            elif node == "extract_claims":
+                current["structural_issues"] = list(payload.get("structural_issues", []))
+
             elif node == "verify_claims":
                 verdicts = payload.get("fact_verifications") or {}
 
@@ -224,12 +168,28 @@ def run_topic(
                     claim_id: result.verdict
                     for claim_id, result in verdicts.items()
                 }
+                current["fact_review_complete"] = all(
+                    (result := verdicts.get(claim.claim_id)) is not None
+                    and result.verdict in ("SUPPORTED", "CONTRADICTED")
+                    and result.independently_reviewed
+                    and not citation_issues(result.citations, result.checked_evidence)
+                    for claim in state.get("claims", [])
+                )
 
             elif node == "verify_answer_key":
                 result = payload.get("answer_verification")
 
                 if result is not None:
                     current["answer_verdict"] = result.verdict
+                    direct = state.get("direct_verification")
+                    current["answer_passed"] = (
+                        result.verdict == "VALID" and result.exactly_one_correct
+                        and result.supported_options == [state["mcq"].correct_answer]
+                        and (bool(state.get("claims")) or (
+                            direct is not None and direct.status == "ANSWERED"
+                            and direct.independently_reviewed
+                        ))
+                    )
 
             elif node == "audit_quality":
                 result = payload.get("quality_audit")
@@ -237,6 +197,16 @@ def run_topic(
                 if result is not None:
                     current["quality"] = result.overall_quality
                     current["quality_issues"] = list(result.issues)
+                current["quality_passed"] = quality_passes(result)
+
+            elif node == "explain_question":
+                result = payload.get("learning_notes")
+                current["explanations_passed"] = bool(
+                    result is not None and result.verdict == "PASS"
+                    and result.notes is not None and result.review is not None
+                    and explanation_review_passes(result.review)
+                    and not notes_issues(result.notes, state.get("answer_evidence", []), state["mcq"])
+                )
 
             elif node == "decide":
                 current["decision"] = payload.get("decision")
@@ -255,13 +225,16 @@ def run_topic(
 
 
 def gates_fired(attempt: dict) -> dict:
-    """
-    Which of the three gates blocked this attempt.
-
-    Computed from the gate results, not from failure_reasons text. The
-    conditions mirror nodes.py decide() exactly: a non-SUPPORTED fact
-    verdict, a non-VALID answer-key verdict, a non-PASS quality audit.
-    """
+    """Attribute current checks while retaining historical report semantics."""
+    if attempt.get("generation_policy") == GENERATION_POLICY:
+        return {
+            "sources": not attempt.get("source_count"),
+            "format": attempt.get("structural_issues") != [],
+            "fact": not attempt.get("fact_review_complete", False),
+            "answer_key": not attempt.get("answer_passed", False),
+            "quality": not attempt.get("quality_passed", False),
+            "explanations": not attempt.get("explanations_passed", False),
+        }
     verdicts = attempt.get("fact_verdicts") or {}
 
     return {
@@ -384,13 +357,14 @@ def summarise(results: list[dict]) -> dict:
         },
         "unverified_baseline": {
             "description": (
-                "attempt 1 of every topic, i.e. what a RAG generator "
-                "with no gate in front of it would have shipped"
+                "First drafts assessed by this system's own checks; "
+                "a block is not an independently established error."
             ),
             "n": total,
             "clean": baseline_clean,
             "defective": total - baseline_clean,
             "defect_rate": pct(total - baseline_clean, total),
+            "block_rate": pct(total - baseline_clean, total),
             "gates_that_would_have_caught_it": dict(baseline_gates),
         },
         "repair": {
@@ -452,7 +426,7 @@ def print_summary(summary: dict) -> None:
 
     print(f"{'gate':<14}{'blocked':>9}{'sole':>7}")
 
-    for gate in ("fact", "answer_key", "quality"):
+    for gate in ("sources", "format", "fact", "answer_key", "quality", "explanations"):
         print(
             f"{gate:<14}"
             f"{blocked.get(gate, 0):>9}"
@@ -464,9 +438,9 @@ def print_summary(summary: dict) -> None:
     baseline = summary["unverified_baseline"]
 
     print(f"n:            {baseline['n']}")
-    print(f"Clean:        {baseline['clean']}")
+    print(f"Passed checks: {baseline['clean']}")
     print(
-        f"Defective:    {baseline['defective']}"
+        f"Blocked:      {baseline['defective']}"
         f"  ({baseline['defect_rate']}%)"
     )
 
@@ -516,9 +490,8 @@ def main() -> dict:
         choices=FORMATS,
         default=FORMAT_SIMPLE,
         help=(
-            "question format arm; 'simple' is what the loop shipped "
-            "with, 'statements' is the multi-statement UPSC form that "
-            "actually exercises the claim machinery"
+            "'simple' uses option comparison; 'statements' uses "
+            "individual claim checks and deterministic mapping"
         ),
     )
 
@@ -527,8 +500,8 @@ def main() -> dict:
         type=int,
         default=None,
         help=(
-            "run only the first N topics; the full list costs roughly "
-            "8 LLM calls per attempt"
+            "run only the first N topics; each accepted item uses "
+            "several paid generation, verification and explanation calls"
         ),
     )
 
@@ -542,6 +515,8 @@ def main() -> dict:
     )
 
     args = parser.parse_args()
+    if args.limit is not None and args.limit < 1:
+        parser.error("--limit must be positive")
 
     results_path = OUTPUT_PATHS[args.question_format]
     output_path = Path(results_path)
@@ -564,6 +539,7 @@ def main() -> dict:
     topics = TOPICS[: args.limit] if args.limit else TOPICS
 
     workflow = build_graph()
+    source_hash = corpus_hash()
 
     results = []
 
@@ -590,7 +566,7 @@ def main() -> dict:
 
                 print(
                     f"    transient failure "
-                    f"({tries}/{TOPIC_ATTEMPTS}): {error}"
+                    f"({tries}/{TOPIC_ATTEMPTS}): {type(error).__name__}"
                 )
 
                 if tries < TOPIC_ATTEMPTS:
@@ -609,9 +585,7 @@ def main() -> dict:
                     "attempts": [],
                     "terminal_decision": None,
                     "attempt_count": 0,
-                    "error": (
-                        f"{type(last_error).__name__}: {last_error}"
-                    ),
+                    "error": type(last_error).__name__,
                 }
             )
 
@@ -628,6 +602,10 @@ def main() -> dict:
 
     payload = {
         "config": {
+            "generation_policy": GENERATION_POLICY,
+            "corpus_hash": source_hash,
+            "corpus_changed_during_run": corpus_hash() != source_hash,
+            "created_at": datetime.now(timezone.utc).isoformat(),
             "topics": topics,
             "difficulty": DIFFICULTY,
             "question_format": args.question_format,

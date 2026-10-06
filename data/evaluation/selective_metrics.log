@@ -4,24 +4,24 @@ Dataset: UPSC 2025 Prelims Polity, Q54-Q66
 metric                        System A    System B
 --------------------------------------------------
 questions                           13          13
-answered                            13           4
-abstained                            0           9
-correct                              5           4
-coverage                       100.00%      30.77%
+answered                            13           3
+abstained                            0          10
+correct                              5           3
+coverage                       100.00%      23.08%
 precision when answered         38.46%     100.00%
-accuracy (abstain=wrong)        38.46%      30.77%
+accuracy (abstain=wrong)        38.46%      23.08%
 
 === WHY SYSTEM B ABSTAINED ===
-incomplete_evidence     9  Q54, Q55, Q57, Q58, Q59, Q60, Q64, Q65, Q66
+incomplete_evidence    10  Q54, Q55, Q57, Q58, Q59, Q60, Q63, Q64, Q65, Q66
 
 === STATEMENT VERDICTS (System B) ===
-INSUFFICIENT      18  48.6%
+INSUFFICIENT      19  51.4%
 SUPPORTED         14  37.8%
-CONTRADICTED       5  13.5%
+CONTRADICTED       4  10.8%
 
 === PAIRED COMPARISON ON ATTEMPTED SUBSET ===
-Subset (4 questions): Q56, Q61, Q62, Q63
-System A correct: 2/4 (50.00%)
-System B correct: 4/4 (100.00%)
+Subset (3 questions): Q56, Q61, Q62
+System A correct: 2/3 (66.67%)
+System B correct: 3/3 (100.00%)
 
 Saved metrics to: data/evaluation/selective_metrics.json

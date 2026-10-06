@@ -3,7 +3,6 @@ Judging 2/13: Q55
 Judging 3/13: Q56
 Judging 4/13: Q57
 Judging 5/13: Q58
-  attempt 1 failed (TimeoutError), retrying in 4s
 Judging 6/13: Q59
 Judging 7/13: Q60
 Judging 8/13: Q61
@@ -20,15 +19,15 @@ Questions:   13
 
 dimension (1-5)               System A  System B
 ------------------------------------------------
-factual correctness               2.77      3.69
-evidence faithfulness             2.46      4.69
-reasoning validity                2.69      4.54
-epistemic honesty                 2.38      5.00
+factual correctness               2.62      3.69
+evidence faithfulness             2.15      4.69
+reasoning validity                2.62      4.54
+epistemic honesty                 2.23      5.00
 ------------------------------------------------
-mean across dimensions            2.58      4.48
+mean across dimensions            2.40      4.48
 
-hallucinated claims                 19         1
-questions affected                  12         1
+hallucinated claims                 18         0
+questions affected                  12         0
 
 === HEAD TO HEAD ===
 System A preferred: 1
@@ -41,15 +40,15 @@ A large slot imbalance would indicate the judge is responding to position rather
 
 === PER QUESTION ===
   Q54  A=1.00 B=4.00  preferred=B    (A said D, B said None, official A)
-  Q55  A=2.75 B=5.00  preferred=B    (A said D, B said None, official A)
-  Q56  A=2.50 B=5.00  preferred=B    (A said A, B said C, official C)
+  Q55  A=1.00 B=5.00  preferred=B    (A said D, B said None, official A)
+  Q56  A=2.75 B=5.00  preferred=B    (A said A, B said C, official C)
   Q57  A=3.75 B=4.00  preferred=B    (A said A, B said None, official A)
   Q58  A=2.75 B=4.50  preferred=B    (A said D, B said None, official A)
-  Q59  A=5.00 B=4.25  preferred=A    (A said C, B said None, official C)
+  Q59  A=4.50 B=4.25  preferred=A    (A said C, B said None, official C)
   Q60  A=1.00 B=4.50  preferred=B    (A said A, B said None, official D)
   Q61  A=3.75 B=5.00  preferred=B    (A said A, B said A, official A)
   Q62  A=4.75 B=5.00  preferred=B    (A said D, B said D, official D)
-  Q63  A=1.25 B=5.00  preferred=B    (A said A, B said D, official D)
+  Q63  A=1.00 B=5.00  preferred=B    (A said A, B said None, official D)
   Q64  A=1.00 B=4.50  preferred=B    (A said A, B said None, official C)
   Q65  A=1.50 B=4.00  preferred=B    (A said B, B said None, official D)
   Q66  A=2.50 B=3.50  preferred=B    (A said B, B said None, official B)

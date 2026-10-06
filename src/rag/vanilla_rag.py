@@ -26,7 +26,7 @@ class RAGAnswer(BaseModel):
 
 class VanillaRAG:
 
-    def __init__(self, chunks: list[dict]):
+    def __init__(self, chunks: list[dict], retriever=None):
 
         # The baseline shares the verifier's retrieval depths on purpose.
         # System A vs System B is meant to isolate the verification layer;
@@ -34,7 +34,7 @@ class VanillaRAG:
         # would be measuring retrieval as well, which is the confound that
         # produced the k=3 defect. Importing both from one place makes
         # that impossible to break by editing one file.
-        self.retriever = SemanticReranker(
+        self.retriever = retriever if retriever is not None else SemanticReranker(
             chunks,
             candidate_k=RERANK_CANDIDATE_K,
         )

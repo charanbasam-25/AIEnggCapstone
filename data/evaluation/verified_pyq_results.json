@@ -140,10 +140,14 @@
     },
     "answer_verification": {
       "declared_answer": "A",
-      "supported_options": [],
+      "supported_options": [
+        "A",
+        "B",
+        "C"
+      ],
       "exactly_one_correct": false,
-      "verdict": "INSUFFICIENT",
-      "reasoning": "The provided evidence does not explicitly mention the requirement for ratification by the Legislatures of not less than one-half of the States for any of the subjects listed in the question. Therefore, none of the options can be supported based on the evidence provided.",
+      "verdict": "INVALID",
+      "reasoning": "The evidence discusses the distribution of legislative powers and the conditions under which amendments require ratification by the states. Specifically, the Union List (I) and the executive power of a State (II) are mentioned in the context of legislative powers, which implies that amendments related to these subjects may require state ratification. The conditions of the Governor's office (III) are also likely to be included in this context, as they pertain to the functioning of state governance. Therefore, options A, B, and C are supported.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -154,8 +158,8 @@
         "document": "Constitution of India",
         "page": 176,
         "chunk_index": 0,
-        "score": 0.7963762283325195,
-        "reranker_score": 0.6593003869056702
+        "score": 0.7963761687278748,
+        "reranker_score": 0.6592994928359985
       },
       {
         "id": 481,
@@ -165,7 +169,7 @@
         "page": 176,
         "chunk_index": 1,
         "score": 0.773112416267395,
-        "reranker_score": 0.14725421369075775
+        "reranker_score": 0.14725196361541748
       },
       {
         "id": 498,
@@ -174,8 +178,8 @@
         "document": "Constitution of India",
         "page": 181,
         "chunk_index": 2,
-        "score": 0.7758269309997559,
-        "reranker_score": -0.9099132418632507
+        "score": 0.7758268117904663,
+        "reranker_score": -0.9099156260490417
       },
       {
         "id": 62,
@@ -184,8 +188,8 @@
         "document": "Constitution of India",
         "page": 34,
         "chunk_index": 0,
-        "score": 0.8175165057182312,
-        "reranker_score": -1.4449712038040161
+        "score": 0.8175162076950073,
+        "reranker_score": -1.4449729919433594
       },
       {
         "id": 393,
@@ -194,7 +198,7 @@
         "document": "Constitution of India",
         "page": 145,
         "chunk_index": 0,
-        "score": 0.7889020442962646,
+        "score": 0.7889019846916199,
         "reranker_score": -1.5347504615783691
       }
     ],
@@ -207,8 +211,8 @@
           "document": "Constitution of India",
           "page": 341,
           "chunk_index": 0,
-          "score": 0.7327289581298828,
-          "reranker_score": 1.3625528812408447
+          "score": 0.7327287197113037,
+          "reranker_score": 1.3625510931015015
         },
         {
           "id": 57,
@@ -218,7 +222,7 @@
           "page": 31,
           "chunk_index": 0,
           "score": 0.7430628538131714,
-          "reranker_score": 1.116639256477356
+          "reranker_score": 1.1166410446166992
         },
         {
           "id": 393,
@@ -228,7 +232,7 @@
           "page": 145,
           "chunk_index": 0,
           "score": 0.748198390007019,
-          "reranker_score": -0.2368045598268509
+          "reranker_score": -0.236805260181427
         },
         {
           "id": 507,
@@ -237,8 +241,8 @@
           "document": "Constitution of India",
           "page": 184,
           "chunk_index": 2,
-          "score": 0.736493706703186,
-          "reranker_score": -0.8550130724906921
+          "score": 0.7364937663078308,
+          "reranker_score": -0.8550101518630981
         },
         {
           "id": 386,
@@ -247,8 +251,8 @@
           "document": "Constitution of India",
           "page": 142,
           "chunk_index": 0,
-          "score": 0.7512991428375244,
-          "reranker_score": -1.295322060585022
+          "score": 0.7512990236282349,
+          "reranker_score": -1.2953248023986816
         }
       ],
       "claim_2": [
@@ -259,8 +263,8 @@
           "document": "Constitution of India",
           "page": 260,
           "chunk_index": 0,
-          "score": 0.7883495688438416,
-          "reranker_score": 4.348628044128418
+          "score": 0.7883496284484863,
+          "reranker_score": 4.3486247062683105
         },
         {
           "id": 555,
@@ -270,7 +274,7 @@
           "page": 200,
           "chunk_index": 2,
           "score": 0.7667273283004761,
-          "reranker_score": 0.9672362804412842
+          "reranker_score": 0.967238187789917
         },
         {
           "id": 153,
@@ -280,7 +284,7 @@
           "page": 64,
           "chunk_index": 1,
           "score": 0.7620010375976562,
-          "reranker_score": -0.16072848439216614
+          "reranker_score": -0.16072961688041687
         },
         {
           "id": 350,
@@ -289,8 +293,8 @@
           "document": "Constitution of India",
           "page": 129,
           "chunk_index": 1,
-          "score": 0.7530722618103027,
-          "reranker_score": -1.050855278968811
+          "score": 0.7530723810195923,
+          "reranker_score": -1.0508556365966797
         },
         {
           "id": 478,
@@ -300,7 +304,7 @@
           "page": 175,
           "chunk_index": 0,
           "score": 0.7624742388725281,
-          "reranker_score": -1.260762095451355
+          "reranker_score": -1.2607624530792236
         }
       ],
       "claim_3": [
@@ -311,8 +315,8 @@
           "document": "Constitution of India",
           "page": 260,
           "chunk_index": 0,
-          "score": 0.77202969789505,
-          "reranker_score": 4.725022315979004
+          "score": 0.7720296382904053,
+          "reranker_score": 4.7250213623046875
         },
         {
           "id": 350,
@@ -321,8 +325,8 @@
           "document": "Constitution of India",
           "page": 129,
           "chunk_index": 1,
-          "score": 0.7534385919570923,
-          "reranker_score": 0.28684166073799133
+          "score": 0.7534384727478027,
+          "reranker_score": 0.28684157133102417
         },
         {
           "id": 328,
@@ -332,7 +336,7 @@
           "page": 122,
           "chunk_index": 1,
           "score": 0.7385285496711731,
-          "reranker_score": -1.6152029037475586
+          "reranker_score": -1.6152002811431885
         },
         {
           "id": 684,
@@ -342,7 +346,7 @@
           "page": 243,
           "chunk_index": 0,
           "score": 0.7321997880935669,
-          "reranker_score": -2.374664783477783
+          "reranker_score": -2.374664306640625
         },
         {
           "id": 329,
@@ -351,8 +355,8 @@
           "document": "Constitution of India",
           "page": 122,
           "chunk_index": 2,
-          "score": 0.7396516799926758,
-          "reranker_score": -2.471853256225586
+          "score": 0.7396515011787415,
+          "reranker_score": -2.4718523025512695
         }
       ]
     }
@@ -421,7 +425,7 @@
       },
       "claim_2": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly state that only the Chief Justice of India can be the Chairperson of the specified body, nor does it confirm that a Chairperson or Member cannot be a Member of Parliament or a State Legislature. While there are disqualifications mentioned, the evidence does not fully support the claim as it lacks specific details about the Chairperson's eligibility and the exclusive role of the Chief Justice.",
+        "reasoning": "The provided evidence does not explicitly state that only the Chief Justice of India can be the Chairperson of the specified body, nor does it confirm that a Member of Parliament or a Member of the Legislature of any State or Union Territory cannot hold the position. The evidence discusses disqualifications for membership in Parliament and State Legislatures but does not address the specific claim about the Chairperson's eligibility or the exclusivity of the Chief Justice's role.",
         "supporting_pages": [
           76,
           117,
@@ -431,14 +435,14 @@
       },
       "claim_3": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly state the age requirement for the Chairperson or a Member. While it mentions age limits for other positions, such as the age of sixty-five for members of a Public Service Commission, it does not confirm the specific age of forty-five for the Chairperson or a Member as claimed.",
+        "reasoning": "The provided evidence does not explicitly state the age requirement for the Chairperson or a Member. While it mentions age limits for other positions, such as the age of sixty-five for members of the Union Public Service Commission, it does not confirm the specific age of forty-five for the Chairperson or a Member as claimed.",
         "supporting_pages": [
           209
         ]
       },
       "claim_4": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly address the ability of the Lokpal to inquire into allegations of corruption against a sitting Prime Minister. None of the evidence mentions the Lokpal or its powers regarding inquiries into such allegations. Therefore, there is insufficient information to verify the claim.",
+        "reasoning": "The provided evidence does not explicitly address the ability of the Lokpal to inquire into allegations of corruption against a sitting Prime Minister. There is no mention of the Lokpal's jurisdiction or limitations regarding inquiries into the Prime Minister's conduct. Therefore, the evidence is insufficient to verify the claim.",
         "supporting_pages": []
       }
     },
@@ -510,12 +514,10 @@
     },
     "answer_verification": {
       "declared_answer": "A",
-      "supported_options": [
-        "D"
-      ],
-      "exactly_one_correct": true,
-      "verdict": "INVALID",
-      "reasoning": "The provided evidence does not explicitly support any of the statements I, II, III, or IV regarding Lokpal. Therefore, the only option that can be supported is D, which states that none of the above statements is correct.",
+      "supported_options": [],
+      "exactly_one_correct": false,
+      "verdict": "INSUFFICIENT",
+      "reasoning": "The provided source evidence does not contain any information that explicitly supports any of the statements about Lokpal. Therefore, none of the options can be confirmed as correct based on the evidence given.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -526,8 +528,8 @@
         "document": "Constitution of India",
         "page": 88,
         "chunk_index": 0,
-        "score": 0.767943263053894,
-        "reranker_score": -0.9140477776527405
+        "score": 0.7679433226585388,
+        "reranker_score": -0.9140467047691345
       },
       {
         "id": 579,
@@ -536,8 +538,8 @@
         "document": "Constitution of India",
         "page": 209,
         "chunk_index": 0,
-        "score": 0.7593888640403748,
-        "reranker_score": -1.2075313329696655
+        "score": 0.7593889236450195,
+        "reranker_score": -1.207533359527588
       },
       {
         "id": 312,
@@ -546,8 +548,8 @@
         "document": "Constitution of India",
         "page": 117,
         "chunk_index": 0,
-        "score": 0.7502967119216919,
-        "reranker_score": -1.5424548387527466
+        "score": 0.7502965927124023,
+        "reranker_score": -1.5424563884735107
       },
       {
         "id": 573,
@@ -556,8 +558,8 @@
         "document": "Constitution of India",
         "page": 207,
         "chunk_index": 0,
-        "score": 0.7619545459747314,
-        "reranker_score": -1.5684497356414795
+        "score": 0.7619544267654419,
+        "reranker_score": -1.5684504508972168
       },
       {
         "id": 583,
@@ -566,8 +568,8 @@
         "document": "Constitution of India",
         "page": 210,
         "chunk_index": 1,
-        "score": 0.7501356601715088,
-        "reranker_score": -1.7347612380981445
+        "score": 0.750135600566864,
+        "reranker_score": -1.7347627878189087
       }
     ],
     "claim_evidence": {
@@ -579,8 +581,8 @@
           "document": "Constitution of India",
           "page": 21,
           "chunk_index": 0,
-          "score": 0.623762845993042,
-          "reranker_score": -1.0727200508117676
+          "score": 0.6237629652023315,
+          "reranker_score": -1.0727190971374512
         },
         {
           "id": 586,
@@ -589,8 +591,8 @@
           "document": "Constitution of India",
           "page": 211,
           "chunk_index": 1,
-          "score": 0.6434548497200012,
-          "reranker_score": -1.673581838607788
+          "score": 0.6434547901153564,
+          "reranker_score": -1.6735808849334717
         },
         {
           "id": 498,
@@ -599,8 +601,8 @@
           "document": "Constitution of India",
           "page": 181,
           "chunk_index": 2,
-          "score": 0.6412438154220581,
-          "reranker_score": -2.05818772315979
+          "score": 0.6412439346313477,
+          "reranker_score": -2.058187961578369
         },
         {
           "id": 497,
@@ -609,8 +611,8 @@
           "document": "Constitution of India",
           "page": 181,
           "chunk_index": 1,
-          "score": 0.6345698833465576,
-          "reranker_score": -3.152385711669922
+          "score": 0.6345700025558472,
+          "reranker_score": -3.1523866653442383
         },
         {
           "id": 585,
@@ -620,7 +622,7 @@
           "page": 211,
           "chunk_index": 0,
           "score": 0.6433984041213989,
-          "reranker_score": -3.631527900695801
+          "reranker_score": -3.63152813911438
         }
       ],
       "claim_2": [
@@ -631,8 +633,8 @@
           "document": "Constitution of India",
           "page": 76,
           "chunk_index": 0,
-          "score": 0.7624692916870117,
-          "reranker_score": 2.8302979469299316
+          "score": 0.7624691724777222,
+          "reranker_score": 2.8303003311157227
         },
         {
           "id": 313,
@@ -641,8 +643,8 @@
           "document": "Constitution of India",
           "page": 117,
           "chunk_index": 1,
-          "score": 0.7480230927467346,
-          "reranker_score": 2.4448657035827637
+          "score": 0.7480230331420898,
+          "reranker_score": 2.4448652267456055
         },
         {
           "id": 191,
@@ -652,7 +654,7 @@
           "page": 77,
           "chunk_index": 0,
           "score": 0.7606023550033569,
-          "reranker_score": 1.4907320737838745
+          "reranker_score": 1.4907350540161133
         },
         {
           "id": 312,
@@ -661,8 +663,8 @@
           "document": "Constitution of India",
           "page": 117,
           "chunk_index": 0,
-          "score": 0.7613534927368164,
-          "reranker_score": 1.0463237762451172
+          "score": 0.7613533735275269,
+          "reranker_score": 1.0463228225708008
         },
         {
           "id": 586,
@@ -671,8 +673,8 @@
           "document": "Constitution of India",
           "page": 211,
           "chunk_index": 1,
-          "score": 0.7509071230888367,
-          "reranker_score": 0.5929779410362244
+          "score": 0.7509070634841919,
+          "reranker_score": 0.5929760336875916
         }
       ],
       "claim_3": [
@@ -683,8 +685,8 @@
           "document": "Constitution of India",
           "page": 209,
           "chunk_index": 1,
-          "score": 0.7119972109794617,
-          "reranker_score": 1.4136836528778076
+          "score": 0.7119971513748169,
+          "reranker_score": 1.4136838912963867
         },
         {
           "id": 442,
@@ -693,8 +695,8 @@
           "document": "Constitution of India",
           "page": 162,
           "chunk_index": 0,
-          "score": 0.754763662815094,
-          "reranker_score": -0.019963562488555908
+          "score": 0.7547636032104492,
+          "reranker_score": -0.01996225118637085
         },
         {
           "id": 579,
@@ -703,8 +705,8 @@
           "document": "Constitution of India",
           "page": 209,
           "chunk_index": 0,
-          "score": 0.7413414716720581,
-          "reranker_score": -0.7595598101615906
+          "score": 0.7413415908813477,
+          "reranker_score": -0.7595576643943787
         },
         {
           "id": 145,
@@ -714,7 +716,7 @@
           "page": 61,
           "chunk_index": 2,
           "score": 0.7167820930480957,
-          "reranker_score": -1.6773649454116821
+          "reranker_score": -1.6773641109466553
         },
         {
           "id": 418,
@@ -723,8 +725,8 @@
           "document": "Constitution of India",
           "page": 153,
           "chunk_index": 1,
-          "score": 0.7396458983421326,
-          "reranker_score": -2.6288094520568848
+          "score": 0.7396458387374878,
+          "reranker_score": -2.628809928894043
         }
       ],
       "claim_4": [
@@ -735,8 +737,8 @@
           "document": "Constitution of India",
           "page": 90,
           "chunk_index": 0,
-          "score": 0.5684682130813599,
-          "reranker_score": -5.239613056182861
+          "score": 0.5684680938720703,
+          "reranker_score": -5.239614963531494
         },
         {
           "id": 705,
@@ -745,8 +747,8 @@
           "document": "Constitution of India",
           "page": 250,
           "chunk_index": 0,
-          "score": 0.54433673620224,
-          "reranker_score": -5.385444164276123
+          "score": 0.5443366765975952,
+          "reranker_score": -5.385447025299072
         },
         {
           "id": 313,
@@ -755,8 +757,8 @@
           "document": "Constitution of India",
           "page": 117,
           "chunk_index": 1,
-          "score": 0.5514997243881226,
-          "reranker_score": -5.819265842437744
+          "score": 0.551499605178833,
+          "reranker_score": -5.819267749786377
         },
         {
           "id": 158,
@@ -765,8 +767,8 @@
           "document": "Constitution of India",
           "page": 66,
           "chunk_index": 0,
-          "score": 0.5621618032455444,
-          "reranker_score": -7.36666202545166
+          "score": 0.5621616840362549,
+          "reranker_score": -7.366660118103027
         },
         {
           "id": 776,
@@ -775,8 +777,8 @@
           "document": "Constitution of India",
           "page": 274,
           "chunk_index": 2,
-          "score": 0.5553780794143677,
-          "reranker_score": -8.2512845993042
+          "score": 0.5553779602050781,
+          "reranker_score": -8.251283645629883
         }
       ]
     }
@@ -931,7 +933,7 @@
         "page": 7,
         "chunk_index": 1,
         "score": 0.7351466417312622,
-        "reranker_score": 1.0152629613876343
+        "reranker_score": 1.0152630805969238
       },
       {
         "id": 71,
@@ -940,8 +942,8 @@
         "document": "Constitution of India",
         "page": 37,
         "chunk_index": 0,
-        "score": 0.7636690139770508,
-        "reranker_score": -0.7673777937889099
+        "score": 0.7636688947677612,
+        "reranker_score": -0.767377495765686
       },
       {
         "id": 571,
@@ -950,8 +952,8 @@
         "document": "Constitution of India",
         "page": 206,
         "chunk_index": 1,
-        "score": 0.7248373031616211,
-        "reranker_score": -0.8402471542358398
+        "score": 0.7248373627662659,
+        "reranker_score": -0.8402459025382996
       },
       {
         "id": 1132,
@@ -960,8 +962,8 @@
         "document": "NCERT Polity",
         "page": 13,
         "chunk_index": 0,
-        "score": 0.7359784841537476,
-        "reranker_score": -1.7240650653839111
+        "score": 0.735978364944458,
+        "reranker_score": -1.7240667343139648
       },
       {
         "id": 129,
@@ -970,8 +972,8 @@
         "document": "Constitution of India",
         "page": 56,
         "chunk_index": 0,
-        "score": 0.7553214430809021,
-        "reranker_score": -1.9431449174880981
+        "score": 0.7553213834762573,
+        "reranker_score": -1.9431458711624146
       }
     ],
     "claim_evidence": {
@@ -983,8 +985,8 @@
           "document": "Constitution of India",
           "page": 52,
           "chunk_index": 0,
-          "score": 0.6990777254104614,
-          "reranker_score": 0.7772770524024963
+          "score": 0.6990779042243958,
+          "reranker_score": 0.777276873588562
         },
         {
           "id": 1130,
@@ -993,8 +995,8 @@
           "document": "NCERT Polity",
           "page": 12,
           "chunk_index": 1,
-          "score": 0.6560834646224976,
-          "reranker_score": 0.2859605848789215
+          "score": 0.6560834050178528,
+          "reranker_score": 0.2859615087509155
         },
         {
           "id": 10,
@@ -1003,8 +1005,8 @@
           "document": "Constitution of India",
           "page": 7,
           "chunk_index": 1,
-          "score": 0.667637825012207,
-          "reranker_score": -0.9662637710571289
+          "score": 0.6676378846168518,
+          "reranker_score": -0.9662644267082214
         },
         {
           "id": 8,
@@ -1013,8 +1015,8 @@
           "document": "Constitution of India",
           "page": 6,
           "chunk_index": 1,
-          "score": 0.7040837407112122,
-          "reranker_score": -1.100799798965454
+          "score": 0.7040838003158569,
+          "reranker_score": -1.1008024215698242
         },
         {
           "id": 110,
@@ -1023,8 +1025,8 @@
           "document": "Constitution of India",
           "page": 49,
           "chunk_index": 1,
-          "score": 0.6776103973388672,
-          "reranker_score": -1.7112798690795898
+          "score": 0.677610456943512,
+          "reranker_score": -1.7112815380096436
         }
       ],
       "claim_2": [
@@ -1046,7 +1048,7 @@
           "page": 14,
           "chunk_index": 0,
           "score": 0.6664035320281982,
-          "reranker_score": 1.5877978801727295
+          "reranker_score": 1.587796926498413
         },
         {
           "id": 1145,
@@ -1056,7 +1058,7 @@
           "page": 18,
           "chunk_index": 1,
           "score": 0.6324306726455688,
-          "reranker_score": -0.06568430364131927
+          "reranker_score": -0.06568390130996704
         },
         {
           "id": 1144,
@@ -1065,8 +1067,8 @@
           "document": "NCERT Polity",
           "page": 18,
           "chunk_index": 0,
-          "score": 0.5954843163490295,
-          "reranker_score": -4.85683536529541
+          "score": 0.5954843759536743,
+          "reranker_score": -4.856836318969727
         },
         {
           "id": 10,
@@ -1075,8 +1077,8 @@
           "document": "Constitution of India",
           "page": 7,
           "chunk_index": 1,
-          "score": 0.6530283689498901,
-          "reranker_score": -5.339097023010254
+          "score": 0.6530284881591797,
+          "reranker_score": -5.339094638824463
         }
       ],
       "claim_3": [
@@ -1088,7 +1090,7 @@
           "page": 45,
           "chunk_index": 0,
           "score": 0.7199605703353882,
-          "reranker_score": 5.666773319244385
+          "reranker_score": 5.666773796081543
         },
         {
           "id": 5,
@@ -1097,8 +1099,8 @@
           "document": "Constitution of India",
           "page": 5,
           "chunk_index": 0,
-          "score": 0.6924700736999512,
-          "reranker_score": 0.5239534378051758
+          "score": 0.6924699544906616,
+          "reranker_score": 0.5239529013633728
         },
         {
           "id": 120,
@@ -1108,7 +1110,7 @@
           "page": 52,
           "chunk_index": 2,
           "score": 0.6712766885757446,
-          "reranker_score": -5.141561508178711
+          "reranker_score": -5.141562461853027
         },
         {
           "id": 88,
@@ -1117,8 +1119,8 @@
           "document": "Constitution of India",
           "page": 42,
           "chunk_index": 1,
-          "score": 0.6226840615272522,
-          "reranker_score": -5.9954938888549805
+          "score": 0.6226840019226074,
+          "reranker_score": -5.995494365692139
         },
         {
           "id": 130,
@@ -1128,7 +1130,7 @@
           "page": 56,
           "chunk_index": 1,
           "score": 0.6272687911987305,
-          "reranker_score": -6.948981761932373
+          "reranker_score": -6.948980331420898
         }
       ]
     }
@@ -1181,7 +1183,7 @@
       },
       "claim_2": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly state whether the President can exercise the power without the advice of the Central Government. While there are references to the President's powers and the role of the Central Government, none of the evidence confirms or denies the claim directly.",
+        "reasoning": "The provided evidence does not explicitly state whether the President can exercise the power without the advice of the Central Government. While there are references to the President's powers and the role of the Council of Ministers, none of the evidence confirms or denies the claim directly.",
         "supporting_pages": []
       }
     },
@@ -1254,7 +1256,7 @@
       ],
       "exactly_one_correct": true,
       "verdict": "VALID",
-      "reasoning": "Evidence 2 states that the President has the power to grant pardons, which can be subjected to limited judicial review, supporting statement I. However, it does not support statement II, as the President typically exercises this power on the advice of the Council of Ministers, indicating that the President cannot exercise this power without such advice.",
+      "reasoning": "Evidence 2 states that the President has the power to grant pardons, which can be subjected to limited judicial review, supporting statement I. However, it does not support statement II, as the President typically exercises this power on the advice of the Council of Ministers, indicating that the President cannot exercise this power without the advice of the Central Government.",
       "supporting_pages": [
         57,
         8,
@@ -1271,7 +1273,7 @@
         "page": 57,
         "chunk_index": 0,
         "score": 0.7811282873153687,
-        "reranker_score": 3.0671703815460205
+        "reranker_score": 3.067169427871704
       },
       {
         "id": 12,
@@ -1280,8 +1282,8 @@
         "document": "Constitution of India",
         "page": 8,
         "chunk_index": 1,
-        "score": 0.7494573593139648,
-        "reranker_score": 2.3734099864959717
+        "score": 0.7494572997093201,
+        "reranker_score": 2.373411178588867
       },
       {
         "id": 494,
@@ -1290,8 +1292,8 @@
         "document": "Constitution of India",
         "page": 180,
         "chunk_index": 1,
-        "score": 0.775847315788269,
-        "reranker_score": 1.7429369688034058
+        "score": 0.7758473753929138,
+        "reranker_score": 1.7429356575012207
       },
       {
         "id": 493,
@@ -1300,8 +1302,8 @@
         "document": "Constitution of India",
         "page": 180,
         "chunk_index": 0,
-        "score": 0.7682666182518005,
-        "reranker_score": 1.1626464128494263
+        "score": 0.7682666778564453,
+        "reranker_score": 1.1626462936401367
       },
       {
         "id": 152,
@@ -1310,8 +1312,8 @@
         "document": "Constitution of India",
         "page": 64,
         "chunk_index": 0,
-        "score": 0.7865632772445679,
-        "reranker_score": 0.44249099493026733
+        "score": 0.7865633964538574,
+        "reranker_score": 0.4424903988838196
       }
     ],
     "claim_evidence": {
@@ -1323,8 +1325,8 @@
           "document": "Constitution of India",
           "page": 250,
           "chunk_index": 0,
-          "score": 0.6639856696128845,
-          "reranker_score": 2.679708957672119
+          "score": 0.6639857292175293,
+          "reranker_score": 2.6797096729278564
         },
         {
           "id": 223,
@@ -1333,8 +1335,8 @@
           "document": "Constitution of India",
           "page": 87,
           "chunk_index": 1,
-          "score": 0.695815920829773,
-          "reranker_score": 1.0600967407226562
+          "score": 0.6958159804344177,
+          "reranker_score": 1.060097098350525
         },
         {
           "id": 150,
@@ -1343,8 +1345,8 @@
           "document": "Constitution of India",
           "page": 63,
           "chunk_index": 1,
-          "score": 0.6784035563468933,
-          "reranker_score": -0.37162113189697266
+          "score": 0.6784036159515381,
+          "reranker_score": -0.37161803245544434
         },
         {
           "id": 780,
@@ -1353,8 +1355,8 @@
           "document": "Constitution of India",
           "page": 276,
           "chunk_index": 0,
-          "score": 0.671502947807312,
-          "reranker_score": -2.630906105041504
+          "score": 0.6715030074119568,
+          "reranker_score": -2.630903959274292
         },
         {
           "id": 251,
@@ -1363,8 +1365,8 @@
           "document": "Constitution of India",
           "page": 96,
           "chunk_index": 1,
-          "score": 0.7202475666999817,
-          "reranker_score": -3.357893466949463
+          "score": 0.7202476859092712,
+          "reranker_score": -3.3578929901123047
         }
       ],
       "claim_2": [
@@ -1376,7 +1378,7 @@
           "page": 250,
           "chunk_index": 0,
           "score": 0.6631724834442139,
-          "reranker_score": -1.4805707931518555
+          "reranker_score": -1.4805725812911987
         },
         {
           "id": 396,
@@ -1385,8 +1387,8 @@
           "document": "Constitution of India",
           "page": 146,
           "chunk_index": 0,
-          "score": 0.6406278610229492,
-          "reranker_score": -2.42338228225708
+          "score": 0.6406278014183044,
+          "reranker_score": -2.423381805419922
         },
         {
           "id": 494,
@@ -1395,8 +1397,8 @@
           "document": "Constitution of India",
           "page": 180,
           "chunk_index": 1,
-          "score": 0.6557114124298096,
-          "reranker_score": -2.5879621505737305
+          "score": 0.6557113528251648,
+          "reranker_score": -2.587963104248047
         },
         {
           "id": 150,
@@ -1406,7 +1408,7 @@
           "page": 63,
           "chunk_index": 1,
           "score": 0.6503547430038452,
-          "reranker_score": -2.640392780303955
+          "reranker_score": -2.640389919281006
         },
         {
           "id": 223,
@@ -1415,8 +1417,8 @@
           "document": "Constitution of India",
           "page": 87,
           "chunk_index": 1,
-          "score": 0.6425158977508545,
-          "reranker_score": -2.642087459564209
+          "score": 0.6425157785415649,
+          "reranker_score": -2.6420860290527344
         }
       ]
     }
@@ -1546,7 +1548,7 @@
       ],
       "exactly_one_correct": true,
       "verdict": "INVALID",
-      "reasoning": "Statement I is incorrect because the evidence indicates that the decision regarding disqualification under the 10th Schedule is made by the Speaker or Chairman, not the President. Statement II is correct as the evidence shows that the term 'political party' is indeed mentioned in the Constitution, specifically in the context of disqualifications under the 10th Schedule.",
+      "reasoning": "Statement I is incorrect because the evidence indicates that the decision regarding disqualification under the 10th Schedule is made by the Speaker or Chairman, not the President. Statement II is correct as the evidence shows that the term 'political party' is indeed mentioned in the Constitution, specifically in relation to disqualifications under the 10th Schedule.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -1557,8 +1559,8 @@
         "document": "Constitution of India",
         "page": 378,
         "chunk_index": 2,
-        "score": 0.8014228343963623,
-        "reranker_score": 3.3465466499328613
+        "score": 0.8014228940010071,
+        "reranker_score": 3.3465476036071777
       },
       {
         "id": 192,
@@ -1567,8 +1569,8 @@
         "document": "Constitution of India",
         "page": 77,
         "chunk_index": 1,
-        "score": 0.842348575592041,
-        "reranker_score": 3.0655155181884766
+        "score": 0.8423485159873962,
+        "reranker_score": 3.065516948699951
       },
       {
         "id": 313,
@@ -1577,8 +1579,8 @@
         "document": "Constitution of India",
         "page": 117,
         "chunk_index": 1,
-        "score": 0.8204597234725952,
-        "reranker_score": 1.6787993907928467
+        "score": 0.82045978307724,
+        "reranker_score": 1.67880117893219
       },
       {
         "id": 419,
@@ -1588,7 +1590,7 @@
         "page": 153,
         "chunk_index": 2,
         "score": 0.7697240710258484,
-        "reranker_score": -0.20115002989768982
+        "reranker_score": -0.20114991068840027
       },
       {
         "id": 1048,
@@ -1598,7 +1600,7 @@
         "page": 376,
         "chunk_index": 1,
         "score": 0.7894983291625977,
-        "reranker_score": -1.8473682403564453
+        "reranker_score": -1.847366452217102
       }
     ],
     "claim_evidence": {
@@ -1610,8 +1612,8 @@
           "document": "Constitution of India",
           "page": 77,
           "chunk_index": 1,
-          "score": 0.7685484290122986,
-          "reranker_score": 6.488245487213135
+          "score": 0.7685484886169434,
+          "reranker_score": 6.488245964050293
         },
         {
           "id": 1055,
@@ -1620,8 +1622,8 @@
           "document": "Constitution of India",
           "page": 378,
           "chunk_index": 2,
-          "score": 0.8054649233818054,
-          "reranker_score": 5.526988983154297
+          "score": 0.8054648637771606,
+          "reranker_score": 5.526989459991455
         },
         {
           "id": 313,
@@ -1630,8 +1632,8 @@
           "document": "Constitution of India",
           "page": 117,
           "chunk_index": 1,
-          "score": 0.7484132647514343,
-          "reranker_score": 4.937859058380127
+          "score": 0.7484132051467896,
+          "reranker_score": 4.937861442565918
         },
         {
           "id": 419,
@@ -1641,7 +1643,7 @@
           "page": 153,
           "chunk_index": 2,
           "score": 0.6936703324317932,
-          "reranker_score": 2.6264193058013916
+          "reranker_score": 2.6264209747314453
         },
         {
           "id": 156,
@@ -1650,8 +1652,8 @@
           "document": "Constitution of India",
           "page": 65,
           "chunk_index": 1,
-          "score": 0.7345141172409058,
-          "reranker_score": 1.9687001705169678
+          "score": 0.7345139980316162,
+          "reranker_score": 1.9687031507492065
         }
       ],
       "claim_2": [
@@ -1662,8 +1664,8 @@
           "document": "NCERT Polity",
           "page": 17,
           "chunk_index": 0,
-          "score": 0.6417475938796997,
-          "reranker_score": 0.5530871748924255
+          "score": 0.6417474746704102,
+          "reranker_score": 0.5530892610549927
         },
         {
           "id": 59,
@@ -1672,8 +1674,8 @@
           "document": "Constitution of India",
           "page": 32,
           "chunk_index": 0,
-          "score": 0.6323884725570679,
-          "reranker_score": 0.5050795078277588
+          "score": 0.6323884129524231,
+          "reranker_score": 0.5050817728042603
         },
         {
           "id": 558,
@@ -1682,8 +1684,8 @@
           "document": "Constitution of India",
           "page": 201,
           "chunk_index": 2,
-          "score": 0.621324360370636,
-          "reranker_score": 0.17714571952819824
+          "score": 0.6213243007659912,
+          "reranker_score": 0.17714589834213257
         },
         {
           "id": 562,
@@ -1692,8 +1694,8 @@
           "document": "Constitution of India",
           "page": 203,
           "chunk_index": 0,
-          "score": 0.6334595680236816,
-          "reranker_score": -1.8058083057403564
+          "score": 0.6334594488143921,
+          "reranker_score": -1.8058056831359863
         },
         {
           "id": 1146,
@@ -1703,7 +1705,7 @@
           "page": 19,
           "chunk_index": 0,
           "score": 0.6249154806137085,
-          "reranker_score": -2.0134048461914062
+          "reranker_score": -2.013404369354248
         }
       ]
     }
@@ -1765,7 +1767,7 @@
       },
       "claim_2": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence discusses the conditions under which a Speaker or Deputy Speaker vacates their office, but it does not explicitly state that a Member of the House of the People must resign from their political party upon being elected as Speaker. Therefore, the claim cannot be verified as supported or contradicted based on the evidence provided.",
+        "reasoning": "The provided evidence discusses the resignation and vacation of office for the Speaker of the House of the People but does not explicitly state that a Member of the House of the People must resign from their political party upon being elected as Speaker. Therefore, the claim cannot be verified as supported or contradicted based on the evidence provided.",
         "supporting_pages": [
           73,
           76
@@ -1854,11 +1856,11 @@
       "declared_answer": "C",
       "supported_options": [
         "C",
-        "D"
+        "B"
       ],
       "exactly_one_correct": false,
       "verdict": "INVALID",
-      "reasoning": "Statement I is supported by Evidence 1, which states that the Speaker shall not vacate his office until immediately before the first meeting after dissolution. Statement III is also supported by Evidence 1, which details the process for removal of the Speaker, including the requirement for a majority and a 14-day notice. However, Statement II is not supported by the evidence, as it does not mention that a Member must resign from their political party upon being elected as Speaker.",
+      "reasoning": "Statement I is supported by Evidence 1, which states that the Speaker shall not vacate his office until immediately before the first meeting after dissolution. Statement II is not supported by the evidence, as it does not mention that a Speaker must resign from their political party upon election. Statement III is supported by Evidence 1, which details the process for removal of the Speaker, including the requirement for a majority and a 14-day notice.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -1870,7 +1872,7 @@
         "page": 73,
         "chunk_index": 1,
         "score": 0.8742282390594482,
-        "reranker_score": 5.4977335929870605
+        "reranker_score": 5.497733116149902
       },
       {
         "id": 298,
@@ -1879,8 +1881,8 @@
         "document": "Constitution of India",
         "page": 112,
         "chunk_index": 1,
-        "score": 0.8344528675079346,
-        "reranker_score": 4.216663360595703
+        "score": 0.8344529867172241,
+        "reranker_score": 4.216663837432861
       },
       {
         "id": 299,
@@ -1889,8 +1891,8 @@
         "document": "Constitution of India",
         "page": 112,
         "chunk_index": 2,
-        "score": 0.7970370054244995,
-        "reranker_score": 2.8281188011169434
+        "score": 0.7970370650291443,
+        "reranker_score": 2.828117847442627
       },
       {
         "id": 179,
@@ -1900,7 +1902,7 @@
         "page": 73,
         "chunk_index": 0,
         "score": 0.8360143899917603,
-        "reranker_score": 1.9859836101531982
+        "reranker_score": 1.985982894897461
       },
       {
         "id": 182,
@@ -1909,8 +1911,8 @@
         "document": "Constitution of India",
         "page": 74,
         "chunk_index": 0,
-        "score": 0.8017855882644653,
-        "reranker_score": 1.7194342613220215
+        "score": 0.8017856478691101,
+        "reranker_score": 1.7194335460662842
       }
     ],
     "claim_evidence": {
@@ -1922,7 +1924,7 @@
           "document": "Constitution of India",
           "page": 112,
           "chunk_index": 2,
-          "score": 0.7782687544822693,
+          "score": 0.7782686948776245,
           "reranker_score": 8.380522727966309
         },
         {
@@ -1932,7 +1934,7 @@
           "document": "Constitution of India",
           "page": 73,
           "chunk_index": 1,
-          "score": 0.7823253870010376,
+          "score": 0.7823254466056824,
           "reranker_score": 7.061644554138184
         },
         {
@@ -1942,8 +1944,8 @@
           "document": "Constitution of India",
           "page": 73,
           "chunk_index": 2,
-          "score": 0.6872760057449341,
-          "reranker_score": 3.507084369659424
+          "score": 0.6872759461402893,
+          "reranker_score": 3.5070860385894775
         },
         {
           "id": 182,
@@ -1952,8 +1954,8 @@
           "document": "Constitution of India",
           "page": 74,
           "chunk_index": 0,
-          "score": 0.722484827041626,
-          "reranker_score": 2.9969401359558105
+          "score": 0.7224847674369812,
+          "reranker_score": 2.9969427585601807
         },
         {
           "id": 702,
@@ -1962,8 +1964,8 @@
           "document": "Constitution of India",
           "page": 249,
           "chunk_index": 0,
-          "score": 0.6956942677497864,
-          "reranker_score": 2.2944092750549316
+          "score": 0.6956942081451416,
+          "reranker_score": 2.294410467147827
         }
       ],
       "claim_2": [
@@ -1975,7 +1977,7 @@
           "page": 73,
           "chunk_index": 1,
           "score": 0.7648948431015015,
-          "reranker_score": 4.518557548522949
+          "reranker_score": 4.518558979034424
         },
         {
           "id": 310,
@@ -1984,8 +1986,8 @@
           "document": "Constitution of India",
           "page": 116,
           "chunk_index": 1,
-          "score": 0.7478602528572083,
-          "reranker_score": 3.089993953704834
+          "score": 0.7478600740432739,
+          "reranker_score": 3.089996099472046
         },
         {
           "id": 188,
@@ -1994,8 +1996,8 @@
           "document": "Constitution of India",
           "page": 76,
           "chunk_index": 0,
-          "score": 0.7501388788223267,
-          "reranker_score": 2.990760326385498
+          "score": 0.7501387596130371,
+          "reranker_score": 2.9907596111297607
         },
         {
           "id": 179,
@@ -2005,7 +2007,7 @@
           "page": 73,
           "chunk_index": 0,
           "score": 0.7537494897842407,
-          "reranker_score": 2.5610463619232178
+          "reranker_score": 2.5610485076904297
         },
         {
           "id": 189,
@@ -2015,7 +2017,7 @@
           "page": 76,
           "chunk_index": 1,
           "score": 0.7488375902175903,
-          "reranker_score": 2.5052807331085205
+          "reranker_score": 2.5052759647369385
         }
       ],
       "claim_3": [
@@ -2026,7 +2028,7 @@
           "document": "Constitution of India",
           "page": 73,
           "chunk_index": 1,
-          "score": 0.7935589551925659,
+          "score": 0.793559193611145,
           "reranker_score": 7.228626728057861
         },
         {
@@ -2036,8 +2038,8 @@
           "document": "Constitution of India",
           "page": 74,
           "chunk_index": 0,
-          "score": 0.711351752281189,
-          "reranker_score": 5.8507232666015625
+          "score": 0.7113518714904785,
+          "reranker_score": 5.850725173950195
         },
         {
           "id": 179,
@@ -2047,7 +2049,7 @@
           "page": 73,
           "chunk_index": 0,
           "score": 0.7403014898300171,
-          "reranker_score": 5.4692888259887695
+          "reranker_score": 5.469287872314453
         },
         {
           "id": 298,
@@ -2066,7 +2068,7 @@
           "document": "Constitution of India",
           "page": 62,
           "chunk_index": 1,
-          "score": 0.7302322387695312,
+          "score": 0.7302323579788208,
           "reranker_score": 4.509590148925781
         }
       ]
@@ -2122,7 +2124,7 @@
     "fact_verifications": {
       "claim_1": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly state that an Ordinance can amend any Central Act. It discusses the nature and limitations of Ordinances but does not confirm the claim that they can amend any Central Act.",
+        "reasoning": "The provided evidence does not explicitly state that an Ordinance can amend any Central Act. While it mentions that an Ordinance has the same force and effect as an Act of Parliament, it does not clarify the extent to which an Ordinance can amend existing laws or Central Acts. Therefore, the claim cannot be verified based on the evidence provided.",
         "supporting_pages": []
       },
       "claim_2": {
@@ -2219,8 +2221,8 @@
         "document": "Constitution of India",
         "page": 173,
         "chunk_index": 1,
-        "score": 0.7798852920532227,
-        "reranker_score": 1.2382382154464722
+        "score": 0.7798854112625122,
+        "reranker_score": 1.2382397651672363
       },
       {
         "id": 62,
@@ -2230,7 +2232,7 @@
         "page": 34,
         "chunk_index": 0,
         "score": 0.7712154388427734,
-        "reranker_score": -0.5369452238082886
+        "reranker_score": -0.5369471311569214
       },
       {
         "id": 388,
@@ -2240,7 +2242,7 @@
         "page": 143,
         "chunk_index": 1,
         "score": 0.7636923789978027,
-        "reranker_score": -2.075702428817749
+        "reranker_score": -2.0756983757019043
       },
       {
         "id": 401,
@@ -2249,8 +2251,8 @@
         "document": "Constitution of India",
         "page": 147,
         "chunk_index": 2,
-        "score": 0.789332926273346,
-        "reranker_score": -2.0951900482177734
+        "score": 0.7893330454826355,
+        "reranker_score": -2.0951895713806152
       },
       {
         "id": 400,
@@ -2260,7 +2262,7 @@
         "page": 147,
         "chunk_index": 1,
         "score": 0.7727524042129517,
-        "reranker_score": -2.108389377593994
+        "reranker_score": -2.1083881855010986
       }
     ],
     "claim_evidence": {
@@ -2272,8 +2274,8 @@
           "document": "Constitution of India",
           "page": 173,
           "chunk_index": 1,
-          "score": 0.6717833876609802,
-          "reranker_score": -2.3297128677368164
+          "score": 0.671783447265625,
+          "reranker_score": -2.3297154903411865
         },
         {
           "id": 224,
@@ -2282,8 +2284,8 @@
           "document": "Constitution of India",
           "page": 87,
           "chunk_index": 2,
-          "score": 0.6762994527816772,
-          "reranker_score": -3.374966621398926
+          "score": 0.676299512386322,
+          "reranker_score": -3.3749704360961914
         },
         {
           "id": 350,
@@ -2293,7 +2295,7 @@
           "page": 129,
           "chunk_index": 1,
           "score": 0.699799656867981,
-          "reranker_score": -3.375009536743164
+          "reranker_score": -3.3750057220458984
         },
         {
           "id": 401,
@@ -2303,7 +2305,7 @@
           "page": 147,
           "chunk_index": 2,
           "score": 0.6582565307617188,
-          "reranker_score": -3.6508147716522217
+          "reranker_score": -3.6508138179779053
         },
         {
           "id": 400,
@@ -2312,8 +2314,8 @@
           "document": "Constitution of India",
           "page": 147,
           "chunk_index": 1,
-          "score": 0.6746010780334473,
-          "reranker_score": -4.447299957275391
+          "score": 0.6746009588241577,
+          "reranker_score": -4.447298049926758
         }
       ],
       "claim_2": [
@@ -2324,8 +2326,8 @@
           "document": "Constitution of India",
           "page": 5,
           "chunk_index": 0,
-          "score": 0.7120740413665771,
-          "reranker_score": -2.0473074913024902
+          "score": 0.7120739221572876,
+          "reranker_score": -2.0473103523254395
         },
         {
           "id": 224,
@@ -2334,8 +2336,8 @@
           "document": "Constitution of India",
           "page": 87,
           "chunk_index": 2,
-          "score": 0.7065762877464294,
-          "reranker_score": -5.4896697998046875
+          "score": 0.7065763473510742,
+          "reranker_score": -5.489669322967529
         },
         {
           "id": 109,
@@ -2344,8 +2346,8 @@
           "document": "Constitution of India",
           "page": 49,
           "chunk_index": 0,
-          "score": 0.7079589366912842,
-          "reranker_score": -5.9320878982543945
+          "score": 0.7079587578773499,
+          "reranker_score": -5.932085037231445
         },
         {
           "id": 106,
@@ -2354,8 +2356,8 @@
           "document": "Constitution of India",
           "page": 48,
           "chunk_index": 0,
-          "score": 0.7273166179656982,
-          "reranker_score": -6.1194353103637695
+          "score": 0.7273164987564087,
+          "reranker_score": -6.119433403015137
         },
         {
           "id": 110,
@@ -2364,7 +2366,7 @@
           "document": "Constitution of India",
           "page": 49,
           "chunk_index": 1,
-          "score": 0.703826904296875,
+          "score": 0.7038267850875854,
           "reranker_score": -6.183231353759766
         }
       ],
@@ -2376,8 +2378,8 @@
           "document": "Constitution of India",
           "page": 278,
           "chunk_index": 1,
-          "score": 0.7359461188316345,
-          "reranker_score": 0.9443890452384949
+          "score": 0.7359458804130554,
+          "reranker_score": 0.9443938732147217
         },
         {
           "id": 224,
@@ -2386,8 +2388,8 @@
           "document": "Constitution of India",
           "page": 87,
           "chunk_index": 2,
-          "score": 0.7487586140632629,
-          "reranker_score": 0.43264153599739075
+          "score": 0.7487585544586182,
+          "reranker_score": 0.43264201283454895
         },
         {
           "id": 349,
@@ -2396,8 +2398,8 @@
           "document": "Constitution of India",
           "page": 129,
           "chunk_index": 0,
-          "score": 0.765709400177002,
-          "reranker_score": -2.3594067096710205
+          "score": 0.7657092213630676,
+          "reranker_score": -2.3594021797180176
         },
         {
           "id": 400,
@@ -2407,7 +2409,7 @@
           "page": 147,
           "chunk_index": 1,
           "score": 0.7428662776947021,
-          "reranker_score": -4.154102325439453
+          "reranker_score": -4.154099941253662
         },
         {
           "id": 350,
@@ -2416,8 +2418,8 @@
           "document": "Constitution of India",
           "page": 129,
           "chunk_index": 1,
-          "score": 0.7437193393707275,
-          "reranker_score": -4.395333290100098
+          "score": 0.743719220161438,
+          "reranker_score": -4.395330429077148
         }
       ]
     }
@@ -2544,11 +2546,19 @@
     },
     "answer_verification": {
       "declared_answer": "A",
-      "supported_options": [],
-      "exactly_one_correct": false,
-      "verdict": "INSUFFICIENT",
-      "reasoning": "The provided evidence does not explicitly support either statement I or II. Therefore, no options can be confirmed as correct based on the evidence.",
-      "supporting_pages": []
+      "supported_options": [
+        "A"
+      ],
+      "exactly_one_correct": true,
+      "verdict": "VALID",
+      "reasoning": "Statement I is supported by the Constitution, which mentions that the Governor of a State acts in his/her own discretion in certain spheres. However, Statement II is not supported, as the President cannot reserve a bill without it being forwarded by the Governor.",
+      "supporting_pages": [
+        64,
+        203,
+        181,
+        34,
+        200
+      ]
     },
     "answer_evidence": [
       {
@@ -2558,8 +2568,8 @@
         "document": "Constitution of India",
         "page": 64,
         "chunk_index": 1,
-        "score": 0.7974933385848999,
-        "reranker_score": 0.26610928773880005
+        "score": 0.7974933981895447,
+        "reranker_score": 0.26611077785491943
       },
       {
         "id": 562,
@@ -2568,8 +2578,8 @@
         "document": "Constitution of India",
         "page": 203,
         "chunk_index": 0,
-        "score": 0.7914282083511353,
-        "reranker_score": -0.021000295877456665
+        "score": 0.7914280891418457,
+        "reranker_score": -0.021000802516937256
       },
       {
         "id": 497,
@@ -2578,8 +2588,8 @@
         "document": "Constitution of India",
         "page": 181,
         "chunk_index": 1,
-        "score": 0.7734485268592834,
-        "reranker_score": -0.10429075360298157
+        "score": 0.7734487652778625,
+        "reranker_score": -0.10429011285305023
       },
       {
         "id": 62,
@@ -2588,8 +2598,8 @@
         "document": "Constitution of India",
         "page": 34,
         "chunk_index": 0,
-        "score": 0.7887532114982605,
-        "reranker_score": -0.20476430654525757
+        "score": 0.78875333070755,
+        "reranker_score": -0.20476752519607544
       },
       {
         "id": 555,
@@ -2598,8 +2608,8 @@
         "document": "Constitution of India",
         "page": 200,
         "chunk_index": 2,
-        "score": 0.7794613838195801,
-        "reranker_score": -0.2509806752204895
+        "score": 0.7794615030288696,
+        "reranker_score": -0.2509780824184418
       }
     ],
     "claim_evidence": {
@@ -2611,8 +2621,8 @@
           "document": "Constitution of India",
           "page": 105,
           "chunk_index": 2,
-          "score": 0.7949750423431396,
-          "reranker_score": 1.7729301452636719
+          "score": 0.7949749231338501,
+          "reranker_score": 1.7729318141937256
         },
         {
           "id": 497,
@@ -2622,7 +2632,7 @@
           "page": 181,
           "chunk_index": 1,
           "score": 0.7575915455818176,
-          "reranker_score": 1.1485660076141357
+          "reranker_score": 1.1485651731491089
         },
         {
           "id": 739,
@@ -2631,8 +2641,8 @@
           "document": "Constitution of India",
           "page": 262,
           "chunk_index": 2,
-          "score": 0.7359381914138794,
-          "reranker_score": -0.33245646953582764
+          "score": 0.7359381318092346,
+          "reranker_score": -0.3324568271636963
         },
         {
           "id": 729,
@@ -2641,8 +2651,8 @@
           "document": "Constitution of India",
           "page": 258,
           "chunk_index": 1,
-          "score": 0.7349714040756226,
-          "reranker_score": -0.4041327238082886
+          "score": 0.734971284866333,
+          "reranker_score": -0.40412992238998413
         },
         {
           "id": 940,
@@ -2651,8 +2661,8 @@
           "document": "Constitution of India",
           "page": 331,
           "chunk_index": 0,
-          "score": 0.7410204410552979,
-          "reranker_score": -0.4835594594478607
+          "score": 0.7410203814506531,
+          "reranker_score": -0.48355916142463684
         }
       ],
       "claim_2": [
@@ -2673,8 +2683,8 @@
           "document": "Constitution of India",
           "page": 122,
           "chunk_index": 1,
-          "score": 0.7461966276168823,
-          "reranker_score": 1.8754513263702393
+          "score": 0.7461965680122375,
+          "reranker_score": 1.8754528760910034
         },
         {
           "id": 562,
@@ -2684,7 +2694,7 @@
           "page": 203,
           "chunk_index": 0,
           "score": 0.7502831220626831,
-          "reranker_score": 0.2302609086036682
+          "reranker_score": 0.23025566339492798
         },
         {
           "id": 329,
@@ -2694,7 +2704,7 @@
           "page": 122,
           "chunk_index": 2,
           "score": 0.7546881437301636,
-          "reranker_score": 0.09473150968551636
+          "reranker_score": 0.09472929686307907
         },
         {
           "id": 900,
@@ -2704,7 +2714,7 @@
           "page": 317,
           "chunk_index": 3,
           "score": 0.7259031534194946,
-          "reranker_score": -0.41845372319221497
+          "reranker_score": -0.41845646500587463
         }
       ]
     }
@@ -2773,7 +2783,7 @@
       },
       "claim_3": {
         "verdict": "SUPPORTED",
-        "reasoning": "The evidence explicitly states that 'No member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof.' This directly supports the claim that members of a State Legislature are not liable to court proceedings for their statements made within the House.",
+        "reasoning": "The evidence explicitly states that 'No member of the Legislature of a State shall be liable to any proceedings in any court in respect of anything said or any vote given by him in the Legislature or any committee thereof.' This directly supports the claim that members of a State Legislature are not liable to any court proceedings for their statements within the House.",
         "supporting_pages": [
           118
         ]
@@ -2859,7 +2869,7 @@
       ],
       "exactly_one_correct": true,
       "verdict": "VALID",
-      "reasoning": "All three statements are supported by the provided evidence. Evidence 1 confirms that the Governor is not answerable to any court for the exercise of powers (Statement I) and that no criminal proceedings can be instituted against the Governor during their term (Statement II). Evidence 3 supports that members of the State Legislature are not liable for anything said within the House (Statement III). Therefore, all statements are correct.",
+      "reasoning": "All three statements are supported by the provided evidence. Evidence 1 confirms that the Governor is not answerable to any court for the exercise of powers (Statement I) and that no criminal proceedings can be instituted against the Governor during their term (Statement II). Evidence 3 supports Statement III, indicating that members of the State Legislature are not liable to any proceedings in court for anything said within the House.",
       "supporting_pages": [
         250,
         64,
@@ -2876,8 +2886,8 @@
         "document": "Constitution of India",
         "page": 250,
         "chunk_index": 0,
-        "score": 0.8147356510162354,
-        "reranker_score": 1.8957736492156982
+        "score": 0.8147357106208801,
+        "reranker_score": 1.8957750797271729
       },
       {
         "id": 153,
@@ -2887,7 +2897,7 @@
         "page": 64,
         "chunk_index": 1,
         "score": 0.8101698160171509,
-        "reranker_score": 0.28548967838287354
+        "reranker_score": 0.2854905426502228
       },
       {
         "id": 912,
@@ -2896,8 +2906,8 @@
         "document": "Constitution of India",
         "page": 321,
         "chunk_index": 1,
-        "score": 0.7685376405715942,
-        "reranker_score": -0.233747661113739
+        "score": 0.768537700176239,
+        "reranker_score": -0.2337447702884674
       },
       {
         "id": 497,
@@ -2906,8 +2916,8 @@
         "document": "Constitution of India",
         "page": 181,
         "chunk_index": 1,
-        "score": 0.7692758440971375,
-        "reranker_score": -0.3935064971446991
+        "score": 0.769275963306427,
+        "reranker_score": -0.3935062885284424
       },
       {
         "id": 313,
@@ -2916,8 +2926,8 @@
         "document": "Constitution of India",
         "page": 117,
         "chunk_index": 1,
-        "score": 0.77714604139328,
-        "reranker_score": -0.800876796245575
+        "score": 0.7771461009979248,
+        "reranker_score": -0.800877034664154
       }
     ],
     "claim_evidence": {
@@ -2929,7 +2939,7 @@
           "document": "Constitution of India",
           "page": 250,
           "chunk_index": 0,
-          "score": 0.6693966388702393,
+          "score": 0.6693965196609497,
           "reranker_score": 8.31116008758545
         },
         {
@@ -2939,8 +2949,8 @@
           "document": "Constitution of India",
           "page": 276,
           "chunk_index": 0,
-          "score": 0.6308102607727051,
-          "reranker_score": 3.654900550842285
+          "score": 0.6308101415634155,
+          "reranker_score": 3.654902935028076
         },
         {
           "id": 346,
@@ -2949,8 +2959,8 @@
           "document": "Constitution of India",
           "page": 128,
           "chunk_index": 0,
-          "score": 0.6772013306617737,
-          "reranker_score": 2.5893502235412598
+          "score": 0.6772011518478394,
+          "reranker_score": 2.5893523693084717
         },
         {
           "id": 706,
@@ -2960,7 +2970,7 @@
           "page": 250,
           "chunk_index": 1,
           "score": 0.6914480924606323,
-          "reranker_score": 1.1697297096252441
+          "reranker_score": 1.1697282791137695
         },
         {
           "id": 684,
@@ -2969,8 +2979,8 @@
           "document": "Constitution of India",
           "page": 243,
           "chunk_index": 0,
-          "score": 0.6729223132133484,
-          "reranker_score": 0.8467123508453369
+          "score": 0.6729222536087036,
+          "reranker_score": 0.8467092514038086
         }
       ],
       "claim_2": [
@@ -2981,8 +2991,8 @@
           "document": "Constitution of India",
           "page": 250,
           "chunk_index": 1,
-          "score": 0.7612184286117554,
-          "reranker_score": 7.485069751739502
+          "score": 0.7612184882164001,
+          "reranker_score": 7.485069274902344
         },
         {
           "id": 705,
@@ -2991,7 +3001,7 @@
           "document": "Constitution of India",
           "page": 250,
           "chunk_index": 0,
-          "score": 0.6783056855201721,
+          "score": 0.6783055067062378,
           "reranker_score": 6.284495830535889
         },
         {
@@ -3001,8 +3011,8 @@
           "document": "Constitution of India",
           "page": 102,
           "chunk_index": 0,
-          "score": 0.6422832608222961,
-          "reranker_score": 0.34808340668678284
+          "score": 0.6422833204269409,
+          "reranker_score": 0.34808123111724854
         },
         {
           "id": 268,
@@ -3012,7 +3022,7 @@
           "page": 102,
           "chunk_index": 1,
           "score": 0.6356967687606812,
-          "reranker_score": 0.13749174773693085
+          "reranker_score": 0.13749131560325623
         },
         {
           "id": 912,
@@ -3021,8 +3031,8 @@
           "document": "Constitution of India",
           "page": 321,
           "chunk_index": 1,
-          "score": 0.6283389329910278,
-          "reranker_score": -0.16503462195396423
+          "score": 0.6283389925956726,
+          "reranker_score": -0.1650349497795105
         }
       ],
       "claim_3": [
@@ -3033,8 +3043,8 @@
           "document": "Constitution of India",
           "page": 118,
           "chunk_index": 1,
-          "score": 0.705288290977478,
-          "reranker_score": 8.158356666564941
+          "score": 0.7052884101867676,
+          "reranker_score": 8.158355712890625
         },
         {
           "id": 708,
@@ -3044,7 +3054,7 @@
           "page": 251,
           "chunk_index": 0,
           "score": 0.6797767877578735,
-          "reranker_score": 7.268646240234375
+          "reranker_score": 7.268645286560059
         },
         {
           "id": 195,
@@ -3053,7 +3063,7 @@
           "document": "Constitution of India",
           "page": 78,
           "chunk_index": 1,
-          "score": 0.6826357245445251,
+          "score": 0.6826358437538147,
           "reranker_score": 6.827696800231934
         },
         {
@@ -3063,7 +3073,7 @@
           "document": "Constitution of India",
           "page": 128,
           "chunk_index": 0,
-          "score": 0.7078537344932556,
+          "score": 0.7078537940979004,
           "reranker_score": 4.967638969421387
         },
         {
@@ -3073,8 +3083,8 @@
           "document": "Constitution of India",
           "page": 379,
           "chunk_index": 0,
-          "score": 0.6669090986251831,
-          "reranker_score": 3.984692096710205
+          "score": 0.6669093370437622,
+          "reranker_score": 3.9846906661987305
         }
       ]
     }
@@ -3091,9 +3101,9 @@
     "official_answer": "D",
     "audited_answer": "D",
     "label_audit_status": "corroborated",
-    "predicted_answer": "D",
-    "status": "CORRECT",
-    "status_audited": "CORRECT",
+    "predicted_answer": null,
+    "status": "ABSTAINED",
+    "status_audited": "ABSTAINED",
     "claim_mode": "bound",
     "policy": "strict",
     "claim_top_k": 5,
@@ -3135,9 +3145,10 @@
         ]
       },
       "claim_2": {
-        "verdict": "CONTRADICTED",
-        "reasoning": "The evidence explicitly states that a person shall not be disqualified on the ground of being less than twenty-five years of age if they have attained the age of twenty-one years. This implies that the minimum age for being a member of a Panchayat is twenty-one years, contradicting the claim that the age requirement is thirty years.",
+        "verdict": "INSUFFICIENT",
+        "reasoning": "The provided evidence does not explicitly state the age requirement for being a member of a Panchayat at the intermediate level. While it mentions disqualifications related to age, it does not confirm that a person must be thirty years old to be eligible. Therefore, the claim cannot be verified based on the evidence provided.",
         "supporting_pages": [
+          151,
           153
         ]
       },
@@ -3154,19 +3165,19 @@
       "question_asks_for_incorrect": true,
       "statement_statuses": {
         "I": "CONTRADICTED",
-        "II": "CONTRADICTED",
+        "II": "INSUFFICIENT",
         "III": "CONTRADICTED"
       },
       "supported_statements": [],
       "contradicted_statements": [
         "I",
-        "II",
         "III"
       ],
-      "insufficient_statements": [],
+      "insufficient_statements": [
+        "II"
+      ],
       "target_statements": [
         "I",
-        "II",
         "III"
       ],
       "surviving_options": null,
@@ -3205,10 +3216,8 @@
           "negated": false
         }
       },
-      "matching_options": [
-        "D"
-      ],
-      "abstention_reason": null,
+      "matching_options": [],
+      "abstention_reason": "policy_insufficient_evidence",
       "statement_claims": {
         "I": [
           "claim_1"
@@ -3220,7 +3229,7 @@
           "claim_3"
         ]
       },
-      "complete_evidence": true
+      "complete_evidence": false
     },
     "answer_verification": {
       "declared_answer": "D",
@@ -3231,7 +3240,7 @@
       ],
       "exactly_one_correct": false,
       "verdict": "INVALID",
-      "reasoning": "I. Panchayats at the intermediate level do not exist in all States, as indicated in Evidence 1, which mentions the case of a State not having Panchayats at the intermediate level. Therefore, statement I is not correct. II. The evidence does not specify the age requirement for being a member of a Panchayat at the intermediate level, so we cannot confirm the correctness of statement II. III. Evidence 4 states that the Governor, not the Chief Minister, constitutes a Finance Commission to review the financial position of Panchayats. Thus, statement III is also not correct. Therefore, options A (I and II only), B (II and III only), and C (I and III only) are supported as they include statements that are not correct.",
+      "reasoning": "I. Panchayats at the intermediate level do not exist in all States, as indicated in Evidence 1, which mentions the case of a State not having Panchayats at the intermediate level. Therefore, statement I is not correct. II. The evidence does not specify the age requirement for being a member of a Panchayat at the intermediate level, so we cannot confirm the correctness of statement II. III. The evidence indicates that the Governor, not the Chief Minister, constitutes a Finance Commission to review the financial position of Panchayats, making statement III not correct. Thus, options A (I and II only), B (II and III only), and C (I and III only) are supported as they include statements that are not correct.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -3243,7 +3252,7 @@
         "page": 151,
         "chunk_index": 1,
         "score": 0.7913286685943604,
-        "reranker_score": 2.2793424129486084
+        "reranker_score": 2.27934193611145
       },
       {
         "id": 413,
@@ -3252,8 +3261,8 @@
         "document": "Constitution of India",
         "page": 151,
         "chunk_index": 2,
-        "score": 0.7629162669181824,
-        "reranker_score": 0.5920341610908508
+        "score": 0.7629162073135376,
+        "reranker_score": 0.5920354127883911
       },
       {
         "id": 423,
@@ -3262,8 +3271,8 @@
         "document": "Constitution of India",
         "page": 155,
         "chunk_index": 0,
-        "score": 0.76167231798172,
-        "reranker_score": -0.13836753368377686
+        "score": 0.7616722583770752,
+        "reranker_score": -0.1383696347475052
       },
       {
         "id": 421,
@@ -3272,8 +3281,8 @@
         "document": "Constitution of India",
         "page": 154,
         "chunk_index": 1,
-        "score": 0.7851629853248596,
-        "reranker_score": -0.8560270071029663
+        "score": 0.7851629257202148,
+        "reranker_score": -0.8560279011726379
       },
       {
         "id": 408,
@@ -3282,8 +3291,8 @@
         "document": "Constitution of India",
         "page": 150,
         "chunk_index": 0,
-        "score": 0.773606538772583,
-        "reranker_score": -0.8910934925079346
+        "score": 0.7736065983772278,
+        "reranker_score": -0.8910952806472778
       }
     ],
     "claim_evidence": {
@@ -3295,8 +3304,8 @@
           "document": "Constitution of India",
           "page": 151,
           "chunk_index": 1,
-          "score": 0.6820625066757202,
-          "reranker_score": 5.955549716949463
+          "score": 0.6820623874664307,
+          "reranker_score": 5.955550670623779
         },
         {
           "id": 409,
@@ -3305,8 +3314,8 @@
           "document": "Constitution of India",
           "page": 150,
           "chunk_index": 1,
-          "score": 0.6447242498397827,
-          "reranker_score": 3.7307796478271484
+          "score": 0.6447241306304932,
+          "reranker_score": 3.730778932571411
         },
         {
           "id": 408,
@@ -3316,7 +3325,7 @@
           "page": 150,
           "chunk_index": 0,
           "score": 0.6754782199859619,
-          "reranker_score": 3.363633632659912
+          "reranker_score": 3.363633394241333
         },
         {
           "id": 413,
@@ -3326,7 +3335,7 @@
           "page": 151,
           "chunk_index": 2,
           "score": 0.632769763469696,
-          "reranker_score": 3.1666057109832764
+          "reranker_score": 3.166605234146118
         },
         {
           "id": 411,
@@ -3335,8 +3344,8 @@
           "document": "Constitution of India",
           "page": 151,
           "chunk_index": 0,
-          "score": 0.6580579280853271,
-          "reranker_score": 3.1120312213897705
+          "score": 0.6580578088760376,
+          "reranker_score": 3.1120307445526123
         }
       ],
       "claim_2": [
@@ -3348,7 +3357,7 @@
           "page": 153,
           "chunk_index": 1,
           "score": 0.7910701036453247,
-          "reranker_score": 1.2964367866516113
+          "reranker_score": 1.296436071395874
         },
         {
           "id": 412,
@@ -3358,7 +3367,7 @@
           "page": 151,
           "chunk_index": 1,
           "score": 0.7480266094207764,
-          "reranker_score": 0.05653686821460724
+          "reranker_score": 0.056536607444286346
         },
         {
           "id": 413,
@@ -3368,7 +3377,7 @@
           "page": 151,
           "chunk_index": 2,
           "score": 0.7080137729644775,
-          "reranker_score": -0.7574161887168884
+          "reranker_score": -0.7574142217636108
         },
         {
           "id": 442,
@@ -3378,7 +3387,7 @@
           "page": 162,
           "chunk_index": 0,
           "score": 0.7311825752258301,
-          "reranker_score": -1.520244836807251
+          "reranker_score": -1.5202460289001465
         },
         {
           "id": 411,
@@ -3387,8 +3396,8 @@
           "document": "Constitution of India",
           "page": 151,
           "chunk_index": 0,
-          "score": 0.7200566530227661,
-          "reranker_score": -2.709305763244629
+          "score": 0.7200567126274109,
+          "reranker_score": -2.709306001663208
         }
       ],
       "claim_3": [
@@ -3410,7 +3419,7 @@
           "page": 154,
           "chunk_index": 1,
           "score": 0.8227252960205078,
-          "reranker_score": 2.782639503479004
+          "reranker_score": 2.782639741897583
         },
         {
           "id": 423,
@@ -3419,8 +3428,8 @@
           "document": "Constitution of India",
           "page": 155,
           "chunk_index": 0,
-          "score": 0.8043604493141174,
-          "reranker_score": 2.0073094367980957
+          "score": 0.8043605089187622,
+          "reranker_score": 2.007310390472412
         },
         {
           "id": 532,
@@ -3429,8 +3438,8 @@
           "document": "Constitution of India",
           "page": 193,
           "chunk_index": 1,
-          "score": 0.7837231159210205,
-          "reranker_score": 1.8904993534088135
+          "score": 0.7837230563163757,
+          "reranker_score": 1.8905003070831299
         },
         {
           "id": 445,
@@ -3439,8 +3448,8 @@
           "document": "Constitution of India",
           "page": 163,
           "chunk_index": 0,
-          "score": 0.7593907117843628,
-          "reranker_score": 1.609395980834961
+          "score": 0.7593905925750732,
+          "reranker_score": 1.609397292137146
         }
       ]
     }
@@ -3495,13 +3504,19 @@
     "fact_verifications": {
       "claim_1": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh or the number of National Parks in the State. Therefore, it is insufficient to verify the claim.",
+        "reasoning": "The provided evidence does not contain any information regarding the capital of Arunachal Pradesh or the number of National Parks in the state. Therefore, it is insufficient to verify the claim.",
         "supporting_pages": []
       },
       "claim_2": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence on the basis of a Constitutional Amendment Act. While there are references to the State of Nagaland Act, 1962, and provisions related to Nagaland in the Constitution, there is no direct mention of the constitutional basis for the state's creation. Therefore, the claim cannot be verified as supported or contradicted based on the evidence provided.",
-        "supporting_pages": []
+        "reasoning": "The provided evidence does not explicitly state that Nagaland came into existence on the basis of a Constitutional Amendment Act. While it mentions the State of Nagaland Act, 1962, and various provisions related to Nagaland, it does not confirm the claim regarding the basis of its existence as a Constitutional Amendment Act.",
+        "supporting_pages": [
+          264,
+          267,
+          221,
+          284,
+          266
+        ]
       },
       "claim_3": {
         "verdict": "INSUFFICIENT",
@@ -3567,12 +3582,11 @@
       "declared_answer": "C",
       "supported_options": [
         "A",
-        "B",
-        "C"
+        "B"
       ],
       "exactly_one_correct": false,
       "verdict": "INVALID",
-      "reasoning": "The evidence provided does not explicitly confirm or deny the correctness of the pairs for Arunachal Pradesh, Nagaland, and Tripura. However, based on the historical context of these states, it can be inferred that: \n- Arunachal Pradesh has a capital named after a fort (Itanagar, named after Ita Fort) and has two national parks (Namdapha and Mouling). \n- Nagaland was created through the Nagaland Act, 1962, which is a constitutional amendment. \n- Tripura was indeed a Part 'C' state and became a centrally administered territory before attaining full statehood. \nThus, all three pairs appear to be correctly matched, supporting option C. However, since the evidence does not explicitly confirm this, options A and B are also included as they could be interpreted based on the context.",
+      "reasoning": "The evidence does not explicitly confirm the details of each state as described in the pairs. However, it does provide information about the status of Tripura as a Chief Commissioner's Province before becoming a full-fledged state, which supports the claim in pair III. The evidence regarding Nagaland's formation through a Constitutional Amendment is also supported. The evidence for Arunachal Pradesh does not confirm the details about its capital or national parks. Therefore, pairs II and III are correctly matched, leading to the conclusion that only two pairs are correctly matched.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -3583,8 +3597,8 @@
         "document": "Constitution of India",
         "page": 127,
         "chunk_index": 2,
-        "score": 0.7301309108734131,
-        "reranker_score": -2.3337156772613525
+        "score": 0.730130672454834,
+        "reranker_score": -2.333714485168457
       },
       {
         "id": 616,
@@ -3594,7 +3608,7 @@
         "page": 221,
         "chunk_index": 2,
         "score": 0.7482029795646667,
-        "reranker_score": -3.9270856380462646
+        "reranker_score": -3.9270834922790527
       },
       {
         "id": 819,
@@ -3603,8 +3617,8 @@
         "document": "Constitution of India",
         "page": 289,
         "chunk_index": 0,
-        "score": 0.7545467019081116,
-        "reranker_score": -4.05952262878418
+        "score": 0.7545466423034668,
+        "reranker_score": -4.059523105621338
       },
       {
         "id": 822,
@@ -3613,8 +3627,8 @@
         "document": "Constitution of India",
         "page": 290,
         "chunk_index": 0,
-        "score": 0.7864818572998047,
-        "reranker_score": -4.960309982299805
+        "score": 0.7864816188812256,
+        "reranker_score": -4.960306167602539
       },
       {
         "id": 778,
@@ -3623,8 +3637,8 @@
         "document": "Constitution of India",
         "page": 275,
         "chunk_index": 1,
-        "score": 0.7285110354423523,
-        "reranker_score": -5.131228446960449
+        "score": 0.7285109758377075,
+        "reranker_score": -5.131225109100342
       }
     ],
     "claim_evidence": {
@@ -3636,8 +3650,8 @@
           "document": "Constitution of India",
           "page": 290,
           "chunk_index": 2,
-          "score": 0.622961163520813,
-          "reranker_score": -3.9693055152893066
+          "score": 0.6229610443115234,
+          "reranker_score": -3.969304323196411
         },
         {
           "id": 344,
@@ -3646,8 +3660,8 @@
           "document": "Constitution of India",
           "page": 127,
           "chunk_index": 2,
-          "score": 0.6418870687484741,
-          "reranker_score": -4.5588579177856445
+          "score": 0.6418868899345398,
+          "reranker_score": -4.558856964111328
         },
         {
           "id": 429,
@@ -3656,8 +3670,8 @@
           "document": "Constitution of India",
           "page": 157,
           "chunk_index": 0,
-          "score": 0.6444896459579468,
-          "reranker_score": -4.689503192901611
+          "score": 0.6444895267486572,
+          "reranker_score": -4.6895036697387695
         },
         {
           "id": 779,
@@ -3666,8 +3680,8 @@
           "document": "Constitution of India",
           "page": 275,
           "chunk_index": 2,
-          "score": 0.6494733095169067,
-          "reranker_score": -4.773249626159668
+          "score": 0.6494731903076172,
+          "reranker_score": -4.773252487182617
         },
         {
           "id": 781,
@@ -3676,8 +3690,8 @@
           "document": "Constitution of India",
           "page": 276,
           "chunk_index": 1,
-          "score": 0.6308921575546265,
-          "reranker_score": -5.020750999450684
+          "score": 0.6308919787406921,
+          "reranker_score": -5.020750045776367
         }
       ],
       "claim_2": [
@@ -3688,8 +3702,8 @@
           "document": "Constitution of India",
           "page": 264,
           "chunk_index": 1,
-          "score": 0.7547932863235474,
-          "reranker_score": 2.5926156044006348
+          "score": 0.7547932267189026,
+          "reranker_score": 2.592616081237793
         },
         {
           "id": 755,
@@ -3698,8 +3712,8 @@
           "document": "Constitution of India",
           "page": 267,
           "chunk_index": 2,
-          "score": 0.753974437713623,
-          "reranker_score": 1.3200186491012573
+          "score": 0.7539743185043335,
+          "reranker_score": 1.3200182914733887
         },
         {
           "id": 616,
@@ -3709,7 +3723,7 @@
           "page": 221,
           "chunk_index": 2,
           "score": 0.7520222663879395,
-          "reranker_score": 1.0491149425506592
+          "reranker_score": 1.0491139888763428
         },
         {
           "id": 807,
@@ -3718,8 +3732,8 @@
           "document": "Constitution of India",
           "page": 284,
           "chunk_index": 1,
-          "score": 0.7535918354988098,
-          "reranker_score": 1.0052716732025146
+          "score": 0.753591775894165,
+          "reranker_score": 1.0052709579467773
         },
         {
           "id": 749,
@@ -3728,8 +3742,8 @@
           "document": "Constitution of India",
           "page": 266,
           "chunk_index": 0,
-          "score": 0.7406349778175354,
-          "reranker_score": 0.175358384847641
+          "score": 0.7406347990036011,
+          "reranker_score": 0.17535720765590668
         }
       ],
       "claim_3": [
@@ -3741,7 +3755,7 @@
           "page": 290,
           "chunk_index": 0,
           "score": 0.7415808439254761,
-          "reranker_score": 2.676685333251953
+          "reranker_score": 2.676682472229004
         },
         {
           "id": 811,
@@ -3750,8 +3764,8 @@
           "document": "Constitution of India",
           "page": 286,
           "chunk_index": 0,
-          "score": 0.70878005027771,
-          "reranker_score": -0.9437800049781799
+          "score": 0.7087802290916443,
+          "reranker_score": -0.9437788724899292
         },
         {
           "id": 814,
@@ -3760,8 +3774,8 @@
           "document": "Constitution of India",
           "page": 287,
           "chunk_index": 0,
-          "score": 0.708314061164856,
-          "reranker_score": -1.1168537139892578
+          "score": 0.7083142399787903,
+          "reranker_score": -1.1168526411056519
         },
         {
           "id": 806,
@@ -3770,8 +3784,8 @@
           "document": "Constitution of India",
           "page": 284,
           "chunk_index": 0,
-          "score": 0.7224857211112976,
-          "reranker_score": -2.543618679046631
+          "score": 0.7224857807159424,
+          "reranker_score": -2.543614387512207
         },
         {
           "id": 817,
@@ -3780,8 +3794,8 @@
           "document": "Constitution of India",
           "page": 288,
           "chunk_index": 1,
-          "score": 0.7125822305679321,
-          "reranker_score": -2.5960707664489746
+          "score": 0.7125823497772217,
+          "reranker_score": -2.59607195854187
         }
       ]
     }
@@ -3827,11 +3841,12 @@
     "fact_verifications": {
       "claim_1": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The evidence indicates that the executive power of a State extends to Scheduled Areas, and the Governor has specific powers regarding administration in these areas. However, it does not explicitly state that the State Government loses its executive power entirely or that a local body assumes total administration. Therefore, the claim is not fully supported by the evidence provided.",
+        "reasoning": "The evidence indicates that the executive power of a State extends to Scheduled Areas, and the Governor has specific powers regarding administration in these areas. However, it does not explicitly state that the State Government loses its executive power entirely or that a local body assumes total administration. Therefore, the claim cannot be fully verified with the provided evidence.",
         "supporting_pages": [
-          1,
-          2,
-          5
+          307,
+          174,
+          175,
+          308
         ]
       },
       "claim_2": {
@@ -3922,8 +3937,8 @@
         "document": "Constitution of India",
         "page": 307,
         "chunk_index": 0,
-        "score": 0.8083274364471436,
-        "reranker_score": 1.7325425148010254
+        "score": 0.808327317237854,
+        "reranker_score": 1.732541799545288
       },
       {
         "id": 449,
@@ -3933,7 +3948,7 @@
         "page": 164,
         "chunk_index": 1,
         "score": 0.7705898880958557,
-        "reranker_score": 1.186276912689209
+        "reranker_score": 1.1862776279449463
       },
       {
         "id": 475,
@@ -3942,8 +3957,8 @@
         "document": "Constitution of India",
         "page": 174,
         "chunk_index": 0,
-        "score": 0.778058648109436,
-        "reranker_score": 0.8589324355125427
+        "score": 0.7780588865280151,
+        "reranker_score": 0.8589305877685547
       },
       {
         "id": 868,
@@ -3952,8 +3967,8 @@
         "document": "Constitution of India",
         "page": 307,
         "chunk_index": 1,
-        "score": 0.7660976052284241,
-        "reranker_score": 0.6749364137649536
+        "score": 0.7660975456237793,
+        "reranker_score": 0.6749354600906372
       },
       {
         "id": 552,
@@ -3962,8 +3977,8 @@
         "document": "Constitution of India",
         "page": 199,
         "chunk_index": 2,
-        "score": 0.7699403166770935,
-        "reranker_score": 0.6703822612762451
+        "score": 0.7699403762817383,
+        "reranker_score": 0.6703846454620361
       }
     ],
     "claim_evidence": {
@@ -3975,8 +3990,8 @@
           "document": "Constitution of India",
           "page": 307,
           "chunk_index": 0,
-          "score": 0.7773990631103516,
-          "reranker_score": 3.894375801086426
+          "score": 0.777398943901062,
+          "reranker_score": 3.8943796157836914
         },
         {
           "id": 475,
@@ -3985,8 +4000,8 @@
           "document": "Constitution of India",
           "page": 174,
           "chunk_index": 0,
-          "score": 0.7485382556915283,
-          "reranker_score": 3.1273443698883057
+          "score": 0.7485381364822388,
+          "reranker_score": 3.127344846725464
         },
         {
           "id": 57,
@@ -3996,7 +4011,7 @@
           "page": 31,
           "chunk_index": 0,
           "score": 0.7541906237602234,
-          "reranker_score": 1.7743163108825684
+          "reranker_score": 1.774317741394043
         },
         {
           "id": 478,
@@ -4005,8 +4020,8 @@
           "document": "Constitution of India",
           "page": 175,
           "chunk_index": 0,
-          "score": 0.7383491396903992,
-          "reranker_score": 1.5491876602172852
+          "score": 0.7383490800857544,
+          "reranker_score": 1.5491865873336792
         },
         {
           "id": 871,
@@ -4016,7 +4031,7 @@
           "page": 308,
           "chunk_index": 1,
           "score": 0.7487988471984863,
-          "reranker_score": 1.2269885540008545
+          "reranker_score": 1.2269898653030396
         }
       ],
       "claim_2": [
@@ -4027,8 +4042,8 @@
           "document": "Constitution of India",
           "page": 307,
           "chunk_index": 0,
-          "score": 0.7906118631362915,
-          "reranker_score": 3.6089863777160645
+          "score": 0.7906116247177124,
+          "reranker_score": 3.6089861392974854
         },
         {
           "id": 475,
@@ -4038,7 +4053,7 @@
           "page": 174,
           "chunk_index": 0,
           "score": 0.7660090923309326,
-          "reranker_score": 2.493816375732422
+          "reranker_score": 2.4938158988952637
         },
         {
           "id": 874,
@@ -4047,8 +4062,8 @@
           "document": "Constitution of India",
           "page": 309,
           "chunk_index": 1,
-          "score": 0.7450377345085144,
-          "reranker_score": 2.2195703983306885
+          "score": 0.7450376152992249,
+          "reranker_score": 2.219571113586426
         },
         {
           "id": 57,
@@ -4057,8 +4072,8 @@
           "document": "Constitution of India",
           "page": 31,
           "chunk_index": 0,
-          "score": 0.7719913721084595,
-          "reranker_score": 2.205045700073242
+          "score": 0.7719913125038147,
+          "reranker_score": 2.2050483226776123
         },
         {
           "id": 871,
@@ -4068,7 +4083,7 @@
           "page": 308,
           "chunk_index": 1,
           "score": 0.7627060413360596,
-          "reranker_score": 0.9688163995742798
+          "reranker_score": 0.9688171148300171
         }
       ]
     }
@@ -4132,7 +4147,7 @@
     "fact_verifications": {
       "claim_1": {
         "verdict": "INSUFFICIENT",
-        "reasoning": "The provided evidence discusses the regulation and development of oilfields and petroleum products but does not explicitly state that the Petroleum and Natural Gas Regulatory Board regulates the production of crude oil. Therefore, it does not support the claim that the production of crude oil-free is regulated by this specific board.",
+        "reasoning": "The provided evidence discusses the regulation and development of oilfields and petroleum products but does not explicitly state that the Petroleum and Natural Gas Regulatory Board regulates the production of crude oil. Therefore, it does not fully support the claim.",
         "supporting_pages": [
           344
         ]
@@ -4146,7 +4161,7 @@
       },
       "claim_3": {
         "verdict": "SUPPORTED",
-        "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products are under the control of the Union as declared by Parliament, which supports the claim that the Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of these products.",
+        "reasoning": "The evidence explicitly states that the regulation and development of petroleum and petroleum products are under the control of the Union as declared by Parliament, which aligns with the claim that the Petroleum and Natural Gas Regulatory Board regulates the marketing and sale of these products.",
         "supporting_pages": [
           344
         ]
@@ -4231,7 +4246,7 @@
       ],
       "exactly_one_correct": false,
       "verdict": "INVALID",
-      "reasoning": "The evidence indicates that the Petroleum and Natural Gas Regulatory Board regulates the refining, storage, and distribution of petroleum (II), as well as the marketing and sale of petroleum products (III). However, it does not explicitly mention the regulation of the production of crude oil (I) or the production of natural gas (IV). Therefore, only two activities (II and III) are supported as regulated by the Board.",
+      "reasoning": "The evidence indicates that the Petroleum and Natural Gas Regulatory Board regulates the refining, storage, and distribution of petroleum (II), as well as the marketing and sale of petroleum products (III). However, it does not explicitly mention the regulation of the production of crude oil (I) or the production of natural gas (IV). Therefore, only two activities (II and III) are supported as being regulated by the Board.",
       "supporting_pages": []
     },
     "answer_evidence": [
@@ -4242,8 +4257,8 @@
         "document": "Constitution of India",
         "page": 344,
         "chunk_index": 0,
-        "score": 0.6612238883972168,
-        "reranker_score": -4.500155448913574
+        "score": 0.6612237691879272,
+        "reranker_score": -4.500154495239258
       },
       {
         "id": 524,
@@ -4252,8 +4267,8 @@
         "document": "Constitution of India",
         "page": 190,
         "chunk_index": 1,
-        "score": 0.6153609156608582,
-        "reranker_score": -4.57785177230835
+        "score": 0.6153607964515686,
+        "reranker_score": -4.577851295471191
       },
       {
         "id": 984,
@@ -4262,8 +4277,8 @@
         "document": "Constitution of India",
         "page": 346,
         "chunk_index": 1,
-        "score": 0.6440191268920898,
-        "reranker_score": -4.630114555358887
+        "score": 0.6440190672874451,
+        "reranker_score": -4.630112648010254
       },
       {
         "id": 978,
@@ -4272,8 +4287,8 @@
         "document": "Constitution of India",
         "page": 344,
         "chunk_index": 1,
-        "score": 0.625948429107666,
-        "reranker_score": -4.700499534606934
+        "score": 0.6259482502937317,
+        "reranker_score": -4.70050048828125
       },
       {
         "id": 1060,
@@ -4282,8 +4297,8 @@
         "document": "Constitution of India",
         "page": 380,
         "chunk_index": 1,
-        "score": 0.6171791553497314,
-        "reranker_score": -4.933835983276367
+        "score": 0.6171788573265076,
+        "reranker_score": -4.933836460113525
       }
     ],
     "claim_evidence": {
@@ -4295,8 +4310,8 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 0,
-          "score": 0.6196909546852112,
-          "reranker_score": -3.189587116241455
+          "score": 0.619691014289856,
+          "reranker_score": -3.189586639404297
         },
         {
           "id": 528,
@@ -4305,8 +4320,8 @@
           "document": "Constitution of India",
           "page": 192,
           "chunk_index": 0,
-          "score": 0.575482964515686,
-          "reranker_score": -4.703554153442383
+          "score": 0.5754829049110413,
+          "reranker_score": -4.703553199768066
         },
         {
           "id": 984,
@@ -4315,8 +4330,8 @@
           "document": "Constitution of India",
           "page": 346,
           "chunk_index": 1,
-          "score": 0.5800177454948425,
-          "reranker_score": -6.936955451965332
+          "score": 0.5800176858901978,
+          "reranker_score": -6.936956405639648
         },
         {
           "id": 996,
@@ -4325,8 +4340,8 @@
           "document": "Constitution of India",
           "page": 351,
           "chunk_index": 1,
-          "score": 0.5710931420326233,
-          "reranker_score": -7.465801239013672
+          "score": 0.5710930824279785,
+          "reranker_score": -7.465799331665039
         },
         {
           "id": 978,
@@ -4335,8 +4350,8 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 1,
-          "score": 0.5870720148086548,
-          "reranker_score": -8.011676788330078
+          "score": 0.5870718955993652,
+          "reranker_score": -8.011672973632812
         }
       ],
       "claim_2": [
@@ -4348,7 +4363,7 @@
           "page": 344,
           "chunk_index": 0,
           "score": 0.6265949010848999,
-          "reranker_score": -2.526343822479248
+          "reranker_score": -2.5263428688049316
         },
         {
           "id": 528,
@@ -4358,7 +4373,7 @@
           "page": 192,
           "chunk_index": 0,
           "score": 0.6142474412918091,
-          "reranker_score": -5.4984869956970215
+          "reranker_score": -5.4984893798828125
         },
         {
           "id": 978,
@@ -4367,7 +4382,7 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 1,
-          "score": 0.6069583892822266,
+          "score": 0.6069583296775818,
           "reranker_score": -6.584238052368164
         },
         {
@@ -4378,7 +4393,7 @@
           "page": 351,
           "chunk_index": 1,
           "score": 0.573166012763977,
-          "reranker_score": -7.834059715270996
+          "reranker_score": -7.834061145782471
         },
         {
           "id": 984,
@@ -4387,8 +4402,8 @@
           "document": "Constitution of India",
           "page": 346,
           "chunk_index": 1,
-          "score": 0.5728920102119446,
-          "reranker_score": -7.952613830566406
+          "score": 0.5728920698165894,
+          "reranker_score": -7.952614784240723
         }
       ],
       "claim_3": [
@@ -4399,8 +4414,8 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 0,
-          "score": 0.6107588410377502,
-          "reranker_score": -1.247694969177246
+          "score": 0.6107587814331055,
+          "reranker_score": -1.247694730758667
         },
         {
           "id": 528,
@@ -4410,7 +4425,7 @@
           "page": 192,
           "chunk_index": 0,
           "score": 0.6196995973587036,
-          "reranker_score": -4.309597015380859
+          "reranker_score": -4.309595108032227
         },
         {
           "id": 996,
@@ -4420,7 +4435,7 @@
           "page": 351,
           "chunk_index": 1,
           "score": 0.608288049697876,
-          "reranker_score": -4.674560070037842
+          "reranker_score": -4.674559593200684
         },
         {
           "id": 978,
@@ -4429,8 +4444,8 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 1,
-          "score": 0.5853783488273621,
-          "reranker_score": -6.938902854919434
+          "score": 0.5853782892227173,
+          "reranker_score": -6.938899993896484
         },
         {
           "id": 984,
@@ -4439,8 +4454,8 @@
           "document": "Constitution of India",
           "page": 346,
           "chunk_index": 1,
-          "score": 0.5803541541099548,
-          "reranker_score": -7.05912971496582
+          "score": 0.5803540349006653,
+          "reranker_score": -7.059127330780029
         }
       ],
       "claim_4": [
@@ -4452,7 +4467,7 @@
           "page": 344,
           "chunk_index": 0,
           "score": 0.6285252571105957,
-          "reranker_score": -2.9941883087158203
+          "reranker_score": -2.9941868782043457
         },
         {
           "id": 528,
@@ -4461,8 +4476,8 @@
           "document": "Constitution of India",
           "page": 192,
           "chunk_index": 0,
-          "score": 0.585419774055481,
-          "reranker_score": -4.04949951171875
+          "score": 0.5854198932647705,
+          "reranker_score": -4.049498558044434
         },
         {
           "id": 984,
@@ -4471,8 +4486,8 @@
           "document": "Constitution of India",
           "page": 346,
           "chunk_index": 1,
-          "score": 0.5727176070213318,
-          "reranker_score": -6.57730770111084
+          "score": 0.5727176666259766,
+          "reranker_score": -6.5773091316223145
         },
         {
           "id": 978,
@@ -4481,7 +4496,7 @@
           "document": "Constitution of India",
           "page": 344,
           "chunk_index": 1,
-          "score": 0.5974899530410767,
+          "score": 0.5974900722503662,
           "reranker_score": -7.789980888366699
         },
         {
@@ -4491,7 +4506,7 @@
           "document": "Constitution of India",
           "page": 194,
           "chunk_index": 1,
-          "score": 0.591365396976471,
+          "score": 0.5913654565811157,
           "reranker_score": -9.090835571289062
         }
       ]

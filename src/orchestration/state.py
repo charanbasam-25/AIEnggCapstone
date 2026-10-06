@@ -5,16 +5,21 @@ from src.verification.claim_extractor import Claim
 from src.verification.fact_verifier import FactVerificationResult
 from src.verification.answer_key_verifier import AnswerKeyVerificationResult
 from src.verification.mcq_quality_auditor import QualityAuditResult
+from src.verification.direct_mcq_verifier import DirectVerificationResult
+from src.verification.learning_notes import LearningNotesResult
 
 
 class MCQVerificationState(TypedDict, total=False):
     # User request
     topic: str
     difficulty: str
+    focus: str
+    avoid_questions: list[str]
+    generation_evidence: list[dict]
+    structural_issues: list[str]
 
-    # Question format: "simple" or "statements". Absent means "simple",
-    # which is the format this loop shipped with. See mcq_generator for why
-    # the difference is measured rather than assumed.
+    # Direct ("simple") and numbered ("statements") questions use different
+    # answer-verification paths. The default is a direct question.
     question_format: str
 
     # Generated candidate
@@ -33,10 +38,12 @@ class MCQVerificationState(TypedDict, total=False):
     answer_evidence: list[dict]
 
     # Result of answer-key verification
-    answer_verification: AnswerKeyVerificationResult
+    answer_verification: AnswerKeyVerificationResult | None
+    direct_verification: DirectVerificationResult | None
 
     # Result of quality audit
-    quality_audit: QualityAuditResult
+    quality_audit: QualityAuditResult | None
+    learning_notes: LearningNotesResult | None
 
     # Final workflow decision
     decision: str

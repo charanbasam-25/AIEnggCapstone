@@ -77,7 +77,7 @@ ELIMINATION = "elimination"
 
 POLICIES = (STRICT, CLOSED_WORLD, ELIMINATION)
 
-STATEMENT_TOKEN = r"\b(?:I|II|III|IV)\b"
+STATEMENT_TOKEN = r"\b(?:I|II|III|IV|V)\b"
 
 NONE_TEXTS = frozenset(
     {

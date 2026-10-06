@@ -171,17 +171,20 @@ if __name__ == "__main__":
     from src.generation.mcq_generator import MCQGenerator
     from src.verification.claim_retriever import ClaimRetriever
     from src.retrieval.semantic_reranker import load_chunks
+    from src.verification.evidence_context import PageEvidenceContext
 
     generator = MCQGenerator()
+    chunks = load_chunks("data/processed/chunks.jsonl")
+    retriever = ClaimRetriever(chunks)
+    source_evidence = PageEvidenceContext(chunks).expand(
+        retriever.retrieve("Fundamental Rights")
+    )
 
     mcq = generator.generate(
         topic="Fundamental Rights",
         difficulty="medium",
+        evidence=source_evidence,
     )
-
-    chunks = load_chunks("data/processed/chunks.jsonl")
-
-    retriever = ClaimRetriever(chunks)
 
     evidence = retriever.retrieve(mcq.question)
 
@@ -192,7 +195,7 @@ if __name__ == "__main__":
         evidence,
     )
 
-    print("\n=== MCQ ===\n")
+    print("\n=== DIAGNOSTIC DRAFT — not approved for practice ===\n")
     print(mcq.question)
     print(f"A. {mcq.option_a}")
     print(f"B. {mcq.option_b}")

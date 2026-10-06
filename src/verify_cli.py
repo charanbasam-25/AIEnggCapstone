@@ -55,6 +55,9 @@ Usage
     # the same text from a file
     python -m src.verify_cli --file my_question.txt
 
+    # direct and best-answer MCQs with four options
+    python -m src.verify_cli --file data/examples/direct_constitution_2023.txt
+
     # exact input, no text parsing
     python -m src.verify_cli --json my_question.json
 
@@ -105,7 +108,9 @@ from src.evaluation.evaluate_verified_pyqs import (
 from src.retrieval.semantic_reranker import load_chunks
 from src.verification.answer_key_verifier import AnswerKeyVerifier
 from src.verification.claim_retriever import ClaimRetriever
-from src.verification.fact_verifier import FactVerifier
+from src.verification.fact_verifier import FactVerifier, verify_constructed_claim
+from src.verification.direct_mcq_verifier import DirectMCQVerifier, verify_direct_question
+from src.verification.question_type import STATEMENT_MCQ, classify_question
 
 # Only A-D. A statement labelled "I." or "III." cannot collide with this,
 # which is the whole reason the option label set is kept this narrow.
@@ -417,6 +422,56 @@ def print_decision(question, predicted, debug, answer_verification):
     print()
 
 
+def run_direct_cli(question: dict, arguments: argparse.Namespace) -> None:
+    if arguments.policy != STRICT:
+        raise SystemExit(
+            "Alternative mapping policies apply to numbered statements only. "
+            "Direct MCQs require one supported option and all alternatives ruled out. "
+            "Run this question with --policy strict."
+        )
+    print("DIRECT MCQ: evidence-grounded option comparison")
+    print("Loading corpus and models (first run takes ~70s)...\n")
+    chunks = load_chunks(CHUNKS_PATH)
+    retriever = ClaimRetriever(chunks)
+    result = verify_direct_question(question, retriever, DirectMCQVerifier(chunks=chunks))
+    for assessment in result.option_assessments:
+        print(f"Option {assessment.option}: {assessment.answer_fit}")
+        print(f"  {assessment.reasoning}")
+        for citation in assessment.citations:
+            chunk = result.evidence[citation.evidence_id - 1]
+            print(f"  [{chunk['source']} p.{chunk['page']}] {citation.quote}")
+    print()
+    print(result.reasoning)
+    if result.predicted_answer is None:
+        print(f"ABSTAINED: {result.abstention_reason}")
+    else:
+        letter = result.predicted_answer
+        print(f"ANSWER: {letter}. {question['options'][letter]}")
+        official = question.get("official_answer")
+        if official:
+            print("Matches supplied key." if official == letter else f"Disagrees with supplied key ({official}).")
+    print("RULED_OUT means excluded as the answer, not necessarily a false statement.")
+    if arguments.show_evidence:
+        print("\nRetrieved evidence:")
+        for index, chunk in enumerate(result.evidence, start=1):
+            print(f"  Evidence {index} [{chunk['source']} p.{chunk['page']}]")
+            print(chunk["text"])
+    if arguments.save:
+        record = {
+            "q_number": question.get("q_number"),
+            "question": question["question_text"],
+            "options": question["options"],
+            "official_answer": question.get("official_answer"),
+            "policy": "direct_strict",
+            "retrieval_top_k": CLAIM_TOP_K,
+            **result.model_dump(),
+        }
+        Path(arguments.save).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8",
+        )
+        print(f"Saved to: {arguments.save}")
+
+
 def main() -> None:
 
     parser = argparse.ArgumentParser(
@@ -454,11 +509,10 @@ def main() -> None:
         choices=POLICIES,
         default=STRICT,
         help=(
-            f"abstention policy (default {STRICT}). "
-            f"{CLOSED_WORLD} answers anyway by treating unsettled "
-            f"statements as false, which measured higher accuracy and "
-            f"took the error rate from 0%% to 30.77%%. {ELIMINATION} "
-            f"answers only when exactly one option survives."
+            f"mapping policy for numbered statements (default {STRICT}). "
+            f"{CLOSED_WORLD} treats unsettled statements as false. "
+            f"{ELIMINATION} answers when exactly one option survives. "
+            "Direct MCQs require strict option comparison."
         ),
     )
     parser.add_argument(
@@ -466,7 +520,7 @@ def main() -> None:
         choices=(CLAIM_MODE_BOUND, CLAIM_MODE_VERBATIM),
         default=CLAIM_MODE,
         help=(
-            f"how statements become claims (default {CLAIM_MODE}). "
+            f"how numbered statements become claims (default {CLAIM_MODE}). "
             f"{CLAIM_MODE_BOUND} binds the stem's predicate onto each "
             f"item so the claim is a standalone proposition."
         ),
@@ -488,6 +542,10 @@ def main() -> None:
 
     print_question(question)
 
+    if classify_question(question["question_text"]) != STATEMENT_MCQ:
+        run_direct_cli(question, arguments)
+        return
+
     try:
         claims = build_pyq_claims(
             question["question_text"],
@@ -495,20 +553,13 @@ def main() -> None:
         )
 
     except ValueError:
-        # question_parser.parse_question raises on a question with no
-        # numbered items rather than returning an empty list. Testing
-        # `not claims` alone was wrong: the call never returned, so the
-        # message below was unreachable and the user got a traceback.
+        # A malformed numbered question must not silently become a direct MCQ.
         claims = []
 
     if not claims:
         raise SystemExit(
-            "No numbered statements found, so there is nothing to "
-            "decompose and verify.\n"
-            "This verifier works on the 'Consider the following "
-            "statements: I. ... II. ...' form. A single-fact question "
-            "has no statements to check independently, which is a real "
-            "limit of the design and not a parsing bug."
+            "The numbered statements could not be parsed. "
+            "Check the I., II., III. labels and question wording."
         )
 
     print(f"Loading corpus and models (first run takes ~70s)...\n")
@@ -539,7 +590,7 @@ def main() -> None:
             top_k=CLAIM_TOP_K,
         )
 
-        verification = fact_verifier.verify(claim.claim, evidence)
+        verification = verify_constructed_claim(claim, evidence, fact_verifier)
 
         claim_evidence[claim.claim_id] = evidence
         fact_verifications[claim.claim_id] = verification

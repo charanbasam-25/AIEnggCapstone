@@ -67,7 +67,7 @@ from src.retrieval.semantic_reranker import load_chunks
 from src.verification.answer_key_verifier import AnswerKeyVerifier
 from src.verification.claim_builder import build_claims_for_question
 from src.verification.claim_retriever import ClaimRetriever
-from src.verification.fact_verifier import FactVerifier
+from src.verification.fact_verifier import FactVerifier, verify_constructed_claim
 from src.evaluation.pyq_statement_parser import extract_numbered_statements
 
 
@@ -448,12 +448,7 @@ def main() -> "dict | None":
                 )
             )
 
-            verification = (
-                fact_verifier.verify(
-                    claim.claim,
-                    evidence,
-                )
-            )
+            verification = verify_constructed_claim(claim, evidence, fact_verifier)
 
             claim_evidence[
                 claim.claim_id

@@ -220,6 +220,22 @@ PREDICATE_MARKERS = frozenset(
     applies apply exist exists attain attains constitutes constitute
     regulated regulates amend amends abridge abridges come comes
     answerable instituted continued mention mentions mentioned
+    prohibits protects ensures allows permits guarantees confers
+    defines establishes authorises authorizes recognises recognizes
+    prevents restricts abolishes imposes prescribes secures empowers
+    introduced exempts classifies
+    """.split()
+)
+
+# These transitive verbs also occur in noun phrases ("constitutional
+# guarantees"). They count as an assertion only when a subject and an object
+# surround them. Bare headings must still go through predicate binding.
+ACTION_PREDICATES = frozenset(
+    """
+    prohibits protects ensures allows permits guarantees confers
+    defines establishes authorises authorizes recognises recognizes
+    prevents restricts abolishes imposes prescribes secures empowers
+    introduced exempts classifies
     """.split()
 )
 
@@ -322,7 +338,20 @@ def is_propositional(text: str) -> bool:
 
     tokens = re.findall(r"[a-z]+", text.lower())
 
-    return any(token in PREDICATE_MARKERS for token in tokens)
+    for index, token in enumerate(tokens):
+        if token not in PREDICATE_MARKERS:
+            continue
+        if token in ACTION_PREDICATES and (
+            index == 0 or index == len(tokens) - 1
+            or tokens[index + 1] in {"of", "in", "on", "under", "by", "from"}
+        ):
+            continue
+        if token == "introduced" and index == 1 and tokens[0] in {"newly", "recently", "previously"}:
+            # A heading such as "Recently introduced Articles" remains a
+            # fragment; recognising this past tense is not a grammar parser.
+            continue
+        return True
+    return False
 
 
 def is_continuation_fragment(text: str) -> bool:

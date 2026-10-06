@@ -1,4 +1,18 @@
 # System Design — Source-Verified UPSC Polity MCQ Verifier
+
+The learner-first generation flow is documented in
+[Practice system design](PRACTICE_DESIGN.md), including source-first generation,
+bounded revisions, answer and explanation checks, storage and the learner UI.
+The [project brief](PROJECT_BRIEF.md) covers the current problem, scope, privacy,
+architecture/tradeoffs, evaluation tasks, error handling, cost and latency, with
+an updated [practice architecture image](diagrams/practice_architecture.png).
+The generation sections below describe the earlier workflow and experiments.
+
+For the preceding overall diagram, including direct-MCQ verification, the
+75-question benchmark and Evaluation Studio, see
+[Architecture diagrams](ARCHITECTURE_DIAGRAMS.md). The record below retains the
+earlier module-level design and evaluation discussion.
+
 **Author:** Charan Kumar Basam · **Cohort:** AI Engineering · **Date:** 2026-09-27
 **Related documents**
 | Document | Role |
@@ -14,6 +28,17 @@ not argue for the architecture; `DESIGN.md` does that, and `EVALUATION.md`
 supplies the numbers.
 ---
 ## 1. Scope and status
+**Direct-MCQ extension.** The UI and CLI now route questions without numbered
+items through `src/verification/direct_mcq_verifier.py`. Question-level and
+option-focused semantic + cross-encoder retrieval supplies a deduplicated
+evidence set. One structured comparison assesses A–D as SUPPORTED as the answer,
+RULED_OUT as the answer, or INSUFFICIENT. For best-answer questions, answer fit
+is distinct from isolated factual truth. Python requires one supported option
+and three ruled-out alternatives, with matching evidence quotations, before
+selecting a letter. The official key is withheld. This extension has offline
+behavioral tests but is not covered by the saved end-to-end measurements;
+the numbered-statement evaluation code is unchanged.
+
 **In scope.** Indian Polity questions from the UPSC Civil Services Preliminary
 Examination, decided against the text of the Constitution of India and NCERT
 Polity.
@@ -423,6 +448,16 @@ therefore only drawn from effects that survive the band.
 requires the retriever factory's argument to be hashable.
 ---
 ## 13. Evaluation harness architecture
+The expanded 75-question benchmark uses a separate runner,
+`src/evaluation/evaluate_benchmark.py`, and fixed 33-development/42-test splits.
+`--check` and `--dry-run` validate/preview offline; `--run` compares the current
+statement/direct verifier with vanilla RAG and checkpoints after every answer.
+Dataset, code and corpus hashes prevent mixing resumed runs from different
+settings. Answer keys stay outside answering inputs, and API errors are counted
+separately from abstentions. Outputs live under `data/evaluation/benchmark/`;
+the new dataset has not yet produced model results. Details and source links
+are in [BENCHMARK.md](BENCHMARK.md).
+
 `src/evaluation/run_all.py` is a small DAG runner with **mtime-based freshness
 checking**. Each stage declares `reads`, `writes`, and a `note`:
 ```

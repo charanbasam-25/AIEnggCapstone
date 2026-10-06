@@ -1,0 +1,77 @@
+flowchart TB
+    USER["Student / examiner"]
+    CLI["Verification CLI"]
+
+    subgraph KNOWLEDGE["1. Offline knowledge preparation"]
+        PDFS["Constitution of India + NCERT Polity PDFs"]
+        PREP["PyMuPDF extraction + cleaning<br/>Preserve document, source and page"]
+        CHUNKING["1,000-character chunks<br/>150-character overlap"]
+        CORPUS[("chunks.jsonl<br/>1,149 chunks")]
+        PDFS --> PREP --> CHUNKING --> CORPUS
+    end
+
+    subgraph EVIDENCE["2. Shared evidence layer - local models"]
+        INDEX["BGE-small embeddings<br/>In-memory NumPy index"]
+        RETRIEVAL["Semantic search: top 20<br/>Cross-encoder rerank: top 5"]
+        SCAN["Python full-corpus lexical scan<br/>Recognized quoted absence claims"]
+        INDEX --> RETRIEVAL
+    end
+    CORPUS --> INDEX
+    CORPUS --> SCAN
+
+    subgraph APPLICATION["3. Tutor application"]
+        TUTOR["Streamlit tutor<br/>Verify a question / Generate practice"]
+        VERIFY["Question verifier<br/>Statements OR direct / best-answer MCQs<br/>Blind evidence review + Python source checks"]
+        GENERATE["LangGraph practice workflow<br/>Generate, verify facts and key, audit quality<br/>Python ACCEPT / REVISE / REJECT"]
+        BASELINE["Vanilla RAG comparison<br/>Retrieve, then LLM selects A-D"]
+        OUTPUT["Results shown to the student<br/>Answer or abstention + reasons and sources<br/>Accepted practice MCQ or rejection"]
+        TUTOR -->|Verify| VERIFY
+        TUTOR -->|Practice| GENERATE
+        VERIFY --> OUTPUT
+        GENERATE --> OUTPUT
+        GENERATE -. Revision feedback .-> GENERATE
+    end
+    USER --> TUTOR
+    USER --> CLI
+    CLI --> VERIFY
+    VERIFY <-->|Queries / evidence| RETRIEVAL
+    GENERATE <-->|Gate queries / evidence| RETRIEVAL
+    BASELINE <-->|Full-question query / evidence| RETRIEVAL
+    VERIFY <-->|Absence claim / lexical verdict| SCAN
+    GENERATE <-->|Absence claim / lexical verdict| SCAN
+
+    OPENAI["OpenAI API<br/>Runtime: gpt-4o-mini<br/>Earlier explanation judge: gpt-4o"]
+    VERIFY -. Structured verification calls .-> OPENAI
+    GENERATE -. Generation and gate calls .-> OPENAI
+    BASELINE -. Answer call .-> OPENAI
+
+    subgraph EVALUATION["4. Evaluation and report storage"]
+        DATASET["Official UPSC PYQ benchmark<br/>75 questions: 33 development / 42 test<br/>Now used for regression after debugging"]
+        HARNESS["Benchmark runner<br/>Verifier vs vanilla RAG<br/>Resumable checkpoints + run configuration"]
+        SCORING["Python scoring<br/>Correct / wrong / abstained / errors<br/>Accuracy, coverage, precision and breakdowns"]
+        DIAGNOSTICS["Earlier evaluation runners<br/>13-question regression, retrieval experiments,<br/>grounding, judge, stability and generation"]
+        REPORTS[("data/evaluation/<br/>JSON results, traces and metrics")]
+        EVALS["Evaluation Studio<br/>Tutor page + standalone evals_app.py<br/>Inspect reports / export CSV and JSON"]
+        DATASET -->|Questions and options| HARNESS
+        DATASET -->|Official keys for scoring| SCORING
+        HARNESS -->|Run verifier| VERIFY
+        HARNESS -->|Run baseline| BASELINE
+        VERIFY -->|Predictions and traces| SCORING
+        BASELINE -->|Predictions and traces| SCORING
+        SCORING --> REPORTS
+        DIAGNOSTICS --> REPORTS
+        REPORTS -->|Read saved reports| EVALS
+    end
+    USER --> EVALS
+    DIAGNOSTICS -. Judge and diagnostic model calls .-> OPENAI
+
+    classDef interface fill:#eff6ff,stroke:#2563eb,color:#0f172a;
+    classDef store fill:#f8fafc,stroke:#475569,color:#0f172a;
+    classDef local fill:#ecfdf5,stroke:#059669,color:#0f172a;
+    classDef model fill:#faf5ff,stroke:#9333ea,color:#0f172a;
+    classDef evaluation fill:#fffbeb,stroke:#d97706,color:#0f172a;
+    class USER,CLI,TUTOR,EVALS,OUTPUT interface;
+    class CORPUS,REPORTS store;
+    class PREP,CHUNKING,INDEX,RETRIEVAL,SCAN local;
+    class OPENAI model;
+    class DATASET,HARNESS,SCORING,DIAGNOSTICS evaluation;

@@ -2,12 +2,12 @@
   "strict": {
     "policy": "strict",
     "total": 13,
-    "answered": 4,
-    "abstained": 9,
-    "correct": 4,
-    "coverage": 0.3076923076923077,
+    "answered": 3,
+    "abstained": 10,
+    "correct": 3,
+    "coverage": 0.23076923076923078,
     "precision_when_answered": 1.0,
-    "accuracy_overall": 0.3076923076923077,
+    "accuracy_overall": 0.23076923076923078,
     "rows": [
       {
         "q_number": 54,
@@ -118,12 +118,12 @@
       {
         "q_number": 63,
         "official_answer": "D",
-        "predicted_answer": "D",
-        "status": "CORRECT",
-        "abstention_reason": null,
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "policy_insufficient_evidence",
         "statement_statuses": {
           "I": "CONTRADICTED",
-          "II": "CONTRADICTED",
+          "II": "INSUFFICIENT",
           "III": "CONTRADICTED"
         }
       },
@@ -168,12 +168,12 @@
   "elimination": {
     "policy": "elimination",
     "total": 13,
-    "answered": 4,
-    "abstained": 9,
-    "correct": 4,
-    "coverage": 0.3076923076923077,
+    "answered": 3,
+    "abstained": 10,
+    "correct": 3,
+    "coverage": 0.23076923076923078,
     "precision_when_answered": 1.0,
-    "accuracy_overall": 0.3076923076923077,
+    "accuracy_overall": 0.23076923076923078,
     "rows": [
       {
         "q_number": 54,
@@ -284,12 +284,12 @@
       {
         "q_number": 63,
         "official_answer": "D",
-        "predicted_answer": "D",
-        "status": "CORRECT",
-        "abstention_reason": null,
+        "predicted_answer": null,
+        "status": "ABSTAINED",
+        "abstention_reason": "multiple_options_possible",
         "statement_statuses": {
           "I": "CONTRADICTED",
-          "II": "CONTRADICTED",
+          "II": "INSUFFICIENT",
           "III": "CONTRADICTED"
         }
       },
@@ -336,10 +336,10 @@
     "total": 13,
     "answered": 11,
     "abstained": 2,
-    "correct": 6,
+    "correct": 5,
     "coverage": 0.8461538461538461,
-    "precision_when_answered": 0.5454545454545454,
-    "accuracy_overall": 0.46153846153846156,
+    "precision_when_answered": 0.45454545454545453,
+    "accuracy_overall": 0.38461538461538464,
     "rows": [
       {
         "q_number": 54,
@@ -450,12 +450,12 @@
       {
         "q_number": 63,
         "official_answer": "D",
-        "predicted_answer": "D",
-        "status": "CORRECT",
+        "predicted_answer": "C",
+        "status": "INCORRECT",
         "abstention_reason": null,
         "statement_statuses": {
           "I": "CONTRADICTED",
-          "II": "CONTRADICTED",
+          "II": "INSUFFICIENT",
           "III": "CONTRADICTED"
         }
       },
