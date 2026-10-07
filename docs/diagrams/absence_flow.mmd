@@ -10,8 +10,8 @@ flowchart TB
     missing["No match<br/>Conditional corpus-only support<br/>Assumes complete, faithful text"]
 
     claim --> pattern
-    pattern -->|"No: semantic claim"| semantic
-    pattern -->|"Yes: literal quoted term"| scan
+    pattern -->|No: semantic claim| semantic
+    pattern -->|Yes: literal quoted term| scan
     scan --> found
     scan --> missing
 

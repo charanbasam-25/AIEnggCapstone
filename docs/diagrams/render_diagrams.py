@@ -195,7 +195,7 @@ def mermaid(diagram):
     lines.append("")
     for link in diagram.links:
         connector = "<-->" if link.both else "-.->" if link.dashed else "-->"
-        label = f'|"{link.label.replace(chr(34), "&quot;")}"|' if link.label else ""
+        label = f'|{link.label.replace(chr(34), "&quot;")}|' if link.label else ""
         lines.append(f"    {link.source} {connector}{label} {link.target}")
     lines.append("")
     for style, (stroke, fill) in STYLES.items():
@@ -224,7 +224,7 @@ def architecture():
           "Practice / My Practice / How it works", "Topic, style, level and set size", "Keys and notes appear on Submit")
     d.box("service", 620, 495, 480, 175, "Practice service",
           "Validate the bounded request", "Reuse eligible records or fill slots", "Return accepted items or a partial set")
-    d.box("graph", 1180, 495, 480, 175, "Bounded LangGraph workflow",
+    d.box("workflow", 1180, 495, 480, 175, "Bounded LangGraph workflow",
           "Draft -> verify -> audit -> explain", "Five required publication gates", "At most two MCQ revisions", size=24)
     d.box("session", 60, 785, 480, 190, "Session history",
           "Answers and scores in server memory", "Latest 20 completed sets", "Python scoring; no model call",
@@ -240,12 +240,12 @@ def architecture():
           style="store", size=24)
     d.link("pdf", "corpus", [(540, 300), (620, 300)], style="source")
     d.link("corpus", "index", [(1100, 300), (1180, 300)], style="source")
-    d.link("index", "graph", [(1420, 385), (1420, 495)], "Evidence", (1434, 450), style="source")
+    d.link("index", "workflow", [(1420, 385), (1420, 495)], "Evidence", (1434, 450), style="source")
     d.link("ui", "service", [(540, 582), (620, 582)], both=True)
-    d.link("service", "graph", [(1100, 582), (1180, 582)], both=True)
+    d.link("service", "workflow", [(1100, 582), (1180, 582)], both=True)
     d.link("ui", "session", [(300, 670), (300, 785)])
     d.link("service", "sqlite", [(860, 670), (860, 785)], "Reuse / save", (879, 738), style="store", both=True)
-    d.link("graph", "api", [(1420, 670), (1420, 785)], "Structured calls", (1435, 738), style="model", dashed=True, both=True)
+    d.link("workflow", "api", [(1420, 670), (1420, 785)], "Structured calls", (1435, 738), style="model", dashed=True, both=True)
     d.link("sqlite", "diagnostics", [(860, 975), (860, 1090)], "Saved reports", (879, 1040), style="store")
     return d
 

@@ -7,7 +7,7 @@ flowchart TB
     session["Streamlit server session<br/>Active set and learner choices<br/>Python score and latest 20 completed sets<br/>No learner choices sent to the model<br/>Browser refresh/restart can lose history"]
     reports["Frozen datasets and evaluation JSON<br/>data/benchmarks: questions, keys and source metadata<br/>data/evaluation: predictions, errors and metrics<br/>Gold keys are grading inputs only<br/>Separate task reports read by Evaluation Studio"]
 
-    runs -.->|"Application reference: question_records[].question_id"| questions
+    runs -.->|Application reference: question_records[].question_id| questions
     questions --> session
 
     classDef source fill:#EDF8F4,stroke:#0B806A,color:#17243B;

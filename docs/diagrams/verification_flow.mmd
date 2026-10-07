@@ -15,8 +15,8 @@ flowchart TB
     input --> paired
     input --> parse
     input --> prepare
-    parse -->|"For each claim"| facts
-    prepare -->|"Compare all options"| options
+    parse -->|For each claim| facts
+    prepare -->|Compare all options| options
     facts --> map
     options --> resolve
     map --> result

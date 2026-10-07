@@ -11,13 +11,13 @@ flowchart TB
     ui["How it works -> Evals<br/>Validate and read saved reports; inspect or export"]
     other["Other task-specific reports<br/>Retrieval, legacy judge/stability and generation yield"]
 
-    dataset -->|"Questions only"| input
+    dataset -->|Questions only| input
     input --> systems
     protocol --> systems
     systems --> grade
-    dataset -.->|"Keys: grading only"| grade
+    dataset -.->|Keys: grading only| grade
     grade --> checkpoint
-    checkpoint -->|"Saved data"| ui
+    checkpoint -->|Saved data| ui
     other --> ui
 
     classDef source fill:#EDF8F4,stroke:#0B806A,color:#17243B;

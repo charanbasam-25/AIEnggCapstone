@@ -12,9 +12,9 @@ flowchart TB
     history["My Practice<br/>Recent completed sets and a mistake notebook<br/>Revisit incorrect or skipped items"]
 
     choose --> bank
-    bank -->|"Missing slots"| prepare
-    bank -->|"Eligible reuse"| quiz
-    prepare -->|"Accepted items"| quiz
+    bank -->|Missing slots| prepare
+    bank -->|Eligible reuse| quiz
+    prepare -->|Accepted items| quiz
     prepare --> partial
     quiz --> submit
     submit --> review

@@ -7,7 +7,7 @@ flowchart TB
     index["Local retrieval<br/>BGE embeddings / NumPy index<br/>Semantic 20 -> reranked 5 per query<br/>Full pages and named Article context"]
     ui["Streamlit learner UI<br/>Practice / My Practice / How it works<br/>Topic, style, level and set size<br/>Keys and notes appear on Submit"]
     service["Practice service<br/>Validate the bounded request<br/>Reuse eligible records or fill slots<br/>Return accepted items or a partial set"]
-    graph["Bounded LangGraph workflow<br/>Draft -> verify -> audit -> explain<br/>Five required publication gates<br/>At most two MCQ revisions"]
+    workflow["Bounded LangGraph workflow<br/>Draft -> verify -> audit -> explain<br/>Five required publication gates<br/>At most two MCQ revisions"]
     session["Session history<br/>Answers and scores in server memory<br/>Latest 20 completed sets<br/>Python scoring; no model call<br/>No persistent learner accounts"]
     sqlite["Local SQLite store<br/>Accepted MCQs and source-bound notes<br/>Runs, retrieval traces and usage<br/>Source + policy must match for reuse<br/>Shared store; no account isolation"]
     api["OpenAI model tasks<br/>gpt-4o-mini / structured responses<br/>Generator and separate reviewers<br/>45-second timeout / one SDK retry<br/>Reviews can share model errors"]
@@ -15,18 +15,18 @@ flowchart TB
 
     pdf --> corpus
     corpus --> index
-    index -->|"Evidence"| graph
+    index -->|Evidence| workflow
     ui <--> service
-    service <--> graph
+    service <--> workflow
     ui --> session
-    service <-->|"Reuse / save"| sqlite
-    graph <-->|"Structured calls"| api
-    sqlite -->|"Saved reports"| diagnostics
+    service <-->|Reuse / save| sqlite
+    workflow <-->|Structured calls| api
+    sqlite -->|Saved reports| diagnostics
 
     classDef source fill:#EDF8F4,stroke:#0B806A,color:#17243B;
     class pdf,corpus,index source;
     classDef control fill:#EFF4FE,stroke:#2457D6,color:#17243B;
-    class ui,service,graph control;
+    class ui,service,workflow control;
     classDef model fill:#F4F0FB,stroke:#7650B6,color:#17243B;
     class api model;
     classDef decision fill:#FFF7E8,stroke:#A56B13,color:#17243B;

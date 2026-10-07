@@ -17,8 +17,8 @@ flowchart TB
     index --> semantic
     query --> semantic
     semantic --> rerank
-    query -->|"Named references"| article
-    rerank -->|"Ranked selections"| context
+    query -->|Named references| article
+    rerank -->|Ranked selections| context
     article --> context
     context --> quotes
 

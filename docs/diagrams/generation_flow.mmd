@@ -18,9 +18,9 @@ flowchart TB
     answer --> quality
     quality --> notes
     notes --> gate
-    gate -->|"All pass"| accept
-    gate -->|"No budget"| reject
-    gate -.->|"REVISE: at most twice; keep generation evidence, retrieve verification evidence afresh"| draft
+    gate -->|All pass| accept
+    gate -->|No budget| reject
+    gate -.->|REVISE: at most twice; keep generation evidence, retrieve verification evidence afresh| draft
 
     classDef source fill:#EDF8F4,stroke:#0B806A,color:#17243B;
     class sources,accept source;
