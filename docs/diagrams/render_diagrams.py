@@ -231,7 +231,7 @@ def architecture():
           "No persistent learner accounts", style="store", size=24)
     d.box("sqlite", 620, 785, 480, 190, "Local SQLite store",
           "Accepted MCQs and source-bound notes", "Runs, retrieval traces and usage", "Source + policy must match for reuse",
-          "Shared store; no account isolation", style="store", size=24)
+          "Shared store; no account isolation", style="store", size=22)
     d.box("api", 1180, 785, 480, 190, "OpenAI model tasks",
           "gpt-4o-mini / structured responses", "Generator and separate reviewers", "45-second timeout / one SDK retry",
           "Reviews can share model errors", style="model", size=24)
@@ -311,7 +311,7 @@ def retrieval_flow():
     d.box("context", 540, 900, 420, 180, "Restore source context",
           "Reassemble retrieved full pages", "Retain qualifications and footnotes", "Record added Article pages separately", style="source", size=23)
     d.box("quotes", 1020, 900, 420, 180, "Quoted evidence packet",
-          "Numbered source excerpts", "Models select quotation references", "Python binds text, source and page", size=24)
+          "Numbered source excerpts", "Models select quotation references", "Python binds text, source and page", size=21)
     d.link("pdf", "chunks", [(480, 310), (540, 310)], style="source")
     d.link("chunks", "index", [(960, 310), (1020, 310)], style="source")
     d.link("index", "semantic", [(1230, 400), (1230, 455), (750, 455), (750, 520)], style="source")
@@ -333,27 +333,27 @@ def generation_flow():
                     "One initial draft + two MCQ revisions. Explanation writing has one local repair; SDK retries are separate.",
                 ))
     d.box("sources", 70, 220, 650, 150, "1  Retrieve generation sources",
-          "Topic and curated focus -> top 20 -> reranked 5", "Full pages, named Article context and source provenance", style="source")
+          "Topic and curated focus -> top 20 -> reranked 5", "Full pages, named Article context and source provenance", style="source", size=22, title_size=26)
     d.box("draft", 70, 465, 650, 150, "2  Generate a structured candidate",
-          "Question, four options and a proposed key", "Use source packet, requested style and revision feedback", style="model")
+          "Question, four options and a proposed key", "Use source packet, requested style and revision feedback", style="model", size=22, title_size=26)
     d.box("format", 70, 710, 650, 150, "3  Check format and construct claims",
-          "Nonempty, distinct options; supported question structure", "Exact-stem duplicate check; safe deterministic binding")
+          "Nonempty, distinct options; supported question structure", "Exact-stem duplicate check; safe deterministic binding", size=22, title_size=26)
     d.box("answer", 70, 955, 650, 175, "4  Verify claims and the answer",
           "Fresh claim retrieval OR direct stem-plus-options retrieval", "Quote validation and agreeing blind review",
-          "Python resolves a unique key and compares the proposed key")
+          "Python resolves a unique key and compares the proposed key", size=22, title_size=26)
     d.box("quality", 960, 220, 650, 150, "5  Audit question quality",
           "Clarity, single best answer, distractors, wording, topic", "Every flag true, PASS and no issues", style="model")
     d.box("notes", 960, 465, 650, 175, "6  Write and review learning notes",
           "Replace generator prose with fresh summary and A-D notes",
           "Bind source excerpts; review every item against its citations",
-          "All item and global explanation checks must pass", style="model", size=24)
+          "All item and global explanation checks must pass", style="model", size=20, title_size=25)
     d.box("gate", 960, 735, 650, 175, "7  Python publication decision",
           "Sources + format + answer + quality + explanations", "All current-attempt gates must PASS",
           "ACCEPT / REVISE / REJECT", style="decision")
     d.box("accept", 960, 1050, 300, 155, "ACCEPT",
-          "Recheck at service boundary", "Validate and store the item", style="source", size=23, title_size=28)
+          "Recheck at service boundary", "Validate and store the item", style="source", size=20, title_size=24)
     d.box("reject", 1310, 1050, 300, 155, "REJECT",
-          "No failed draft in the quiz", "Partial set or empty result", style="decision", size=23, title_size=28)
+          "No failed draft in the quiz", "Partial set or empty result", style="decision", size=20, title_size=24)
     d.link("sources", "draft", [(395, 370), (395, 465)], style="source")
     d.link("draft", "format", [(395, 615), (395, 710)], style="model")
     d.link("format", "answer", [(395, 860), (395, 955)])
@@ -375,17 +375,17 @@ def verification_flow():
                     "INSUFFICIENT is unresolved evidence; it is never converted to a false statement in practice.",
                     "Blind review hides the earlier verdict, but uses the same model family. Agreement can still be wrong.",
                 ))
-    d.box("input", 505, 215, 665, 145, "Question text and A-D options",
+    d.box("input", 505, 215, 665, 175, "Question text and A-D options",
           "Python routes direct or numbered questions", "Gold keys and earlier verdicts are withheld from reviewers")
     d.box("paired", 1260, 215, 370, 145, "Unsupported paired format",
           "Statement-I/II or assertion/reason", "Abstain before model retrieval",
-          style="decision", size=23, title_size=25)
+          style="decision", size=19, title_size=23)
     d.box("parse", 60, 490, 700, 160, "Numbered statements: build complete claims",
           "Parse stem, items, closing question and coded options",
           "Bind the stem predicate; reject failed or introduced wording")
     d.box("prepare", 930, 490, 700, 160, "Direct questions: prepare comparison evidence",
           "Search the stem and each alternative",
-          "Deduplicate up to five selections per query; restore full pages")
+          "Deduplicate up to five selections per query; restore full pages", size=22, title_size=26)
     d.box("facts", 60, 780, 700, 190, "Assess each complete claim",
           "Fresh retrieval plus full pages and named Article context",
           "SUPPORTED / CONTRADICTED / INSUFFICIENT",
@@ -433,9 +433,9 @@ def absence_flow():
           "No model call inside the scan branch", "Record matching chunks, pages and chunks scanned",
           "Counts can include overlapping chunk matches", style="source", size=24)
     d.box("found", 780, 1000, 305, 155, "Term found",
-          "Literal absence contradicted", "Return matching source chunks", style="decision", size=23, title_size=27)
+          "Literal absence contradicted", "Return matching source chunks", style="decision", size=19, title_size=23)
     d.box("missing", 1135, 1000, 305, 155, "No match",
-          "Conditional corpus-only support", "Assumes complete, faithful text", style="decision", size=23, title_size=27)
+          "Conditional corpus-only support", "Assumes complete, faithful text", style="decision", size=16, title_size=21)
     d.link("claim", "pattern", [(680, 300), (860, 300)])
     d.link("pattern", "semantic", [(860, 340), (765, 340), (765, 475), (370, 475), (370, 600)],
            "No: semantic claim", (392, 467), style="model")
@@ -521,14 +521,14 @@ def baseline_flow():
                     "The historical baseline uses retrieved chunks and asks for a letter; it has no blind publication review.",
                     "Saved keys grade correctness afterwards. Citing a page does not establish faithful reasoning.",
                 ), direction="LR")
-    d.box("question", 60, 230, 420, 165, "Question and A-D options",
+    d.box("question", 60, 230, 420, 190, "Question and A-D options",
           "Combine the stem and alternatives", "Keep the official answer out of the prompt")
     d.box("search", 540, 230, 420, 165, "Retrieve evidence",
           "Semantic top 20", "Cross-encoder rerank to top 5", style="source")
     d.box("answer", 1020, 230, 420, 165, "One model answer call",
           "gpt-4o-mini / temperature 0", "Choose an option and explain it", style="model")
-    d.box("saved", 1020, 565, 420, 155, "Record the prediction",
-          "Letter, explanation and retrieved text", "No separate statement or option review", style="store", size=24)
+    d.box("saved", 1020, 565, 420, 180, "Record the prediction",
+          "Letter, explanation and retrieved text", "No separate statement or option review", style="store", size=20, title_size=25)
     d.box("grader", 540, 565, 420, 155, "Grade against saved keys",
           "Correct or wrong, with errors separate", "Same evaluation dataset", size=24)
     d.box("report", 60, 565, 420, 155, "Compare saved outcomes",

@@ -1,60 +1,9 @@
-# Vanilla RAG Baseline
+# Vanilla RAG baseline
 
-## Objective
+The baseline is a comparison protocol: retrieve once, ask the model to select an option and record the answer. It does not run claim decomposition, blind publication review or a generation gate.
 
-Establish a simple source-grounded RAG baseline before adding independent
-verification and orchestration.
+![Vanilla RAG flow](diagrams/baseline_flow.png)
 
-## Retrieval Pipeline
+It uses the same semantic top-20 and cross-encoder top-five retrieval configuration as the source-verifier comparison. The model receives the question, options and retrieved evidence, but not the official answer key. Python grades the saved prediction after the call.
 
-The baseline uses the retrieval approach selected from the retrieval
-experiments:
-
-```text
-User Query
-    ↓
-BGE-small semantic retrieval
-    ↓
-Top 20 candidate chunks
-    ↓
-MS MARCO MiniLM cross-encoder reranker
-    ↓
-Top 5 evidence chunks
-    ↓
-OpenAI LLM
-    ↓
-Grounded answer + source citations
-
-
-
-
-Semantic retrieval followed by cross-encoder reranking was selected for the
-Vanilla RAG baseline based on the benchmark results.
-
-
-Model:gpt-4o-mini
-Temperature:0
-
-Example Result
-
-The system retrieved Constitution of India, page 57 as the highest-ranked
-evidence.
-
-The generated answer explained that the President is elected by an electoral
-college consisting of the elected members of both Houses of Parliament and
-the elected members of the Legislative Assemblies of the States. It cited
-page 57 of the Constitution.
-
-The answer also referenced Article 55 regarding the manner of election.
-
-Observations
-
-The Vanilla RAG pipeline successfully connected the evaluated retrieval
-system to an LLM and produced a source-grounded answer.
-
-The retrieved top five results can contain multiple chunks from the same
-page. For example, the President query returned page 57 more than once.
-This creates redundant context.
-
-This is a known limitation of the current baseline and can be addressed
-later if necessary.
+The baseline is useful because it measures the cost of adding verification. It always attempts a completed question, so its coverage is high but its answer may be unsupported. Its historical scores belong to the 13-question regression protocol and must not be mixed with the current practice generation workflow.
